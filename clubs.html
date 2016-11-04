@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/css/hexagon.css">
+	<link rel="stylesheet" type="text/css" href="/css/bg.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/hexagon.js"></script>
+
+
+	<title>Clubs</title>
+</head>
+
+<body class="custom-scrollbar">
+	<canvas id='c'></canvas>
+<div id="canvas-container">
+  <div id="mountains2"></div>
+  <div id="mountains1"></div>
+  <div id="skyline"></div>
+</div>
+	<script type="text/javascript" src="/js/dat.gui.min.js"></script>
+	<script type="text/javascript" src="/js/bg.js"></script>
+	<script type="text/javascript" src="/js/bg2.js"></script>
+
+<div class="hexagon_wrapper custom-scrollbar">
+    <article>
+
+    <div id="cephid-container">
+	    
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+    	<div class="hexagon_item club_name" data-club="cephid">		
+	        <div class="translate layer0">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 5em;font-size: 2.5em;">
+		                		<span>CEPHEID</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>	
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+
+	    <div class="hexagon_item cephid-layer1" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+	    <div class="hexagon_item cephid-layer1 click_fix" style="display:none">		
+	        <div class="translate layer1">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 6.5em;font-size: 2em;">
+		                		<span>AQUANAUT</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+
+	    <div class="hexagon_item cephid-layer1 click_fix" style="display:none">		
+	        <div class="translate layer1">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 6.5em;font-size: 2em;">
+		                		<span>EUREKA</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+
+	    <div class="hexagon_item cephid-layer1" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+	    <div class="hexagon_item cephid-layer2" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+	    <div class="hexagon_item cephid-layer2" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+    	<div class="hexagon_item cephid-layer2 click_fix" style="display:none">		
+	        <div class="translate layer2">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 8em;font-size: 1.5em;">
+		                		<span>THE GALILEO PROJECT</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+	    <div class="hexagon_item cephid-layer2" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>	
+
+
+    </div><br><br> <!-- CEPHID END -->
+
+    <div id="torque-container">
+	    
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+    	<div class="hexagon_item club_name" data-club="torque">		
+	        <div class="translate layer0">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 5em;font-size: 2.5em;">
+		                		<span>TORQUE</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>	
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+
+	    <div class="hexagon_item torque-layer1" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+	    <div class="hexagon_item torque-layer1 click_fix" style="display:none">		
+	        <div class="translate layer1">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 6.5em;font-size: 2em;">
+		                		<span>DRIFT KING</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+
+	    <div class="hexagon_item torque-layer1 click_fix" style="display:none">		
+	        <div class="translate layer1">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 6.5em;font-size: 2em;">
+		                		<span>MINE STRIFE</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+
+	    <div class="hexagon_item torque-layer1" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+	    <div class="hexagon_item torque-layer2" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+	    <div class="hexagon_item torque-layer2" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+    	<div class="hexagon_item torque-layer2 click_fix" style="display:none">		
+	        <div class="translate layer2">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 6.5em;font-size: 2em;">
+		                		<span>CADPRO</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+	    <div class="hexagon_item torque-layer2" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>	
+
+
+    </div><br><br> <!-- TORQUE END -->
+
+    <div id="infero-container">
+	    
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+    	<div class="hexagon_item club_name" data-club="infero">		
+	        <div class="translate layer0">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 5em;font-size: 2.5em;">
+		                		<span>INFERO</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>	
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+
+	    <div class="hexagon_item infero-layer1" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+	    <div class="hexagon_item infero-layer1 click_fix" style="display:none">		
+	        <div class="translate layer1">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 6.5em;font-size: 2em;">
+		                		<span>CODE-A-BOT</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+
+	    <div class="hexagon_item infero-layer1 click_fix" style="display:none">		
+	        <div class="translate layer1">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 7.8em;font-size: 1.7em;">
+		                		<span>HELLO WORLD</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+
+	    <div class="hexagon_item infero-layer1" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+	    <div class="hexagon_item infero-layer2" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+    	<div class="hexagon_item infero-layer2 click_fix" style="display:none">		
+	        <div class="translate layer2">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 6.5em;font-size: 2em;">
+		                		<span>PRO QUEST</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+
+	    <div class="hexagon_item infero-layer2" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+	    <div class="hexagon_item infero-layer2 click_fix" style="display:none">		
+	        <div class="translate layer2">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 6.5em;font-size: 2em;">
+		                		<span>ALGORITHMA</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+
+
+    </div><br><br> <!-- INFERO END -->
+
+    <div id="kludge-container">
+	    
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+    	<div class="hexagon_item club_name" data-club="kludge">		
+	        <div class="translate layer0">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 5em;font-size: 2.5em;">
+		                		<span>KLUDGE</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>	
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+
+	    <div class="hexagon_item kludge-layer1" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+	    <div class="hexagon_item kludge-layer1 click_fix" style="display:none">		
+	        <div class="translate layer1">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 6.5em;font-size: 2em;">
+		                		<span>ENIGME</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+
+	    <div class="hexagon_item kludge-layer1 click_fix" style="display:none">		
+	        <div class="translate layer1">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 7.8em;font-size: 1.7em;">
+		                		<span>HACK A MAZE</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+
+	    <div class="hexagon_item kludge-layer1" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+    </div><br><br> <!-- KLUDGE END -->
+
+    <div id="equilibria-container">
+	    
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+    	<div class="hexagon_item club_name" data-club="equilibria">		
+	        <div class="translate layer0">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 5.5em;font-size: 2.3em;">
+		                		<span>EQUILIBRIA</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>	
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+
+	    <div class="hexagon_item equilibria-layer1" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+	    <div class="hexagon_item equilibria-layer1 click_fix" style="display:none">		
+	        <div class="translate layer1">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 7em;font-size: 1.7em;">
+		                		<span>JUNKYARD WARS</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+
+	    <div class="hexagon_item equilibria-layer1 click_fix" style="display:none">		
+	        <div class="translate layer1">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 7em;font-size: 1.7em;">
+		                		<span>BRIDGE BUILDER</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+
+	    <div class="hexagon_item equilibria-layer1" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+    </div><br><br> <!-- EQUILIBRIA END -->
+
+    <div id="robotics-container">
+	    
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+    	<div class="hexagon_item club_name" data-club="robotics">		
+	        <div class="translate layer0">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 5em;font-size: 2.5em;">
+		                		<span>ROBOTICS</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>	
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+
+	    <div class="hexagon_item robotics-layer1" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+	    <div class="hexagon_item robotics-layer1 click_fix" style="display:none">		
+	        <div class="translate layer1">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 6.5em;font-size: 2em;">
+		                		<span>ROBOWARS</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+
+	    <div class="hexagon_item robotics-layer1 click_fix" style="display:none">		
+	        <div class="translate layer1">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 7.3em;font-size: 1.8em;">
+		                		<span>ROBOSOCCER</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+
+	    <div class="hexagon_item robotics-layer1" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+	    <div class="hexagon_item robotics-layer2" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+	    <div class="hexagon_item robotics-layer2" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+    	<div class="hexagon_item robotics-layer2 click_fix" style="display:none">		
+	        <div class="translate layer2">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 6.5em;font-size: 2em;">
+		                		<span>ARCADE RUN</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+	    <div class="hexagon_item robotics-layer2" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>	
+
+
+    </div><br><br> <!-- ROBOTICS END -->
+
+    <div id="electronika-container">
+	    
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+    	<div class="hexagon_item club_name" data-club="electronika">		
+	        <div class="translate layer0">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 7em;font-size: 1.9em;">
+		                		<span>ELECTRONICA</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>	
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+
+	    <div class="hexagon_item electronika-layer1" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+	    <div class="hexagon_item electronika-layer1 click_fix" style="display:none">		
+	        <div class="translate layer1">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 6.5em;font-size: 2em;">
+		                		<span>DTMF RACE</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+
+	    <div class="hexagon_item electronika-layer1 click_fix" style="display:none">		
+	        <div class="translate layer1">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 7em;font-size: 1.7em;">
+		                		<span>BATTLE OF BREADBOARDS</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+
+	    <div class="hexagon_item electronika-layer1" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+	    <div class="hexagon_item electronika-layer2" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+    	<div class="hexagon_item electronika-layer2 click_fix" style="display:none">		
+	        <div class="translate layer2">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 7em;font-size: 1.7em;">
+		                		<span>ELECTRONICS BLOOPERS</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+
+	    <div class="hexagon_item electronika-layer2" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+	    <div class="hexagon_item electronika-layer2 click_fix" style="display:none">		
+	        <div class="translate layer2">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 7em;font-size: 1.7em;">
+		                		<span>ELIXIR OF ELECTRICITY</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+
+
+    </div><br><br> <!-- ELECTRONICA END -->
+
+    <div id="ecell-container">
+	    
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+    	<div class="hexagon_item club_name" data-club="ecell">		
+	        <div class="translate layer0">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 5em;font-size: 2.5em;">
+		                		<span>E-CELL</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>	
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+
+	    <div class="hexagon_item ecell-layer1" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+	    <div class="hexagon_item ecell-layer1 click_fix" style="display:none">		
+	        <div class="translate layer1">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 6.5em;font-size: 1.7em;">
+		                		<span>BUSINESS SIMULATION GAME</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+
+	    <div class="hexagon_item ecell-layer1 click_fix" style="display:none">		
+	        <div class="translate layer1">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 7.8em;font-size: 1.7em;">
+		                		<span>CROWD PITCH</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+
+	    <div class="hexagon_item ecell-layer1" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+    </div><br><br> <!-- E-CELL END -->
+
+    <div id="infi-container">
+	    
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+	    <div class="hexagon_item club_name" data-club="infi">		
+	        <div class="translate layer0">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 5em;font-size: 2.5em;">
+		                		<span>INFI</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+
+
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+	    
+	    <div class="hexagon_item infi-layer1" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+	    <div class="hexagon_item infi-layer1 click_fix" style="display:none">		
+	        <div class="translate layer1">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 7.8em;font-size: 1.7em;">
+		                		<span>CAKE EATING</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+	    <div class="hexagon_item infi-layer1 click_fix" style="display:none">		
+	        <div class="translate layer1">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 7em;font-size: 1.7em;">
+		                		<span>FINAL DESTINATION</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+	    <div class="hexagon_item infi-layer1" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+	    
+	    <div class="hexagon_item infi-layer2" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+	    <div class="hexagon_item infi-layer2 click_fix" style="display:none">		
+	        <div class="translate layer2">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 7em;font-size: 1.7em;">
+		                		<span>WHEEL OF FORTUNE</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+	    <div class="hexagon_item infi-layer2 click_fix" style="display:none">		
+	        <div class="translate layer2">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 7em;font-size: 1.7em;">
+		                		<span>STREET FOOTBALL</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+	    <div class="hexagon_item infi-layer2 click_fix" style="display:none">		
+	        <div class="translate layer2">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 7.8em;font-size: 1.7em;">
+		                		<span>LAN GAMING</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+	    
+	    <div class="hexagon_item infi-layer3 click_fix" style="display:none">		
+	        <div class="translate layer3">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 7.8em;font-size: 1.7em;">
+		                		<span>CASINO ROYALE</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+	    <div class="hexagon_item infi-layer3 click_fix" style="display:none">		
+	        <div class="translate layer3">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 7.8em;font-size: 1.7em;">
+		                		<span>MINUTE TO WIN IT</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+	    <div class="hexagon_item infi-layer3 click_fix" style="display:none">		
+	        <div class="translate layer3">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 7.8em;font-size: 1.7em;">
+		                		<span>MAD ADS</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+	    <div class="hexagon_item infi-layer3 click_fix" style="display:none">		
+	        <div class="translate layer3">
+		        <div class="hexagon hexagon2">
+		            <div class="hexagon-in1">
+		                <div class="hexagon-in2">
+		                	<div class="hexagon_text" style="padding-top: 7em;font-size: 1.7em;">
+		                		<span>BUBBLE SOCCER</span>
+		                	</div>
+		                </div>
+		             </div>
+		         </div>
+	         </div>
+	    </div>
+	   
+    </div><br><br> <!-- INFI END -->
+
+	</article>
+</div>
+
+</body>
+
+</html>
