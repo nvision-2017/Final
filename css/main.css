@@ -49,8 +49,7 @@ body {
   text-transform: uppercase;
   vertical-align: middle;
   width: 100%;
-  padding: 1em;
-  margin: 1em;
+  margin: 0.5em;
 }
 
 @media (min-width: 400px) {
