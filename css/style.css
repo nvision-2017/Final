@@ -14,3 +14,12 @@
   background-color: #00ccff;
   border-radius: 5px; 
 }
+
+.row-cen {
+    text-align:center;
+}
+
+.col-cen {
+    display:inline-block;
+    float:none;
+}

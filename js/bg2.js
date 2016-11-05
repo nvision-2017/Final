@@ -31,8 +31,8 @@ P.prototype.init = function(){
 	this.vx = 0;
 	this.vy = 0;
 	this.vz = 2;
-	this.color = "hsla("+hue+", 100%, 50%, .8)";
-	this.size = 20;
+	this.color = "hsla(360, 100%, 100%, 1)"; /*"hsla("+hue+", 100%, 50%, .8)"*/
+	this.size = 5;
 };
 
 P.prototype.draw = function(){
