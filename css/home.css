@@ -1,0 +1,8 @@
+#mainbody {
+	background-color: #000;
+	width: 100vw;
+	position: relative;
+	z-index: 98;
+	padding-left: 30px;
+	padding-right: 30px;
+}
