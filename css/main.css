@@ -22,7 +22,17 @@ body {
 }
 
 #navlogo {
-	height: 5em;
+	height: 6em;
+}
+
+@media (max-width:767px) {
+	#navbar-top {
+		background-color: #000;
+		height: 8em;
+	}
+	#navlogo {
+		height: 4em;
+	}
 }
 
 .btnsfos, .btnfos * {
