@@ -5,11 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
 	<script type="text/javascript" src="/js/jquery.min.js"></script>
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-
+	<script type="text/javascript" src="/js/materialize.min.js"></script>
+	<script src="js/main.js"></script>
 	<title>Sponsors</title>
 
 	<style>
@@ -87,7 +90,37 @@
 
 </head>
 
-<body>
+<body class="custom-scrollbar">
+
+	<nav id="navbar-top" class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" data-activates="slide-out" class="navbar-toggle collapsed button-collapse" aria-expanded="false" style="background-color:#000;position:fixed;right:0">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">
+					<img id="navlogo" alt="Brand" src="img/nvision.png">
+				</a>
+			</div>
+			<ul id="slide-out" class="side-nav">
+				<li><div class="userView">
+					<img class="img-responsive" src="img/nvision_b.png">
+				</div></li>
+				<li><div class="divider"></div></li>
+			</ul>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="index.html" class="btnfos"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Home</a></li>
+					<li><a href="about.html" class="btnfos"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>About us</a></li>
+					<li><a href="events.html" class="btnfos"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Events</a></li>
+					<li><a href="sponsors.html" class="btnfos"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Sponsors</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
                 <div class="row">
                   <div class="col-lg-1"></div>
