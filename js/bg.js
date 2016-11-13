@@ -176,7 +176,7 @@ var Fireworks = function(){
             {x: startX, y: startY},
             {x: startX, y: startY}
         ];
-        targetY = targetY - document.body.scrollTop;
+        targetY = targetY - (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0);
         this.targetX = targetX;
         this.targetY = targetY;
         this.speed = self.fworkSpeed;

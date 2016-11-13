@@ -1,11 +1,11 @@
 #mainbody {
 	background: url(/img/buried.png);
 	background-color: #00ccff;
-	width: 100vw;
+	/*width: 100vw;*/
 	position: relative;
 	z-index: 98;
-	display: inline-block;
-	background-attachment: fixed;
+	/*display: inline-block;*/
+	/*background-attachment: fixed;*/
 }
 
 .glimpse {

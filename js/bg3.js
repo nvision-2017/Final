@@ -1,8 +1,7 @@
-var c = document.createElement('canvas');
+var c = document.getElementById('canvas');
 var ctx = c.getContext('2d');
-var cw = c.width = window.innerWidth;
-var ch = c.height = window.innerHeight;
-document.body.appendChild(c);
+var cw = c.width = device_width;
+var ch = c.height = device_height;
 
 var rand = function(a,b){return ~~((Math.random()*(b-a+1))+a);}
 var mx = cw/2;
@@ -68,7 +67,7 @@ for(var i = 0; i < rows; i++){
 
 $(window).on('mousemove', function(e){
   mx = e.pageX - c.offsetLeft;
-  my = e.pageY - c.offsetTop - document.body.scrollTop;
+  my = e.pageY - c.offsetTop - (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0);
 });
 
 loop();
