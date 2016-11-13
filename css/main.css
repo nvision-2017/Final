@@ -1,11 +1,12 @@
 body {
-	background-color: black; 
+	background-color: #000;
 	color: white;
 }
 
-#navbar-top {
+#navbar-top, #navbar-collapse {
 	background-color: transparent;
 	border-color: transparent;
+	border: 0;
 }
 
 .btn-navlink {
@@ -28,7 +29,7 @@ body {
 @media (max-width:767px) {
 	#navbar-top {
 		background-color: #000;
-		height: 8em;
+		height: 6em;
 	}
 	#navlogo {
 		height: 4em;
