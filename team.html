@@ -7,50 +7,8 @@
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/materialize.min.css">
-		<style>
-			#register-btn {
-				background:#1AAB8A;
-				color:#000;
-				border:none;
-				position:relative;
-				height:60px;
-				font-size:1.6em;
-				padding:0 2em;
-				cursor:pointer;
-				transition:800ms ease all;
-				outline:none;
-			}
-			#register-btn:hover {
-				background:#000;
-				color:#1AAB8A;
-			}
-			#register-btn:before, #register-btn:after {
-				content:'';
-				position:absolute;
-				top:0;
-				right:0;
-				height:2px;
-				width:0;
-				background: #1AAB8A;
-				transition:400ms ease all;
-			}
-			#register-btn:after {
-				right:inherit;
-				top:inherit;
-				left:0;
-				bottom:0;
-			}
-			#register-btn:hover:before, #register-btn:hover:after {
-				width:100%;
-				transition:800ms ease all;
-			}
-
-
-		</style>
 	</head>
 	<body class="custom-scrollbar">
-		<canvas id="c" style="position: fixed;height: 100vh;width: 100vw; top: 0;left: 0; z-index: -10;">Can't Vas</canvas>
-		<script src="/js/bg4.js"></script>
 		<nav id="navbar-top" class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -84,24 +42,7 @@
 		</nav>
 
 		<div class="container-fluid">
-			<div class="row center">
-				<div class="col-xs-12">
-					<h1 style="font-size:2em">EVENT</h1>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<img class="img-responsive center-block" src="http://placehold.it/720x480" style="margin-bottom:2.5em;">
-				</div>
-				<div class="col-md-6 text-center">
-					<p style="font-size:1.5em;">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>
-					<div class="text-center" style="margin-top:5em;margin-bottom:5em;">
-						<button id="register-btn">Register</button>
-					</div>
-				</div>
-			</div>
+			
 		</div>
 
 		<script src="js/jquery.min.js"></script>
