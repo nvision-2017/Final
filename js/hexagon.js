@@ -12,7 +12,7 @@ var club_layer_count ={
 
 var device_width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 var device_height = (window.innerHeight > 0) ? window.innerHeight : screen.height;
-
+var last_open;
 $(document).ready(function() {
 
 
@@ -24,23 +24,21 @@ $(document).ready(function() {
 	
 	$(".club_name").unbind().click(function(){
 
-		var layer_count;
-		var club_name = $(this).attr('data-club');
-
+		var layer_count = club_layer_count[last_open];
 		var check = $('.'+club_name+'-layer1').is(':visible');
-
-		for(name in club_layer_count) {
-			layer_count = club_layer_count[name];
-			for(var i=1 ; i<= layer_count ; i++) {
-				$('.'+name+'-layer'+i).stop(true,true).fadeOut({duration:500,queue:false}).slideUp(500);
-			}
+		for(var i=1 ; i<= layer_count ; i++) {
+			$('.'+last_open+'-layer'+i).stop(true,true).fadeOut({duration:500,queue:false}).slideUp(500);
 		}
+		$("."+last_open+"-helper").show();
 
+		var club_name = $(this).attr('data-club');
 		layer_count = club_layer_count[club_name];
 		if(!check){
 			for(var i=1 ; i<= layer_count ; i++) {
 				$('.'+club_name+'-layer'+i).stop(true,true).fadeIn({duration:500,queue:false}).css('display','none').slideDown(500);
 			}
+			$("."+club_name+"-helper").stop(true,true).hide();
+			last_open = club_name;
 		}
 
 		$('html,body').animate({ scrollTop: $("#"+club_name+"-container").offset().top}, 'ease-in-out');
