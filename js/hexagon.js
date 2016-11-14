@@ -23,13 +23,21 @@ $(document).ready(function() {
 	}
 	
 	$(".club_name").unbind().click(function(){
+
+		var layer_count;
 		var club_name = $(this).attr('data-club');
-		var layer_count = club_layer_count[club_name];
-		if($('.'+club_name+'-layer1').is(':visible')){
+
+		var check = $('.'+club_name+'-layer1').is(':visible');
+
+		for(name in club_layer_count) {
+			layer_count = club_layer_count[name];
 			for(var i=1 ; i<= layer_count ; i++) {
-				$('.'+club_name+'-layer'+i).stop(true,true).fadeOut({duration:500,queue:false}).slideUp(500);
+				$('.'+name+'-layer'+i).stop(true,true).fadeOut({duration:500,queue:false}).slideUp(500);
 			}
-		} else {
+		}
+
+		layer_count = club_layer_count[club_name];
+		if(!check){
 			for(var i=1 ; i<= layer_count ; i++) {
 				$('.'+club_name+'-layer'+i).stop(true,true).fadeIn({duration:500,queue:false}).css('display','none').slideDown(500);
 			}
