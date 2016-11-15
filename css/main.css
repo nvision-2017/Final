@@ -1,6 +1,7 @@
 body {
 	background-color: #000;
 	color: white;
+	padding-top: 70px !important;
 }
 
 #navbar-top, #navbar-collapse {

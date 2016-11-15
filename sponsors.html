@@ -9,10 +9,6 @@
 		<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
 		<link rel="stylesheet" type="text/css" href="/css/main.css">
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
-	<script type="text/javascript" src="/js/jquery.min.js"></script>
-	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="/js/materialize.min.js"></script>
-	<script src="js/main.js"></script>
 	<title>Sponsors</title>
 
 	<style>
@@ -21,9 +17,13 @@
 			background-color: #000;
 			background-image: url(/img/black-felt.png);
 			background-attachment: fixed;
-      overflow-x: hidden;
+			overflow-x: hidden;
+			padding-top: 70px;
 		}
 
+		.scrolled {
+			background-color: black;
+		}
 
 		.thumbnail {
 		  background-color: transparent !important;
@@ -92,7 +92,7 @@
 
 <body class="custom-scrollbar">
 
-	<nav id="navbar-top" class="navbar navbar-inverse">
+	<nav id="navbar-top" class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" data-activates="slide-out" class="navbar-toggle collapsed button-collapse" aria-expanded="false" style="background-color:#000;position:fixed;right:0">
@@ -496,6 +496,10 @@
               <div class="col-lg-1"></div>
             </div>
 
+			<script type="text/javascript" src="/js/jquery.min.js"></script>
+			<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="/js/materialize.min.js"></script>
+			<script src="js/main.js"></script>
 
 </body>
 
