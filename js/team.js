@@ -15,13 +15,32 @@
     );
   }
 
+  // document.querySelector(".teamline").style.visibility = "hidden";
+
   function callbackFunc() {
     for (var i = 0; i < items.length; i++) {
       if (isElementInViewport(items[i])) {
         items[i].classList.add("in-view");
       }
     }
+	if (document.documentElement.clientWidth > 600) {
+	  for (var i = 0; i<items.length; i++)
+	  {
+		  items[i].style.transform = "translateY(" + -Math.floor((i+1)/2)*100 +"%)";
+		//   items[i].style.marginBottom = -Math.floor((i)/2)*items[i].offsetHeight + "px";
+	  }
+	//   document.querySelector(".teamline").style.marginBottom = (-Math.ceil(items.length/4)*items[0].offsetHeight+500)+"px";
+	  // document.getElementsByClassName(".teamline")[0].style.margin = -Math.floor((i-1)/2)*200 + "px";
+	}
+	else {
+	  for (var i = 0; i<items.length; i++)
+  	  {
+  		  items[i].style.transform = "none";
+  	  }
+	}
   }
+
+
 
   // listen for events
   window.addEventListener("load", callbackFunc);
