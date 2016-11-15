@@ -13,7 +13,6 @@ body {
   height: 100px;
   /*height: 100vh;*/
   /*overflow-y: scroll;*/
-
   -webkit-transition: all ease 500ms;
   -moz-transition: all ease 500ms;
   -o-transition: all ease 500ms;
@@ -25,7 +24,7 @@ body {
     height: 180px;
     /*background:rgba(255,255,255,0.05);*/
     padding: 1em;
-    border-bottom: 2px solid #444;
+    /*border-bottom: 2px solid #444;*/
     -webkit-transition: all ease-in-out 200ms;
     -moz-transition: all ease-in-out 200ms;
     -o-transition: all ease-in-out 200ms;
@@ -35,6 +34,15 @@ body {
 .club-container:hover {
     box-shadow:0 0 100px #000, 0 0 30px #fff;
 }
+/*
+.club-container:nth-child(2n){
+  animation: float_m 1.5s infinite ease-in-out alternate;
+}
+
+.club-container:nth-child(2n-1){
+  animation: float_m_r 1.5s infinite ease-in-out alternate;
+}
+*/
 
 .click_fix , .club_name {
   color: #000;
@@ -96,6 +104,10 @@ body {
   animation-delay: 2.5s; 
 }
 
+.translate.layer7 {
+  animation-delay: 2.9s; 
+}
+
 @keyframes float {
   100% {
     transform: translate(-10px,10px);
@@ -105,6 +117,12 @@ body {
 @keyframes float_m {
   100% {
     transform: translateY(10px);
+  }
+}
+
+@keyframes float_m_r {
+  100% {
+    transform: translateY(-10px);
   }
 }
 
