@@ -24,13 +24,10 @@
       }
     }
 	if (document.documentElement.clientWidth > 600) {
-	  for (var i = 0; i<items.length; i++)
+	  for (var i = 1; i<items.length; i+=2)
 	  {
-		  items[i].style.transform = "translateY(" + -Math.floor((i+1)/2)*100 +"%)";
-		//   items[i].style.marginBottom = -Math.floor((i)/2)*items[i].offsetHeight + "px";
+		  items[i].style.marginTop = -items[i-1].offsetHeight+"px";
 	  }
-	//   document.querySelector(".teamline").style.marginBottom = (-Math.ceil(items.length/4)*items[0].offsetHeight+500)+"px";
-	  // document.getElementsByClassName(".teamline")[0].style.margin = -Math.floor((i-1)/2)*200 + "px";
 	}
 	else {
 	  for (var i = 0; i<items.length; i++)
