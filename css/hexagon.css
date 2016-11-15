@@ -7,7 +7,7 @@ body {
 .hexagon_wrapper {
   /*width: 1000px;*/
   padding-bottom: 70px;
-  position: relative;
+  /*position: static;*/
   margin: 0 auto;
   margin-bottom: 2.5em;
   height: 100px;
@@ -19,6 +19,21 @@ body {
   -o-transition: all ease 500ms;
   -ms-transition: all ease 500ms;
   transition: all ease 500ms;
+}
+
+.club-container {
+    height: 180px;
+    /*background:rgba(255,255,255,0.05);*/
+    padding: 1em;
+    border-bottom: 2px solid #444;
+    -webkit-transition: all ease-in-out 200ms;
+    -moz-transition: all ease-in-out 200ms;
+    -o-transition: all ease-in-out 200ms;
+    -ms-transition: all ease-in-out 200ms;
+    transition: all ease-in-out 200ms;
+}
+.club-container:hover {
+    box-shadow:0 0 100px #000, 0 0 30px #fff;
 }
 
 .click_fix , .club_name {
@@ -194,7 +209,7 @@ a.hexagon_item {
 }
 
 .hexagon-in2:hover {
-  background: rgba(0,0,0,0.9); /*#62b7a7*/ 
+  background: rgba(255,255,255,0.05); /*#62b7a7*/ 
   color: #fff;
   -webkit-box-shadow: inset 0 0 0 0px #B0DAD4;
   box-shadow: inset 0 0 0 0px #B0DAD4;
