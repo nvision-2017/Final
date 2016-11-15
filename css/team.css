@@ -17,12 +17,12 @@ body {
 /* TIMELINE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-.timeline ul {
+.timeline .teamline {
   /*background: #456990;*/
   padding: 50px 0;
 }
 
-.timeline ul li {
+.timeline .teamline li {
   list-style-type: none;
   position: relative;
   width: 6px;
@@ -31,7 +31,7 @@ body {
   background: #fff;
 }
 
-.timeline ul li::after {
+.timeline .teamline li::after {
   content: '';
   position: absolute;
   left: 50%;
@@ -43,7 +43,7 @@ body {
   background: inherit;
 }
 
-.timeline ul li div {
+.timeline .teamline li .profile-group {
   position: relative;
   bottom: 0;
   width: 400px;
@@ -51,7 +51,14 @@ body {
   background: #00bbff;
 }
 
-.timeline ul li div::before {
+.timeline .teamline li .profile-group .profile {
+  position: relative;
+  bottom: 0;
+  display: inline-block;
+  margin: 1em;
+}
+
+.timeline .teamline li .profile-group::before {
   content: '';
   position: absolute;
   bottom: 7px;
@@ -60,74 +67,56 @@ body {
   border-style: solid;
 }
 
-.timeline ul li:nth-child(odd) div {
+.timeline .teamline li:nth-of-type(even) .profile-group {
   left: 45px;
 }
 
-.timeline ul li:nth-child(odd) div::before {
+.timeline .teamline li:nth-of-type(even) .profile-group::before {
   left: -15px;
   border-width: 8px 16px 8px 0;
   border-color: transparent #00bbff transparent transparent;
 }
 
-.timeline ul li:nth-child(even) div {
+.timeline .teamline li:nth-of-type(odd) .profile-group {
   left: -439px;
 }
 
-.timeline ul li:nth-child(even) div::before {
+.timeline .teamline li:nth-of-type(odd) .profile-group::before {
   right: -15px;
   border-width: 8px 0 8px 16px;
   border-color: transparent transparent transparent #00bbff;
-}
-
-time {
-  display: block;
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 8px;
 }
 
 
 /* EFFECTS
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-.timeline ul li::after {
+.timeline .teamline li::after {
   transition: background .5s ease-in-out;
 }
 
-.timeline ul li.in-view::after {
+.timeline .teamline li.in-view::after {
   background: #00bbff;
 }
 
-.timeline ul li div {
+.timeline .teamline li .profile-group {
   visibility: hidden;
    /*display: none;*/
   opacity: 0;
   transition: all .5s ease-in-out;
 }
 
-.timeline ul li:nth-child(odd) div {
+.timeline .teamline li:nth-of-type(even) .profile-group {
   transform: translate3d(200px, 0, 0);
 }
 
-.timeline ul li:nth-child(even) div {
+.timeline .teamline li:nth-of-type(odd) .profile-group {
   transform: translate3d(-200px, 0, 0);
 }
 
-@media (max-width:767px) {
-	.timeline ul li:nth-child(odd) div {
-	  transform: translate3d(20px, 0, 0);
-	}
-
-	.timeline ul li:nth-child(even) div {
-	  transform: translate3d(-20px, 0, 0);
-	}
-}
-
-.timeline ul li.in-view div {
+.timeline .teamline li.in-view .profile-group {
   transform: none;
   visibility: visible;
-   /*display: inline-block;*/
   opacity: 1;
 }
 
@@ -136,26 +125,26 @@ time {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 @media screen and (max-width: 900px) {
-  .timeline ul li div {
+  .timeline .teamline li .profile-group {
     width: 250px;
   }
-  .timeline ul li:nth-child(even) div {
+  .timeline .teamline li:nth-of-type(odd) .profile-group {
     left: -289px;
     /*250+45-6*/
   }
 }
 
 @media screen and (max-width: 600px) {
-  .timeline ul li {
+  .timeline .teamline li {
     margin-left: 20px;
   }
-  .timeline ul li div {
+  .timeline .teamline li .profile-group {
     width: calc(100vw - 91px);
   }
-  .timeline ul li:nth-child(even) div {
+  .timeline .teamline li:nth-of-type(odd) .profile-group {
     left: 45px;
   }
-  .timeline ul li:nth-child(even) div::before {
+  .timeline .teamline li:nth-of-type(odd) .profile-group::before {
     left: -15px;
     border-width: 8px 16px 8px 0;
     border-color: transparent #00bbff transparent transparent;

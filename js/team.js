@@ -1,7 +1,5 @@
 (function() {
 
-  'use strict';
-
   // define variables
   var items = document.querySelectorAll(".timeline li");
 
