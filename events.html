@@ -41,7 +41,7 @@
 	<!-- <div id="canvas-container"> </div> -->
 	<!-- <script type="text/javascript" src="/js/dat.gui.min.js"></script> -->
 	<!-- <script type="text/javascript" src="/js/bg.js"></script> -->
-	<nav id="navbar-top" class="navbar navbar-inverse navbar-fixed-top" style="z-index:1000;background:rgba(0,0,0,0.8)">
+	<nav id="navbar-top" class="navbar navbar-inverse navbar-fixed-top" style="z-index:1000;">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" data-activates="slide-out" class="navbar-toggle collapsed button-collapse" aria-expanded="false" style="background-color:#000;position:fixed;right:0">
@@ -50,7 +50,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">
+				<a class="navbar-brand" href="event.html">
 					<img id="navlogo" alt="Brand" src="img/nvision.png">
 				</a>
 			</div>
@@ -73,9 +73,9 @@
 		</div>
 	</nav>
 <!-- ===== DESKTOP ===== -->
-<div class="row desktop" id="main-container">
+<div class="row desktop" id="main-container" style="padding-top:2.5em">
 
-<div class="col-lg-12 club-container kludge">
+<div class="col-lg-12 club-container kludge" data-club="kludge">
 
 	<div class="col-lg-1 desktop"></div>
 	<div class="col-lg-4 col-xs-12">
@@ -90,7 +90,7 @@
 		    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
 		    <div class="hexagon_item kludge-helper"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
 
-		    <a href="#" class="hexagon_item kludge-layer click_fix" style="display:none">
+		    <a href="event.html" class="hexagon_item kludge-layer click_fix" style="display:none">
 		        <div class="translate layer1">
 			        <div class="hexagon hexagon2">
 			            <div class="hexagon-in1">
@@ -104,7 +104,7 @@
 		         </div>
 		    </a>
 
-	    	<div class="hexagon_item club_name" data-club="kludge">
+	    	<div class="hexagon_item club_name">
 		        <div class="layer0">
 			        <div class="hexagon hexagon2">
 			            <div class="hexagon-in1">
@@ -118,7 +118,7 @@
 		         </div>
 		    </div>
 
-		    <a href="#" class="hexagon_item kludge-layer click_fix" style="display:none">
+		    <a href="event.html" class="hexagon_item kludge-layer click_fix" style="display:none">
 		        <div class="translate layer2">
 			        <div class="hexagon hexagon2">
 			            <div class="hexagon-in1">
@@ -155,7 +155,7 @@
 </div>
 
 
-<div class="col-lg-12 club-container cephid">
+<div class="col-lg-12 club-container cephid" data-club="cephid">
 	
 	<div class="col-lg-2 desktop"></div>
 	<div class="col-lg-4 col-xs-12" style="text-align:center">
@@ -173,23 +173,9 @@
 	    <div id="cephid-container">
 
 	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
-	    <div class="hexagon_item cephid-helper"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
 
-	    <a href="#" class="hexagon_item cephid-layer click_fix" style="display:none">
-	        <div class="translate layer1">
-		        <div class="hexagon hexagon2">
-		            <div class="hexagon-in1">
-		                <div class="hexagon-in2">
-		                	<div class="hexagon_text">
-		                		<span>AQUANAUT</span>
-		                	</div>
-		                </div>
-		             </div>
-		         </div>
-	         </div>
-	    </a>
-
-    	<div class="hexagon_item club_name" data-club="cephid">
+    	<div class="hexagon_item club_name">
 	        <div class="layer0">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -203,25 +189,8 @@
 	         </div><!-- style="padding-top: 4em;font-size: 1.5em;" -->
 	    </div>
 
-	    <a href="#" class="hexagon_item cephid-layer click_fix" style="display:none">
-	        <div class="translate layer2">
-		        <div class="hexagon hexagon2">
-		            <div class="hexagon-in1">
-		                <div class="hexagon-in2">
-		                	<div class="hexagon_text">
-		                		<span>EUREKA</span>
-		                	</div>
-		                </div>
-		             </div>
-		         </div>
-	         </div>
-	    </a>
-
-
-	    <div class="hexagon_item cephid-helper"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
-
-	    <a href="#" class="hexagon_item cephid-layer click_fix" style="display:none">
-	        <div class="translate layer3">
+	    <a href="event.html" class="hexagon_item cephid-layer click_fix" style="display:none">
+	        <div class="translate layer1">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
 		                <div class="hexagon-in2">
@@ -234,6 +203,10 @@
 	         </div>
 	    </a>
 
+	    <div class="hexagon_item cephid-helper"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+
+
     </div><br><br> <!-- CEPHID END -->
 		</article>
 	</div>
@@ -245,7 +218,7 @@
 
 </div>
 
-<div class="col-lg-12 club-container infero">
+<div class="col-lg-12 club-container infero" data-club="infero">
 
 	<div class="col-lg-1 desktop"></div>
 	<div class="col-lg-4 col-xs-12">
@@ -257,16 +230,16 @@
 
 	    <div id="infero-container">
 
-	    <div class="hexagon_item infero-helper"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
 	    <div class="hexagon_item infero-helper"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
 
-	    <a href="#" class="hexagon_item infero-layer click_fix" style="display:none">
+    	<a href="event.html" class="hexagon_item infero-layer click_fix" style="display:none">
 	        <div class="translate layer1">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
 		                <div class="hexagon-in2">
 		                	<div class="hexagon_text">
-		                		<span>CODE-A-BOT</span>
+		                		<span>PRO QUEST</span>
 		                	</div>
 		                </div>
 		             </div>
@@ -274,21 +247,7 @@
 	         </div>
 	    </a>
 
-	    <a href="#" class="hexagon_item infero-layer click_fix" style="display:none">
-	        <div class="translate layer2">
-		        <div class="hexagon hexagon2">
-		            <div class="hexagon-in1">
-		                <div class="hexagon-in2">
-		                	<div class="hexagon_text">
-		                		<span>HELLO WORLD</span>
-		                	</div>
-		                </div>
-		             </div>
-		         </div>
-	         </div>
-	    </a>
-
-    	<div class="hexagon_item club_name" data-club="infero">
+    	<div class="hexagon_item club_name">
 	        <div class="layer0">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -302,27 +261,8 @@
 	         </div>
 	    </div>
 
-	    <div class="hexagon_item infero-helper"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
-	    <div class="hexagon_item infero-helper"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
-
-
-
-    	<a href="#" class="hexagon_item infero-layer click_fix" style="display:none">
-	        <div class="translate layer3">
-		        <div class="hexagon hexagon2">
-		            <div class="hexagon-in1">
-		                <div class="hexagon-in2">
-		                	<div class="hexagon_text">
-		                		<span>PRO QUEST</span>
-		                	</div>
-		                </div>
-		             </div>
-		         </div>
-	         </div>
-	    </a>
-
-	    <a href="#" class="hexagon_item infero-layer click_fix" style="display:none">
-	        <div class="translate layer4">
+	    <a href="event.html" class="hexagon_item infero-layer click_fix" style="display:none">
+	        <div class="translate layer2">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
 		                <div class="hexagon-in2">
@@ -335,6 +275,8 @@
 	         </div>
 	    </a>
 
+	    <div class="hexagon_item infero-helper"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
 
     </div><br><br> <!-- INFERO END -->
 		</article>
@@ -352,7 +294,7 @@
 </div>
 
 
-<div class="col-lg-12 club-container ecell">
+<div class="col-lg-12 club-container ecell" data-club="ecell">
 
 	<div class="col-lg-2 desktop"></div>
 	<div class="col-lg-4 col-xs-12" style="text-align:center">
@@ -372,7 +314,7 @@
 	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
 	    <div class="hexagon_item ecell-helper"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
 
-	    <a href="#" class="hexagon_item ecell-layer click_fix" style="display:none">
+	    <a href="event.html" class="hexagon_item ecell-layer click_fix" style="display:none">
 	        <div class="translate layer1">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -386,7 +328,7 @@
 	         </div>
 	    </a>
 
-    	<div class="hexagon_item club_name" data-club="ecell">
+    	<div class="hexagon_item club_name">
 	        <div class="layer0">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -400,7 +342,7 @@
 	         </div>
 	    </div>
 
-	    <a href="#" class="hexagon_item ecell-layer click_fix" style="display:none">
+	    <a href="event.html" class="hexagon_item ecell-layer click_fix" style="display:none">
 	        <div class="translate layer2">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -432,7 +374,7 @@
 
 </div>
 
-<div class="col-lg-12 club-container robotics">
+<div class="col-lg-12 club-container robotics" data-club="robotics">
 
 	<div class="col-lg-1 desktop"></div>
 	<div class="col-lg-4 col-xs-12">
@@ -444,10 +386,10 @@
 
 	    <div id="robotics-container">
 
-	    <div class="hexagon_item robotics-helper"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
 	    <div class="hexagon_item robotics-helper"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
 
-	    <a href="#" class="hexagon_item robotics-layer click_fix" style="display:none">
+	    <a href="event.html" class="hexagon_item robotics-layer click_fix" style="display:none">
 	        <div class="translate layer1">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -461,22 +403,9 @@
 	         </div>
 	    </a>
 
-	    <a href="#" class="hexagon_item robotics-layer click_fix" style="display:none">
-	        <div class="translate layer2">
-		        <div class="hexagon hexagon2">
-		            <div class="hexagon-in1">
-		                <div class="hexagon-in2">
-		                	<div class="hexagon_text">
-		                		<span>ROBOSOCCER</span>
-		                	</div>
-		                </div>
-		             </div>
-		         </div>
-	         </div>
-	    </a>
 
 
-    	<div class="hexagon_item club_name" data-club="robotics">
+    	<div class="hexagon_item club_name">
 	        <div class="layer0">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -490,15 +419,13 @@
 	         </div>
 	    </div>
 
-	    <div class="hexagon_item robotics-helper"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
-
-	    <a href="#" class="hexagon_item robotics-layer click_fix" style="display:none">
-	        <div class="translate layer3">
+	    <a href="event.html" class="hexagon_item robotics-layer click_fix" style="display:none">
+	        <div class="translate layer2">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
 		                <div class="hexagon-in2">
 		                	<div class="hexagon_text">
-		                		<span>ARCADE RUN</span>
+		                		<span>ROBOSOCCER</span>
 		                	</div>
 		                </div>
 		             </div>
@@ -506,6 +433,7 @@
 	         </div>
 	    </a>
 
+	    <div class="hexagon_item robotics-helper"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
 
 	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
 
@@ -529,7 +457,7 @@
 </div>
 
 
-<div class="col-lg-12 club-container infi">
+<!-- <div class="col-lg-12 club-container infi" data-club="infi">
 
 	<div class="col-lg-2 desktop"></div>
 	<div class="col-lg-4 col-xs-12" style="text-align:center">
@@ -549,7 +477,7 @@
 	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
 	    <div class="hexagon_item infi-helper"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
 
-	    <a href="#" class="hexagon_item infi-layer click_fix" style="display:none">
+	    <a href="event.html" class="hexagon_item infi-layer click_fix" style="display:none">
 	        <div class="translate layer1">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -563,7 +491,7 @@
 	         </div>
 	    </a>
 
-	    <div class="hexagon_item club_name" data-club="infi">
+	    <div class="hexagon_item club_name">
 	        <div class="layer0">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -577,7 +505,7 @@
 	         </div>
 	    </div>
 
-	    <a href="#" class="hexagon_item infi-layer click_fix" style="display:none">
+	    <a href="event.html" class="hexagon_item infi-layer click_fix" style="display:none">
 	        <div class="translate layer1">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -591,7 +519,7 @@
 	         </div>
 	    </a>
 
-	    <a href="#" class="hexagon_item infi-layer click_fix" style="display:none">
+	    <a href="event.html" class="hexagon_item infi-layer click_fix" style="display:none">
 	        <div class="translate layer2">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -604,7 +532,7 @@
 		         </div>
 	         </div>
 	    </a>
-	    <a href="#" class="hexagon_item infi-layer click_fix" style="display:none">
+	    <a href="event.html" class="hexagon_item infi-layer click_fix" style="display:none">
 	        <div class="translate layer2">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -617,7 +545,7 @@
 		         </div>
 	         </div>
 	    </a>
-	    <a href="#" class="hexagon_item infi-layer click_fix" style="display:none">
+	    <a href="event.html" class="hexagon_item infi-layer click_fix" style="display:none">
 	        <div class="translate layer2">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -630,7 +558,7 @@
 		         </div>
 	         </div>
 	    </a>
-	    <a href="#" class="hexagon_item infi-layer click_fix" style="display:none">
+	    <a href="event.html" class="hexagon_item infi-layer click_fix" style="display:none">
 	        <div class="translate layer2">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -646,7 +574,7 @@
 
 
 	    <div class="hexagon_item infi-layer" style="display:none"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
-	    <a href="#" class="hexagon_item infi-layer click_fix" style="display:none">
+	    <a href="event.html" class="hexagon_item infi-layer click_fix" style="display:none">
 	        <div class="translate layer3">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -659,7 +587,7 @@
 		         </div>
 	         </div>
 	    </a>
-	    <a href="#" class="hexagon_item infi-layer click_fix" style="display:none">
+	    <a href="event.html" class="hexagon_item infi-layer click_fix" style="display:none">
 	        <div class="translate layer3">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -672,7 +600,7 @@
 		         </div>
 	         </div>
 	    </a>
-	    <a href="#" class="hexagon_item infi-layer click_fix" style="display:none">
+	    <a href="event.html" class="hexagon_item infi-layer click_fix" style="display:none">
 	        <div class="translate layer3">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -688,7 +616,7 @@
 
 
 
-    </div><br><br> <!-- INFI END -->
+    </div><br><br> 
 		</article>
 	</div>
 
@@ -697,11 +625,15 @@
 
 	<div class="col-lg-2 desktop"></div>
 
-</div>
+</div> -->
 
-<div class="col-lg-12 club-container equilibria">
+<div class="col-lg-12 club-container equilibria" data-club="equilibria">
 
-	<div class="col-lg-1 desktop"></div>
+	<div class="col-lg-2 desktop"></div>
+	<div class="col-lg-4 col-xs-12" style="text-align:center">
+		<h4>EQUILIBRIA</h4>
+		<p>About club</p>
+	</div>
 	<div class="col-lg-4 col-xs-12">
 
 
@@ -714,7 +646,7 @@
 	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
 	    <div class="hexagon_item equilibria-helper"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
 
-	    <a href="#" class="hexagon_item equilibria-layer click_fix" style="display:none">
+	    <a href="event.html" class="hexagon_item equilibria-layer click_fix" style="display:none">
 	        <div class="translate layer1">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -729,7 +661,7 @@
 	    </a>
 
 
-    	<div class="hexagon_item club_name" data-club="equilibria">
+    	<div class="hexagon_item club_name">
 	        <div class="layer0">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -743,7 +675,7 @@
 	         </div>
 	    </div>
 
-	    <a href="#" class="hexagon_item equilibria-layer click_fix" style="display:none">
+	    <a href="event.html" class="hexagon_item equilibria-layer click_fix" style="display:none">
 	        <div class="translate layer2">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -768,22 +700,14 @@
 
 	</div>
 
-	<div class="col-lg-4 col-xs-12" style="text-align:center">
-		<h4>EQUILIBRIA</h4>
-		<p>About club</p>
-	</div>
-	<div class="col-lg-3 desktop"></div>
+	<div class="col-lg-2 desktop"></div>
 
 </div>
 
 
-<div class="col-lg-12 club-container torque">
+<div class="col-lg-12 club-container torque" data-club="torque">
 	
-	<div class="col-lg-2 desktop"></div>
-	<div class="col-lg-4 col-xs-12" style="text-align:center">
-		<h4>TORQUE</h4>
-		<p>About club</p>
-	</div>
+	<div class="col-lg-1 desktop"></div>
 
 	<div class="col-lg-4 col-xs-12">
 
@@ -797,7 +721,7 @@
 	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
 	    <div class="hexagon_item torque-helper"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
 
-	    <a href="#" class="hexagon_item torque-layer click_fix" style="display:none">
+	    <a href="event.html" class="hexagon_item torque-layer click_fix" style="display:none">
 	        <div class="translate layer1">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -811,7 +735,7 @@
 	         </div>
 	    </a>
 
-    	<div class="hexagon_item club_name" data-club="torque">
+    	<div class="hexagon_item club_name">
 	        <div class="layer0">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -825,24 +749,8 @@
 	         </div>
 	    </div>
 
-
-	    <a href="#" class="hexagon_item torque-layer click_fix" style="display:none">
+    	<a href="event.html" class="hexagon_item torque-layer click_fix" style="display:none">
 	        <div class="translate layer2">
-		        <div class="hexagon hexagon2">
-		            <div class="hexagon-in1">
-		                <div class="hexagon-in2">
-		                	<div class="hexagon_text">
-		                		<span>MINE STRIFE</span>
-		                	</div>
-		                </div>
-		             </div>
-		         </div>
-	         </div>
-	    </a>
-
-	    <div class="hexagon_item torque-helper"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
-    	<a href="#" class="hexagon_item torque-layer click_fix" style="display:none">
-	        <div class="translate layer3">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
 		                <div class="hexagon-in2">
@@ -854,6 +762,8 @@
 		         </div>
 	         </div>
 	    </a>
+	    <div class="hexagon_item torque-helper"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
     </div><br><br> <!-- TORQUE END -->
 		</article>
 	</div>
@@ -861,14 +771,22 @@
 
 	</div>
 
-	<div class="col-lg-2 desktop"></div>
+	<div class="col-lg-4 col-xs-12" style="text-align:center">
+		<h4>TORQUE</h4>
+		<p>About club</p>
+	</div>
+	<div class="col-lg-3 desktop"></div>
 
 </div>
 
 
-<div class="col-lg-12 club-container electronika">
+<div class="col-lg-12 club-container electronika" data-club="electronika">
 
-	<div class="col-lg-1 desktop"></div>
+	<div class="col-lg-2 desktop"></div>
+	<div class="col-lg-4 col-xs-12" style="text-align:center">
+		<h4>ELECTRONICA</h4>
+		<p>About club</p>
+	</div>
 	<div class="col-lg-4 col-xs-12">
 
 
@@ -878,10 +796,10 @@
 
 	    <div id="electronika-container">
 
-	    <div class="hexagon_item electronika-helper"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
+	    <div class="hexagon_item"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
 	    <div class="hexagon_item electronika-helper"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
 
-	    <a href="#" class="hexagon_item electronika-layer click_fix" style="display:none">
+	    <a href="event.html" class="hexagon_item electronika-layer click_fix" style="display:none">
 	        <div class="translate layer1">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -895,22 +813,7 @@
 	         </div>
 	    </a>
 
-	    <a href="#" class="hexagon_item electronika-layer click_fix" style="display:none">
-	        <div class="translate layer2">
-		        <div class="hexagon hexagon2">
-		            <div class="hexagon-in1">
-		                <div class="hexagon-in2">
-		                	<div class="hexagon_text">
-		                		<span>BATTLE OF BREADBOARDS</span>
-		                	</div>
-		                </div>
-		             </div>
-		         </div>
-	         </div>
-	    </a>
-
-
-    	<div class="hexagon_item club_name" data-club="electronika">
+    	<div class="hexagon_item club_name">
 	        <div class="layer0">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -923,12 +826,10 @@
 		         </div>
 	         </div>
 	    </div>
-	    <div class="hexagon_item electronika-helper"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
-	    <div class="hexagon_item electronika-helper"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
 
 
 
-    	<a href="#" class="hexagon_item electronika-layer click_fix" style="display:none">
+    	<a href="event.html" class="hexagon_item electronika-layer click_fix" style="display:none">
 	        <div class="translate layer3">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -941,8 +842,9 @@
 		         </div>
 	         </div>
 	    </a>
+	    <div class="hexagon_item electronika-helper"><div class="hexagon hexagon2"><div class="hexagon-in1"><div class="dummy-hexagon-in2"></div></div></div></div>
 
-	    <a href="#" class="hexagon_item electronika-layer click_fix" style="display:none">
+	    <a href="event.html" class="hexagon_item electronika-layer click_fix" style="display:none">
 	        <div class="translate layer4">
 		        <div class="hexagon hexagon2">
 		            <div class="hexagon-in1">
@@ -964,11 +866,7 @@
 
 	</div>
 
-	<div class="col-lg-4 col-xs-12" style="text-align:center">
-		<h4>ELECTRONICA</h4>
-		<p>About club</p>
-	</div>
-	<div class="col-lg-3 desktop"></div>
+	<div class="col-lg-2 desktop"></div>
 
 </div>
 
@@ -1010,8 +908,6 @@
 	    <div class="collapsible-header">CEPHID</div>
 	    <div class="collapsible-body">
 	    	<div class="collection">
-			    <a href="#!" class="collection-item">AQUANAUT</a>
-			    <a href="#!" class="collection-item">EUREKA</a>
 			    <a href="#!" class="collection-item">THE GALILEO PROJECT</a>
 			</div>
 	    </div>
@@ -1023,8 +919,6 @@
 	    <div class="collapsible-header">INFERO</div>
 	    <div class="collapsible-body">
 	    	<div class="collection">
-			    <a href="#!" class="collection-item">CODE-A-BOT</a>
-			    <a href="#!" class="collection-item">HELLO WORLD</a>
 			    <a href="#!" class="collection-item">PRO QUEST</a>
 			    <a href="#!" class="collection-item">ALGORITHMA</a>
 			</div>
@@ -1051,13 +945,12 @@
 	    	<div class="collection">
 			    <a href="#!" class="collection-item">ROBOWARS</a>
 			    <a href="#!" class="collection-item">ROBOSOCCER</a>
-			    <a href="#!" class="collection-item">ARCADE RUN</a>
 			</div>
 	    </div>
 	  </li>
 	</ul>
 
-	<ul class="collapsible" data-collapsible="accordion">
+	<!-- <ul class="collapsible" data-collapsible="accordion">
 	  <li>
 	    <div class="collapsible-header">INFI</div>
 	    <div class="collapsible-body">
@@ -1074,7 +967,7 @@
 			</div>
 	    </div>
 	  </li>
-	</ul>
+	</ul> -->
 
 	<ul class="collapsible" data-collapsible="accordion">
 	  <li>
@@ -1094,7 +987,6 @@
 	    <div class="collapsible-body">
 	    	<div class="collection">
 			    <a href="#!" class="collection-item">DRIFT KING</a>
-			    <a href="#!" class="collection-item">MINE STRIFE</a>
 			    <a href="#!" class="collection-item">CADPRO</a>
 			</div>
 	    </div>
@@ -1107,7 +999,6 @@
 	    <div class="collapsible-body">
 	    	<div class="collection">
 			    <a href="#!" class="collection-item">DTMF RACE</a>
-			    <a href="#!" class="collection-item">BATTLE OF BREADBOARDS</a>
 			    <a href="#!" class="collection-item">ELECTRONIC BLOOPERS</a>
 			    <a href="#!" class="collection-item">ELIXIR OF ELECTRICITY</a>
 			</div>
@@ -1131,15 +1022,15 @@
 <script>
 	var tween = new TimelineMax ()
 	.add([
-		TweenMax.fromTo(".club-container.kludge", 1, {}, {top: -600, ease: Linear.easeNone}),
-		TweenMax.fromTo(".club-container.cephid", 1, {}, {top: -525, ease: Linear.easeNone}),
-		TweenMax.fromTo(".club-container.infero", 1, {}, {top: -450, ease: Linear.easeNone}),
-		TweenMax.fromTo(".club-container.ecell", 1, {}, {top: -375, ease: Linear.easeNone}),
-		TweenMax.fromTo(".club-container.robotics", 1, {}, {top: -300, ease: Linear.easeNone}),
-		TweenMax.fromTo(".club-container.infi", 1, {}, {top: -225, ease: Linear.easeNone}),
-		TweenMax.fromTo(".club-container.equilibria", 1, {}, {top: -175, ease: Linear.easeNone}),
-		TweenMax.fromTo(".club-container.torque", 1, {}, {top: -100, ease: Linear.easeNone}),
-		TweenMax.fromTo(".club-container.electronika", 1, {}, {top: -50, ease: Linear.easeNone})
+		TweenMax.fromTo(".club-container.kludge", 1, {}, {top: -960, ease: Linear.easeNone}),
+		TweenMax.fromTo(".club-container.cephid", 1, {}, {top: -840, ease: Linear.easeNone}),
+		TweenMax.fromTo(".club-container.infero", 1, {}, {top: -720, ease: Linear.easeNone}),
+		TweenMax.fromTo(".club-container.ecell", 1, {}, {top: -600, ease: Linear.easeNone}),
+		TweenMax.fromTo(".club-container.robotics", 1, {}, {top: -480, ease: Linear.easeNone}),
+		TweenMax.fromTo(".club-container.infi", 1, {}, {top: -360, ease: Linear.easeNone}),
+		TweenMax.fromTo(".club-container.equilibria", 1, {}, {top: -240, ease: Linear.easeNone}),
+		TweenMax.fromTo(".club-container.torque", 1, {}, {top: -120, ease: Linear.easeNone}),
+		TweenMax.fromTo(".club-container.electronika", 1, {}, {top: -0, ease: Linear.easeNone})
 	]);
 
 	// build scene

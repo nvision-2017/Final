@@ -1,3 +1,39 @@
+@font-face {
+  font-family: 'trench';
+  src: url('/fonts/trench100free.ttf'),url('/fonts/trench100free.otf');
+}
+
+@font-face {
+  font-family: 'Digital_tech';
+  src: url('/fonts/Digital_tech.otf'),url('/fonts/trench100free.otf');
+}
+
+@font-face {
+  font-family: 'AdamasRegular';
+  src: url('/fonts/AdamasRegular.otf'),url('/fonts/trench100free.otf');
+}
+
+@font-face {
+  font-family: 'complex';
+  src: url('/fonts/complex.ttf'),url('/fonts/trench100free.otf');
+}
+
+@font-face {
+  font-family: 'Gtek';
+  src: url('/fonts/Gtek.ttf'),url('/fonts/trench100free.otf');
+}
+
+@font-face {
+  font-family: 'FREEDOM';
+  src: url('/fonts/FREEDOM.ttf'),url('/fonts/trench100free.otf');
+}
+
+* {
+  font-family: 'trench', sans-serif !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+}
+
 body {
 	background-color: #000;
 	color: white;

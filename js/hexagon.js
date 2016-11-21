@@ -10,7 +10,7 @@ $(document).ready(function() {
 		});
 	}
 	
-	$(".club_name").unbind().click(function(){
+	$(".club-container").unbind().click(function(){
 
 		var club_name = $(this).attr('data-club');
 		var check = $('.'+club_name+'-layer').is(':visible');
@@ -24,7 +24,7 @@ $(document).ready(function() {
 			last_open = club_name;
 		}
 
-		$('html,body').animate({ scrollTop: $("#"+club_name+"-container").offset().top}, 'ease-in-out');
+		$('html,body').animate({ scrollTop: $("#"+club_name+"-container").offset().top - 180}, 'ease-in-out');
 
 	});
 

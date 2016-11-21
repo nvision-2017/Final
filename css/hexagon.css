@@ -33,8 +33,18 @@ body {
 }
 .club-container:hover {
     box-shadow:0 0 100px #000, 0 0 30px #fff;
+    cursor: pointer;
 }
-/*
+
+.club-container div h4 {
+  font-size: 40px;
+}
+
+.club-container div p {
+  font-size: 15px;
+}
+
+
 .club-container:nth-child(2n){
   animation: float_m 1.5s infinite ease-in-out alternate;
 }
@@ -42,7 +52,7 @@ body {
 .club-container:nth-child(2n-1){
   animation: float_m_r 1.5s infinite ease-in-out alternate;
 }
-*/
+
 
 .click_fix , .club_name {
   color: #000;
@@ -143,6 +153,15 @@ a.hexagon_item {
   line-height: 200px;
   width: 100%;
 }
+
+.hexagon_item .hexagon_text span{
+  font-size: 17px;
+}
+
+.hexagon_item.club_name .hexagon_text span{
+  font-size: 20px;
+}
+
 
 .hexagon_text span {
   font-weight: bold;
