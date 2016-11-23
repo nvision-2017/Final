@@ -1,3 +1,18 @@
+Element.prototype.remove = function() {
+    this.parentElement.removeChild(this);
+}
+NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+    for(var i = this.length - 1; i >= 0; i--) {
+        if(this[i] && this[i].parentElement) {
+            this[i].parentElement.removeChild(this[i]);
+        }
+    }
+}
+
+window.onload = function() {
+	document.getElementById("pre-loader").remove();
+}
+
 $(document).ready(function() {
 	$(".button-collapse").sideNav();
 	$("#slide-out").append($("#navbar-collapse ul").html());
