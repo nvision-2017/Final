@@ -29,9 +29,9 @@
 }
 
 * {
-  font-family: 'trench', sans-serif !important;
+  font-family: 'trench', sans-serif;
   font-weight: bold !important;
-  text-transform: uppercase !important;
+  /*text-transform: uppercase !important;*/
 }
 
 body {
