@@ -287,3 +287,21 @@ body .dot {
   -o-animation: r-to-l 0.4s infinite;
   animation: r-to-l 0.4s infinite;
 }
+
+@media only screen and (max-width: 768px) {
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+}
