@@ -149,8 +149,9 @@ body {
   -webkit-transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
           transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
 }
-/* LOADER */
 
+
+/* LOADER */
 
 #pre-loader {
   position: fixed;
@@ -287,6 +288,8 @@ body .dot {
   -o-animation: r-to-l 0.4s infinite;
   animation: r-to-l 0.4s infinite;
 }
+
+/* LOADER */
 
 @media only screen and (max-width: 768px) {
   .mobile {
