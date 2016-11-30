@@ -162,7 +162,6 @@ a.hexagon_item {
   font-size: 20px;
 }
 
-
 .hexagon_text span {
   font-weight: bold;
   text-shadow: 0 0 1px #fff;
@@ -214,7 +213,7 @@ a.hexagon_item {
 }
 
 .club_name .hexagon-in2 {
-  background: url(/img/club_name_bg.png) rgba(140, 255, 255, 0.9);
+  background: url(/img/club_name_bg.png) rgba(0, 128, 128, 0.9);
   -webkit-box-shadow: inset 0px 0px 37px 15px rgba(0,77,77,1);
     -moz-box-shadow: inset  0px 0px 37px 15px rgba(0,77,77,1);
           box-shadow: inset 0px 0px 37px 15px rgba(0,77,77,1);
