@@ -108,10 +108,10 @@
 			<div class="keyart_layer parallax" id="keyart-6"></div>		<!-- 75.0 -->
 			<div class="keyart_layer" id="keyart-scrim"></div>
 			<div class="keyart_layer parallax" id="keyart-7"></div>		<!-- 87.5 -->
-			<!-- <div class="keyart_layer" id="keyart-8"></div> -->		<!-- 100. -->
+			<div class="keyart_layer parallax" id="keyart-8"></div>		<!-- 100. -->
 		</div>
 
-		<!-- <div id="mainbody">
+		<div id="mainbody">
 			<style type="text/css">
 						#pinContainer {
 							/*border: 2px solid #f00;*/
@@ -121,7 +121,7 @@
 						.panel {
 							height: 100vh;
 							width: 100vw;
-							position: absolute;
+							/*position: absolute;*/
 						}
 						.one {
 							background:url(/img/firstBG.jpg) 50% 0 no-repeat fixed;
@@ -160,7 +160,7 @@
 </svg>
 						</section>
 					</div>
-		</div> -->
+		</div>
 
 
 		<script src="js/jquery.min.js"></script>
@@ -186,15 +186,15 @@
 			// build tween
 	var tween = new TimelineMax ()
 	.add([
-		TweenMax.fromTo("#keyart-8", 1, {}, {top: -600, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-7", 1, {}, {top: -525, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-6", 1, {}, {top: -450, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-5", 1, {}, {top: -375, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-4", 1, {}, {top: -300, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-3", 1, {}, {top: -225, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-2", 1, {}, {top: -175, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-1", 1, {}, {top: -100, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-0", 1, {}, {top: -50, ease: Linear.easeNone})
+		TweenMax.fromTo("#keyart-8", 1, {}, {top: -1150, ease: Linear.easeNone}),
+		TweenMax.fromTo("#keyart-7", 1, {}, {top: -1006, ease: Linear.easeNone}),
+		TweenMax.fromTo("#keyart-6", 1, {}, {top: -862, ease: Linear.easeNone}),
+		TweenMax.fromTo("#keyart-5", 1, {}, {top: -719, ease: Linear.easeNone}),
+		TweenMax.fromTo("#keyart-4", 1, {}, {top: -575, ease: Linear.easeNone}),
+		TweenMax.fromTo("#keyart-3", 1, {}, {top: -431, ease: Linear.easeNone}),
+		TweenMax.fromTo("#keyart-2", 1, {}, {top: -287, ease: Linear.easeNone}),
+		TweenMax.fromTo("#keyart-1", 1, {}, {top: -144, ease: Linear.easeNone}),
+		TweenMax.fromTo("#keyart-0", 1, {}, {top: -0, ease: Linear.easeNone})
 	]);
 
 	// build scene
@@ -202,7 +202,7 @@
 				.setTween(tween)
 				.addTo(controller);
 
-/*
+
 		// define movement of panels
 	var wipeAnimation = new TimelineMax()
 		.fromTo("section.panel.two", 1, {x: "-100%",y: "-100%"}, {x: "0%",y: "0%", ease: Linear.easeNone})  // in from left
@@ -218,10 +218,10 @@
 	.setPin("#pinContainer")
 	.setTween(wipeAnimation)
 	.addTo(controller);
-*/
+
 </script>
 
-<!-- <script>
+<script>
 	function pathPrepare ($el) {
 		var lineLength = $el[0].getTotalLength();
 		$el.css("stroke-dasharray", lineLength);
@@ -245,7 +245,7 @@
 	var scene = new ScrollMagic.Scene({triggerElement: ".panel.four", duration: 200, tweenChanges: true})
 	.setTween(tween)
 	.addTo(controller);
-</script> -->
+</script>
 <script src="/js/updates.js"></script>
 	</body>
 </html>
