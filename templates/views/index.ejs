@@ -34,9 +34,6 @@
 		.md-content {
 			background-color: rgba(0,0,0,0.5) !important;
 		}
-		#navbar-collapse ul li a.btnfos {
-			color: #000 !important;
-		}
 	</style>
 
 	<div id="pre-loader">
@@ -59,11 +56,52 @@
 		</div>
 		<div class="md-overlay"></div><!-- the overlay element -->
 
-		<%- include('../includes/_nav') %>
+
+<nav id="navbar-top" class="navbar navbar-inverse navbar-fixed-top" style="z-index:1000;">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" data-activates="slide-out" class="navbar-toggle collapsed button-collapse" aria-expanded="false" style="background-color:#000;position:fixed;right:0">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">
+					<img id="navlogo" alt="Brand" src="img/nvision.png">
+				</a>
+			</div>
+			<ul id="slide-out" class="side-nav">
+				<li><div class="userView">
+					<img class="img-responsive" src="img/nvision_b.png">
+				</div></li>
+				<li><div class="divider"></div></li>
+						
+						<li><a href="#" class="btnfos md-trigger md-setperspective" data-modal="updates-modal" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Updates&nbsp;<span style="color:#f00;font-size:1.2em;font-weight:bold">&#33;</span></a></li>
+						<!-- <li><a href="index.html" class="btnfos" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Home</a></li> -->
+						<li><a href="about.html" class="btnfos" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>About us</a></li>
+						<li><a href="events.html" class="btnfos" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Events</a></li>
+						<li><a href="sponsors.html" class="btnfos" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Sponsors</a></li>
+						<li><a href="workshops.html" class="btnfos" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Workshops</a></li>
+						<li><a href="team.html" class="btnfos" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Team</a></li>
+			</ul>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#" class="btnfos md-trigger md-setperspective" data-modal="updates-modal" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Updates&nbsp;<span style="color:#f00;font-size:1.2em;font-weight:bold">&#33;</span></a></li>
+					<!-- <li><a href="index.html" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Home</a></li> -->
+					<li><a href="about.html" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>About us</a></li>
+					<li><a href="events.html" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Events</a></li>
+					<li><a href="sponsors.html" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Sponsors</a></li>
+					<li><a href="workshops.html" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Workshops</a></li>
+					<li><a href="team.html" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Team</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
 		<div class="keyart" id="parallax">
 			<div class="keyart_layer parallax" id="keyart-0"></div>		<!-- 00.0 -->
 			<div class="keyart_layer parallax" id="keyart-1"></div>	<!-- 12.5 -->
+			<div class="keyart_layer parallax" id="keyart-drone"></div>	<!-- 12.5 -->
 			<div class="keyart_layer parallax" id="keyart-2"></div>		<!-- 25.0 -->
 			<div class="keyart_layer parallax" id="keyart-3"></div>	<!-- 37.5 -->
 			<div class="keyart_layer parallax" id="keyart-4"></div>		<!-- 50.0 -->
@@ -71,6 +109,7 @@
 			<div class="keyart_layer parallax" id="keyart-6"></div>		<!-- 75.0 -->
 			<div class="keyart_layer" id="keyart-scrim"></div>
 			<div class="keyart_layer parallax" id="keyart-7"></div>		<!-- 87.5 -->
+			<div class="keyart_layer parallax" id="keyart-car"></div>		<!-- 87.5 -->
 			<div class="keyart_layer parallax" id="keyart-8"></div>		<!-- 100. -->
 		</div>
 
@@ -150,6 +189,7 @@
 	var tween = new TimelineMax ()
 	.add([
 		TweenMax.fromTo("#keyart-8", 1, {}, {top: -1150, ease: Linear.easeNone}),
+		TweenMax.fromTo("#keyart-car", 1, {}, {left: 1006, top: -1200, ease: Linear.easeNone}),
 		TweenMax.fromTo("#keyart-7", 1, {}, {top: -1006, ease: Linear.easeNone}),
 		TweenMax.fromTo("#keyart-6", 1, {}, {top: -862, ease: Linear.easeNone}),
 		TweenMax.fromTo("#keyart-5", 1, {}, {top: -719, ease: Linear.easeNone}),
@@ -157,6 +197,7 @@
 		TweenMax.fromTo("#keyart-3", 1, {}, {top: -431, ease: Linear.easeNone}),
 		TweenMax.fromTo("#keyart-2", 1, {}, {top: -287, ease: Linear.easeNone}),
 		TweenMax.fromTo("#keyart-1", 1, {}, {top: -144, ease: Linear.easeNone}),
+		TweenMax.fromTo("#keyart-drone", 1, {}, {top: -144,left: -500, ease: Linear.easeNone}),
 		TweenMax.fromTo("#keyart-0", 1, {}, {top: -0, ease: Linear.easeNone})
 	]);
 
