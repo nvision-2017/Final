@@ -1,23 +1,24 @@
-var keystone = require('keystone');
-keystone.init({
+/* @flow */
 
-  'name': 'ηvision 2017',
+const keystone = require('keystone');
+const cons = require('consolidate');
+
+keystone.init({
+  'name': 'nvision 2017',
 
   'favicon': 'public/favicon.ico',
   'less': 'public',
   'static': ['public'],
-
-  'views': 'templates/views',
-  'view engine': 'ejs',
-
   'auto update': true,
-  'mongo': 'mongodb://localhost/nvision-2017',
+  'mongo': 'mongodb://localhost/nvision2017v0',
 
   'session': true,
   'auth': true,
   'user model': 'User',
-  'cookie secret': 'th1$_1$_my_$3cr37'
-
+  'cookie secret': 'This is a Huuge Secret',
+  'views': 'templates/views',
+  'custom engine': cons.handlebars,
+  'view engine': 'html'
 });
 
 require('./models');
