@@ -106,6 +106,7 @@
 			<div class="keyart_layer parallax" id="keyart-3"></div>	<!-- 37.5 -->
 			<div class="keyart_layer parallax" id="keyart-4"></div>		<!-- 50.0 -->
 			<div class="keyart_layer parallax" id="keyart-5"></div>	<!-- 62.5 -->
+			<div class="keyart_layer parallax" id="keyart-box"></div>	<!-- 62.5 -->
 			<div class="keyart_layer parallax" id="keyart-6"></div>		<!-- 75.0 -->
 			<div class="keyart_layer" id="keyart-scrim"></div>
 			<div class="keyart_layer parallax" id="keyart-7"></div>		<!-- 87.5 -->
@@ -193,12 +194,13 @@
 		TweenMax.fromTo("#keyart-7", 1, {}, {top: -1006, ease: Linear.easeNone}),
 		TweenMax.fromTo("#keyart-6", 1, {}, {top: -862, ease: Linear.easeNone}),
 		TweenMax.fromTo("#keyart-5", 1, {}, {top: -719, ease: Linear.easeNone}),
+		TweenMax.fromTo("#keyart-box", 1, {}, {top: -719,left: 300, ease: Linear.easeNone}),
 		TweenMax.fromTo("#keyart-4", 1, {}, {top: -575, ease: Linear.easeNone}),
 		TweenMax.fromTo("#keyart-3", 1, {}, {top: -431, ease: Linear.easeNone}),
 		TweenMax.fromTo("#keyart-2", 1, {}, {top: -287, ease: Linear.easeNone}),
 		TweenMax.fromTo("#keyart-1", 1, {}, {top: -144, ease: Linear.easeNone}),
 		TweenMax.fromTo("#keyart-drone", 1, {}, {top: -144,left: -500, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-0", 1, {}, {top: -0, ease: Linear.easeNone})
+		TweenMax.fromTo("#keyart-0", 1, {}, {top: -150, ease: Linear.easeNone})
 	]);
 
 	// build scene
