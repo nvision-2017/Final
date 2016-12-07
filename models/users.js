@@ -1,5 +1,3 @@
-/* @flow */
-
 let keystone = require('keystone');
 let Types = keystone.Field.Types;
 

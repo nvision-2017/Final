@@ -14,7 +14,9 @@ const newEvt = (evt, domain) => new Event.model({
   domain: domain,
   name: evt.name,
   introduction: evt.introduction,
-  file: evt.file
+  file: evt.file,
+  image: evt.image || "/img/text.jpg",
+  prize: evt.prize || "10000"
 });
 
 const handleEvents = (evts, cb2) => {

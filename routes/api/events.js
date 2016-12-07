@@ -1,5 +1,3 @@
-// @flow
-
 const keystone = require('keystone');
 const Event = keystone.list('Event');
 
