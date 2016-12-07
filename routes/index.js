@@ -2,6 +2,8 @@ var keystone = require('keystone'),
     middleware = require('./middleware'),
     importRoutes = keystone.importer(__dirname);
 
+const Event = keystone.list('Event');
+
 // Common Middleware
 keystone.pre('routes', middleware.initErrorHandlers);
 keystone.pre('routes', middleware.initLocals);
@@ -36,10 +38,19 @@ exports = module.exports = function(app) {
 	app.get('/events', routes.views.events);
 	app.get('/team', routes.views.team);
 	app.get('/workshops', routes.views.workshops);
+    app.get('/events/:event', (req, res) => {
+        Event.model.findOne({name: req.params.event})
+        .then(e => {
+            if (!e) return res.notfound();
+            var view = new keystone.View(req, res);
+            view.render('event', e);
+        }, e => res.err(e));
+    });
 
   // Domain API
   app.get('/domains', routes.domains.getDomains);
   app.get('/domains/:domain', routes.domains.getDomain);
   app.get('/domains/:domain/events', routes.domains.getEventsOfDomain);
   app.get('/domains/:domain/events/:event', routes.domains.getEvent);
+  
 };

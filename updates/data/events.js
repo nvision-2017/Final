@@ -142,5 +142,4 @@ let events = [{
 	domain: "online"
 }]
 
-
 exports = module.exports = events;

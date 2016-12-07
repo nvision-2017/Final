@@ -13,7 +13,8 @@ const DomainIdMap  = {};
 const newEvt = (evt, domain) => new Event.model({
   domain: domain,
   name: evt.name,
-  introduction: evt.introduction
+  introduction: evt.introduction,
+  file: evt.file
 });
 
 const handleEvents = (evts, cb2) => {

@@ -21,7 +21,8 @@ Event.add({
   domain: {type: Types.Relationship, ref: 'Domain'},
   name: { type: Types.Text, required: true },
   introduction: { type: Types.Textarea },
-  image: { type: Types.File, storage: fsStorage }
+  image: { type: Types.File, storage: fsStorage },
+  file: { type: Types.Text }
 });
 
 Event.register();
