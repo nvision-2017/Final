@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <!-- <link rel="stylesheet" href="css/updates.css"> -->
+  <title>Sponsors</title>
+
+  <style>
+    body {
+      background-color: #000;
+      background-image: url(/img/black-felt.png);
+      background-attachment: fixed;
+      overflow-x: hidden;
+      padding-top: 70px;
+    }
+    
+    .scrolled {
+      background-color: black;
+    }
+    
+    .thumbnail {
+      background-color: transparent !important;
+      margin-top: 2em;
+      margin-bottom: 2em;
+    }
+    
+    .thumb a {
+      background-color: #fff !important;
+      background-image: url(/img/black-felt.png);
+      border: 2px solid transparent;
+      text-decoration: none;
+      transition: box-shadow 0.3s;
+      -webkit-transition-timing-function: ease-in-out;
+      transition-timing-function: ease-in-out;
+    }
+    
+    a.thumbnail:hover,
+    a.thumbnail:focus,
+    a.thumbnail.active {
+      border-color: transparent !important;
+    }
+    
+    .thumb a:hover {
+      box-shadow: 0 0 10px #262626, 0 0 70px #262626;
+    }
+    
+    .thumb a p {
+      text-align: center;
+    }
+    
+    .sponsor-type-title {
+      text-align: center;
+      font-size: 300%;
+      color: #fff;
+      font-weight: bold;
+    }
+    
+    .sponsor-name,
+    .sponsor-role {
+      color: #000;
+      white-space: nowrap;
+      overflow-x: hidden;
+    }
+    
+    .sponsor-name {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    
+    .sponsor-role {
+      font-size: 15px;
+    }
+    
+    @media only screen and (max-width: 768px) {
+      .desktop {
+        display: none;
+      }
+      .threecolfixz {
+        display: none;
+      }
+    }
+    
+    #navbar-top {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4)) !important;
+    }
+    
+    h4 {
+      text-align: center;
+    }
+  </style>
+
+  <style>
+    .md-close {
+      color: #fff;
+      margin-top: 6em !important;
+      border: 1px solid #fff;
+      transition-duration: 0.3s;
+    }
+    
+    .md-close:hover {
+      background-color: #fff;
+      color: #000;
+    }
+    
+    .md-content {
+      /*width: 70vw;*/
+      /*height: 100vh;*/
+      text-align: center;
+      padding-top: 6em;
+      border: 1px solid #fff;
+    }
+    
+    .md-content {
+      background-color: rgba(0, 0, 0, 0.8) !important;
+    }
+  </style>
+
+</head>
+<body class="custom-scrollbar">
+  <div id="pre-loader"></div>
+
+  <!-- <div class="md-modal md-effect-19 md-effect-12 md-effect-13" id="updates-modal" style="text-align:center">
+    <div class="md-content">
+      <h3><b>Updates</b></h3>
+      <div>
+        <ul>
+          <li><strong>Update 1:</strong> You cant miss this update!.</li>
+          <li><strong>Update 2:</strong> You cant miss this update!.</li>
+          <li><strong>Update 3:</strong> You cant miss this update!.</li>
+        </ul>
+        <button class="btnfos md-close">Close</button>
+      </div>
+    </div>
+  </div>
+  <div class="md-overlay"></div> -->
+  <!-- the overlay element -->
+
+
+  <nav id="navbar-top" class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" data-activates="slide-out" class="navbar-toggle collapsed button-collapse" aria-expanded="false" style="background-color:#000;position:fixed;right:0">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          <img id="navlogo" alt="Brand" src="img/nvision.png">
+        </a>
+      </div>
+      <ul id="slide-out" class="side-nav">
+        <li>
+          <div class="userView">
+            <img class="img-responsive" src="img/nvision_b.png">
+          </div>
+        </li>
+        <li>
+          <div class="divider"></div>
+        </li>
+
+        <!-- <li>
+          <a href="#" class="btnfos md-trigger md-setperspective" data-modal="updates-modal">
+            <svg>
+              <rect x="0" y="0" fill="none" width="100%" height="100%" />
+            </svg>Updates&nbsp;<span style="color:#f00;font-size:1.2em;font-weight:bold">&#33;</span></a>
+        </li> -->
+        <li>
+          <a href="/events" class="btnfos">
+            <svg>
+              <rect x="0" y="0" fill="none" width="100%" height="100%" />
+            </svg>Events</a>
+        </li>
+        <li>
+          <a href="/exhibitions" class="btnfos">
+            <svg>
+              <rect x="0" y="0" fill="none" width="100%" height="100%" />
+            </svg>Exhibitions</a>
+        </li>
+        <li>
+          <a href="/sponsors" class="btnfos">
+            <svg>
+              <rect x="0" y="0" fill="none" width="100%" height="100%" />
+            </svg>Sponsors</a>
+        </li>
+        <li>
+          <a href="/workshops" class="btnfos">
+            <svg>
+              <rect x="0" y="0" fill="none" width="100%" height="100%" />
+            </svg>Workshops</a>
+        </li>
+        <li>
+          <a href="/team" class="btnfos">
+            <svg>
+              <rect x="0" y="0" fill="none" width="100%" height="100%" />
+            </svg>Team</a>
+        </li>
+        <li class="dropdown">
+                  <a class="dropdown-toggle btnfos" data-toggle="dropdown" href="#">Archives
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li style="width:100%"><a href="https://old.nvision.org.in/">2016</a></li>
+                    <li style="width:100%"><a href="#">2015</a></li>
+                  </ul>
+                </li>
+      </ul>
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <!-- <li>
+            <a href="#" class="btnfos md-trigger md-setperspective" data-modal="updates-modal">
+              <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%" />
+              </svg>Updates&nbsp;<span style="color:#f00;font-size:1.2em;font-weight:bold">&#33;</span></a>
+          </li> -->
+          <li>
+            <a href="/events" class="btnfos">
+              <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%" />
+              </svg>Events</a>
+          </li>
+          <li>
+            <a href="/exhibitions" class="btnfos">
+              <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%" />
+              </svg>Exhibitions</a>
+          </li>
+          <li>
+            <a href="/sponsors" class="btnfos">
+              <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%" />
+              </svg>Sponsors</a>
+          </li>
+          <li>
+            <a href="/workshops" class="btnfos">
+              <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%" />
+              </svg>Workshops</a>
+          </li>
+          <li>
+            <a href="/team" class="btnfos">
+              <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%" />
+              </svg>Team</a>
+          </li>
+          <li class="dropdown">
+                  <a class="dropdown-toggle btnfos" data-toggle="dropdown" href="#">Archives
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li style="width:100%"><a href="https://old.nvision.org.in/">2016</a></li>
+                    <li style="width:100%"><a href="#">2015</a></li>
+                  </ul>
+                </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="row">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-10">
+      <div class="row">
+
+        <legend class="sponsor-type-title">Current Sponsors</legend>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://www.whataftercollege.com/">
+            <img class="img-responsive" src="/img/sponsors/wac.png" />
+            <p class="sponsor-name">What After College</p>
+            <p class="sponsor-role">Major Sponsor</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://www.ablab.in/">
+            <img class="img-responsive" src="/img/sponsors/ABLab_solutions.png" />
+            <p class="sponsor-name">ABLab Solutions</p>
+            <p class="sponsor-role">Outreach Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://www.upto75.com/">
+            <img class="img-responsive" src="/img/sponsors/up275.png" />
+            <p class="sponsor-name">UPto75.com</p>
+            <p class="sponsor-role">Coupon Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="https://www.hellointern.com/">
+            <img class="img-responsive" src="/img/sponsors/hello_intern.png" />
+            <p class="sponsor-name">Hello Intern</p>
+            <p class="sponsor-role">Youth Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="https://www.brainbuxa.com/">
+            <img class="img-responsive" src="/img/sponsors/brain_buxa.png" />
+            <p class="sponsor-name">BrainBuxa</p>
+            <p class="sponsor-role">Educational Partner</p>
+          </a>
+        </div>
+
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="https://misfits.io/">
+            <img class="img-responsive" src="/img/sponsors/misfits.png" />
+            <p class="sponsor-name">The Misfits</p>
+            <p class="sponsor-role">Online Media Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb"></div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb"></div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://fests.info/">
+            <img class="img-responsive" src="/img/sponsors/Fests.info.png" />
+            <p class="sponsor-name">Fests.info</p>
+            <p class="sponsor-role">Online Media Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://www.techienest.in//">
+            <img class="img-responsive" src="/img/sponsors/techienest.png" />
+            <p class="sponsor-name">Techie Nest</p>
+            <p class="sponsor-role">Outreach Sponsor</p>
+          </a>
+        </div>
+      </div>
+
+      <legend class="sponsor-type-title">Previous Sponsors</legend>
+
+      <div class="row">
+
+        <h4>Powered By</h4>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb"></div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb"></div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="https://www.coyatri.com/">
+            <img class="img-responsive" src="/img/sponsors/coyatri.png" />
+            <p class="sponsor-name">CoYatri</p>
+            <p class="sponsor-role">CO-Title Sponsor</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://www.novatechrobo.com/">
+            <img class="img-responsive" src="/img/sponsors/novatechlogo.png" />
+            <p class="sponsor-name">Novatech Robo</p>
+            <p class="sponsor-role">CO-Title Sponsor</p>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <h4>Sponsors</h4>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://www.i3indyatechnologies.com/">
+            <img class="img-responsive" src="/img/sponsors/i3indya.png" />
+            <p class="sponsor-name">I3 Indya</p>
+            <p class="sponsor-role">Workshop Outreach Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://www.solutionsinfini.com/">
+            <img class="img-responsive" src="/img/sponsors/solinfini.png" />
+            <p class="sponsor-name">Solutions Infini</p>
+            <p class="sponsor-role">SMS Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://www.spacekidzindia.com/">
+            <img class="img-responsive" src="/img/sponsors/spacekidz.png" />
+            <p class="sponsor-name">Space Kidz India</p>
+            <p class="sponsor-role">Event Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://popsci.in/">
+            <img class="img-responsive" src="/img/sponsors/popsci.png" />
+            <p class="sponsor-name">Popular Science</p>
+            <p class="sponsor-role">Magazine Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="https://campusdiaries.com/">
+            <img class="img-responsive" src="/img/sponsors/campusdiaries.png" />
+            <p class="sponsor-name">Campus Diaries</p>
+            <p class="sponsor-role">Wingman</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="https://www.hackerrank.com/">
+            <img class="img-responsive" src="/img/sponsors/hackerrank.png" />
+            <p class="sponsor-name">HackerRank</p>
+            <p class="sponsor-role">Event Sponsor</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://in.bluehost.com/">
+            <img class="img-responsive" src="/img/sponsors/bh.png" />
+            <p class="sponsor-name">Bluehost</p>
+            <p class="sponsor-role">Event Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="https://campusdiaries.com/25under25/home">
+            <img class="img-responsive" src="/img/sponsors/25under25-logo.png" />
+            <p class="sponsor-name">GenX 25 under 25</p>
+            <p class="sponsor-role">Event Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="https://www.indianinstituteofphotography.com/">
+            <img class="img-responsive" src="/img/sponsors/iip.png" />
+            <p class="sponsor-name">IIP</p>
+            <p class="sponsor-role">Photography Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://www.eenadu.net/">
+            <img class="img-responsive" src="/img/sponsors/eenadu.png" />
+            <p class="sponsor-name">Eenadu</p>
+            <p class="sponsor-role">Media Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://www.etv.co.in/channels/home?channelId=2">
+            <img class="img-responsive" src="/img/sponsors/etv_telangana.png" />
+            <p class="sponsor-name">ETV Telangana</p>
+            <p class="sponsor-role">Media Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://www.manyagroup.com/">
+            <img class="img-responsive" src="/img/sponsors/logo-new.png" />
+            <p class="sponsor-name">Manya Group</p>
+            <p class="sponsor-role">Education Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://www.ifc3india.com/">
+            <img class="img-responsive" src="/img/sponsors/website_ifc3.png" />
+            <p class="sponsor-name">IFC3 India</p>
+            <p class="sponsor-role">Event Sponsor</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://www.ibm.com/">
+            <img class="img-responsive" src="/img/sponsors/ibm.png" />
+            <p class="sponsor-name">IBM</p>
+            <p class="sponsor-role">Drone Sponsor</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://www.ibgroup.io/index.html">
+            <img class="img-responsive" src="/img/sponsors/ib.png" />
+            <p class="sponsor-name">iB Group</p>
+            <p class="sponsor-role">Stall Sponsor</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://www.frogo.in/">
+            <img class="img-responsive" src="/img/sponsors/frogo.png" />
+            <p class="sponsor-name">Frogo</p>
+            <p class="sponsor-role">Gift Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://www.nestaway.com/">
+            <img class="img-responsive" src="/img/sponsors/nestaway.png" />
+            <p class="sponsor-name">nestaway</p>
+            <p class="sponsor-role">Hospitality Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://www.ebay.in/">
+            <img class="img-responsive" src="/img/sponsors/ebay.png" />
+            <p class="sponsor-name">ebay.in</p>
+            <p class="sponsor-role">Coupon Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb"></div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://www.pikeducation.com/">
+            <img class="img-responsive" src="/img/sponsors/pik_site_logo.png" />
+            <p class="sponsor-name">Pik Education</p>
+            <p class="sponsor-role">Education Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://www.spykar.com/">
+            <img class="img-responsive" src="/img/sponsors/spykar.png" />
+            <p class="sponsor-name">Spykar</p>
+            <p class="sponsor-role">Fashion Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://www.isic.co.in/">
+            <img class="img-responsive" src="/img/sponsors/ISIC_logo1.png" />
+            <p class="sponsor-name">ISIC Student Cards</p>
+            <p class="sponsor-role">Coupon Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="#">
+            <img class="img-responsive" src="/img/sponsors/sonyo.png" />
+            <p class="sponsor-name">Sonyo Garments</p>
+            <p class="sponsor-role">Official Merchandise Partner</p>
+          </a>
+        </div>
+
+      </div>
+      <div class="row">
+
+        <h4>Online Media Partners</h4>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://thecollegefever.com/">
+            <img class="img-responsive" src="/img/sponsors/thecollegefever.png" />
+            <p class="sponsor-name">TheCollegeFever</p>
+            <p class="sponsor-role">Online Media Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://penumbramag.com/">
+            <img class="img-responsive" src="/img/sponsors/Penumbra.png" />
+            <p class="sponsor-name">Penumbra</p>
+            <p class="sponsor-role">Online Media Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://festpav.com/">
+            <img class="img-responsive" src="/img/sponsors/Festpav.png" />
+            <p class="sponsor-name">Festpav</p>
+            <p class="sponsor-role">Online Media Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://springtide.in/">
+            <img class="img-responsive" src="/img/sponsors/SpringTide.png" />
+            <p class="sponsor-name">SpringTide</p>
+            <p class="sponsor-role">Online Media Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://fests.info/">
+            <img class="img-responsive" src="/img/sponsors/Fests.info.png" />
+            <p class="sponsor-name">Fests.info</p>
+            <p class="sponsor-role">Online Media Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://testfunda.com/">
+            <img class="img-responsive" src="/img/sponsors/TestFunda.png" />
+            <p class="sponsor-name">TestFunda</p>
+            <p class="sponsor-role">Online Media Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb desktop"></div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://indiacollegefest.com/">
+            <img class="img-responsive" src="/img/sponsors/icf.png" />
+            <p class="sponsor-name">IndiaCollegeFest.com</p>
+            <p class="sponsor-role">Online Media Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://www.knowafest.com/">
+            <img class="img-responsive" src="/img/sponsors/bottomlogo.png" />
+            <p class="sponsor-name">Know A Fest</p>
+            <p class="sponsor-role">Online Media Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://jammag.com/">
+            <img class="img-responsive" src="/img/sponsors/jam.png" />
+            <p class="sponsor-name">JAM</p>
+            <p class="sponsor-role">Online Media Partner</p>
+          </a>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 thumb">
+          <a class="thumbnail" target="_blank" href="http://indiansnews.com/">
+            <img class="img-responsive" src="/img/sponsors/in.png" />
+            <p class="sponsor-name">Indiansnews.com</p>
+            <p class="sponsor-role">Online Media Partner</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/js/materialize.min.js"></script>
+  <script src="js/main.js"></script>
+  <!-- <script src="/js/updates.js"></script> -->
+
+</body>
+
+</html>
