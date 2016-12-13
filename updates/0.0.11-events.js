@@ -14,9 +14,11 @@ const newEvt = (evt, domain) => new Event.model({
   domain: domain,
   name: evt.name,
   introduction: evt.introduction,
+  rules: evt.rules || "Coming soon...",
   file: evt.file,
-  image: evt.image || "/img/text.jpg",
-  prize: evt.prize || "10000"
+  image: evt.image || "/img/event.png",
+  prize: evt.prize || "",
+  link: '/events/'+evt.name.replace(/\s+/g, '').toLowerCase()
 });
 
 const handleEvents = (evts, cb2) => {

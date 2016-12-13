@@ -38,8 +38,9 @@ exports = module.exports = function(app) {
 	app.get('/events', routes.views.events);
 	app.get('/team', routes.views.team);
 	app.get('/workshops', routes.views.workshops);
+	app.get('/exhibitions', routes.views.exhibitions);
     app.get('/events/:event', (req, res) => {
-        Event.model.findOne({name: req.params.event})
+        Event.model.findOne({link: `/events/${req.params.event}`})
         .then(e => {
             if (!e) return res.notfound();
             var view = new keystone.View(req, res);
