@@ -6,7 +6,7 @@
 		<title>nvision 2017</title>
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/parallax.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/materialize.min.css">
 		<!-- <link rel="stylesheet" href="css/updates.css"> -->
 		<link rel="stylesheet" href="css/animations.css">
@@ -85,6 +85,14 @@
 			z-index: 98;
 			/*border: 1px solid #f00;*/
 		}
+		.dropdown1, .dropdown1 * {
+			background-color: transparent !important;
+			color: black;
+		}
+		.btnfosd {
+			text-align: center;
+			width: 100px;
+		}
 	</style>
 
 	<div id="pre-loader">
@@ -153,19 +161,28 @@
 			<div class="collapse navbar-collapse" id="navbar-collapse">
 				<ul class="nav navbar-nav navbar-right home-nav">
 					<!-- <li><a class="btnfos md-trigger md-setperspective" data-modal="updates-modal" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Updates&nbsp;<span style="color:#f00;font-size:1.2em;font-weight:bold">&#33;</span></a></li> -->
-					<li><a href="events.html" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Events</a></li>
-					<li><a href="exhibition.html" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Exhibitions</a></li>
-					<li><a href="sponsors.html" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Sponsors</a></li>
-					<li><a href="workshops.html" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Workshops</a></li>
-					<li><a href="team.html" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Team</a></li>
-					<li class="dropdown">
-			            <a class="dropdown-toggle btnfos" style="color:#000 !important" data-toggle="dropdown" href="#">Archives
+					<li><a href="/events" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Events</a></li>
+					<li><a href="/exhibitions" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Exhibitions</a></li>
+					<li><a href="/sponsors" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Sponsors</a></li>
+					<li><a href="/workshops" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Workshops</a></li>
+					<li><a href="/team" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Team</a></li>
+					<li class="dropdown dropdown1">
+						<a href="#" class="btnfos dropdown-toggle" style="color:#000 !important" data-toggle="dropdown">
+						<svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Archives<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="#" class="btnfos btnfosd">2016</a></li><br>
+							<li><a href="#" class="btnfos btnfosd"></svg>2014</a></li>
+						</ul>
+					</li>
+					<!--<li class="dropdown">
+			            <a class="btnfos dropdown-toggle" data-toggle="dropdown" href="#">Archives
 			            <span class="caret"></span></a>
 			            <ul class="dropdown-menu">
-			              <li style="width:100%"><a href="https://old.nvision.org.in/">2016</a></li>
-			              <li style="width:100%"><a href="#">2015</a></li>
+			              <li style="width:100%"><a href="https://old.nvision.org.in/" class="btnfos btnfosd">2016</a></li>
+			              <li style="width:100%"><a href="#" class="btnfos btnfosd">2015</a></li>
 			            </ul>
-			          </li>
+			          </li>-->
 				</ul>
 			</div>
 		</div>

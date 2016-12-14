@@ -31,13 +31,16 @@ keystone.set('500', function(err, req, res, next) {
 
 // Bind Routes
 exports = module.exports = function(app) {
-  // views
-  app.get('/', routes.views.index);
-	app.get('/sponsors', routes.views.sponsors);
-	app.get('/events', routes.views.events);
-	app.get('/team', routes.views.team);
-	app.get('/workshops', routes.views.workshops);
-	app.get('/exhibitions', routes.views.exhibitions);
+    // views
+    app.get('/mobile', (req, res) => {
+        res.send(require('../lib/detectmobilebrowser')(req));
+    })
+    app.get('/', routes.views.index);
+    app.get('/sponsors', routes.views.sponsors);
+    app.get('/events', routes.views.events);
+    app.get('/team', routes.views.team);
+    app.get('/workshops', routes.views.workshops);
+    app.get('/exhibitions', routes.views.exhibitions);
     app.get('/events/:event', (req, res) => {
         Event.model.findOne({link: `/events/${req.params.event}`})
         .then(e => {
