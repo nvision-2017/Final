@@ -1,94 +1,117 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>nvision 2017</title>
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/materialize.min.css">
-		<link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/stars.css">
-		<!-- <link rel="stylesheet" href="css/updates.css"> -->
-		<style>
-			body {
-				padding-top: 70px;
-			}
-			#register-btn {
-				display: inline-block;
-				vertical-align: middle;
-				background:#1AAB8A;
-				color:#000;
-				border:none;
-				position:relative;
-				height:40px;
-				font-size:1.2em;
-				padding:0.5em 2em;
-				cursor:pointer;
-				transition:800ms ease all;
-				outline:none;
-			}
-			#register-btn:hover {
-				background:#000;
-				color:#1AAB8A;
-			}
-			#register-btn:before, #register-btn:after {
-				content:'';
-				position:absolute;
-				top:0;
-				right:0;
-				height:2px;
-				width:0;
-				background: #1AAB8A;
-				transition:400ms ease all;
-			}
-			#register-btn:after {
-				right:inherit;
-				top:inherit;
-				left:0;
-				bottom:0;
-			}
-			#register-btn:hover:before, #register-btn:hover:after {
-				width:100%;
-				transition:800ms ease all;
-			}
 
-			#navbar-top {
-				background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2));
-			}
+<head>
+	<meta charset="utf-8">
+	<title>&eta;vision 2017 | Techno management fest of IIT Hyderabad</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="&eta;vision is the techno-management fest of IIT Hyderabad.">
+	<meta name="copyright" content="&eta;vision 2017">
+	<meta name="author" content="&eta;vision 2017">
+	<meta name="keyword" content="nvision,vision,techno,tech,management,technical,iit hyderabad, iit,fest, competitions,events,event,hyderabad,iith,students,robots,sponsors,games,awesome,workshops,kludge,infero,cephid,ecell,robotics,equilibria,torque,electronica">
+	<meta name="robots" content="index, follow">
+	<meta name="theme-color" content="#283389">
+	<meta property="og:site_name" content="&eta;vision">
+	<meta property="og:title" content="&eta;vision 2017">
+	<meta property="og:type" content="techno-management_fest:nvision">
+	<meta property="og:image" content="/img/logo.png">
+	<meta property="og:url" content="nvision.org.in">
+	<meta property="og:description" content="&eta;vision: techno-management Fest of IIT Hyderabad">
+	
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/materialize.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/stars.css">
+	<!-- <link rel="stylesheet" href="css/updates.css"> -->
+	<style>
+		body {
+			padding-top: 70px;
+		}
+		
+		#register-btn {
+			display: inline-block;
+			vertical-align: middle;
+			background: #1AAB8A;
+			color: #000;
+			border: none;
+			position: relative;
+			height: 40px;
+			font-size: 1.2em;
+			padding: 0.5em 2em;
+			cursor: pointer;
+			transition: 800ms ease all;
+			outline: none;
+		}
+		
+		#register-btn:hover {
+			background: #000;
+			color: #1AAB8A;
+		}
+		
+		#register-btn:before,
+		#register-btn:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 2px;
+			width: 0;
+			background: #1AAB8A;
+			transition: 400ms ease all;
+		}
+		
+		#register-btn:after {
+			right: inherit;
+			top: inherit;
+			left: 0;
+			bottom: 0;
+		}
+		
+		#register-btn:hover:before,
+		#register-btn:hover:after {
+			width: 100%;
+			transition: 800ms ease all;
+		}
+		
+		#navbar-top {
+			background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2));
+		}
+	</style>
+	<style>
+		.md-close {
+			color: #fff;
+			margin-top: 6em !important;
+			border: 1px solid #fff;
+			transition-duration: 0.3s;
+		}
+		
+		.md-close:hover {
+			background-color: #fff;
+			color: #000;
+		}
+		
+		.md-content {
+			/*width: 70vw;*/
+			/*height: 100vh;*/
+			text-align: center;
+			padding-top: 6em;
+			border: 1px solid #fff;
+		}
+		
+		.md-content {
+			background-color: rgba(0, 0, 0, 0.8) !important;
+		}
+	</style>
+</head>
 
-
-		</style>
-		<style>
-			.md-close{
-				color:#fff;
-				margin-top: 6em !important;
-				border: 1px solid #fff;
-				transition-duration: 0.3s;
-			}
-			.md-close:hover{
-				background-color: #fff;
-				color:#000;
-			}
-			.md-content {
-				/*width: 70vw;*/
-				/*height: 100vh;*/
-				text-align: center;
-				padding-top: 6em;
-				border: 1px solid #fff;
-			}
-			.md-content {
-				background-color: rgba(0,0,0,0.8) !important;
-			}
-		</style>
-	</head>
-	<body class="custom-scrollbar">
+<body class="custom-scrollbar">
 	<div id="pre-loader"></div>
-		<div id='stars'></div>
-		<div id='stars2'></div>
-		<div id='stars3'></div>
+	<div id='stars'></div>
+	<div id='stars2'></div>
+	<div id='stars3'></div>
 
-		<!-- <div class="md-modal md-effect-19 md-effect-12 md-effect-13" id="updates-modal" style="text-align:center">
+	<!-- <div class="md-modal md-effect-19 md-effect-12 md-effect-13" id="updates-modal" style="text-align:center">
 			<div class="md-content">
 				<h3><b>Updates</b></h3>
 				<div>
@@ -101,181 +124,198 @@
 				</div>
 			</div>
 		</div>
-		<div class="md-overlay"></div> --><!-- the overlay element -->
-		
+		<div class="md-overlay"></div> -->
+	<!-- the overlay element -->
 
-<nav id="navbar-top" class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" data-activates="slide-out" class="navbar-toggle collapsed button-collapse" aria-expanded="false" style="background-color:#000;position:fixed;right:0">
+
+	<nav id="navbar-top" class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" data-activates="slide-out" class="navbar-toggle collapsed button-collapse" aria-expanded="false" style="background-color:#000;position:fixed;right:0">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-        <a class="navbar-brand" href="/">
-          <img id="navlogo" alt="Brand" src="/img/nvision.png">
-        </a>
-      </div>
-      <ul id="slide-out" class="side-nav">
-        <li>
-          <div class="userView"><a href="/">
-            <img class="img-responsive" src="/img/nvision_b.png"></a>
-          </div>
-        </li>
-        <li>
-          <div class="divider"></div>
-        </li>
+				<a class="navbar-brand" href="/">
+					<img id="navlogo" alt="Brand" src="/img/nvision.png">
+				</a>
+			</div>
+			<ul id="slide-out" class="side-nav">
+				<li>
+					<div class="userView">
+						<a href="/">
+							<img class="img-responsive" src="/img/nvision_b.png"></a>
+					</div>
+				</li>
+				<li>
+					<div class="divider"></div>
+				</li>
 
-        <!-- <li>
+				<!-- <li>
           <a href="#" class="btnfos md-trigger md-setperspective" data-modal="updates-modal">
             <svg>
               <rect x="0" y="0" fill="none" width="100%" height="100%" />
             </svg>Updates&nbsp;<span style="color:#f00;font-size:1.2em;font-weight:bold">&#33;</span></a>
         </li> -->
-            <li><a href="/about" class="btnfos" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>About</a></li>
-        <li>
-          <a href="/events" class="btnfos">
-            <svg>
-              <rect x="0" y="0" fill="none" width="100%" height="100%" />
-            </svg>Events</a>
-        </li>
-        <li>
-          <a href="/exhibitions" class="btnfos">
-            <svg>
-              <rect x="0" y="0" fill="none" width="100%" height="100%" />
-            </svg>Exhibitions</a>
-        </li>
-        <li>
-          <a href="/sponsors" class="btnfos">
-            <svg>
-              <rect x="0" y="0" fill="none" width="100%" height="100%" />
-            </svg>Sponsors</a>
-        </li>
-        <li>
-          <a href="/workshops" class="btnfos">
-            <svg>
-              <rect x="0" y="0" fill="none" width="100%" height="100%" />
-            </svg>Workshops</a>
-        </li>
-        <li>
-          <a href="/team" class="btnfos">
-            <svg>
-              <rect x="0" y="0" fill="none" width="100%" height="100%" />
-            </svg>Team</a>
-        </li>
-        <li class="dropdown">
-          <a class="dropdown-toggle btnfos" data-toggle="dropdown" href="#">Archives
+				<li>
+					<a href="/about" class="btnfos">
+						<svg>
+							<rect x="0" y="0" fill="none" width="100%" height="100%" />
+						</svg>About</a>
+				</li>
+				<li>
+					<a href="/events" class="btnfos">
+						<svg>
+							<rect x="0" y="0" fill="none" width="100%" height="100%" />
+						</svg>Events</a>
+				</li>
+				<li>
+					<a href="/exhibitions" class="btnfos">
+						<svg>
+							<rect x="0" y="0" fill="none" width="100%" height="100%" />
+						</svg>Exhibitions</a>
+				</li>
+				<li>
+					<a href="/sponsors" class="btnfos">
+						<svg>
+							<rect x="0" y="0" fill="none" width="100%" height="100%" />
+						</svg>Sponsors</a>
+				</li>
+				<li>
+					<a href="/workshops" class="btnfos">
+						<svg>
+							<rect x="0" y="0" fill="none" width="100%" height="100%" />
+						</svg>Workshops</a>
+				</li>
+				<li>
+					<a href="/team" class="btnfos">
+						<svg>
+							<rect x="0" y="0" fill="none" width="100%" height="100%" />
+						</svg>Team</a>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle btnfos" data-toggle="dropdown" href="#">Archives
           <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li style="width:100%"><a href="https://old.nvision.org.in/">2016</a></li>
-            <li style="width:100%"><a href="#">2015</a></li>
-          </ul>
-        </li>
-      </ul>
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <!-- <li>
+					<ul class="dropdown-menu">
+						<li style="width:100%"><a href="https://old.nvision.org.in/">2016</a></li>
+						<li style="width:100%"><a href="#">2015</a></li>
+					</ul>
+				</li>
+			</ul>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<!-- <li>
             <a href="#" class="btnfos md-trigger md-setperspective" data-modal="updates-modal">
               <svg>
                 <rect x="0" y="0" fill="none" width="100%" height="100%" />
               </svg>Updates&nbsp;<span style="color:#f00;font-size:1.2em;font-weight:bold">&#33;</span></a>
           </li> -->
-          <li>
-            <a href="/events" class="btnfos">
-              <svg>
-                <rect x="0" y="0" fill="none" width="100%" height="100%" />
-              </svg>Events</a>
-          </li>
-          <li>
-            <a href="/exhibitions" class="btnfos">
-              <svg>
-                <rect x="0" y="0" fill="none" width="100%" height="100%" />
-              </svg>Exhibitions</a>
-          </li>
-          <li>
-            <a href="/sponsors" class="btnfos">
-              <svg>
-                <rect x="0" y="0" fill="none" width="100%" height="100%" />
-              </svg>Sponsors</a>
-          </li>
-          <li>
-            <a href="/workshops" class="btnfos">
-              <svg>
-                <rect x="0" y="0" fill="none" width="100%" height="100%" />
-              </svg>Workshops</a>
-          </li>
-          <li>
-            <a href="/team" class="btnfos">
-              <svg>
-                <rect x="0" y="0" fill="none" width="100%" height="100%" />
-              </svg>Team</a>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="btnfos dropdown-toggle" data-toggle="dropdown">
-              <svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Archives<span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="#" class="btnfos btnfosd">2016</a></li>
-              <li><a href="#" class="btnfos btnfosd"></svg>2014</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+					<li>
+						<a href="/events" class="btnfos">
+							<svg>
+								<rect x="0" y="0" fill="none" width="100%" height="100%" />
+							</svg>Events</a>
+					</li>
+					<li>
+						<a href="/exhibitions" class="btnfos">
+							<svg>
+								<rect x="0" y="0" fill="none" width="100%" height="100%" />
+							</svg>Exhibitions</a>
+					</li>
+					<li>
+						<a href="/sponsors" class="btnfos">
+							<svg>
+								<rect x="0" y="0" fill="none" width="100%" height="100%" />
+							</svg>Sponsors</a>
+					</li>
+					<li>
+						<a href="/workshops" class="btnfos">
+							<svg>
+								<rect x="0" y="0" fill="none" width="100%" height="100%" />
+							</svg>Workshops</a>
+					</li>
+					<li>
+						<a href="/team" class="btnfos">
+							<svg>
+								<rect x="0" y="0" fill="none" width="100%" height="100%" />
+							</svg>Team</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="btnfos dropdown-toggle" data-toggle="dropdown">
+							<svg>
+								<rect x="0" y="0" fill="none" width="100%" height="100%" />
+							</svg>Archives<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="#" class="btnfos btnfosd">2016</a></li>
+							<li>
+								<a href="#" class="btnfos btnfosd"></svg>2014</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
-		<div class="container-fluid">
-			<div id="content-div">
-				<div class="row center" id="page-title">
-					<div class="col-xs-12">
-						<h1 style="font-size:2.5em;">WORKSHOPS</h1>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-6 text-center thumbnail" style="background-color:transparent;border:0;padding:2em;">
-						<img class="img-responsive center-block" src="img/workshops/solar.jpg">
-						<p style="font-size:1em;margin-top:1em;">
-							ηvision, IIT Hyderabad and Elan, IIT Hyderabad in association with kWatt Solutions Pvt. Ltd. and S-SparQ now brings to you a workshop on solar energy.
-							You'll gain practical knowledge and skills to develop solar products. You'll also be able to design and set up a solar power plant for your home/college.
-						</p>
-						<a href="https://nvision.org.in/workshop" target="_blank" id="register-btn">More</a>
-					</div>
-					<div class="col-md-6 text-center thumbnail" style="background-color:transparent;border:0;padding:2em;">
-						<img class="img-responsive center-block" src="img/workshops/sixthsense.jpg">
-						<p style="font-size:1em;margin-top:1em;">
-							ηvision, IIT Hyderabad in association with TechieNest now brings to you a workshop on sixth sense technology.
-							You'll build gesture controlled robots and explore more appplications of sixth sense technology like gesture controlled music players, web browsing and more cool stuff.
-						</p>
-						<a href="https://nvision.org.in/sixth_sense" target="_blank" id="register-btn">More</a>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-6 text-center thumbnail" style="background-color:transparent;border:0;padding:2em;">
-						<img class="img-responsive center-block" src="img/workshops/wac.jpg">
-						<p style="font-size:1em;margin-top:1em;">
-							ηvision, IIT Hyderabad now brings to you a series of workshops. ηvision, IIT Hyderabad in association with What After College presents you with workshops on differnet fields.
-						</p>
-						<a href="https://nvision.org.in/what-after-college" target="_blank" id="register-btn">More</a>
-					</div>
-					<div class="col-md-6 text-center thumbnail" style="background-color:transparent;border:0;padding:2em;">
-						<img class="img-responsive center-block" src="img/workshops/fitnessband.jpg">
-						<p style="font-size:1em;margin-top:1em;">
-							ηvision, IIT Hyderabad now brings to you the first workshop of the year 2016. As the name suggests it's a workshop on fitness band. ηvision, IIT Hyderabad in association with Robokart presents you with an opportunity to learn how to make a fitness band on your own.
-						</p>
-						<a href="https://nvision.org.in/fitnessband" target="_blank" id="register-btn">More</a>
-					</div>
+	<div class="container-fluid">
+		<div id="content-div">
+			<div class="row center" id="page-title">
+				<div class="col-xs-12">
+					<h1 style="font-size:2.5em;">WORKSHOPS</h1>
 				</div>
 			</div>
-
-
-
+			<div class="row">
+				<div class="col-md-6 text-center thumbnail" style="background-color:transparent;border:0;padding:2em;">
+					<img class="img-responsive center-block" src="img/workshops/solar.jpg">
+					<p style="font-size:1em;margin-top:1em;">
+						ηvision, IIT Hyderabad and Elan, IIT Hyderabad in association with kWatt Solutions Pvt. Ltd. and S-SparQ now brings to you
+						a workshop on solar energy. You'll gain practical knowledge and skills to develop solar products. You'll also be able
+						to design and set up a solar power plant for your home/college.
+					</p>
+					<a href="https://nvision.org.in/workshop" target="_blank" id="register-btn">More</a>
+				</div>
+				<div class="col-md-6 text-center thumbnail" style="background-color:transparent;border:0;padding:2em;">
+					<img class="img-responsive center-block" src="img/workshops/sixthsense.jpg">
+					<p style="font-size:1em;margin-top:1em;">
+						ηvision, IIT Hyderabad in association with TechieNest now brings to you a workshop on sixth sense technology. You'll build
+						gesture controlled robots and explore more appplications of sixth sense technology like gesture controlled music players,
+						web browsing and more cool stuff.
+					</p>
+					<a href="https://nvision.org.in/sixth_sense" target="_blank" id="register-btn">More</a>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 text-center thumbnail" style="background-color:transparent;border:0;padding:2em;">
+					<img class="img-responsive center-block" src="img/workshops/wac.jpg">
+					<p style="font-size:1em;margin-top:1em;">
+						ηvision, IIT Hyderabad now brings to you a series of workshops. ηvision, IIT Hyderabad in association with What After College
+						presents you with workshops on differnet fields.
+					</p>
+					<a href="https://nvision.org.in/what-after-college" target="_blank" id="register-btn">More</a>
+				</div>
+				<div class="col-md-6 text-center thumbnail" style="background-color:transparent;border:0;padding:2em;">
+					<img class="img-responsive center-block" src="img/workshops/fitnessband.jpg">
+					<p style="font-size:1em;margin-top:1em;">
+						ηvision, IIT Hyderabad now brings to you the first workshop of the year 2016. As the name suggests it's a workshop on fitness
+						band. ηvision, IIT Hyderabad in association with Robokart presents you with an opportunity to learn how to make a fitness
+						band on your own.
+					</p>
+					<a href="https://nvision.org.in/fitnessband" target="_blank" id="register-btn">More</a>
+				</div>
+			</div>
 		</div>
 
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/materialize.min.js"></script>
-		<script src="js/main.js"></script>
-<!-- <script src="/js/updates.js"></script> -->
-	</body>
+
+
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/materialize.min.js"></script>
+	<script src="js/main.js"></script>
+	<!-- <script src="/js/updates.js"></script> -->
+</body>
+
 </html>
