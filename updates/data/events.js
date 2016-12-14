@@ -25,7 +25,7 @@ let events = [{
 	image: "/img/events/enigma.png",
 	domain: "kludge"
 }, {
-	name: "The Galelio Project",
+	name: "The Galileo Project",
 	introduction: "“By taking the sense our sense of sight far beyond the realm of our forebear’s imagination, these wonderful instruments, the telescopes, open the way to a deeper and more perfect understanding of nature.”   -  Rene Descartes.\n\nMake your own Optical tube.\n\n\nThis event is based on building of a simple terrestrial telescope with given components. Also, test your talent in physics by participating in a challenging quiz.",
 	file: "https://s3-ap-southeast-1.amazonaws.com/nvision/events/TheGalelioProject.pdf",
 	image: "/img/events/galileoproject.png",
