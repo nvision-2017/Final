@@ -290,20 +290,29 @@
 	}
 
 	.three div.p4-first a {
-		color: #fff;
-		background-color: #072347;
+		color: #072347;
+		/*background-color: #fff;*/
 		text-decoration: none;
-		padding: 0.17em 0.5em;
+		padding: 0.17em 0.2em 0.17em 0;
 		border: 2px solid #fff;
-		/*border-radius: 10px;*/
 		transition-duration: 0.5s;
+		background: linear-gradient(to right, #fff 50%, #072347 50%);
+	    background-size: 200% 100%;
+	    background-position:left bottom;
 		transition-timing-function: ease-in-out;
 	}
 
-	.three div.p4-first a:hover {
-		color: #072347;
-		background-color: #fff;
+	.three div.p4-first a span{
+		color: #fff;
+		/*background-color: #072347;*/
+		padding: 0.17em 0.2em;
+		transition-duration: 0.5s;
+		background: linear-gradient(to right, #072347 50%, #fff 50%);
+	    background-size: 200% 100%;
+	    background-position:left bottom;
+		transition-timing-function: ease-in-out;
 	}
+
 	.three div.p4-footer {
 		text-align: right;
 		padding: 2em 2em 0.4em 0;
@@ -311,11 +320,11 @@
 		width: 100%;
 		bottom: 0;
 
-	    /*background: #072347;
-	    background: -webkit-linear-gradient(#072347, #020b17);
-	    background: -o-linear-gradient(#072347, #020b17); 
-	    background: -moz-linear-gradient(#072347, #020b17);
-	    background: linear-gradient(#072347, #020b17); */
+	    background: transparent;
+	    background: -webkit-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1));
+	    background: -o-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1)); 
+	    background: -moz-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1));
+	    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1)); 
 	}
 
 	.p1-content {
@@ -414,9 +423,21 @@
 		
 		<div class="p4-first">
 			<div>
-				<a href="events.html">Lets explore</a> the events!&nbsp;
+				<a href="events.html"><span>Lets explore</span> the events!</a>
 			</div>
 		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$(".three div.p4-first a").mouseover(function() {
+					$(".three div.p4-first a span").css({"color":"#072347","background-position":"right bottom"})
+					$(".three div.p4-first a").css({"color":"#fff","background-position":"right bottom"})
+				}).mouseout(function() {
+					$(".three div.p4-first a").css({"color":"#072347","background-position":"left bottom"})
+					$(".three div.p4-first a span").css({"color":"#fff","background-position":"left bottom"})
+				});
+			});
+		</script>
 
 		<div class="p4-footer">
 		<a href="https://www.facebook.com/nvision.IIThyderabad/" target="_blank"><img height="30" width="30" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDUxMiA1MTIiIGhlaWdodD0iNTEycHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik00OTIuNjY4LDQ0Mi45NTdjMCwzNC4xNzEtMjcuNzAyLDYxLjg3Mi02MS44NzMsNjEuODcySDgxLjA1MmMtMzQuMTcxLDAtNjEuODc1LTI3LjcwMS02MS44NzUtNjEuODcyICBWOTMuMjEyYzAtMzQuMTcxLDI3LjcwNC02MS44NzMsNjEuODc1LTYxLjg3M2gzNDkuNzQzYzM0LjE3MSwwLDYxLjg3MywyNy43MDEsNjEuODczLDYxLjg3M1Y0NDIuOTU3eiIgZmlsbD0iIzIwMzY1NiIvPjxwYXRoIGQ9Ik00OTIuNjY4LDQxOC4yMTNjMCwzNC4xNzItMjcuNzAyLDYxLjg3My02MS44NzMsNjEuODczSDgxLjA1MmMtMzQuMTcxLDAtNjEuODc1LTI3LjcwMS02MS44NzUtNjEuODczICBWNjguNDY4YzAtMzQuMTcxLDI3LjcwNC02MS44NzIsNjEuODc1LTYxLjg3MmgzNDkuNzQzYzM0LjE3MSwwLDYxLjg3MywyNy43MDEsNjEuODczLDYxLjg3MlY0MTguMjEzeiIgZmlsbD0iIzNCNTk5OCIvPjxwYXRoIGQ9Ik00OTIuNjY4LDI3MC4yNjVMMzI4LjMwOSwxMDUuOTA2TDE4My41NCwyNTUuNTYzbDg5LjQyNyw4OS40MjhsLTQ2LjYzNCwzNy43NGw5Ny4zNTQsOTcuMzU1aDEwNy4xMDcgIGMzNC4xNzIsMCw2MS44NzMtMjcuNzAxLDYxLjg3My02MS44NzNWMjcwLjI2NXoiIGZpbGw9IiMyODQxNkQiLz48cGF0aCBkPSJNMjc3LjUwOCwzODIuNzNWMjU1LjU2M2g0Mi42ODRsNi4zOTEtNDkuNTU1aC00OS4wNzR2LTMxLjYzOCAgYzAtMTQuMzQ5LDMuOTg3LTI0LjEyOCwyNC41NTctMjQuMTI4bDI2LjI0NC0wLjAwOHYtNDQuMzI3Yy00LjUzNy0wLjYwOS0yMC4xMTItMS45NTctMzguMjQtMS45NTcgIGMtMzcuODM2LDAtNjMuNzM2LDIzLjEwMS02My43MzYsNjUuNTEydjM2LjU0NkgxODMuNTR2NDkuNTU1aDQyLjc5M1YzODIuNzNIMjc3LjUwOHoiIGZpbGw9IiNGRkZGRkYiIGlkPSJmXzFfIi8+PC9zdmc+"></a>
