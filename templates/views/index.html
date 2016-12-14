@@ -6,12 +6,57 @@
 		<title>nvision 2017</title>
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/parallax.css">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/home.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/materialize.min.css">
-		<link rel="stylesheet" href="css/updates.css">
+		<!-- <link rel="stylesheet" href="css/updates.css"> -->
+		<link rel="stylesheet" href="css/animations.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/style3.css">
+		<link rel="stylesheet" type="text/css" href="css/custom.css" />
+		<script type="text/javascript" src="/js/modernizr.custom.79639.js"></script> 
+
+
+		<link rel="stylesheet" href="css/supersized.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="css/supersized.shutter.css" type="text/css" media="screen" />
+		
+		<script src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.easing.min.js"></script>
+		
+		<script type="text/javascript" src="js/supersized.3.2.7.min.js"></script>
+		<script type="text/javascript" src="js/supersized.shutter.min.js"></script>
+		
+		<script type="text/javascript">
+			
+			jQuery(function($){
+				
+				$.supersized({
+				
+					// Functionality
+					slide_interval          :   3000,		// Length between transitions
+					transition              :   1, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+					transition_speed		:	700,		// Speed of transition
+															   
+					// Components							
+					slide_links				:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
+					slides 					:  	[			// Slideshow Images
+
+														{image : '/img/slideshow/1.jpg', title : 'Image Credit: Maria Kazvan'},
+														{image : '/img/slideshow/2.jpg', title : 'Image Credit: Maria Kazvan'},
+														{image : '/img/slideshow/3.jpg', title : 'Image Credit: Maria Kazvan'},
+														{image : '/img/slideshow/4.jpg', title : 'Image Credit: Maria Kazvan'},
+														{image : '/img/slideshow/5.jpg', title : 'Image Credit: Maria Kazvan'},
+														{image : '/img/slideshow/6.jpg', title : 'Image Credit: Maria Kazvan'},
+														{image : '/img/slideshow/7.jpg', title : 'Image Credit: Maria Kazvan'}
+												]
+					
+				});
+		    });
+		    
+		</script>
+
+
 	</head>
-	<body style="overflow-x: hidden ">
+	<body class="custom-scrollbar" style="overflow-x: hidden;">
 
 	<style>
 		.md-close{
@@ -34,14 +79,19 @@
 		.md-content {
 			background-color: rgba(0,0,0,0.5) !important;
 		}
+		#mainbody {
+			background-color: #072347;
+			position: relative;
+			z-index: 98;
+			/*border: 1px solid #f00;*/
+		}
 	</style>
 
 	<div id="pre-loader">
-		<div class="pacman"></div>
-		<div class="dot"></div>
+		
 	</div>
 
-		<div class="md-modal md-effect-19 md-effect-12 md-effect-13" id="updates-modal" style="text-align:center">
+		<!-- <div class="md-modal md-effect-19 md-effect-12 md-effect-13" id="updates-modal" style="text-align:center">
 			<div class="md-content">
 				<h3><b>Updates</b></h3>
 				<div>
@@ -54,7 +104,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="md-overlay"></div><!-- the overlay element -->
+		<div class="md-overlay"></div> --><!-- the overlay element -->
 
 
 <nav id="navbar-top" class="navbar navbar-inverse navbar-fixed-top" style="z-index:1000;">
@@ -66,9 +116,9 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">
+				<!-- <a class="navbar-brand" href="#">
 					<img id="navlogo" alt="Brand" src="img/nvision.png">
-				</a>
+				</a> -->
 			</div>
 			<ul id="slide-out" class="side-nav">
 				<li><div class="userView">
@@ -76,112 +126,305 @@
 				</div></li>
 				<li><div class="divider"></div></li>
 						
-						<li><a href="#" class="btnfos md-trigger md-setperspective" data-modal="updates-modal" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Updates&nbsp;<span style="color:#f00;font-size:1.2em;font-weight:bold">&#33;</span></a></li>
-						<!-- <li><a href="index.html" class="btnfos" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Home</a></li> -->
-						<li><a href="about.html" class="btnfos" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>About us</a></li>
-						<li><a href="events.html" class="btnfos" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Events</a></li>
-						<li><a href="sponsors.html" class="btnfos" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Sponsors</a></li>
-						<li><a href="workshops.html" class="btnfos" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Workshops</a></li>
-						<li><a href="team.html" class="btnfos" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Team</a></li>
+						<!-- <li><a class="btnfos md-trigger md-setperspective" data-modal="updates-modal" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Updates&nbsp;<span style="color:#f00;font-size:1.2em;font-weight:bold">&#33;</span></a></li> -->
+						<li><a href="/events" class="btnfos" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Events</a></li>
+						<li><a href="/exhibitions" class="btnfos" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Exhibitions</a></li>
+						<li><a href="/sponsors" class="btnfos" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Sponsors</a></li>
+						<li><a href="/workshops" class="btnfos" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Workshops</a></li>
+						<li><a href="/team" class="btnfos" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Team</a></li>
+						<li class="dropdown">
+			            <a class="dropdown-toggle btnfos" data-toggle="dropdown" href="#">Archives
+			            <span class="caret"></span></a>
+			            <ul class="dropdown-menu">
+			              <li style="width:100%"><a href="https://old.nvision.org.in/">2016</a></li>
+			              <li style="width:100%"><a href="#">2015</a></li>
+			            </ul>
+			          </li>
 			</ul>
+			<style>
+				.home-nav {
+					width: 100% !important;
+				}
+				.home-nav li{
+					width: 16.66% !important;
+				}
+			</style>
 			<div class="collapse navbar-collapse" id="navbar-collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#" class="btnfos md-trigger md-setperspective" data-modal="updates-modal" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Updates&nbsp;<span style="color:#f00;font-size:1.2em;font-weight:bold">&#33;</span></a></li>
-					<!-- <li><a href="index.html" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Home</a></li> -->
-					<li><a href="about.html" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>About us</a></li>
-					<li><a href="events.html" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Events</a></li>
-					<li><a href="sponsors.html" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Sponsors</a></li>
-					<li><a href="workshops.html" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Workshops</a></li>
-					<li><a href="team.html" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Team</a></li>
+				<ul class="nav navbar-nav navbar-right home-nav">
+					<!-- <li><a class="btnfos md-trigger md-setperspective" data-modal="updates-modal" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Updates&nbsp;<span style="color:#f00;font-size:1.2em;font-weight:bold">&#33;</span></a></li> -->
+					<li><a href="/events" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Events</a></li>
+					<li><a href="/exhibitions" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Exhibitions</a></li>
+					<li><a href="/sponsors" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Sponsors</a></li>
+					<li><a href="/workshops" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Workshops</a></li>
+					<li><a href="/team" class="btnfos" style="color:#000 !important"><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Team</a></li>
+					<li class="dropdown">
+			            <a class="dropdown-toggle btnfos" style="color:#000 !important" data-toggle="dropdown" href="#">Archives
+			            <span class="caret"></span></a>
+			            <ul class="dropdown-menu">
+			              <li style="width:100%"><a href="https://old.nvision.org.in/">2016</a></li>
+			              <li style="width:100%"><a href="#">2015</a></li>
+			            </ul>
+			          </li>
 				</ul>
 			</div>
 		</div>
 	</nav>
 
-		<div class="keyart" id="parallax">
-			<div class="keyart_layer parallax" id="keyart-0"></div>		<!-- 00.0 -->
-			<div class="keyart_layer parallax" id="keyart-1"></div>	<!-- 12.5 -->
-			<div class="keyart_layer parallax" id="keyart-drone"></div>	<!-- 12.5 -->
-			<div class="keyart_layer parallax" id="keyart-2"></div>		<!-- 25.0 -->
-			<div class="keyart_layer parallax" id="keyart-3"></div>	<!-- 37.5 -->
-			<div class="keyart_layer parallax" id="keyart-4"></div>		<!-- 50.0 -->
-			<div class="keyart_layer parallax" id="keyart-5"></div>	<!-- 62.5 -->
-			<div class="keyart_layer parallax" id="keyart-box"></div>	<!-- 62.5 -->
-			<div class="keyart_layer parallax" id="keyart-6"></div>		<!-- 75.0 -->
-			<div class="keyart_layer" id="keyart-scrim"></div>
-			<div class="keyart_layer parallax" id="keyart-7"></div>		<!-- 87.5 -->
-			<div class="keyart_layer parallax" id="keyart-car"></div>		<!-- 87.5 -->
-			<div class="keyart_layer parallax" id="keyart-8"></div>		<!-- 100. -->
+	<div class="keyart" id="parallax">
+		<div class="keyart_layer parallax" id="keyart-0"></div>		<!-- 00.0 -->
+		<div class="keyart_layer parallax" id="keyart-rocket"></div>	<!-- 12.5 -->
+		<div class="keyart_layer parallax" id="keyart-1"></div>	<!-- 12.5 -->
+		<div class="keyart_layer parallax" id="keyart-drone"></div>	<!-- 12.5 -->
+		<div class="keyart_layer parallax" id="keyart-3"></div>	<!-- 37.5 -->
+		<div class="keyart_layer parallax" id="keyart-4"></div>		<!-- 50.0 -->
+		<div class="keyart_layer parallax" id="keyart-logo"></div>		<!-- 50.0 -->
+		<div class="keyart_layer parallax" id="keyart-5"></div>	<!-- 62.5 -->
+		<div class="keyart_layer parallax" id="keyart-box"></div>	<!-- 62.5 -->
+		<div class="keyart_layer parallax" id="keyart-walle"></div>		<!-- 75.0 -->
+		<div class="keyart_layer parallax" id="keyart-6"></div>		<!-- 75.0 -->
+		<!-- <div class="keyart_layer" id="keyart-scrim"></div> -->
+		<div class="keyart_layer parallax" id="keyart-7"></div>		<!-- 87.5 -->
+		<div class="keyart_layer parallax" id="keyart-car"></div>		<!-- 87.5 -->
+		<div class="keyart_layer parallax" id="keyart-8"></div>		<!-- 100. -->
+		<div class="keyart_layer parallax" id="keyart-train"></div>		<!-- 100. -->
+	</div>
+
+<div id="mainbody">
+
+<div style="text-align:center;color:#fff;">
+	<h2>Welcome to <span style="text-shadow:0 0 5px #000,0 0 5px #00ccff">&eta;vision</span>, IIT Hyderabad</h2>
+</div>
+
+	
+<style type="text/css">
+	#pinContainer {
+		width: 100%;
+		height: 100vh;
+		overflow: hidden;
+	}
+	.panel {
+		height: 100vh;
+		width: 100vw;
+		/*overflow: scroll;*/
+		position: absolute;
+		/*border: 2px solid red;*/
+	}
+	.one {
+		background-color: #072347;
+		text-align: center;
+		height: 100%;
+		padding: 4em;
+	}
+	.two {
+		background-color: #072347;
+	}
+	.three {
+		background: url(/img/sectionlbg.jpg) no-repeat;
+		background-size: cover;
+		text-align: center;
+		background-color: #072347;
+	}
+
+	.three div.p4-first {
+		color: #fff;
+		font-size: 5em;
+		position: fixed;
+		width: 100%;
+		top: 40%;
+	}
+
+	.three div.p4-first div {
+		color: #072347;
+		background-color: #fff;
+		display: inline-block;
+		/*border-radius: 10px;*/
+	}
+
+	.three div.p4-first a {
+		color: #fff;
+		background-color: #072347;
+		text-decoration: none;
+		padding: 0.17em 0.5em;
+		border: 2px solid #fff;
+		/*border-radius: 10px;*/
+		transition-duration: 0.5s;
+		transition-timing-function: ease-in-out;
+	}
+
+	.three div.p4-first a:hover {
+		color: #072347;
+		background-color: #fff;
+	}
+	.three div.p4-footer {
+		text-align: right;
+		padding: 2em 2em 0.4em 0;
+		position: fixed;
+		width: 100%;
+		bottom: 0;
+
+	    /*background: #072347;
+	    background: -webkit-linear-gradient(#072347, #020b17);
+	    background: -o-linear-gradient(#072347, #020b17); 
+	    background: -moz-linear-gradient(#072347, #020b17);
+	    background: linear-gradient(#072347, #020b17); */
+	}
+
+	.p1-content {
+		height: 100%;
+		overflow-y: scroll;
+		color: #fff;
+		position: relative;
+		padding: 1em;
+		background: rgba(0,0,0,0);
+		font-size: 2em;
+	}
+</style>
+<div id="pinContainer">
+
+	<section class="panel one">
+	<style type="text/css">
+		.thin-scrollbar::-webkit-scrollbar {
+		  width: 2px;
+		}
+
+		.thin-scrollbar::-webkit-scrollbar-track {
+			background-color: #000 !important;
+		}
+
+		.thin-scrollbar::-webkit-scrollbar-thumb {
+		  background-color: #00ccff;
+		  border-radius: 5px; 
+		}
+	</style>
+		<div class="p1-content thin-scrollbar">
+			Technology is a part of everyday life. It's everywhere. Everything we do throughout our day is intertwined with gadgets of various forms and features developed over years if not decades. Human civilisation is at a point where we're enriching our lives with technology. <br><br>
+										Tech has evolved as a platform for creators, innovators and thinkers to express themselves and bring to life their thoughts and ideas. Tech is limited not by our times but by our dreams. <br><br>
+										These are the thoughts that drive us year after year to make &eta;vision bigger, better and spectacular.<br><br>
+										 &eta;vision, as we see it, is meant to be a celebration of everything tech, innovation and all the hackers who make what we see possible.<br><br>
+			Started in 2011, &eta;vision is the technical fest organised by the students of IIT Hyderabad with a motto of providing the technical enthusiasts of our country a platform to explore,  innovate and showcase their technical and engineering prowess.<br><br>
+			Over the past 6 years, &eta;vision has gradually evolved from an inter college festival to one of the recognised technical fests of our country.
+		</div>
+	</section>
+
+	<!-- <section class="panel two">
+		<div class="p1-content" style="line-height:2.5em">
+		</div>
+	</section> -->
+
+	<section class="panel two">
+		
+		<div class="p-content-slideshow">
+
+									<!--Thumbnail Navigation-->
+									<div id="prevthumb"></div>
+									<div id="nextthumb"></div>
+									
+									<!--Arrow Navigation-->
+									<a id="prevslide" class="load-item"></a>
+									<a id="nextslide" class="load-item"></a>
+									
+									<!-- <div id="thumb-tray" class="load-item">
+										<div id="thumb-back"></div>
+										<div id="thumb-forward"></div>
+									</div> -->
+									
+									<!--Time Bar-->
+									<div id="progress-back" class="load-item">
+										<div id="progress-bar"></div>
+									</div>
+									
+									<!--Control Bar-->
+									<div id="controls-wrapper" class="load-item">
+										<div id="controls">
+											
+											<a id="play-button"><img id="pauseplay" src="img/pause.png"/></a>
+										
+											<!--Slide counter-->
+											<div id="slidecounter">
+												<span class="slidenumber"></span> / <span class="totalslides"></span>
+											</div>
+											
+											<!--Slide captions displayed here-->
+											<div id="slidecaption"></div>
+											
+											<!--Thumb Tray button-->
+											<!-- <a id="tray-button"><img id="tray-arrow" src="img/button-tray-up.png"/></a> -->
+											
+											<!--Navigation-->
+											<ul id="slide-list"></ul>
+											
+										</div>
+									</div>
+									
+								</div>
+
+	</section>
+	<section class="panel three">
+		
+		<div class="p4-first">
+			<div>
+				<a href="/events">Lets explore</a> the events!&nbsp;
+			</div>
 		</div>
 
-		<div id="mainbody">
-			<style type="text/css">
-						#pinContainer {
-							/*border: 2px solid #f00;*/
-							width: 100%;
-							height: 100vh;
-						}
-						.panel {
-							height: 100vh;
-							width: 100vw;
-							/*position: absolute;*/
-						}
-						.one {
-							background:url(/img/firstBG.jpg) 50% 0 no-repeat fixed;
-						}
-						.two {
-							background: url(/img/secondBG.jpg) 50% 0 no-repeat fixed;
-
-						}
-						.three {
-							background: url(/img/thirdBG.jpg) 50% 0 no-repeat fixed;
-
-						}
-					</style>
-					<div id="pinContainer">
-						<section class="panel one" style="background-color:#f00 !important">
-							<b>ONE</b>
-						</section>
-						<section class="panel two"  style="background-color:#0f0 !important">
-							<b>TWO</b>
-						</section>
-						<section class="panel three"  style="background-color:#00f !important">
-							<b>THREE</b>
-						</section>
-						<section class="panel four"  style="background-color:#000 !important">
-							<b>FOUR</b>
-					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="350" height="200">
-	<path id="word" style="stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1009.23px; stroke-dashoffset: 1009.23px;" fill="none" stroke="#000000" stroke-width="5" d="M22.328,70.018c9.867-7.4,10.724,20.434,13.014,28.694c-0.08-9.105-1.308-31.463,11.936-31.886
-			c11.313-0.361,17.046,19.368,16.367,28.098c-1.432-10.289,6.234-30.682,18.163-25.671c11.505,4.833,8.682,26.772,20.071,31.964
-			c13.06,5.953,14.854-8.305,19.734-17.017c7.188-12.836,4.933-15.417,29.6-14.8c-8.954-3.842-37.42,1.728-28.539,20.1
-			c5.823,12.045,34.911,12.583,30.018-8.873c-5.385,17.174,24.01,23.104,24.01,9.123c0-9.867,3.816-15.937,16.034-18.5
-			c8.359-1.754,18.982,4.754,25.9,9.25c-10.361-4.461-51.941-13.776-37.749,12.357c9.435,17.372,50.559,2.289,33.477-6.063
-			c-2.871,19.008,32.415,31.684,30.695,54.439c-2.602,34.423-66.934,24.873-79.302,2.134c-13.11-24.101,38.981-36.781,54.798-40.941
-			c8.308-2.185,42.133-12.162,25.88-25.587c-2.779,17.058,19.275,28.688,29.963,12.911c6.862-10.131,6.783-25.284,30.833-19.117
-			c-9.404-0.429-32.624-0.188-32.864,18.472c-0.231,17.912,21.001,21.405,40.882,11.951"></path>
-	<path id="dot" style="stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 44.2974px; stroke-dashoffset: 44.2974px;" fill="none" stroke="#000000" stroke-width="5" d="M247.003,38.567c-7.423,1.437-11.092,9.883-1.737,11.142c14.692,1.978,13.864-13.66,1.12-8.675"></path>
-</svg>
-						</section>
-					</div>
+		<div class="p4-footer">
+		<a href="https://www.facebook.com/nvision.IIThyderabad/" target="_blank"><img height="30" width="30" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDUxMiA1MTIiIGhlaWdodD0iNTEycHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik00OTIuNjY4LDQ0Mi45NTdjMCwzNC4xNzEtMjcuNzAyLDYxLjg3Mi02MS44NzMsNjEuODcySDgxLjA1MmMtMzQuMTcxLDAtNjEuODc1LTI3LjcwMS02MS44NzUtNjEuODcyICBWOTMuMjEyYzAtMzQuMTcxLDI3LjcwNC02MS44NzMsNjEuODc1LTYxLjg3M2gzNDkuNzQzYzM0LjE3MSwwLDYxLjg3MywyNy43MDEsNjEuODczLDYxLjg3M1Y0NDIuOTU3eiIgZmlsbD0iIzIwMzY1NiIvPjxwYXRoIGQ9Ik00OTIuNjY4LDQxOC4yMTNjMCwzNC4xNzItMjcuNzAyLDYxLjg3My02MS44NzMsNjEuODczSDgxLjA1MmMtMzQuMTcxLDAtNjEuODc1LTI3LjcwMS02MS44NzUtNjEuODczICBWNjguNDY4YzAtMzQuMTcxLDI3LjcwNC02MS44NzIsNjEuODc1LTYxLjg3MmgzNDkuNzQzYzM0LjE3MSwwLDYxLjg3MywyNy43MDEsNjEuODczLDYxLjg3MlY0MTguMjEzeiIgZmlsbD0iIzNCNTk5OCIvPjxwYXRoIGQ9Ik00OTIuNjY4LDI3MC4yNjVMMzI4LjMwOSwxMDUuOTA2TDE4My41NCwyNTUuNTYzbDg5LjQyNyw4OS40MjhsLTQ2LjYzNCwzNy43NGw5Ny4zNTQsOTcuMzU1aDEwNy4xMDcgIGMzNC4xNzIsMCw2MS44NzMtMjcuNzAxLDYxLjg3My02MS44NzNWMjcwLjI2NXoiIGZpbGw9IiMyODQxNkQiLz48cGF0aCBkPSJNMjc3LjUwOCwzODIuNzNWMjU1LjU2M2g0Mi42ODRsNi4zOTEtNDkuNTU1aC00OS4wNzR2LTMxLjYzOCAgYzAtMTQuMzQ5LDMuOTg3LTI0LjEyOCwyNC41NTctMjQuMTI4bDI2LjI0NC0wLjAwOHYtNDQuMzI3Yy00LjUzNy0wLjYwOS0yMC4xMTItMS45NTctMzguMjQtMS45NTcgIGMtMzcuODM2LDAtNjMuNzM2LDIzLjEwMS02My43MzYsNjUuNTEydjM2LjU0NkgxODMuNTR2NDkuNTU1aDQyLjc5M1YzODIuNzNIMjc3LjUwOHoiIGZpbGw9IiNGRkZGRkYiIGlkPSJmXzFfIi8+PC9zdmc+"></a>
+		<a href="https://twitter.com/nvisioniith" target="_blank"><img height="30" width="30" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDUxMiA1MTIiIGhlaWdodD0iNTEycHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yOTUuMzYxLDEzNTQuNTkxbDAuMDIzLDAuMDIzYzAuMDA1LTAuMDE2LDAuMDExLTAuMDMsMC4wMTYtMC4wNDYgIEMyOTUuMzg4LDEzNTQuNTc2LDI5NS4zNzQsMTM1NC41ODMsMjk1LjM2MSwxMzU0LjU5MXoiIGZpbGw9IiNGRkZGRkYiLz48cGF0aCBkPSJNNTExLjk5OSw0MzJjMCw0NC4xODMtMzUuODE2LDgwLTgwLDgwSDgwYy00NC4xODMsMC04MC0zNS44MTctODAtODBWODBDMCwzNS44MTcsMzUuODE3LDAsODAsMGgzNTEuOTk5ICBjNDQuMTg0LDAsODAsMzUuODE3LDgwLDgwVjQzMnoiIGZpbGw9IiMyQUE5RTAiLz48cGF0aCBkPSJNNDI2LjY2NSwxNTAuMTQyYy0xMi41NTcsNS41Ny0yNi4wNTUsOS4zMzQtNDAuMjE5LDExLjAyNmMxNC40NTctOC42NjYsMjUuNTYxLTIyLjM5LDMwLjc4OS0zOC43NDMgIGMtMTMuNTMxLDguMDI2LTI4LjUxOCwxMy44NTQtNDQuNDY5LDE2Ljk5M2MtMTIuNzczLTEzLjYwOS0zMC45NzUtMjIuMTEzLTUxLjExNS0yMi4xMTNjLTM4LjY3NCwwLTcwLjAyOSwzMS4zNTQtNzAuMDI5LDcwLjAyNyAgYzAsNS40ODgsMC42MTksMTAuODMzLDEuODEzLDE1Ljk1OWMtNTguMi0yLjkyMS0xMDkuODAxLTMwLjgwMS0xNDQuMzM5LTczLjE2OGMtNi4wMjgsMTAuMzQyLTkuNDgxLDIyLjM3MS05LjQ4MSwzNS4yMDUgIGMwLDI0LjI5NiwxMi4zNjIsNDUuNzMsMzEuMTUzLDU4LjI4OWMtMTEuNDc5LTAuMzY1LTIyLjI3OC0zLjUxNS0zMS43MTktOC43NmMtMC4wMDcsMC4yOTMtMC4wMDcsMC41ODUtMC4wMDcsMC44ODEgIGMwLDMzLjkyOCwyNC4xNCw2Mi4yMzIsNTYuMTc0LDY4LjY2NmMtNS44NzUsMS42MDEtMTIuMDYzLDIuNDU3LTE4LjQ0OCwyLjQ1N2MtNC41MTMsMC04Ljg5OS0wLjQzOS0xMy4xNzctMS4yNTYgIGM4LjkxMiwyNy44MTksMzQuNzczLDQ4LjA2OCw2NS40MTgsNDguNjMxYy0yMy45NjcsMTguNzgzLTU0LjE2MiwyOS45NzktODYuOTcyLDI5Ljk3OWMtNS42NTIsMC0xMS4yMjctMC4zMzEtMTYuNzA1LTAuOTc5ICBjMzAuOTkxLDE5Ljg3LDY3LjgwMSwzMS40NjUsMTA3LjM0OCwzMS40NjVjMTI4LjgwNywwLDE5OS4yNDYtMTA2LjcwOCwxOTkuMjQ2LTE5OS4yNDljMC0zLjAzNS0wLjA2OC02LjA1NS0wLjIwNS05LjA2ICBDNDA1LjQwNSwxNzYuNTE5LDQxNy4yNzgsMTY0LjE4Niw0MjYuNjY1LDE1MC4xNDJ6IiBmaWxsPSIjRkZGRkZGIi8+PHBhdGggZD0iTTIzNC4wNjMsNTEySDQzMmM0NC4xODQsMCw4MC0zNS44MTgsODAtODBWMjE3LjI1bC05NC43NzktOTQuNzc5Yy01LjIzNCwxNi4zMzMtMTYuMzMsMzAuMDM5LTMwLjc3MywzOC42OTcgIGMxNC4xNjQtMS42OTIsMjcuNjYyLTUuNDU2LDQwLjIxOS0xMS4wMjZjLTkuMzg3LDE0LjA0NC0yMS4yNiwyNi4zNzctMzQuOTQzLDM2LjI1YzAuMTM3LDMuMDA1LDAuMjA1LDYuMDI0LDAuMjA1LDkuMDYgIGMwLDkyLjU0Mi03MC40MzksMTk5LjI0OS0xOTkuMjQ2LDE5OS4yNDljLTM5LjU0NywwLTc2LjM1Ny0xMS41OTQtMTA3LjM0OC0zMS40NjUiIGZpbGw9IiMxQTcwQjciLz48L3N2Zz4="></a>
 		</div>
+	</section>
+</div>
+</div>
 
 
-		<script src="js/jquery.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
 		<script src="js/materialize.min.js"></script>
-		<script src="js/main.js"></script>
-		<!-- <script src="js/parallax.js"></script> -->
 
-		<script src="/js/jquery.parallax-1.1.3.js"></script>
-		<script src="/js/jquery.localscroll-1.2.7-min.js"></script>
-		<script src="/js/jquery.scrollTo-1.4.2-min.js"></script>
+		<script src="js/main.js"></script>
 
 		<script src="/js/TweenMax.min.js"></script>
 		<script src="/js/ScrollMagic.js"></script>
 		<script src="/js/animation.gsap.js"></script>
-		<script src="/js/debug.addIndicators.js"></script>
 <script>
-	var controller = new ScrollMagic.Controller();
+	$(function () { // wait for document ready
+		// init
+		var controller = new ScrollMagic.Controller();
+
+		// define movement of panels
+		var wipeAnimation = new TimelineMax()
+			.fromTo("section.panel.two",    1, {y:  "100%"}, {y: "0%", ease: Linear.easeNone})  // in from right
+			.fromTo("section.panel.three", 1, {y: "100%"}, {y: "0%", ease: Linear.easeNone}); // in from top
+
+		// create scene to pin and link animation
+		new ScrollMagic.Scene({
+				triggerElement: "#pinContainer",
+				triggerHook: "onLeave",
+				duration: "300%"
+			})
+			.setPin("#pinContainer")
+			.setTween(wipeAnimation)
+			.addTo(controller);
+	});
+</script>
+
+<script>
+	var controller2 = new ScrollMagic.Controller();
 </script>
 
 <script type="text/javascript">
@@ -189,69 +432,34 @@
 			// build tween
 	var tween = new TimelineMax ()
 	.add([
-		TweenMax.fromTo("#keyart-8", 1, {}, {top: -1150, ease: Linear.easeNone}),
+		TweenMax.fromTo("#keyart-train", 1, {top:328,left:-700}, {left:800,top: -1122, ease: Linear.easeNone}),
+		TweenMax.fromTo("#keyart-8", 1, {top:350}, {top: -1100, ease: Linear.easeNone}),
 		TweenMax.fromTo("#keyart-car", 1, {}, {left: 1006, top: -1200, ease: Linear.easeNone}),
 		TweenMax.fromTo("#keyart-7", 1, {}, {top: -1006, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-6", 1, {}, {top: -862, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-5", 1, {}, {top: -719, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-box", 1, {}, {top: -719,left: 300, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-4", 1, {}, {top: -575, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-3", 1, {}, {top: -431, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-2", 1, {}, {top: -287, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-1", 1, {}, {top: -144, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-drone", 1, {}, {top: -144,left: -500, ease: Linear.easeNone}),
+		TweenMax.fromTo("#keyart-6", 1, {top:-60}, {top: -862, ease: Linear.easeNone}),
+		TweenMax.fromTo("#keyart-walle", 1, {top:-65}, {left:-300,top: -790, ease: Linear.easeNone}),
+		TweenMax.fromTo("#keyart-logo", 1, {top:-10}, {top: -100, ease: Linear.easeNone}),
+		TweenMax.fromTo("#keyart-5", 1, {top:-40}, {top: -719, ease: Linear.easeNone}),
+		TweenMax.fromTo("#keyart-box", 1, {top:-35}, {top: -714,left: 300, ease: Linear.easeNone}),
+		TweenMax.fromTo("#keyart-4", 1, {top:-50}, {top: -575, ease: Linear.easeNone}),
+		TweenMax.fromTo("#keyart-3", 1, {top:-50}, {top: -431, ease: Linear.easeNone}),
+		// TweenMax.fromTo("#keyart-2", 1, {}, {top: -287, ease: Linear.easeNone}),
+		TweenMax.fromTo("#keyart-1", 1, {top:-40}, {top: -144, ease: Linear.easeNone}),
+		TweenMax.fromTo("#keyart-rocket", 1, {top:-40}, {top: -1500, ease: Linear.easeNone}),
+		TweenMax.fromTo("#keyart-drone", 1, {}, {top: -200,left: -250, ease: Linear.easeNone}),
 		TweenMax.fromTo("#keyart-0", 1, {}, {top: -150, ease: Linear.easeNone})
 	]);
 
 	// build scene
 	var scene = new ScrollMagic.Scene({duration: $(window).width()})
 				.setTween(tween)
-				.addTo(controller);
-
-
-		// define movement of panels
-	var wipeAnimation = new TimelineMax()
-		.fromTo("section.panel.two", 1, {x: "-100%",y: "-100%"}, {x: "0%",y: "0%", ease: Linear.easeNone})  // in from left
-		.fromTo("section.panel.three",    1, {x:  "100%" , y:"100%"}, {x: "0%",y: "0%", ease: Linear.easeNone}) // in from right
-		.fromTo("section.panel.four", 1, {y: "100%"}, {y: "0%", ease: Linear.easeNone});// in from top
-
-	// create scene to pin and link animation
-	new ScrollMagic.Scene({
-		triggerElement: "#pinContainer",
-		triggerHook: "onLeave",
-		duration: "300%"
-	})
-	.setPin("#pinContainer")
-	.setTween(wipeAnimation)
-	.addTo(controller);
+				.addTo(controller2);
 
 </script>
 
-<script>
-	function pathPrepare ($el) {
-		var lineLength = $el[0].getTotalLength();
-		$el.css("stroke-dasharray", lineLength);
-		$el.css("stroke-dashoffset", lineLength);
-	}
 
-	var $word = $("path#word");
-	var $dot = $("path#dot");
 
-	// prepare SVG
-	pathPrepare($word);
-	pathPrepare($dot);
+<!-- <script src="/js/updates.js"></script> -->
 
-	// build tween
-	var tween = new TimelineMax()
-		.add(TweenMax.to($word, 0.9, {strokeDashoffset: 0, ease:Linear.easeNone})) // draw word for 0.9
-		.add(TweenMax.to($dot, 0.1, {strokeDashoffset: 0, ease:Linear.easeNone}))  // draw dot for 0.1
-		.add(TweenMax.to("path", 1, {stroke: "#33629c", ease:Linear.easeNone}), 0);			// change color during the whole thing
-
-	// build scene
-	var scene = new ScrollMagic.Scene({triggerElement: ".panel.four", duration: 200, tweenChanges: true})
-	.setTween(tween)
-	.addTo(controller);
-</script>
-<script src="/js/updates.js"></script>
 	</body>
 </html>

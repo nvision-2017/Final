@@ -1,40 +1,10 @@
 @font-face {
-  font-family: 'trench';
-  src: url('/fonts/trench100free.ttf'),url('/fonts/trench100free.otf');
-}
-
-@font-face {
-  font-family: 'Digital_tech';
-  src: url('/fonts/Digital_tech.otf'),url('/fonts/trench100free.otf');
-}
-
-@font-face {
-  font-family: 'AdamasRegular';
-  src: url('/fonts/AdamasRegular.otf'),url('/fonts/trench100free.otf');
-}
-
-@font-face {
-  font-family: 'complex';
-  src: url('/fonts/complex.ttf'),url('/fonts/trench100free.otf');
-}
-
-@font-face {
-  font-family: 'Gtek';
-  src: url('/fonts/Gtek.ttf'),url('/fonts/trench100free.otf');
-}
-
-@font-face {
-  font-family: 'FREEDOM';
-  src: url('/fonts/FREEDOM.ttf'),url('/fonts/trench100free.otf');
-}
-
-@font-face {
-  font-family: 'CartoGothic';
-  src: url('/fonts/CartoGothicStd-Book.otf');
+  font-family: 'JosefinSans';
+  src: url('/fonts/JosefinSans.ttf');
 }
 
 * {
-  font-family: 'CartoGothic', sans-serif;
+  font-family: 'JosefinSans', sans-serif;
   /*font-weight: bold !important;*/
   /*text-transform: uppercase !important;*/
 }

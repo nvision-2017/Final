@@ -11,6 +11,7 @@ NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
 
 window.onload = function() {
 	document.getElementById("pre-loader").remove();
+	if(typeof afterLoad === "function") afterLoad();
 }
 
 $(document).ready(function() {
