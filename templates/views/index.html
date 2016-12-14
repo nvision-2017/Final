@@ -133,14 +133,13 @@
 						<li><a href="/workshops" class="btnfos" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Workshops</a></li>
 						<li><a href="/team" class="btnfos" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Team</a></li>
 						<li class="dropdown">
-							<a href="#" class="btnfos dropdown-toggle" data-toggle="dropdown">
-							<svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Archives<span class="caret"></span>
-							</a>
+							<a class="dropdown-toggle btnfos" data-toggle="dropdown" href="#">Archives
+							<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-							<li><a href="#" class="btnfos btnfosd">2016</a></li>
-							<li><a href="#" class="btnfos btnfosd"></svg>2014</a></li>
-							</ul>
-						</li>
+							<li style="width:100%"><a href="https://old.nvision.org.in/">2016</a></li>
+							<li style="width:100%"><a href="#">2015</a></li>
+			            </ul>
+			          </li>
 			</ul>
 			<style>
 				.home-nav {
@@ -219,11 +218,25 @@
 	.two {
 		background-color: #072347;
 	}
-	.three {
+
+	#sectionlbg {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		right: 0;
 		background: url(/img/sectionlbg.jpg) no-repeat;
 		background-size: cover;
-		text-align: center;
 		background-color: #072347;
+		-webkit-filter: blur(2px);
+	    -moz-filter: blur(2px);
+	    -o-filter: blur(2px);
+	    -ms-filter: blur(2px);
+	    filter: blur(2px);
+	}
+
+	.three {
+		text-align: center;
 	}
 
 	.three div.p4-first {
@@ -361,10 +374,12 @@
 
 	</section>
 	<section class="panel three">
+
+		<div id="sectionlbg"></div>
 		
 		<div class="p4-first">
 			<div>
-				<a href="/events">Lets explore</a> the events!&nbsp;
+				<a href="events.html">Lets explore</a> the events!&nbsp;
 			</div>
 		</div>
 
