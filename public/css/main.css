@@ -4,7 +4,7 @@
 }
 
 * {
-  font-family: 'JosefinSans', sans-serif;
+  font-family: 'JosefinSans', sans-serif !important;
   /*font-weight: bold !important;*/
   /*text-transform: uppercase !important;*/
 }
@@ -94,7 +94,7 @@ body {
 }
 
 .btnfos {
-  font-weight: 100;
+  font-weight: bold;
   border-color: transparent;
   background-color: transparent;
 }
