@@ -135,11 +135,14 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+  body {
+    overflow-x: hidden;
+  }
   .timeline .teamline li {
     margin-left: 20px;
   }
   .timeline .teamline li .profile-group {
-    width: calc(100vw - 91px);
+    width: calc(90vw - 91px);
   }
   .timeline .teamline li:nth-of-type(odd) .profile-group {
     left: 45px;
