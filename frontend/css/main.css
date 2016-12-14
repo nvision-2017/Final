@@ -165,7 +165,11 @@ body {
 }
 .btnfosd {
   font-size: 1.2em;
+  width: 5em;
   color: white !important;
+}
+.btnfos, .btnfos:hover {
+  background-color: transparent !important;
 }
 .btnfosd:hover {
   background-color: transparent !important;
