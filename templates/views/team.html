@@ -17,13 +17,13 @@
 	<meta property="og:image" content="/img/logo.png">
 	<meta property="og:url" content="nvision.org.in">
 	<meta property="og:description" content="&eta;vision: techno-management Fest of IIT Hyderabad">
-	
+
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/materialize.min.css">
 	<link rel="stylesheet" href="css/hexagons.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/stars.css" media="only screen and (min-width: 600px)">
-	<link rel="stylesheet" href="css/team.css">
+	<link rel="stylesheet" href="css/team.css" media="only screen and (min-width: 600px)">
 	<link rel="stylesheet" href="css/main.css">
 	<!-- <link rel="stylesheet" href="css/updates.css"> -->
 	<style>
@@ -415,14 +415,15 @@
 							<a href="https://www.facebook.com/koumudhi.deshpande.7" target="_blank"><span class="hb hb-xs spin"><i class="fa fa-facebook"></i></span></a>
 						</div>
 					</div>
-					<div class="profile text-center" style="visibility:hidden">
-						<img class="profile-pic img-circle" src="img/team/koumudhi.jpg">
-						<span class="pname">D Koumudhi</span>
+					<div class="profile text-center" style="background-color:transparent;">
+						<img class="profile-pic img-circle" src="img/team/asvin.jpg">
+						<span class="pname">Asvin Kumar</span>
 						<span class="pdesg">Online Publicity</span>
-						<a class="pemail">me15btech11008@iith.ac.in</a>
-						<a class="pphone">+91 7032400268</a>
+						<a class="pemail">ee15btech11038@iith.ac.in</a>
+						<a class="pphone">+91 9445930886</a>
 						<div class="psocial">
-							<a href="https://www.facebook.com/koumudhi.deshpande.7" target="_blank"><span class="hb hb-xs spin"><i class="fa fa-facebook"></i></span></a>
+							<a href="https://www.facebook.com/asvinkumar21" target="_blank"><span class="hb hb-xs spin"><i class="fa fa-facebook"></i></span></a>
+							<a href="https://twitter.com/__AsvinKumar__" target="_blank"><span class="hb hb-xs spin"><i class="fa fa-twitter"></i></span></a>
 						</div>
 					</div>
 				</div>
@@ -570,6 +571,30 @@
 						</div>
 					</div>
 					<div class="profile text-center">
+						<img class="profile-pic img-circle" src="img/team/keshav.jpg">
+						<span class="pname">Keshav Chouksey</span>
+						<span class="pdesg">Marketing</span>
+						<a class="pemail">ch15btech11015@iith.ac.in</a>
+						<a class="pphone">+91 9424485766</a>
+						<div class="psocial">
+							<a href="https://www.facebook.com/choukseykeshav" target="_blank"><span class="hb hb-xs spin"><i class="fa fa-facebook"></i></span></a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="profile-group profile-group1" style="background-color:transparent;">
+					<div class="profile text-center">
+						<img class="profile-pic img-circle" src="img/team/vaibhav.jpg">
+						<span class="pname">Vaibhav Sinha</span>
+						<span class="pdesg">Finanace</span>
+						<a class="pemail">cs15btech11034@iith.ac.in</a>
+						<a class="pphone">+91 7032397960</a>
+						<div class="psocial">
+							<a href="https://www.facebook.com/vaibhav.sinha.33886" target="_blank"><span class="hb hb-xs spin"><i class="fa fa-facebook"></i></span></a>
+						</div>
+					</div>
+					<div class="profile text-center" style="visibility:hidden">
 						<img class="profile-pic img-circle" src="img/team/vaibhav.jpg">
 						<span class="pname">Vaibhav Sinha</span>
 						<span class="pdesg">Finanace</span>
@@ -690,6 +715,11 @@
 				});
 				if($(window).width() < 600) {
 					$(".timeline li").addClass("in-view");
+					$(".profile").each(function(i){
+							if ($(this).css("visibility") == "hidden") {
+								$(this).css("display", "none");
+							}
+					});
 				}
 			});
 		</script>
