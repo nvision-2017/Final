@@ -10,7 +10,7 @@ keystone.init({
   'less': 'public',
   'static': ['public'],
   'auto update': true,
-  'mongo': 'mongodb://localhost/nvision2017v0',
+  'mongo': 'mongodb://localhost/nvision2017',
 
   'session': true,
   'auth': true,
