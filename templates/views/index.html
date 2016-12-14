@@ -609,41 +609,35 @@
 			.setPin("#pinContainer")
 			.setTween(wipeAnimation)
 			.addTo(controller);
+
+		var controller2 = new ScrollMagic.Controller();
+				// build tween
+		var tween = new TimelineMax ()
+		.add([
+			TweenMax.fromTo("#keyart-train", 1, {top:328,left:-700}, {left:800,top: -1122, ease: Linear.easeNone}),
+			TweenMax.fromTo("#keyart-8", 1, {top:350}, {top: -1100, ease: Linear.easeNone}),
+			TweenMax.fromTo("#keyart-car", 1, {}, {left: 1006, top: -1200, ease: Linear.easeNone}),
+			TweenMax.fromTo("#keyart-7", 1, {}, {top: -1006, ease: Linear.easeNone}),
+			TweenMax.fromTo("#keyart-6", 1, {top:-60}, {top: -862, ease: Linear.easeNone}),
+			TweenMax.fromTo("#keyart-walle", 1, {top:-65}, {left:-300,top: -790, ease: Linear.easeNone}),
+			TweenMax.fromTo("#keyart-logo", 1, {top:-10}, {top: -100, ease: Linear.easeNone}),
+			TweenMax.fromTo("#keyart-5", 1, {top:-40}, {top: -719, ease: Linear.easeNone}),
+			TweenMax.fromTo("#keyart-box", 1, {top:-35}, {top: -714,left: 300, ease: Linear.easeNone}),
+			TweenMax.fromTo("#keyart-4", 1, {top:-50}, {top: -575, ease: Linear.easeNone}),
+			TweenMax.fromTo("#keyart-3", 1, {top:-50}, {top: -431, ease: Linear.easeNone}),
+			// TweenMax.fromTo("#keyart-2", 1, {}, {top: -287, ease: Linear.easeNone}),
+			TweenMax.fromTo("#keyart-1", 1, {top:-40}, {top: -144, ease: Linear.easeNone}),
+			TweenMax.fromTo("#keyart-rocket", 1, {top:-40}, {top: -1500, ease: Linear.easeNone}),
+			TweenMax.fromTo("#keyart-drone", 1, {}, {top: -200,left: -250, ease: Linear.easeNone}),
+			TweenMax.fromTo("#keyart-0", 1, {}, {top: -150, ease: Linear.easeNone})
+		]);
+
+		// build scene
+		var scene = new ScrollMagic.Scene({duration: $(window).width()})
+					.setTween(tween)
+					.addTo(controller2);
+	
 	});
-</script>
-
-	<script>
-	var controller2 = new ScrollMagic.Controller();
-</script>
-
-	<script type="text/javascript">
-
-			// build tween
-	var tween = new TimelineMax ()
-	.add([
-		TweenMax.fromTo("#keyart-train", 1, {top:328,left:-700}, {left:800,top: -1122, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-8", 1, {top:350}, {top: -1100, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-car", 1, {}, {left: 1006, top: -1200, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-7", 1, {}, {top: -1006, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-6", 1, {top:-60}, {top: -862, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-walle", 1, {top:-65}, {left:-300,top: -790, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-logo", 1, {top:-10}, {top: -100, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-5", 1, {top:-40}, {top: -719, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-box", 1, {top:-35}, {top: -714,left: 300, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-4", 1, {top:-50}, {top: -575, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-3", 1, {top:-50}, {top: -431, ease: Linear.easeNone}),
-		// TweenMax.fromTo("#keyart-2", 1, {}, {top: -287, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-1", 1, {top:-40}, {top: -144, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-rocket", 1, {top:-40}, {top: -1500, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-drone", 1, {}, {top: -200,left: -250, ease: Linear.easeNone}),
-		TweenMax.fromTo("#keyart-0", 1, {}, {top: -150, ease: Linear.easeNone})
-	]);
-
-	// build scene
-	var scene = new ScrollMagic.Scene({duration: $(window).width()})
-				.setTween(tween)
-				.addTo(controller2);
-
 </script>
 
 	<script type="text/javascript">
