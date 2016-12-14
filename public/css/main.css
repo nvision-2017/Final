@@ -160,15 +160,15 @@ body {
 }
 
 .dropdown-menu {
-  background-color: transparent;
-  text-align: center;
+  border-color: rgba(200, 200, 200, 0.8);
+  background-color: rgba(50, 50, 50, 0.3) !important;
 }
 .btnfosd {
   font-size: 1.2em;
   color: white !important;
 }
 .btnfosd:hover {
-  background-color: transparent !important;
+  /*background-color: transparent !important;*/
   color: white !important;
 }
 .btnfosd {

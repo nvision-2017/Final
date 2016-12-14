@@ -35,6 +35,7 @@ exports = module.exports = function(app) {
     app.get('/mobile', (req, res) => {
         res.send(require('../lib/detectmobilebrowser')(req));
     })
+    app.get('/about', routes.views.about);
     app.get('/', routes.views.index);
     app.get('/sponsors', routes.views.sponsors);
     app.get('/events', routes.views.events);
