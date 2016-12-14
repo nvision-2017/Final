@@ -1,0 +1,76 @@
+.keyart, .keyart_layer {
+	height: 1000px;
+}
+
+/*#parallax {
+	display: none;
+}*/
+
+.keyart {
+	position: relative;
+	z-index: 10;
+}
+
+.keyart_layer {
+	background-position: bottom center;
+	background-size: auto 1038px;
+	background-repeat: repeat-x;
+	width: 100%;
+	position: absolute;
+}
+.keyart_layer.parallax {
+	position: fixed;
+}
+	#keyart-0 {
+		background-image: url('/img/parallax/parallax0.png');
+		background-color: #ffaf1b;
+	}
+	#keyart-1 {
+		background-image: url('/img/parallax/parallax1.png');
+	}
+	#keyart-rocket {
+		background-image: url('/img/parallax/rocket.png');
+	}
+	#keyart-drone {
+		background-image: url('/img/parallax/drone.png');
+	}
+	#keyart-2 {
+		background-image: url('/img/parallax/parallax2.png');
+	}
+	#keyart-3 {
+		background-image: url('/img/parallax/parallax3.png');
+	}
+	#keyart-4 {
+		background-image: url('/img/parallax/parallax4.png');
+	}
+	#keyart-5 {
+		background-image: url('/img/parallax/parallax5.png');
+	}
+	#keyart-logo {
+		background-image: url('/img/parallax/logo.png');
+	}
+	#keyart-box {
+		background-image: url('/img/parallax/box.png');
+	}
+	#keyart-6 {
+		background-image: url('/img/parallax/parallax6.png');
+	}
+	#keyart-walle {
+		background-image: url('/img/parallax/walle.png');
+	}
+	#keyart-7 {
+		background-image: url('/img/parallax/parallax7.png');
+	}
+	#keyart-car {
+		background-image: url('/img/parallax/car.png');
+	}
+	#keyart-8 {
+		background-image: url('/img/parallax/parallax8.png');
+	}
+	#keyart-train {
+		background-image: url('/img/parallax/train.png');
+	}
+	#keyart-scrim {
+		background-color: #ffaf00;
+		opacity: 0;
+	}
