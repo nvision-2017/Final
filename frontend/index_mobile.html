@@ -23,10 +23,16 @@
 			  background-color: #00ccff;
 			  border-radius: 5px; 
 			}
+
+			body {
+				background: url(/img/sectionlbg.jpg);
+				background-color: #072347;height:100vh;width:100vw;padding:0 !important;
+			}
+
 		</style>
 
 	</head>
-<body class="thin-scrollbar" style="background-color: #072347;height:100vh;width:100vw;padding:0 !important">
+<body class="thin-scrollbar">
 
 	<div id="pre-loader"></div>
 
@@ -40,18 +46,21 @@
 		}
 		table tr td{
 			width: 50%;
-			background-color: #00ccff;
-			border: 15px solid #072347;
+			border: 15px solid transparent;
+		}
+		table tr td > div {
+			background-color: rgba(0,0,0,0.6);
+			height: 100%;
 		}
 		#logo {
-			background: url(/img/nvision.png) center no-repeat;
+			background: url(/img/nvision_b.png) center no-repeat;
 			background-size: 100%;
 		}
 		.box td {
 			text-align: center;
 			font-size: 2em;
 		}
-		.box td a {
+		.box td div a {
 			display: table;
 			overflow: hidden;
 			width: 100%;
@@ -73,28 +82,28 @@
 				<td colspan="2" id="logo"></td>
 			</tr>
 			<tr class="box">
-				<td>
+				<td><div>
 					<a href="about_mobile.html" class="content"><span>About</span></a>
-				</td>
-				<td>
+				</div></td>
+				<td><div>
 					<a href="events.html" class="content"><span>Events</span></a>
-				</td>
+				</div></td>
 			</tr>
 			<tr class="box">
-				<td>
+				<td><div>
 					<a href="exhibition.html" class="content"><span>Exhibitions</span></a>
-				</td>
-				<td>
+				</div></td>
+				<td><div>
 					<a href="sponsors.html" class="content"><span>Sponsors</span></a>
-				</td>
+				</div></td>
  			</tr>
 			<tr class="box">
-				<td>
+				<td><div>
 					<a href="workshops.html" class="content"><span>Workshops</span></a>
-				</td>
-				<td>
+				</div></td>
+				<td><div>
 					<a href="team.html" class="content"><span>Team</span></a>
-				</td>
+				</div></td>
 			</tr>
 
 		</tbody>
