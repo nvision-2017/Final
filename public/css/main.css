@@ -1,3 +1,6 @@
+html{
+  overflow-y: hidden;
+}
 @font-face {
   font-family: 'JosefinSans';
   src: url('/fonts/JosefinSans.ttf');

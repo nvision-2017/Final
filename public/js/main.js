@@ -10,6 +10,7 @@ NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
 }
 
 window.onload = function() {
+	document.getElementsByTagName("html")[0].style['overflow-y'] = "auto";
 	document.getElementById("pre-loader").remove();
 	if(typeof afterLoad === "function") afterLoad();
 }
