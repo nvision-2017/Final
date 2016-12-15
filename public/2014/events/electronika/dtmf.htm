@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html class=" -webkit-"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta charset="UTF-8">
+
+  <title>CSS Responsive animated Accordion - CodePen</title>
+
+  <link rel="stylesheet" href="http://s.codepen.io/assets/reset/reset.css">
+
+  <style>@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato';
+}
+
+h1 {
+  font-size: 2em;
+  padding: 2em;
+  text-align: center;
+}
+
+.accordion dl {
+  border: 1px solid #ddd;
+}
+.accordion dl:after {
+  content: "";
+  display: block;
+  height: 1em;
+  width: 100%;
+  background-color: rgba(20, 103, 167, 1);
+}
+.accordion dt > a {
+  text-align: center;
+  font-weight: 700;
+  padding: 2em;
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  -webkit-transition: background-color 0.5s ease-in-out;
+}
+.accordion dd {
+  background-color: #eee;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+.accordion dd > p {
+  padding: 1em 2em 1em 2em;
+}
+
+.accordion {
+  position: relative;
+  background-color: #eee;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2em 0 2em 0;
+}
+
+.accordionTitle {
+  background-color: rgba(20, 103, 167, 1);
+  border-bottom: 1px solid rgba(20, 103, 167, 1);
+}
+.accordionTitle:before {
+  content: "+";
+  font-size: 1.5em;
+  line-height: 0.5em;
+  float: left;
+  -moz-transition: -moz-transform 0.3s ease-in-out;
+  -o-transition: -o-transform 0.3s ease-in-out;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
+.accordionTitle:hover {
+  background-color: rgba(15,25,134,1);
+}
+
+.accordionTitleActive {
+  background-color: rgba(15,25,134,1);
+}
+.accordionTitleActive:before {
+  -webkit-transform: rotate(-225deg);
+  -moz-transform: rotate(-225deg);
+  transform: rotate(-225deg);
+}
+
+.accordionItem {
+  height: auto;
+  overflow: hidden;
+}
+@media all {
+  .accordionItem {
+    max-height: 50em;
+    -moz-transition: max-height 1s;
+    -o-transition: max-height 1s;
+    -webkit-transition: max-height 1s;
+    transition: max-height 1s;
+  }
+}
+@media screen and (min-width: 48em) {
+  .accordionItem {
+    max-height: 500em;
+    -moz-transition: max-height 0.5s;
+    -o-transition: max-height 0.5s;
+    -webkit-transition: max-height 0.5s;
+    transition: max-height 0.5s;
+  }
+}
+
+.accordionItemCollapsed {
+  max-height: 0;
+}
+
+.animateIn {
+  -webkit-animation-name: accordionIn;
+  -webkit-animation-duration: 0.65s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-delay: 0s;
+  -moz-animation-name: normal;
+  -moz-animation-duration: 0.65s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-direction: alternate;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-fill-mode: both;
+  -moz-animation-delay: 0s;
+  -webkit-animation-name: accordionIn;
+  -webkit-animation-duration: 0.65s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-delay: 0s;
+}
+
+.animateOut {
+  -webkit-animation-name: accordionOut;
+  -webkit-animation-duration: 0.75s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-delay: 0s;
+  -moz-animation-name: accordionOut;
+  -moz-animation-duration: 0.75s;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-direction: alternate;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-fill-mode: both;
+  -moz-animation-delay: 0s;
+  -webkit-animation-name: accordionOut;
+  -webkit-animation-duration: 0.75s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: both;
+  -webkit-animation-delay: 0s;
+}
+
+@-webkit-keyframes accordionIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+}
+@-moz-keyframes accordionIn {
+  0% {
+    opacity: 0;
+    -moz-transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    -moz-transform: scale(1);
+  }
+}
+@-webkit-keyframes accordionIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes accordionOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+  }
+}
+@-moz-keyframes accordionOut {
+  0% {
+    opacity: 1;
+    -moz-transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: scale(0.8);
+  }
+}
+@-webkit-keyframes accordionOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}</style>
+
+  <script>
+    window.open    = function(){};
+    window.print   = function(){};
+    // Support hover state for mobile.
+    if (false) {
+      window.ontouchstart = function(){};
+    }
+  </script>
+
+    <script src=".../scripts/js/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="container">
+          <h1 style="color:#ffffff;">DTMF RACE</h1>
+          <div class="accordion">
+            <dl>
+              <dt><a class="accordionTitle" href="#" >Introduction</a></dt>
+              <dd class="accordionItem animateOut accordionItemCollapsed">
+                <p>A competition can never be fair. One uses all the means available to reach to that final goal of victory which everyone dreams of. So, it is not just winning anymore but how you win one.<br>Crush your competitors and hold the victory cup that is within your hand’s reach.</p><p style="font-weight:900">Problem Statement</p><p>The participants will pre­design a DTMF controlled bot which should be capable of performing these two tasks:
+<br>
+1. Completing an obstacle race.
+<br>
+2. Throw the opponent bot out of the arena</p></dd>
+                <dt><a class="accordionTitle" href="#">Rules And Regulation</a></dt>
+              <dd class="accordionItem animateOut accordionItemCollapsed">
+                <p style="font-weight:900">Event Format:</p>
+<p>The event is divided into two rounds.<br>
+<font style="font-weight:900">1. Obstacle race:</font><br>
+As the name suggests, the bot has to complete a track having various obstacles. Your bot has to complete the race overcoming and avoiding various obstacles in the least possible time. The top 8 teams with the shortest time elapsed will proceed further to the next round.<br>
+<font style="font-weight:900">2. Sumo fight:</font><br>
+In this round bots will be released in the arena. Bots will have to move the opponent bot out of the arena, without destroying the bot. The arena is most likely a circular one resembling that of Sumo wrestling. This is a knock out round. So the bot that remains till last wins the event.
+<p style="font-weight:900">Design Specifications:</p>
+<p>Weight limit – 2kg.
+<br>Max Power supply – 12v.
+<br>The dimensions of the bot should not exceed 25*25*25cm (l*b*h). (*excluding the arm)
+<br>You can have an arm to move the opponent out of the arena.
+<br>The arm can be detached during the race.
+<br>The maximum extension of arm should be 7.5cm out of the bot dimensions, at any instant of time.</p>
+<p style="font-weight:900">Rules:</p>
+<p>A team may consist of a maximum of 4 members.
+<br>All members of team need to register for the event.
+<br>If a team is not ready when their challenge round is called by the judge, the team forfeits and the opposing team is declared the winner by default.
+<br>The arm should not be sharp or should not contain any cutting tool.
+<br>The machine should be controlled by a wireless remote control mechanism throughout the race.
+<br>The machine must not be made from Lego parts, or any ready­made assembly kits.
+<br>Each team is allowed to have only one machine.
+<br>The machines have to use an on­board power supply. No external power supply will be allowed.
+<br>Teams shall bring their own power supply for all its machines.
+<br>Pneumatics and hydraulics is not allowed.
+<br>You are not allowed to destroy the opponent’s bot.
+<br>After a bot successfully completes a round, that team will be allowed to "repair" their bot before the next round, time permitting.
+<br>The participants are not allowed to touch the robot during the duel.
+<br>Organizer’s decision shall be treated as final and binding on all.
+<br>Participants are not allowed to keep anything inside the arena other than their bot in the second round.</p>
+<p style="font-weight:900">Judging Criteria:</p>
+<p>In the first round the bots have to complete the track in minimum time. Top 8 teams with shortest time will be selected for the second round. The track for the Obstacle race will be made up of different terrains with obstacles to test the participant’s control of the bot. It’s made wide enough for one bot to navigate freely. In the second round the selected team have to compete against each other in the knockout round. After that there will be quarter final, semifinals and final to select the ultimate winner. Bot leaving the arena during the fight loses. If the bot is unable to move the opponent out within the time constraints then the most aggressive bot will be the winner. Aggressiveness will be decided by the attempts taken by the bot and will be decided by the judges.</p>
+<table width="100%" style="text-align:center"><tr>
+<td><img src="/images/DTMF 3.png" height="240" width="240" /></td>
+<td><img src="/images/DTMF 2.png" height="240" width="240" /></td>
+<td><img src="/images/DTMF 1.png" height="240" width="240" /></td></tr></table></dd>
+              <dt><a class="accordionTitle" href="#">Registration</a></dt>
+              <dd class="accordionItem animateOut accordionItemCollapsed">
+                <p>Coming Soon!</p> </dd>
+              <dt><a class="accordionTitle" href="#">Contact Us</a></dt>
+              <dd class="accordionItem animateOut accordionItemCollapsed">
+             <p style="font-weight:900">Organizers</p><p>Rahul Garg<br>ce13b1020@iith.ac.in<br>9494825911</p>
+             <p>Sitanshu Patil<br>me13b1028@iith.ac.in<br>9494827473</p> </dd>
+            </dl>
+          </div>
+        </div>
+
+  <script src=".../scripts/js/localstorage.js"></script>
+  <script src=".../scripts/js/remember_scroll.js"></script>
+  <script>RememberScroll.init();</script>
+
+  <script>
+    if (document.location.search.match(/type=embed/gi)) {
+      window.parent.postMessage('resize', "*");
+    }
+  </script>
+
+  <script>
+    /*!
+ * classie - class helper functions
+ * from bonzo https://github.com/ded/bonzo
+ *
+ * classie.has( elem, 'my-class' ) -> true/false
+ * classie.add( elem, 'my-new-class' )
+ * classie.remove( elem, 'my-unwanted-class' )
+ * classie.toggle( elem, 'my-class' )
+ */
+
+/*jshint browser: true, strict: true, undef: true */
+/*global define: false */
+
+( function( window ) {
+
+'use strict';
+
+// class helper functions from bonzo https://github.com/ded/bonzo
+
+function classReg( className ) {
+  return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
+}
+
+// classList support for class management
+// altho to be fair, the api sucks because it won't accept multiple classes at once
+var hasClass, addClass, removeClass;
+
+if ( 'classList' in document.documentElement ) {
+  hasClass = function( elem, c ) {
+    return elem.classList.contains( c );
+  };
+  addClass = function( elem, c ) {
+    elem.classList.add( c );
+  };
+  removeClass = function( elem, c ) {
+    elem.classList.remove( c );
+  };
+}
+else {
+  hasClass = function( elem, c ) {
+    return classReg( c ).test( elem.className );
+  };
+  addClass = function( elem, c ) {
+    if ( !hasClass( elem, c ) ) {
+      elem.className = elem.className + ' ' + c;
+    }
+  };
+  removeClass = function( elem, c ) {
+    elem.className = elem.className.replace( classReg( c ), ' ' );
+  };
+}
+
+function toggleClass( elem, c ) {
+  var fn = hasClass( elem, c ) ? removeClass : addClass;
+  fn( elem, c );
+}
+
+var classie = {
+  // full names
+  hasClass: hasClass,
+  addClass: addClass,
+  removeClass: removeClass,
+  toggleClass: toggleClass,
+  // short names
+  has: hasClass,
+  add: addClass,
+  remove: removeClass,
+  toggle: toggleClass
+};
+
+// transport
+if ( typeof define === 'function' && define.amd ) {
+  // AMD
+  define( classie );
+} else {
+  // browser global
+  window.classie = classie;
+}
+
+})( window );
+
+//fake jQuery
+var $ = function(selector){
+  return document.querySelector(selector);
+}
+var accordion = $('.accordion');
+
+//add event listener to all anchor tags with accordion title class
+accordion.addEventListener("click",function(e) {
+  e.stopPropagation();
+  e.preventDefault();
+  if(e.target && e.target.nodeName == "A") {
+    var classes = e.target.className.split(" ");
+    if(classes) {
+      for(var x = 0; x < classes.length; x++) {
+        if(classes[x] == "accordionTitle") {
+          var title = e.target;
+
+          //next element sibling needs to be tested in IE8+ for any crashing problems
+          var content = e.target.parentNode.nextElementSibling;
+
+          //use classie to then toggle the active class which will then open and close the accordion
+
+          classie.toggle(title, 'accordionTitleActive');
+          //this is just here to allow a custom animation to treat the content
+          if(classie.has(content, 'accordionItemCollapsed')) {
+            if(classie.has(content, 'animateOut')){
+              classie.remove(content, 'animateOut');
+            }
+            classie.add(content, 'animateIn');
+
+          }else{
+             classie.remove(content, 'animateIn');
+             classie.add(content, 'animateOut');
+          }
+          //remove or add the collapsed state
+          classie.toggle(content, 'accordionItemCollapsed');
+
+        }
+      }
+    }
+
+  }
+});
+    //@ sourceURL=pen.js
+  </script>
+
+
+
+
+</body></html>
