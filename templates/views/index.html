@@ -399,7 +399,7 @@
 			
 			.p1-content {
 				height: 100%;
-				overflow-y: scroll;
+				overflow-y: auto;
 				color: #fff;
 				position: relative;
 				padding: 1em;
@@ -452,34 +452,14 @@
 				<div style="width:100vw;height:100vh;position:fixed;top:0;left:0;z-index:1000;background:rgba(7, 35, 71,1);text-align:center">
 					<style type="text/css">
 						#ss-init-text {
-							font-size: 5em;
+							font-size: 9em;
 							color: #fff;
 							position: fixed;
 							top: 30%;
-							left: 39%;
-						}
-						
-						#slideShowInit {
-							font-weight: bold;
-							color: #fff;
-							background: rgba(7, 35, 71, 1);
-							border: 2px solid #fff;
-							position: fixed;
-							top: 45%;
-							left: 36%;
-							font-size: 2em;
-							padding: 1em 3em;
-							transition-timing-function: ease-in-out;
-							transition-duration: 0.3s;
-						}
-						
-						#slideShowInit:hover {
-							color: rgba(7, 35, 71, 1);
-							background: #fff;
+							left: 34%;
 						}
 					</style>
 					<div id="ss-init-text">Glimpses</div>
-					<button id="slideShowInit">Start Slideshow</button>
 				</div>
 
 				<div class="p-content-slideshow">
@@ -653,6 +633,20 @@
 	});
 </script>
 
+
+			<script type="text/javascript">
+				var sFlag = false;
+				var h = (window.innerHeight > 0) ? window.innerHeight : screen.height;
+				$(document).on('scroll', function() {
+					if(!sFlag){
+					    if($(this).scrollTop()>=$('#ss-init-text').position().top+(h*2)){
+					        sFlag = true;	
+							$("#ss-init-text").parent().remove();
+							slideShowInit();
+					    }
+					}
+				});
+			</script>
 
 
 	<!-- <script src="/js/updates.js"></script> -->
