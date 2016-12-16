@@ -18,6 +18,7 @@
 	<meta property="og:url" content="nvision.org.in">
 	<meta property="og:description" content="&eta;vision: techno-management Fest of IIT Hyderabad">
 	
+	<link rel="stylesheet" href="/css/animate.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/materialize.min.css">
 	<link rel="stylesheet" href="css/main.css">
@@ -77,8 +78,6 @@
 		#navbar-top {
 			background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2));
 		}
-	</style>
-	<style>
 		.md-close {
 			color: #fff;
 			margin-top: 6em !important;
@@ -102,6 +101,25 @@
 		.md-content {
 			background-color: rgba(0, 0, 0, 0.8) !important;
 		}
+
+		html {
+      overflow-x: hidden;
+    }
+
+    .event-nav a {
+      color: #fff;
+    }
+    
+    .event-nav a:hover {
+      background: url(/img/buried.png);
+      color: rgba(0, 77, 77, 1);
+      border-radius: 0;
+    }
+    
+    li.active a {
+      background: url(/img/buried.png);
+      border-radius: 0;
+    }
 	</style>
 </head>
 
@@ -259,57 +277,67 @@
 		</div>
 	</nav>
 
-	<div class="container-fluid">
-		<div id="content-div">
-			<div class="row center" id="page-title">
-				<div class="col-xs-12">
-					<h1 style="font-size:2.5em;">WORKSHOPS</h1>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6 text-center thumbnail" style="background-color:transparent;border:0;padding:2em;">
-					<img class="img-responsive center-block" src="img/workshops/solar.jpg">
-					<p style="font-size:1em;margin-top:1em;">
-						ηvision, IIT Hyderabad and Elan, IIT Hyderabad in association with kWatt Solutions Pvt. Ltd. and S-SparQ now brings to you
-						a workshop on solar energy. You'll gain practical knowledge and skills to develop solar products. You'll also be able
-						to design and set up a solar power plant for your home/college.
-					</p>
-					<a href="https://nvision.org.in/workshop" target="_blank" id="register-btn">More</a>
-				</div>
-				<div class="col-md-6 text-center thumbnail" style="background-color:transparent;border:0;padding:2em;">
-					<img class="img-responsive center-block" src="img/workshops/sixthsense.jpg">
-					<p style="font-size:1em;margin-top:1em;">
-						ηvision, IIT Hyderabad in association with TechieNest now brings to you a workshop on sixth sense technology. You'll build
-						gesture controlled robots and explore more appplications of sixth sense technology like gesture controlled music players,
-						web browsing and more cool stuff.
-					</p>
-					<a href="https://nvision.org.in/sixth_sense" target="_blank" id="register-btn">More</a>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6 text-center thumbnail" style="background-color:transparent;border:0;padding:2em;">
-					<img class="img-responsive center-block" src="img/workshops/wac.jpg">
-					<p style="font-size:1em;margin-top:1em;">
-						ηvision, IIT Hyderabad now brings to you a series of workshops. ηvision, IIT Hyderabad in association with What After College
-						presents you with workshops on differnet fields.
-					</p>
-					<a href="https://nvision.org.in/what-after-college" target="_blank" id="register-btn">More</a>
-				</div>
-				<div class="col-md-6 text-center thumbnail" style="background-color:transparent;border:0;padding:2em;">
-					<img class="img-responsive center-block" src="img/workshops/fitnessband.jpg">
-					<p style="font-size:1em;margin-top:1em;">
-						ηvision, IIT Hyderabad now brings to you the first workshop of the year 2016. As the name suggests it's a workshop on fitness
-						band. ηvision, IIT Hyderabad in association with Robokart presents you with an opportunity to learn how to make a fitness
-						band on your own.
-					</p>
-					<a href="https://nvision.org.in/fitnessband" target="_blank" id="register-btn">More</a>
-				</div>
-			</div>
-		</div>
-
-
-
-	</div>
+  <div class="container-fluid">
+    <div class="row center">
+      <div class="col-xs-12">
+        <h1 style="font-size:4em;margin:0.2em">WORKSHOPS</h1>
+        <ul class="nav nav-tabs">
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked animated bounceInLeft event-nav">
+          <li class="active"><a href="#tab-w1" data-toggle="pill">Solar Energy Workshop</a></li>
+          <li><a href="#tab-w2" data-toggle="pill">Sixth Sense Workshop</a></li>
+          <li><a href="#tab-w3" data-toggle="pill">WAC Workshops</a></li>
+          <li><a href="#tab-w4" data-toggle="pill">Fitness Band Workshop</a></li>
+        </ul>
+        <div class="hidden-xs hidden-sm event-icon animated slideInLeft">
+          <img class="img-responsive center-block" src="{{image}}">
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="row tab-content">
+          <div class="tab-pane active animated bounceInUp" id="tab-w1">
+			<div class="col-md-8 col-md-offset-2"><img class="img-responsive center-block" src="img/workshops/solar.jpg"></div>
+			<div class="col-md-12 center"><p style="font-size:1em;margin-top:1em;">
+				ηvision, IIT Hyderabad and Elan, IIT Hyderabad in association with kWatt Solutions Pvt. Ltd. and S-SparQ now brings to you
+				a workshop on solar energy. You'll gain practical knowledge and skills to develop solar products. You'll also be able
+				to design and set up a solar power plant for your home/college.
+			</p>
+			<a href="https://nvision.org.in/workshop" target="_blank" id="register-btn">More</a></div>
+          </div>
+          <div class="tab-pane animated bounceInUp" id="tab-w2">
+            <div class="col-md-8 col-md-offset-2"><img class="img-responsive center-block" src="img/workshops/sixthsense.jpg"></div>
+			<div class="col-md-12 center"><p style="font-size:1em;margin-top:1em;">
+				ηvision, IIT Hyderabad in association with TechieNest now brings to you a workshop on sixth sense technology. You'll build
+				gesture controlled robots and explore more appplications of sixth sense technology like gesture controlled music players,
+				web browsing and more cool stuff.
+			</p>
+			<a href="https://nvision.org.in/sixth_sense" target="_blank" id="register-btn">More</a></div>
+          </div>
+		  <div class="tab-pane animated bounceInUp" id="tab-w3">
+            <div class="col-md-8 col-md-offset-2"><img class="img-responsive center-block" src="img/workshops/wac.jpg"></div>
+			<div class="col-md-12 center"><p style="font-size:1em;margin-top:1em;">
+				ηvision, IIT Hyderabad now brings to you a series of workshops. ηvision, IIT Hyderabad in association with What After College
+				presents you with workshops on differnet fields.
+			</p>
+			<a href="https://nvision.org.in/what-after-college" target="_blank" id="register-btn">More</a></div>
+          </div>
+		  <div class="tab-pane animated bounceInUp" id="tab-w4">
+            <div class="col-md-8 col-md-offset-2"><img class="img-responsive center-block" src="img/workshops/fitnessband.jpg"></div>
+			<div class="col-md-12 center"><p style="font-size:1em;margin-top:1em;">
+				ηvision, IIT Hyderabad now brings to you the first workshop of the year 2016. As the name suggests it's a workshop on fitness
+				band. ηvision, IIT Hyderabad in association with Robokart presents you with an opportunity to learn how to make a fitness
+				band on your own.
+			</p>
+			<a href="https://nvision.org.in/fitnessband" target="_blank" id="register-btn">More</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>	
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
