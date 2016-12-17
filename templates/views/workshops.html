@@ -30,7 +30,7 @@
 			padding-top: 70px;
 		}
 		
-		#register-btn {
+		.register-btn {
 			display: inline-block;
 			vertical-align: middle;
 			background: #1AAB8A;
@@ -45,13 +45,13 @@
 			outline: none;
 		}
 		
-		#register-btn:hover {
+		.register-btn:hover {
 			background: #000;
 			color: #1AAB8A;
 		}
 		
-		#register-btn:before,
-		#register-btn:after {
+		.register-btn:before,
+		.register-btn:after {
 			content: '';
 			position: absolute;
 			top: 0;
@@ -62,15 +62,15 @@
 			transition: 400ms ease all;
 		}
 		
-		#register-btn:after {
+		.register-btn:after {
 			right: inherit;
 			top: inherit;
 			left: 0;
 			bottom: 0;
 		}
 		
-		#register-btn:hover:before,
-		#register-btn:hover:after {
+		.register-btn:hover:before,
+		.register-btn:hover:after {
 			width: 100%;
 			transition: 800ms ease all;
 		}
@@ -278,7 +278,7 @@
 						<ul class="dropdown-menu">
 							<li><a href="https://old.nvision.org.in/" class="btnfos btnfosd" target="_blank">2016</a></li>
 							<li>
-								<a href="/2014" class="btnfos btnfosd" target="_blank"></svg>2014</a>
+								<a href="/2014" class="btnfos btnfosd" target="_blank">2014</a>
 							</li>
 						</ul>
 					</li>
@@ -303,9 +303,6 @@
           <li><a href="#tab-w3" data-toggle="pill">WAC Workshops</a></li>
           <li><a href="#tab-w4" data-toggle="pill">Fitness Band Workshop</a></li>
         </ul>
-        <div class="hidden-xs hidden-sm event-icon animated slideInLeft">
-          <img class="img-responsive center-block" src="{{image}}">
-        </div>
       </div>
       <div class="col-md-9">
         <div class="row tab-content">
@@ -316,7 +313,7 @@
 				a workshop on solar energy. You'll gain practical knowledge and skills to develop solar products. You'll also be able
 				to design and set up a solar power plant for your home/college.
 			</p>
-			<a href="https://nvision.org.in/workshop" target="_blank" id="register-btn">More</a></div>
+			<a href="https://nvision.org.in/workshop" target="_blank" class="register-btn">More</a></div>
           </div>
           <div class="tab-pane animated bounceInUp" id="tab-w2">
             <div class="col-md-8 col-md-offset-2"><img class="img-responsive center-block" src="img/workshops/sixthsense.jpg"></div>
@@ -325,7 +322,7 @@
 				gesture controlled robots and explore more appplications of sixth sense technology like gesture controlled music players,
 				web browsing and more cool stuff.
 			</p>
-			<a href="https://nvision.org.in/sixth_sense" target="_blank" id="register-btn">More</a></div>
+			<a href="https://nvision.org.in/sixth_sense" target="_blank" class="register-btn">More</a></div>
           </div>
 		  <div class="tab-pane animated bounceInUp" id="tab-w3">
             <div class="col-md-8 col-md-offset-2"><img class="img-responsive center-block" src="img/workshops/wac.jpg"></div>
@@ -333,7 +330,7 @@
 				ηvision, IIT Hyderabad now brings to you a series of workshops. ηvision, IIT Hyderabad in association with What After College
 				presents you with workshops on differnet fields.
 			</p>
-			<a href="https://nvision.org.in/what-after-college" target="_blank" id="register-btn">More</a></div>
+			<a href="https://nvision.org.in/what-after-college" target="_blank" class="register-btn">More</a></div>
           </div>
 		  <div class="tab-pane animated bounceInUp" id="tab-w4">
             <div class="col-md-8 col-md-offset-2"><img class="img-responsive center-block" src="img/workshops/fitnessband.jpg"></div>
@@ -342,7 +339,7 @@
 				band. ηvision, IIT Hyderabad in association with Robokart presents you with an opportunity to learn how to make a fitness
 				band on your own.
 			</p>
-			<a href="https://nvision.org.in/fitnessband" target="_blank" id="register-btn">More</a></div>
+			<a href="https://nvision.org.in/fitnessband" target="_blank" class="register-btn">More</a></div>
           </div>
         </div>
       </div>
