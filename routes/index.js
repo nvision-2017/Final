@@ -34,7 +34,10 @@ exports = module.exports = function(app) {
     // views
     app.get('/mobile', (req, res) => {
         res.send(require('../lib/detectmobilebrowser')(req));
-    })
+    });
+    app.get('/iotduino', (req, res) => {
+        res.redirect('/iotDuino');
+    });
     app.get('/about', routes.views.about);
     app.get('/', routes.views.index);
     app.get('/sponsors', routes.views.sponsors);
