@@ -45,6 +45,9 @@ exports = module.exports = function (app) {
     app.get('/iotduino', (req, res) => {
         res.redirect('/iotDuino');
     });
+    app.get('/mobilemaking', (req, res) => {
+        res.redirect('/mobileMaking');
+    });
     app.get('/about', routes.views.about);
     app.get('/', routes.views.index);
     app.get('/sponsors', routes.views.sponsors);
