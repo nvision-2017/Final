@@ -9,6 +9,10 @@
   /*text-transform: uppercase !important;*/
 }
 
+.navbar-nav li {
+      text-align: center;
+    }
+
 body {
 	background-color: #000;
 	color: white;
