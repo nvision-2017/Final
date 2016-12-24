@@ -8,7 +8,7 @@ handlers.getEvents = (req, res) => {
     .then(events => {
       res.json(events);
     }, err => {
-      res.err(err);
+      res.json({error:err});
     })
 };
 
@@ -16,7 +16,7 @@ handlers.getEventsOfDomain = (req, res) => {
   Event.model.find({
     domain: req.params.domain
   })
-    .then(evts => res.json(evts), err => res.json(err));
+    .then(evts => res.json(evts), err => res.json({error:err}));
 };
 
 module.exports = exports = handlers;

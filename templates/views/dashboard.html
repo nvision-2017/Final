@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-	<title>{{name}} | &eta;vision 2017 | Techno management fest of IIT Hyderabad</title>
+	<title>&eta;vision 2017 | Techno management fest of IIT Hyderabad</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="&eta;vision is the techno-management fest of IIT Hyderabad.">
 	<meta name="copyright" content="&eta;vision 2017">
@@ -15,7 +15,7 @@
 	<meta property="og:title" content="&eta;vision 2017">
 	<meta property="og:type" content="website">
 	<meta property="og:image" content="https://nvision.org.in/img/logo.png">
-	<meta property="og:url" content="https://nvision.org.in{{link}}/">
+	<meta property="og:url" content="https://nvision.org.in/dashboard/">
 	<meta property="og:description" content="&eta;vision: techno-management Fest of IIT Hyderabad">
   
   <link rel="stylesheet" href="/css/animate.css">
@@ -325,47 +325,25 @@
   <div class="container-fluid">
     <div class="row center">
       <div class="col-xs-12">
-        <h1 style="font-size:4em;margin:0.2em">{{name}}</h1>
+        <h1 style="font-size:4em;margin:0.2em">Dashboard</h1>
         <ul class="nav nav-tabs">
         </ul>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-3">
-        <ul class="nav nav-pills nav-stacked animated bounceInLeft event-nav">
-          <li class="active"><a href="#tab-intro" data-toggle="pill">Introduction</a></li>
-          <li><a href="#tab-rules" data-toggle="pill">Rules</a></li>
-          {{#if registered}}
-          <li><a href="#tab-register" id="registerbtn" data-toggle="pill">Unregister</a></li>
-          {{else}}
-          <li><a href="#tab-register" id="registerbtn" data-toggle="pill">Register</a></li>
-          {{/if}}
-        </ul>
-        <div class="hidden-xs hidden-sm event-icon animated slideInLeft">
-          <img class="img-responsive center-block" src="{{image}}">
-        </div>
+      {{#if emailnv}}
+      <div class="col-lg-12">
+        <p>Email not verified. Check your mail for verification email. <a href="#" id="resendv">Resend verification email</a></p>
       </div>
-      <div class="col-md-9">
-        <div class="row">
-          <div class="col-md-8"></div>
-          <div class="col-md-4 animated bounceInRight">
-            {{#if prize}}
-            <div class="prize-div">Prizes worth&emsp;&#8377;&nbsp;{{prize}}</div>{{/if}}
-          </div>
-        </div>
-        <div class="row tab-content">
-          <div class="tab-pane active animated bounceInUp" id="tab-intro">
-            <p class="" style="font-size:1.5em;width:100%;padding:0.3em;">
-              {{introduction}}
-            </p>
-          </div>
-          <div class="tab-pane animated zoomIn" id="tab-rules">
-            <p class="" style="font-size:1.5em;width:100%;padding:0.3em;">
-              {{rules}}
-            </p>
-          </div>
-        </div>
+      {{else}}
+      {{#each reg}}
+      <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12 center" style="padding: 0 2em;margin: 2em;background: url('/img/buried.png');background-color: #555;">
+        <h5>{{this.event.name}}</h5>
+        <a href="{{this.event.link}}"><img class="img-responsive" src="{{this.event.image}}"></a>
+        <a href="#" class="unregister" data-id="{{this.event._id}}" style="text-align: center;color: white;padding: 1em;">Unregister</a>
       </div>
+      {{/each}}
+      {{/if}}
     </div>
   </div>
 
@@ -374,34 +352,26 @@
   <script src="/js/materialize.min.js"></script>
   <script src="/js/main.js"></script>
   <!-- <script src="/js/updates.js"></script> -->
-
   <script>
-    let reg = {{registered}};
     $(document).ready(function(){
-      $('#registerbtn').click(function(data, sts){
-        if (!reg) {
-          $.post('/events/{{_id}}/register', function(data, sts){
-            if (data.status) {
-              $('#registerbtn').html('Unregister');
-              reg = !reg;
-            }
-            else {
-              alert(data.message);
-            }
-          });
-        }
-        else {
-          $.post('/events/{{_id}}/unregister', function(data, sts){
-            if (data.status) {
-              $('#registerbtn').html('Register');
-              reg = !reg;
-            }
-            else {
-              alert(data.message);
-            }
-          });
-        }
+      {{#if emailnv}}
+      $("#resendv").click(function(){
+        $.post('/resendemail', function(data, sts){
+          if (data.status) {
+            alert('Rsent email');
+          }
+        });
       });
+      {{else}}
+      $(".unregister").click(function(){
+        var th = $(this);
+        $.post('/events/'+$(this).attr('data-id')+'/unregister', function(data, sts){
+          if (data.status) {
+            th.parent().remove();
+          }
+        });
+      });
+      {{/if}}
     });
   </script>
 </body>

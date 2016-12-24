@@ -9,7 +9,7 @@ handlers.getEvents = (req, res) => {
     .then(events => {
       res.json(events);
     }, err => {
-      res.err(err);
+      res.json({error:err});
     })
 };
 
@@ -17,22 +17,22 @@ handlers.getEventsOfDomain = (req, res) => {
   Event.model.find({
     domain: req.params.domain
   })
-    .then(evts => res.json(evts), err => res.err(err));
+    .then(evts => res.json(evts), err => res.json({error:err}));
 };
 
 handlers.getDomains = (req, res) => {
   Domain.model.find()
-    .then(d => res.json(d), e => res.err(e));
+    .then(d => res.json(d), e => res.json({error:e}));
 };
 
 handlers.getDomain = (req, res) => {
   Domain.model.findById(req.params.domain)
-    .then(d => res.json(d), e => res.err(e));
+    .then(d => res.json(d), e => res.json({error:e}));
 };
 
 handlers.getEvent = (req, res) => {
   Event.model.findById(req.params.event)
-    .then(e => res.json(e), e => res.err(e));
+    .then(e => res.json(e), e => res.json({error:e}));
 };
 
 module.exports = exports = handlers;

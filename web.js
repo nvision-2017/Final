@@ -4,6 +4,7 @@ const cons = require('consolidate');
 
 keystone.init({
   'name': 'nvision 2017',
+  'brand': 'nvision 2017',
 
   'favicon': 'public/favicon.ico',
   'less': 'public',
@@ -13,6 +14,9 @@ keystone.init({
 
   'session': true,
   'auth': true,
+  'signin url': '/signin',
+  'signin redirect': '/dashboard',
+  'signout redirect': '/signin',
   'user model': 'User',
   'cookie secret': 'This is a Huuge Secret',
   'views': 'templates/views',
