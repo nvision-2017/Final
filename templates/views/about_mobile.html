@@ -188,10 +188,22 @@
 					</ul>
 				</li>
 				<li>
-					<a href="/signin" class="btnfos">
-						<svg>
+					{{#if user}}
+						<a href="#" class="btnfos dropdown-toggle" data-toggle="dropdown">
+							<svg>
+								<rect x="0" y="0" fill="none" width="100%" height="100%" />
+							</svg>Hi, {{user.name.first}}<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+							<li><a href="/dashboard" class="btnfos btnfosd" style="width: 10em;">Dashboard</a></li>
+							<li><a href="/keystone/signout" class="btnfos btnfosd" style="width: 10em;">Signout</a></li>
+							</ul>
+						{{else}}
+						<a href="/signin" class="btnfos">
+							<svg>
 							<rect x="0" y="0" fill="none" width="100%" height="100%" />
-						</svg>Login</a>
+							</svg>Register</a>
+						{{/if}}
 				</li>
 			</ul>
 			<style>
