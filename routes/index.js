@@ -4,45 +4,9 @@ importRoutes = keystone.importer(__dirname),
 User = keystone.list('User'),
 Registration = keystone.list('Registration');
 
-var nodemailer = require('nodemailer');
-var transporter = nodemailer.createTransport(process.env.SMTP_EMAIL);
 var randtoken = require('rand-token');
 
-function sendVEmail(tk, email, cb) {
-    var mailOptions = {
-        from: 'nvision 2017 <nvison2k17@gmail.com>',
-        to: email,
-        subject: 'Email verfication',
-        text: `Verify your email here : https://nvision.org.in/verify?token=${tk}`,
-        html: `
-        <div style="width:100%;background-color:#072347;padding:3em 0 6em 0">
-	<div style="
-		background-image:url(https://nvision.org.in/img/nvision.png);
-		height:10em;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: contain;
-	"></div>
-	<p style="color:#fff;font-size:1.2em;text-align:center">
-		Here is the last step of your signup.<br><br>
-		<a href="https://nvision.org.in/verify?token=${tk}" style="text-decoration: none;background-color:#00ccff;color:#072347;padding:6px;border-radius:3px">Click me</a> to verify your email<br><br>
-
-		(or) copy and paste this below link in your web browser<br>
-		<a href="https://nvision.org.in/verify?token=${tk}" style="color:#00ccff">https://nvision.org.in/verify?token=${tk}</a>
-	</p>
-
-	<p style="color:#fff;font-size:1.2em;text-align:center">
-		Thank You,<br>
-		&eta;vision team
-	</p>
-</div>
-        `
-    };
-    transporter.sendMail(mailOptions, function(err, info){
-        if (err) return console.log(err);
-        console.log('Message sent : '+info.response);
-    });
-}
+var sendVEmail = require('./mail');
 
 const jwt = require('jsonwebtoken');
 
