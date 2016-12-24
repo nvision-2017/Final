@@ -25,7 +25,7 @@
 	<link rel="stylesheet" type="text/css" href="/css/hexagon.css">
 	<link rel="stylesheet" type="text/css" href="/css/style.css">
 	<link rel="stylesheet" href="/css/animate.css">
-	<!-- <link rel="stylesheet" href="css/updates.css"> -->
+	<link rel="stylesheet" href="css/updates.css">
 	<style>
 		body {
 			padding-top: 70px !important;
@@ -44,8 +44,8 @@
 		}
 		
 		.md-close:hover {
-			background-color: #fff;
-			color: #000;
+			background-color: #fff !important;
+			color: #000 !important;
 		}
 		
 		.md-content {
@@ -93,7 +93,7 @@
 	</style>
 	<div id="WebGL-output"></div>
 
-	<!-- <div class="md-modal md-effect-19 md-effect-12 md-effect-13" id="updates-modal" style="text-align:center">
+	<div class="md-modal md-effect-19 md-effect-12 md-effect-13" id="updates-modal" style="text-align:center">
 			<div class="md-content">
 				<h3><b>Updates</b></h3>
 				<div>
@@ -106,7 +106,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="md-overlay"></div> -->
+		<div class="md-overlay"></div>
 	<!-- the overlay element -->
 
 	<nav id="navbar-top" class="navbar navbar-inverse navbar-fixed-top" style="z-index:1000;">
@@ -118,7 +118,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/">
+				<a class="navbar-brand mobile" href="/">
 					<img id="navlogo" alt="Brand" src="img/nvision.png">
 				</a>
 			</div>
@@ -133,7 +133,7 @@
 					<div class="divider"></div>
 				</li>
 
-				<!-- <li><a href="#" class="btnfos md-trigger md-setperspective" data-modal="updates-modal" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Updates&nbsp;<span style="color:#f00;font-size:1.2em;font-weight:bold">&#33;</span></a></li> -->
+				<li><a href="#" class="btnfos md-trigger md-setperspective" data-modal="updates-modal" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Updates&nbsp;<span style="color:#f00;font-size:1.2em;font-weight:bold">&#33;</span></a></li>
 				<li>
 					<a href="/about" class="btnfos">
 						<svg>
@@ -184,66 +184,93 @@
 						<li style="width:100%"><a href="/2014" target="_blank">014</a></li>
 					</ul>
 				</li>
-			</ul>
-			<div class="collapse navbar-collapse" id="navbar-collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<!-- <li><a href="#" class="btnfos md-trigger md-setperspective" data-modal="updates-modal" ><svg><rect x="0" y="0" fill="none" width="100%" height="100%"/></svg>Updates&nbsp;<span style="color:#f00;font-size:1.2em;font-weight:bold">&#33;</span></a></li> -->
-					<li>
-						<a href="/events" class="btnfos">
-							<svg>
-								<rect x="0" y="0" fill="none" width="100%" height="100%" />
-							</svg>Events</a>
-					</li>
-					<li>
-						<a href="/exhibitions" class="btnfos">
-							<svg>
-								<rect x="0" y="0" fill="none" width="100%" height="100%" />
-							</svg>Exhibitions</a>
-					</li>
-					<li>
-						<a href="/sponsors" class="btnfos">
-							<svg>
-								<rect x="0" y="0" fill="none" width="100%" height="100%" />
-							</svg>Sponsors</a>
-					</li>
-					<li>
-						<a href="/workshops" class="btnfos">
-							<svg>
-								<rect x="0" y="0" fill="none" width="100%" height="100%" />
-							</svg>Workshops</a>
-					</li>
-					<li>
-						<a href="https://blog.nvision.org.in/" class="btnfos">
+				<li>
+					<a href="/auth" class="btnfos">
 						<svg>
 							<rect x="0" y="0" fill="none" width="100%" height="100%" />
-						</svg>Blog</a>
-					</li>
-					<li>
-						<a href="/team" class="btnfos">
-							<svg>
-								<rect x="0" y="0" fill="none" width="100%" height="100%" />
-							</svg>Team</a>
-					</li>
-					<li class="dropdown">
-						<a href="#" class="btnfos dropdown-toggle" data-toggle="dropdown">
-							<svg>
-								<rect x="0" y="0" fill="none" width="100%" height="100%" />
-							</svg>Archives<span class="caret"></span>
-						</a>
-						<ul class="dropdown-menu">
-							<li><a href="https://old.nvision.org.in/" class="btnfos btnfosd" target="_blank">2016</a></li>
-							<li>
-								<a href="/2014" class="btnfos btnfosd" target="_blank">2014</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</div>
+						</svg>Login</a>
+				</li>
+			</ul>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav navbar-left" style="width:37%;">
+          <li style="width:25%">
+            <a class="btnfos md-trigger md-setperspective" data-modal="updates-modal">
+              <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%" />
+              </svg>Updates&nbsp;<span style="color:#f00;font-size:1.2em;font-weight:bold">&#33;</span></a>
+          </li>
+          <li style="width:25%">
+            <a href="/events" class="btnfos">
+              <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%" />
+              </svg>Events</a>
+          </li>
+          <li style="width:25%">
+            <a href="/sponsors" class="btnfos">
+              <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%" />
+              </svg>Sponsors</a>
+          </li>
+          <li style="width:25%">
+            <a href="/workshops" class="btnfos">
+              <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%" />
+              </svg>Workshops</a>
+          </li>
+        </ul>
+        
+        <ul class="nav navbar-nav navbar-left" style="width:23%;">
+          <li style="width:100%;">
+            <a href="/" class="btnfos">
+              <img src="/img/nvision.png" width="300">
+            </a>
+          </li>
+        </ul>  
+        <ul class="nav navbar-nav navbar-right" style="width:40%;">
+          <li style="width:20%">
+            <a href="/exhibitions" class="btnfos">
+              <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%" />
+              </svg>Exhibitions</a>
+          </li>
+          <li style="width:20%">
+            <a href="https://blog.nvision.org.in/" class="btnfos">
+              <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%" />
+              </svg>Blog</a>
+          </li>
+          <li style="width:20%">
+            <a href="/team" class="btnfos">
+              <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%" />
+              </svg>Team</a>
+          </li style="width:20%">
+          <li class="dropdown" style="width:20%">
+            <a href="#" class="btnfos dropdown-toggle" data-toggle="dropdown">
+              <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%" />
+              </svg>Archives<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="https://old.nvision.org.in/" class="btnfos btnfosd" target="_blank">2016</a></li>
+              <li>
+                <a href="/2014" class="btnfos btnfosd" target="_blank">2014</a>
+              </li>
+            </ul>
+          </li>
+          <li style="width:20%">
+            <a href="/auth" class="btnfos">
+              <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%" />
+              </svg>Login</a>
+          </li>
+        </ul>
+      </div>
 		</div>
 	</nav>
 
 	<!-- ===== DESKTOP ===== -->
-	<div class="row desktop animated bounceInRight" id="main-container" style="padding-top:2.5em">
+	<div class="row desktop animated bounceInRight" id="main-container" style="padding-top:2.5em;margin-top:3em">
 
 		<div class="col-lg-12 club-container kludge" data-club="kludge">
 
@@ -1414,7 +1441,7 @@
 
 	</script>
 
-	<!-- <script src="/js/updates.js"></script> -->
+	<script src="/js/updates.js"></script>
 	<script src="/js/scrollreveal.min.js"></script>
 	<script src="/js/three.min.js"></script>
 

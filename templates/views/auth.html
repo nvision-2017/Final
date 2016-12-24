@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-	<title>{{name}} | &eta;vision 2017 | Techno management fest of IIT Hyderabad</title>
+	<title>Exhibitions | &eta;vision 2017 | Techno management fest of IIT Hyderabad</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="&eta;vision is the techno-management fest of IIT Hyderabad.">
 	<meta name="copyright" content="&eta;vision 2017">
@@ -15,7 +15,7 @@
 	<meta property="og:title" content="&eta;vision 2017">
 	<meta property="og:type" content="website">
 	<meta property="og:image" content="https://nvision.org.in/img/logo.png">
-	<meta property="og:url" content="https://nvision.org.in{{link}}/">
+	<meta property="og:url" content="https://nvision.org.in/exhibitions/">
 	<meta property="og:description" content="&eta;vision: techno-management Fest of IIT Hyderabad">
   
   <link rel="stylesheet" href="/css/animate.css">
@@ -24,69 +24,9 @@
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/materialize.min.css">
-	<link rel="stylesheet" href="/css/stars.css" media="only screen and (min-width: 600px)">
+	<link rel="stylesheet" href="css/stars.css" media="only screen and (min-width: 600px)">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
-    .event-btn {
-      background: #1AAB8A;
-      color: #000;
-      border: none;
-      position: relative;
-      height: 60px;
-      font-size: 1.6em;
-      padding: 0 2em;
-      cursor: pointer;
-      transition: 800ms ease all;
-      outline: none;
-      margin: 0 1em;
-    }
-    
-    .event-btn:hover {
-      background: #000;
-      color: #1AAB8A;
-    }
-    
-    .event-btn:before,
-    .event-btn:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 2px;
-      width: 0;
-      background: #1AAB8A;
-      transition: 400ms ease all;
-    }
-    
-    .event-btn:after {
-      right: inherit;
-      top: inherit;
-      left: 0;
-      bottom: 0;
-    }
-    
-    .event-btn:hover:before,
-    .event-btn:hover:after {
-      width: 100%;
-      transition: 800ms ease all;
-    }
-    
-    .hover-effect {
-      -webkit-transition: all ease-in-out 200ms;
-      -moz-transition: all ease-in-out 200ms;
-      -o-transition: all ease-in-out 200ms;
-      -ms-transition: all ease-in-out 200ms;
-      transition: all ease-in-out 200ms;
-      /*box-shadow: 0 0 5px #fff, 0 0 5px #fff;*/
-    }
-    
-    .hover-effect.w:hover {
-      box-shadow: 0 0 10px #fff, 0 0 30px #fff;
-    }
-    
-    .hover-effect.b:hover {
-      box-shadow: 0 0 10px #fff, 0 0 20px #00ccff;
-    }
-    
     .md-close {
       color: #fff;
       margin-top: 6em !important;
@@ -110,40 +50,63 @@
     .md-content {
       background-color: rgba(0, 0, 0, 0.8) !important;
     }
-    
-    .prize-div {
-      background: url(/img/buried.png);
-      background-color: rgba(0, 77, 77, 1);
-      text-align: right;
-      font-size: 1.5em;
-      padding: 0.5em;
-    }
-    
-    .event-icon {
-      position: fixed;
-      bottom: 10%;
-      left: 5%;
-      width: 15%;
-    }
-    
-    html {
-      overflow-x: hidden;
+
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin: 0; 
     }
 
-    .event-nav a {
-      color: #fff;
+
+    .form-btn {
+      width: 100%;
+      font-weight: bold;
+      display: inline-block;
+      vertical-align: middle;
+      background: #1AAB8A;
+      color: #000;
+      border: none;
+      position: relative;
+      height: 40px;
+      font-size: 1.2em;
+      padding: 0.5em 2em;
+      cursor: pointer;
+      transition: 800ms ease all;
+      outline: none;
     }
     
-    .event-nav a:hover {
-      background: url(/img/buried.png);
-      color: rgba(0, 77, 77, 1);
-      border-radius: 0;
+    .form-btn:hover {
+      background: #000;
+      color: #1AAB8A;
     }
     
-    li.active a {
-      background: url(/img/buried.png);
-      border-radius: 0;
+    .form-btn:before,
+    .form-btn:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 2px;
+      width: 0;
+      background: #1AAB8A;
+      transition: 400ms ease all;
     }
+    
+    .form-btn:after {
+      right: inherit;
+      top: inherit;
+      left: 0;
+      bottom: 0;
+    }
+    
+    .form-btn:hover:before,
+    .form-btn:hover:after {
+      width: 100%;
+      transition: 800ms ease all;
+    }
+
   </style>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -165,12 +128,11 @@
 
   <div class="md-modal md-effect-19 md-effect-12 md-effect-13" id="updates-modal" style="text-align:center">
     <div class="md-content">
-      <h3><b>Updates</b></h3>
+      <h3><b>Updates<span style="color:#f00;font-size:1.2em;font-weight:bold">&#33;</span></b></h3>
       <div>
         <ul>
-          <li><strong>Update 1:</strong> You cant miss this update!.</li>
-          <li><strong>Update 2:</strong> You cant miss this update!.</li>
-          <li><strong>Update 3:</strong> You cant miss this update!.</li>
+          <li><strong>1:</strong> Registrations for events have started. <a href="/auth">Signup</a> now!</li><br>
+          <li><strong>2:</strong> Check out the upcoming <a href="/workshops">workshops</a> on <a href="/iotDuino">IoT Duino</a> and <a href="/mobileMaking">Mobile Making</a></li>
         </ul>
         <button class="btnfos md-close">Close</button>
       </div>
@@ -195,8 +157,7 @@
       <ul id="slide-out" class="side-nav">
         <li>
           <div class="userView">
-            <a href="/">
-              <img class="img-responsive" src="/img/nvision_b.png"></a>
+            <a href="/"><img class="img-responsive" src="/img/nvision_b.png"></a>
           </div>
         </li>
         <li>
@@ -204,17 +165,17 @@
         </li>
 
         <li>
-          <a href="#" class="btnfos md-trigger md-setperspective" data-modal="updates-modal">
+          <a class="btnfos md-trigger md-setperspective" data-modal="updates-modal">
             <svg>
               <rect x="0" y="0" fill="none" width="100%" height="100%" />
             </svg>Updates&nbsp;<span style="color:#f00;font-size:1.2em;font-weight:bold">&#33;</span></a>
         </li>
-        <li>
-          <a href="/about" class="btnfos">
-            <svg>
-              <rect x="0" y="0" fill="none" width="100%" height="100%" />
-            </svg>About</a>
-        </li>
+				<li>
+					<a href="/about" class="btnfos">
+						<svg>
+							<rect x="0" y="0" fill="none" width="100%" height="100%" />
+						</svg>About</a>
+				</li>
         <li>
           <a href="/events" class="btnfos">
             <svg>
@@ -252,11 +213,14 @@
             </svg>Team</a>
         </li>
         <li class="dropdown">
-          <a class="dropdown-toggle btnfos" data-toggle="dropdown" href="#">Archives
-          <span class="caret"></span></a>
+          <a href="#" class="btnfos dropdown-toggle" data-toggle="dropdown">
+            <svg>
+              <rect x="0" y="0" fill="none" width="100%" height="100%" />
+            </svg>Archives<span class="caret"></span>
+          </a>
           <ul class="dropdown-menu">
-            <li style="width:100%"><a href="https://old.nvision.org.in/" target="_blank">2016</a></li>
-            <li style="width:100%"><a href="/2014" target="_blank">2014</a></li>
+            <li><a href="https://old.nvision.org.in/" class="btnfos" target="_blank">2016</a></li>
+            <li><a href="/2014" class="btnfos" target="_blank">2014</a></li>
           </ul>
         </li>
         <li>
@@ -345,50 +309,76 @@
   </nav>
 
   <div class="container-fluid">
-    <div class="row center">
-      <div class="col-xs-12">
-        <h1 style="font-size:4em;margin:0.2em">{{name}}</h1>
-        <ul class="nav nav-tabs">
-        </ul>
-      </div>
-    </div>
+    
     <div class="row">
-      <div class="col-md-3">
-        <ul class="nav nav-pills nav-stacked animated bounceInLeft event-nav">
-          <li class="active"><a href="#tab-intro" data-toggle="pill">Introduction</a></li>
-          <li><a href="#tab-rules" data-toggle="pill">Rules</a></li>
-          {{#if registered}}
-          <li><a href="#tab-register" id="registerbtn" data-toggle="pill">Unregister</a></li>
-          {{else}}
-          <li><a href="#tab-register" id="registerbtn" data-toggle="pill">Register</a></li>
-          {{/if}}
-        </ul>
-        <div class="hidden-xs hidden-sm event-icon animated slideInLeft">
-          <img class="img-responsive center-block" src="{{image}}">
+
+      <div class="col-lg-6">
+        <h3 style="text-align:center">Login</h3>
+        <div>
+          
+          <div class="input-field col s12">
+            <i class="material-icons prefix">email</i>
+            <input id="login-email" name="email" type="email" class="validate input-login">
+            <label for="login-email">Email</label>
+          </div>
+
+          <div class="input-field col s12">
+            <i class="material-icons prefix">vpn_key</i>
+            <input id="login-password" name="password" type="password" class="validate input-login">
+            <label for="login-password">Password</label>
+          </div>
+
+          <button id="login" class="form-btn" type="submit">Login</button>
+
         </div>
       </div>
-      <div class="col-md-9">
-        <div class="row">
-          <div class="col-md-8"></div>
-          <div class="col-md-4 animated bounceInRight">
-            {{#if prize}}
-            <div class="prize-div">Prizes worth&emsp;&#8377;&nbsp;{{prize}}</div>{{/if}}
+
+
+
+      <div class="col-lg-6">
+        <h3 style="text-align:center">Signup</h3>
+        <div>
+          
+          <div class="input-field col s12">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="name" name="name" type="text" class="validate input-signup">
+            <label for="name">Name</label>
           </div>
+
+          <div class="input-field col s12">
+            <i class="material-icons prefix">email</i>
+            <input id="signup-email" name="email" type="email" class="validate input-signup">
+            <label for="signup-email">Email</label>
+          </div>
+
+          <div class="input-field col s12">
+            <i class="material-icons prefix">business</i>
+            <input id="college" name="college" type="text" class="validate input-signup">
+            <label for="college">College</label>
+          </div>
+
+          <div class="input-field col s12">
+            <i class="material-icons prefix">phone</i>
+            <input id="phone" name="phone" type="number" class="validate input-signup">
+            <label for="phone">Phone</label>
+          </div>
+
+
+          <div class="input-field col s12">
+            <i class="material-icons prefix">vpn_key</i>
+            <input id="signup-password" name="password" type="password" class="validate input-signup">
+            <label for="signup-password">Password (>=6 characters)</label>
+          </div>
+
+          <button id="signup" class="form-btn" type="submit">Signup</button>
+
         </div>
-        <div class="row tab-content">
-          <div class="tab-pane active animated bounceInUp" id="tab-intro">
-            <p class="" style="font-size:1.5em;width:100%;padding:0.3em;">
-              {{introduction}}
-            </p>
-          </div>
-          <div class="tab-pane animated zoomIn" id="tab-rules">
-            <p class="" style="font-size:1.5em;width:100%;padding:0.3em;">
-              {{rules}}
-            </p>
-          </div>
-        </div>
+
       </div>
+
     </div>
+      
+
   </div>
 
   <script src="/js/jquery.min.js"></script>
@@ -397,35 +387,88 @@
   <script src="/js/main.js"></script>
   <script src="/js/updates.js"></script>
 
-  <script>
-    let reg = {{registered}};
+  <script type="text/javascript">
     $(document).ready(function(){
-      $('#registerbtn').click(function(data, sts){
-        if (!reg) {
-          $.post('/events/{{_id}}/register', function(data, sts){
-            if (data.status) {
-              $('#registerbtn').html('Unregister');
-              reg = !reg;
-            }
-            else {
-              alert(data.message);
-            }
-          });
-        }
-        else {
-          $.post('/events/{{_id}}/unregister', function(data, sts){
-            if (data.status) {
-              $('#registerbtn').html('Register');
-              reg = !reg;
-            }
-            else {
-              alert(data.message);
-            }
-          });
+
+      $('input').unbind().blur(function(){
+        if( ( $(this).attr('name')!='password' && /^\s*$/.test($(this).val())) || $(this).val()=="" ){
+          $(this).removeClass('valid').addClass('invalid');
+        } else {
+          $(this).removeClass('invalid').addClass('valid');
         }
       });
+
+      $("#signup").click(function(){
+
+        var invalidFlag = false;
+        $('input.input-signup').each(function(){
+          if(( $(this).attr('name')!='password' && /^\s*$/.test($(this).val())) || $(this).val()=="" ) invalidFlag = true;
+        });
+
+        if(invalidFlag) {
+          alert('All fields are mandatory');
+        } else if($("#signup-password").val().length <6){
+          alert('Password length should be >=6')
+        } else {
+
+          var body = {
+            name: $("#name").val(),
+            email: $("#signup-email").val(),
+            college: $("#college").val(),
+            phone: $("#phone").val(),
+            password: $("#signup-password").val()
+          };
+
+          console.log(body);
+
+          $("#signup").prop('disabled',true);
+          $.post('/signup/{{signupToken}}',body,function(res){
+            $("#signup").prop('disabled',false);
+            if(res.status){
+              window.location = res.redirectURL;
+            } else {
+              alert(res.message);
+            }
+          });
+
+        }
+
+      });
+
+      $("#login").click(function(){
+
+        var invalidFlag = false;
+        $('input.input-login').each(function(){
+          if(( $(this).attr('name')!='password' && /^\s*$/.test($(this).val())) || $(this).val()=="" ) invalidFlag = true;
+        });
+
+        if(invalidFlag) {
+          alert('All fields are mandatory');
+        } else {
+
+          var body = {
+            email: $("#login-email").val(),
+            password: $("#login-password").val()
+          };
+
+          console.log(body);
+          $("#login").prop('disabled',true);
+          $.post('/login',body,function(res){
+            $("#login").prop('disabled',false);
+            if(res.status){
+              window.location = res.redirectURL;
+            } else {
+              alert(res.message);
+            }
+          });
+
+        }
+
+      });
+
     });
   </script>
+
 </body>
 
 </html>

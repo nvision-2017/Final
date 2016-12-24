@@ -24,7 +24,7 @@
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/stars.css" media="only screen and (min-width: 600px)">
-	<!-- <link rel="stylesheet" href="css/updates.css"> -->
+	<link rel="stylesheet" href="css/updates.css">
 	<style>
 		body {
 			padding-top: 70px;
@@ -86,8 +86,8 @@
 		}
 		
 		.md-close:hover {
-			background-color: #fff;
-			color: #000;
+			background-color: #fff !important;
+			color: #000 !important;
 		}
 		
 		.md-content {
@@ -139,7 +139,7 @@
 	<div id='stars2'></div>
 	<div id='stars3'></div>
 
-	<!-- <div class="md-modal md-effect-19 md-effect-12 md-effect-13" id="updates-modal" style="text-align:center">
+	<div class="md-modal md-effect-19 md-effect-12 md-effect-13" id="updates-modal" style="text-align:center">
 			<div class="md-content">
 				<h3><b>Updates</b></h3>
 				<div>
@@ -152,7 +152,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="md-overlay"></div> -->
+		<div class="md-overlay"></div>
 	<!-- the overlay element -->
 
 
@@ -165,7 +165,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-				<a class="navbar-brand" href="/">
+				<a class="navbar-brand mobile" href="/">
 					<img id="navlogo" alt="Brand" src="/img/nvision.png">
 				</a>
 			</div>
@@ -180,12 +180,12 @@
 					<div class="divider"></div>
 				</li>
 
-				<!-- <li>
+				<li>
           <a href="#" class="btnfos md-trigger md-setperspective" data-modal="updates-modal">
             <svg>
               <rect x="0" y="0" fill="none" width="100%" height="100%" />
             </svg>Updates&nbsp;<span style="color:#f00;font-size:1.2em;font-weight:bold">&#33;</span></a>
-        </li> -->
+        </li>
 				<li>
 					<a href="/about" class="btnfos">
 						<svg>
@@ -236,89 +236,137 @@
 						<li style="width:100%"><a href="/2014" target="_blank">2014</a></li>
 					</ul>
 				</li>
+        <li>
+          <a href="/auth" class="btnfos">
+            <svg>
+              <rect x="0" y="0" fill="none" width="100%" height="100%" />
+            </svg>Login</a>
+        </li>
 			</ul>
 			<div class="collapse navbar-collapse" id="navbar-collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<!-- <li>
-            <a href="#" class="btnfos md-trigger md-setperspective" data-modal="updates-modal">
+        <ul class="nav navbar-nav navbar-left" style="width:37%;">
+          <li style="width:25%">
+            <a class="btnfos md-trigger md-setperspective" data-modal="updates-modal">
               <svg>
                 <rect x="0" y="0" fill="none" width="100%" height="100%" />
               </svg>Updates&nbsp;<span style="color:#f00;font-size:1.2em;font-weight:bold">&#33;</span></a>
-          </li> -->
-					<li>
-						<a href="/events" class="btnfos">
-							<svg>
-								<rect x="0" y="0" fill="none" width="100%" height="100%" />
-							</svg>Events</a>
-					</li>
-					<li>
-						<a href="/exhibitions" class="btnfos">
-							<svg>
-								<rect x="0" y="0" fill="none" width="100%" height="100%" />
-							</svg>Exhibitions</a>
-					</li>
-					<li>
-						<a href="/sponsors" class="btnfos">
-							<svg>
-								<rect x="0" y="0" fill="none" width="100%" height="100%" />
-							</svg>Sponsors</a>
-					</li>
-					<li>
-						<a href="/workshops" class="btnfos">
-							<svg>
-								<rect x="0" y="0" fill="none" width="100%" height="100%" />
-							</svg>Workshops</a>
-					</li>
-          <li>
+          </li>
+          <li style="width:25%">
+            <a href="/events" class="btnfos">
+              <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%" />
+              </svg>Events</a>
+          </li>
+          <li style="width:25%">
+            <a href="/sponsors" class="btnfos">
+              <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%" />
+              </svg>Sponsors</a>
+          </li>
+          <li style="width:25%">
+            <a href="/workshops" class="btnfos">
+              <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%" />
+              </svg>Workshops</a>
+          </li>
+        </ul>
+        
+        <ul class="nav navbar-nav navbar-left" style="width:23%;">
+          <li style="width:100%;">
+            <a href="/" class="btnfos">
+              <img src="/img/nvision.png" width="300">
+            </a>
+          </li>
+        </ul>  
+        <ul class="nav navbar-nav navbar-right" style="width:40%;">
+          <li style="width:20%">
+            <a href="/exhibitions" class="btnfos">
+              <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%" />
+              </svg>Exhibitions</a>
+          </li>
+          <li style="width:20%">
             <a href="https://blog.nvision.org.in/" class="btnfos">
               <svg>
                 <rect x="0" y="0" fill="none" width="100%" height="100%" />
               </svg>Blog</a>
           </li>
-					<li>
-						<a href="/team" class="btnfos">
-							<svg>
-								<rect x="0" y="0" fill="none" width="100%" height="100%" />
-							</svg>Team</a>
-					</li>
-					<li class="dropdown">
-						<a href="#" class="btnfos dropdown-toggle" data-toggle="dropdown">
-							<svg>
-								<rect x="0" y="0" fill="none" width="100%" height="100%" />
-							</svg>Archives<span class="caret"></span>
-						</a>
-						<ul class="dropdown-menu">
-							<li><a href="https://old.nvision.org.in/" class="btnfos btnfosd" target="_blank">2016</a></li>
-							<li>
-								<a href="/2014" class="btnfos btnfosd" target="_blank">2014</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</div>
+          <li style="width:20%">
+            <a href="/team" class="btnfos">
+              <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%" />
+              </svg>Team</a>
+          </li style="width:20%">
+          <li class="dropdown" style="width:20%">
+            <a href="#" class="btnfos dropdown-toggle" data-toggle="dropdown">
+              <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%" />
+              </svg>Archives<span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="https://old.nvision.org.in/" class="btnfos btnfosd" target="_blank">2016</a></li>
+              <li>
+                <a href="/2014" class="btnfos btnfosd" target="_blank">2014</a>
+              </li>
+            </ul>
+          </li>
+          <li style="width:20%">
+            <a href="/auth" class="btnfos">
+              <svg>
+                <rect x="0" y="0" fill="none" width="100%" height="100%" />
+              </svg>Login</a>
+          </li>
+        </ul>
+      </div>
 		</div>
 	</nav>
 
-  <div class="container-fluid">
-    <div class="row center">
+  <div class="container-fluid" style="margin-top:3em">
+    <!-- <div class="row center">
       <div class="col-xs-12">
         <h1 style="font-size:3em;margin:0.2em">WORKSHOPS</h1>
         <ul class="nav nav-tabs">
         </ul>
       </div>
-    </div>
+    </div> -->
     <div class="row">
       <div class="col-md-3">
         <ul class="nav nav-pills nav-stacked animated bounceInLeft event-nav">
-          <li class="active"><a href="#tab-w1" data-toggle="pill">Solar Energy Workshop</a></li>
-          <li><a href="#tab-w2" data-toggle="pill">Sixth Sense Workshop</a></li>
-          <li><a href="#tab-w3" data-toggle="pill">WAC Workshops</a></li>
-          <li><a href="#tab-w4" data-toggle="pill">Fitness Band Workshop</a></li>
+          <b>Upcoming Workshops:</b>
+          <li class="active"><a href="#tab-uw1" data-toggle="pill">Mobile Making</a></li>
+          <li><a href="#tab-uw2" data-toggle="pill">IoT Duino</a></li>
+          <br><b>Past Workshops:</b>
+          <li><a href="#tab-w1" data-toggle="pill">Solar Energy</a></li>
+          <li><a href="#tab-w2" data-toggle="pill">Sixth Sense</a></li>
+          <li><a href="#tab-w3" data-toggle="pill">WAC</a></li>
+          <li><a href="#tab-w4" data-toggle="pill">Fitness Band</a></li>
         </ul>
       </div>
       <div class="col-md-9">
-        <div class="row tab-content">
-          <div class="tab-pane active animated bounceInUp" id="tab-w1">
+        <div class="row tab-content custom-scrollbar" style="height:75vh;overflow-y:auto">
+          <div class="tab-pane active animated bounceInUp" id="tab-uw1">
+			<div class="col-md-8 col-md-offset-2"><img class="img-responsive center-block" src="img/workshops/mobilemaking.jpg"></div>
+			<div class="col-md-12 center"><p style="font-size:1em;margin-top:1em;">
+				nvision, IIT Hyderabad in association with ABLab Solutions brings to you a workshop on mobile making!<br>
+		In this workshop you'll be introduced to different technologies like GSM, ATMEGA 16 and interfacing with LCD.<br>
+		By the end of the workshop, you'll be able to build and develop your own customized mobile phone!
+			</p>
+			<a href="https://nvision.org.in/mobileMaking" target="_blank" class="register-btn">More</a></div>
+          </div>
+
+          <div class="tab-pane animated bounceInUp" id="tab-uw2">
+			<div class="col-md-8 col-md-offset-2"><img class="img-responsive center-block" src="img/workshops/iotduino.png"></div>
+			<div class="col-md-12 center"><p style="font-size:1em;margin-top:1em;">
+				&eta;vision, IIT Hyderabad in asscoiation with ABLab solutions presents to you a workshop on Arduino based Internet Of Things.<br>
+			    Attend the workshop and learn how to control household appliances wirelessly from anywhere in the world using Wi-Fi technology.<br>
+			    In this workshop you'll learn the basics of embedded systems, digital electronics and you'll be introduced to the Arduino platform and many more.<br>
+			    There's going to be practical sessions where you'll get to test out all the things you've learned on your own!<br>
+			    *No pre requisites required<br>
+			</p>
+			<a href="https://nvision.org.in/iotDuino" target="_blank" class="register-btn">More</a></div>
+          </div>
+
+          <div class="tab-pane animated bounceInUp" id="tab-w1">
 			<div class="col-md-8 col-md-offset-2"><img class="img-responsive center-block" src="img/workshops/solar.jpg"></div>
 			<div class="col-md-12 center"><p style="font-size:1em;margin-top:1em;">
 				ηvision, IIT Hyderabad and Elan, IIT Hyderabad in association with kWatt Solutions Pvt. Ltd. and S-SparQ now brings to you
@@ -362,7 +410,7 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/materialize.min.js"></script>
 	<script src="js/main.js"></script>
-	<!-- <script src="/js/updates.js"></script> -->
+	<script src="/js/updates.js"></script>
 </body>
 
 </html>
