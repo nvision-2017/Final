@@ -12,9 +12,12 @@ Event.add({
   introduction: { type: Types.Textarea },
   rules: { type: Types.Textarea },
   image: { type: Types.Text },
-  link: { type: Types.Text },
   file: { type: Types.Text },
   prize: {type: Types.Text }
+});
+
+Event.schema.virtual('link').get(function(){
+    return '/events/'+this.name.replace(/\s+/g, '').toLowerCase();
 });
 
 Event.relationship({path: 'registrations', ref: 'Relationship', refPath: 'event'});

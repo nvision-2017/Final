@@ -156,7 +156,7 @@ exports = module.exports = function (app) {
             }
             else {
                 User.model.findOne({emailVerified: false, verificationToken: decoded.token}).then(user=>{
-                    if (!user) return res.send('Error');
+                    if (!user) return res.notfound();
                     user.emailVerified = true;
                     user.save().then(usr=>{
                         res.redirect('/dashboard');
@@ -165,6 +165,55 @@ exports = module.exports = function (app) {
                     });
                 }, err=>{
                     res.notfound();
+                });
+            }
+        });
+    });
+
+    app.get('/forgot', (req, res)=>{
+        var token = req.query.token;
+        if (!token) {
+            return res.notfound();
+        }
+        jwt.verify(token, tokenSecret, function(err, decoded){
+            if (err) return res.notfound();
+            else {
+                var token = decoded.token;
+                if (token.substr(0, 6) != "forgot") return res.notfound();
+                User.model.findOne({verificationToken: token.substr(6)}).then(user=>{
+                    if (!user) return res.notfound();
+                    res.render('forgot', {user: req.user, token: token});
+                }, err=>res.notfound());
+            }
+        });
+    });
+
+    app.post('/forgot', (req, res)=>{
+        var token = req.body.token;
+        var password = req.body.password;
+        if (!token) {
+            return res.json({status:false, message: 'No token'});
+        }
+        if (!password || password.length < 6) {
+            return res.json({status:false, message: 'Password should have min 6 characters'});
+        }
+        jwt.verify(token, tokenSecret, function(err, decoded){
+            if (err) return res.notfound('Invalid token');
+            else {
+                var token = decoded.token;
+                if (token.substr(0, 6) != "forgot") return res.notfound();
+                User.model.findOne({verificationToken: token.substr(6)}).then(user=>{
+                    if (!user) return res.json({status:false, message: 'Invalid token'});
+                    user.verificationToken = 
+                    user.password = password;
+                    user.verificationToken = randtoken.generate(64);
+                    user.save().then(user=>{
+                        res.json({status: true, message: 'Updated password'});
+                    }, err=>{
+                        res.json({status: false, message: 'Error'});
+                    });
+                }, err=>{
+                    res.json({status: false, message: 'Invalid token'});
                 });
             }
         });

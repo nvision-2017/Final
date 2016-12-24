@@ -5,7 +5,6 @@ let autoIncrement = require('mongoose-auto-increment');
 autoIncrement.initialize(keystone.mongoose);
 
 let User = new keystone.List('User', {
-    noedit: true,
     nodelete: true
 });
 
@@ -17,14 +16,14 @@ function pad(num, size) {
 
 User.add({
     name: { type: Types.Name, required: true, index: true },
-    userid: {type: Types.Number},
-    email: { type: Types.Email, initial: true, required: true, index: true, unique: true },
+    userid: {type: Types.Number, noedit: true},
+    email: { type: Types.Email, initial: true, required: true, index: true, unique: true, noedit: false },
     password: { type: Types.Password, required: true, initial: true },
     college: {type: Types.Text, initial: true},
     phone: {type: Types.Number, initial:true},
     canAccessKeystone: { type: Boolean, initial: true },
-    emailVerified: {type:Boolean, initial: false},
-    verificationToken: {type: Types.Text, initial: false}
+    emailVerified: {type:Boolean, initial: false, noedit: true},
+    verificationToken: {type: Types.Text, initial: false, noedit: true}
 });
 
 User.schema.plugin(autoIncrement.plugin, {model: 'User', field: 'userid'});
