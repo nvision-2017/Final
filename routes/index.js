@@ -96,9 +96,34 @@ exports = module.exports = function (app) {
 
     app.post('/signup', (req, res) => {
         var tk = randtoken.generate(64);
+        if (!req.body.name) {
+            return res.json({status:false, message: 'Name cannot be empty'});
+        }
         var i = req.body.name.indexOf(' ');
+        var f,l;
+        if (i==-1){
+            f = req.body.name;
+            l = ''
+        }
+        else
+        {
+            f = req.body.name.substr(0, i);
+            l = req.body.name.substr(i);
+        }
+        if(!req.body.password || req.body.password.length < 6) {
+            return res.json({status:false, message: 'Password must have atleast 6 characters'});
+        }
+        if (!req.body.email) {
+            return res.json({status:false, message: 'Enter a valid email address'});
+        }
+        if (!req.body.college) {
+            return res.json({status:false, message: 'College name cannot be empty'});
+        }
+        if (!req.body.phone) {
+            return res.json({status:false, message: 'Phone cannot be empty'});
+        }
         new User.model({
-            name: { first: req.body.name.substr(0,i), last: req.body.name.substr(i) },
+            name: { first: f, last: l },
             email: req.body.email,
             password: req.body.password,
             college: req.body.college,
@@ -116,7 +141,7 @@ exports = module.exports = function (app) {
                 return res.json({status: true, verified: false, redirectURL: '/dashboard', message: 'A verification email sent'});
             }, (err) => res.json({status: false, message: "Auth failed"}));
         }, (err)=>{
-            res.json({status: false, message: "Auth failed"});
+            res.json({status: false, message: "Use another email"});
         });
     });
 
