@@ -4,6 +4,6 @@ exports = module.exports = function(req, res) {
 
     var view = new keystone.View(req, res);
 
-    view.render('workshops', {user: req.user});
+    view.render('workshops', {user: req.user, updates: keystone.get('updatesWeb')});
 
 }

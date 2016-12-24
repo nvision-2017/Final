@@ -6,6 +6,6 @@ exports = module.exports = function(req, res) {
     if (require('../../lib/detectmobilebrowser')(req))
         view.render('index_mobile', {user: req.user});
     else
-        view.render('index', {user: req.user});
+        view.render('index', {user: req.user, updates: keystone.get('updatesWeb')});
 
 }

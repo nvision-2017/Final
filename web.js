@@ -29,4 +29,6 @@ require('./models');
 
 keystone.set('routes', require('./routes'));
 
+keystone.set('updatesWeb', require('./update.js'));
+
 keystone.start();

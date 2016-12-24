@@ -111,9 +111,9 @@
 				<h3><b>Updates</b></h3>
 				<div>
 					<ul>
-						<li><strong>Update 1:</strong> You cant miss this update!.</li>
-						<li><strong>Update 2:</strong> You cant miss this update!.</li>
-						<li><strong>Update 3:</strong> You cant miss this update!.</li>
+					{{#each updates}}
+					<li>{{{this}}}</li>
+					{{/each}}
 					</ul>
 					<button class="btnfos md-close">Close</button>
 				</div>

@@ -12,4 +12,6 @@ Registration.add({
   user: {type: Types.Relationship, ref: 'User', initial: true, index: true}
 });
 
+Registration.defaultColumns = '_id, event, user';
+
 Registration.register();

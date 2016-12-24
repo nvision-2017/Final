@@ -75,10 +75,12 @@ exports = module.exports = function (app) {
                 if (reg) e.registered = true;
                 else e.registered = false;
                 e.user = req.user;
+                e.updates = keystone.get('updatesWeb');
                 view.render('event', e);
             }, err=>{
                 e.registered = false;
                 e.user = req.user;
+                e.updates = keystone.get('updatesWeb');
                 view.render('event', e);
             });
         }, e => res.err(e));
@@ -182,7 +184,7 @@ exports = module.exports = function (app) {
                 if (token.substr(0, 6) != "forgot") return res.notfound();
                 User.model.findOne({verificationToken: token.substr(6)}).then(user=>{
                     if (!user) return res.notfound();
-                    res.render('forgot', {user: req.user, token: token});
+                    res.render('forgot', {user: req.user, token: token, updates: keystone.get('updatesWeb')});
                 }, err=>res.notfound());
             }
         });
@@ -279,10 +281,10 @@ exports = module.exports = function (app) {
             return res.redirect('/signin');
         }
         if (!req.user.emailVerified) {
-            return view.render('dashboard', {emailnv:true, user:req.user});
+            return view.render('dashboard', {emailnv:true, user:req.user, updates: keystone.get('updatesWeb')});
         }
         Registration.model.find({user: req.user._id}).populate('event').exec().then(r=>{
-            return view.render('dashboard', {reg:r, n:r.length, user:req.user});
+            return view.render('dashboard', {reg:r, n:r.length, user:req.user, updates: keystone.get('updatesWeb')});
         }, e=>{
             return res.redirect('/');
         });

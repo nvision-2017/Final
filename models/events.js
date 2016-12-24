@@ -8,18 +8,22 @@ let Event = new keystone.List('Event', {
 
 Event.add({
   domain: {type: Types.Relationship, ref: 'Domain'},
-  name: { type: Types.Text, required: true, index: true, unique:true },
+  name: { type: Types.Text, required: true, index: true, unique: true },
   introduction: { type: Types.Textarea },
-  rules: { type: Types.Textarea },
+  rules: { type: Types.Html },
   image: { type: Types.Text },
+  link: { type: Types.Text, noedit: true, index: true },
   file: { type: Types.Text },
   prize: {type: Types.Text }
 });
 
-Event.schema.virtual('link').get(function(){
-    return '/events/'+this.name.replace(/\s+/g, '').toLowerCase();
+Event.schema.pre('save', function(next){
+  this.link = '/events/'+this.name.replace(/\s+/g, '').toLowerCase();
+  next();
 });
 
-Event.relationship({path: 'registrations', ref: 'Relationship', refPath: 'event'});
+Event.relationship({path: 'registrations', ref: 'Registration', refPath: 'event'});
+
+Event.defaultColumns = 'name, introduction, domain';
 
 Event.register();

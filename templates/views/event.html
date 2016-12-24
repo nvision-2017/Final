@@ -168,9 +168,9 @@
       <h3><b>Updates</b></h3>
       <div>
         <ul>
-          <li><strong>Update 1:</strong> You cant miss this update!.</li>
-          <li><strong>Update 2:</strong> You cant miss this update!.</li>
-          <li><strong>Update 3:</strong> You cant miss this update!.</li>
+          {{#each updates}}
+          <li>{{{this}}}</li>
+          {{/each}}
         </ul>
         <button class="btnfos md-close">Close</button>
       </div>
@@ -383,7 +383,7 @@
           </div>
           <div class="tab-pane animated zoomIn" id="tab-rules">
             <p class="" style="font-size:1.5em;width:100%;padding:0.3em;">
-              {{rules}}
+              {{{rules}}}
             </p>
           </div>
         </div>

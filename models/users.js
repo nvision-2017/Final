@@ -16,7 +16,7 @@ function pad(num, size) {
 
 User.add({
     name: { type: Types.Name, required: true, index: true },
-    userid: {type: Types.Number, noedit: true},
+    userid: {type: Types.Number, noedit: true, unique: true},
     email: { type: Types.Email, initial: true, required: true, index: true, unique: true, noedit: false },
     password: { type: Types.Password, required: true, initial: true },
     college: {type: Types.Text, initial: true},
@@ -33,5 +33,7 @@ User.schema.virtual('nvisionID').get(function(){
 });
 
 User.relationship({path: 'registrations', ref: 'Registration', refPath: 'user'});
+
+User.defaultColumns = 'name, email, college, phone';
 
 User.register();

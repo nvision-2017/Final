@@ -13,4 +13,6 @@ Domain.add({
 
 Domain.relationship({path: 'events', ref: 'Event', refPath: 'domain'});
 
+Domain.defaultColumns = 'name, introduction';
+
 Domain.register();

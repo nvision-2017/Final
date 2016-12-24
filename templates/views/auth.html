@@ -131,8 +131,9 @@
       <h3><b>Updates<span style="color:#f00;font-size:1.2em;font-weight:bold">&#33;</span></b></h3>
       <div>
         <ul>
-          <li><strong>1:</strong> Registrations for events have started. <a href="/signin">Signup</a> now!</li><br>
-          <li><strong>2:</strong> Check out the upcoming <a href="/workshops">workshops</a> on <a href="/iotDuino">IoT Duino</a> and <a href="/mobileMaking">Mobile Making</a></li>
+          {{#each updates}}
+          <li>{{{this}}}</li>
+          {{/each}}
         </ul>
         <button class="btnfos md-close">Close</button>
       </div>
