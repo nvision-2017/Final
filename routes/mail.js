@@ -121,7 +121,7 @@ var template = (tk)=>{return `
 
 function sendVEmail(tk, email, cb) {
     var mailOptions = {
-        from: 'nvision 2017 <nvison2k17@gmail.com>',
+        from: 'nvision 2017 <'+process.env.EMAIL+'>',
         to: email,
         subject: 'Email verfication',
         text: `Verify your email here : https://nvision.org.in/verify?token=${tk}`,
