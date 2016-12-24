@@ -211,7 +211,7 @@ exports = module.exports = function (app) {
             return view.render('dashboard', {emailnv:true});
         }
         Registration.model.find({user: req.user._id}).populate('event').exec().then(r=>{
-            return view.render('dashboard', {reg:r});
+            return view.render('dashboard', {reg:r, user:req.user});
         }, e=>{
             return res.redirect('/');
         });

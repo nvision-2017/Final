@@ -332,17 +332,25 @@
     </div>
     <div class="row">
       {{#if emailnv}}
-      <div class="col-lg-12">
+      <div class="col-lg-12 center">
         <p>Email not verified. Check your mail for verification email. <a href="#" id="resendv">Resend verification email</a></p>
       </div>
       {{else}}
+      <div class="col-md-5 center">
+        <h5>Name : {{user.name.first}} {{user.name.last}}</h5>
+        <h5>Email : {{user.email}}</h5>
+        <h5>&eta;vision ID : {{user.nvisionID}}</h5>
+        <h5>College : {{user.college}}</h5>
+        <h5>Phone : {{user.phone}}<h5>
+      </div>
+      <div class="col-md-7"><h3>Events Registered</h3>
       {{#each reg}}
-      <div class="col-lg-2 col-md-3 col-sm-6 col-xs-12 center" style="padding: 0 2em;margin: 2em;background: url('/img/buried.png');background-color: #555;">
+      <div class="col-md-3 col-sm-6 col-xs-12 center" style="padding: 0 2em;margin: 2em;background: url('/img/buried.png');background-color: #555;">
         <h5>{{this.event.name}}</h5>
-        <a href="{{this.event.link}}"><img class="img-responsive" src="{{this.event.image}}"></a>
+        <a href="{{this.event.link}}"></a>
         <a href="#" class="unregister" data-id="{{this.event._id}}" style="text-align: center;color: white;padding: 1em;">Unregister</a>
       </div>
-      {{/each}}
+      {{/each}}</div>
       {{/if}}
     </div>
   </div>

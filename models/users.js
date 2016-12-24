@@ -15,6 +15,8 @@ User.add({
     userid: {type: Types.Number},
     email: { type: Types.Email, initial: true, required: true, index: true, unique: true },
     password: { type: Types.Password, required: true, initial: true },
+    college: {type: Types.Text, initial: true},
+    phone: {type: Types.Number, initial:true},
     canAccessKeystone: { type: Boolean, initial: true },
     emailVerified: {type:Boolean, initial: false},
     verificationToken: {type: Types.Text, initial: false}
