@@ -64,7 +64,7 @@ body {
 }
 
 .btnfos {
-  color: #fff;
+  color: #fff !important;
   cursor: pointer;
   display: block;
   font-size: 12px;
