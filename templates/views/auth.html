@@ -35,8 +35,8 @@
     }
     
     .md-close:hover {
-      background-color: #fff;
-      color: #000;
+      background-color: #fff !important;
+      color: #000 !important;
     }
     
     .md-content {
@@ -128,12 +128,11 @@
 
   <div class="md-modal md-effect-19 md-effect-12 md-effect-13" id="updates-modal" style="text-align:center">
     <div class="md-content">
-      <h3><b>Updates</b></h3>
+      <h3><b>Updates<span style="color:#f00;font-size:1.2em;font-weight:bold">&#33;</span></b></h3>
       <div>
         <ul>
-          <li><strong>Update 1:</strong> You cant miss this update!.</li>
-          <li><strong>Update 2:</strong> You cant miss this update!.</li>
-          <li><strong>Update 3:</strong> You cant miss this update!.</li>
+          <li><strong>1:</strong> Registrations for events have started. <a href="/auth">Signup</a> now!</li><br>
+          <li><strong>2:</strong> Check out the upcoming <a href="/workshops">workshops</a> on <a href="/iotDuino">IoT Duino</a> and <a href="/mobileMaking">Mobile Making</a></li>
         </ul>
         <button class="btnfos md-close">Close</button>
       </div>
@@ -224,6 +223,12 @@
             <li><a href="/2014" class="btnfos" target="_blank">2014</a></li>
           </ul>
         </li>
+        <li>
+          <a href="/auth" class="btnfos">
+            <svg>
+              <rect x="0" y="0" fill="none" width="100%" height="100%" />
+            </svg>Login</a>
+        </li>
       </ul>
       <div class="collapse navbar-collapse" id="navbar-collapse">
         <ul class="nav navbar-nav navbar-left" style="width:37%;">
@@ -306,6 +311,30 @@
   <div class="container-fluid">
     
     <div class="row">
+
+      <div class="col-lg-6">
+        <h3 style="text-align:center">Login</h3>
+        <div>
+          
+          <div class="input-field col s12">
+            <i class="material-icons prefix">email</i>
+            <input id="login-email" name="email" type="email" class="validate input-login">
+            <label for="login-email">Email</label>
+          </div>
+
+          <div class="input-field col s12">
+            <i class="material-icons prefix">vpn_key</i>
+            <input id="login-password" name="password" type="password" class="validate input-login">
+            <label for="login-password">Password</label>
+          </div>
+
+          <button id="login" class="form-btn" type="submit">Login</button>
+
+        </div>
+      </div>
+
+
+
       <div class="col-lg-6">
         <h3 style="text-align:center">Signup</h3>
         <div>
@@ -347,28 +376,8 @@
 
       </div>
 
-      <div class="col-lg-6">
-        <h3 style="text-align:center">Login</h3>
-        <div>
-          
-          <div class="input-field col s12">
-            <i class="material-icons prefix">email</i>
-            <input id="login-email" name="email" type="email" class="validate input-login">
-            <label for="login-email">Email</label>
-          </div>
-
-          <div class="input-field col s12">
-            <i class="material-icons prefix">vpn_key</i>
-            <input id="login-password" name="password" type="password" class="validate input-login">
-            <label for="login-password">Password</label>
-          </div>
-
-          <button id="login" class="form-btn" type="submit">Login</button>
-
-        </div>
-      </div>
-
     </div>
+      
 
   </div>
 
