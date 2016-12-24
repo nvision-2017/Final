@@ -20,17 +20,31 @@ handlers.getEvent = (req, res)=>{
 };
 
 handlers.registerEvent = (req, res)=>{
-  new Registration.model({
+  if (!req.decoded._doc.emailVerified) {
+    return res.json({error: 'Email not verified'});
+  }
+  Registration.model.findOne({
     event: req.params.id,
     user: req.decoded._doc._id
-  }).save(function(err, user){
-    if (err) {
-      res.json({error: 'Registration failed'});
+  }).then((user)=>{
+    if (user) {
+      return res.json(user);
     }
-    else {
-      res.json(user);
-    }
+    new Registration.model({
+      event: req.params.id,
+      user: req.decoded._doc._id
+    }).save(function(err, user){
+      if (err) {
+        res.json({error: 'Registration failed'});
+      }
+      else {
+        res.json(user);
+      }
+    });
+  }, err=>{
+
   });
+  
 };
 
 handlers.deleteEvent = (req, res)=>{

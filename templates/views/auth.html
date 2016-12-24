@@ -131,7 +131,7 @@
       <h3><b>Updates<span style="color:#f00;font-size:1.2em;font-weight:bold">&#33;</span></b></h3>
       <div>
         <ul>
-          <li><strong>1:</strong> Registrations for events have started. <a href="/auth">Signup</a> now!</li><br>
+          <li><strong>1:</strong> Registrations for events have started. <a href="/signin">Signup</a> now!</li><br>
           <li><strong>2:</strong> Check out the upcoming <a href="/workshops">workshops</a> on <a href="/iotDuino">IoT Duino</a> and <a href="/mobileMaking">Mobile Making</a></li>
         </ul>
         <button class="btnfos md-close">Close</button>
@@ -224,7 +224,7 @@
           </ul>
         </li>
         <li>
-          <a href="/auth" class="btnfos">
+          <a href="/signin" class="btnfos">
             <svg>
               <rect x="0" y="0" fill="none" width="100%" height="100%" />
             </svg>Login</a>
@@ -298,7 +298,7 @@
             </ul>
           </li>
           <li style="width:20%">
-            <a href="/auth" class="btnfos">
+            <a href="/signin" class="btnfos">
               <svg>
                 <rect x="0" y="0" fill="none" width="100%" height="100%" />
               </svg>Login</a>
@@ -422,7 +422,7 @@
           console.log(body);
 
           $("#signup").prop('disabled',true);
-          $.post('/signup/{{signupToken}}',body,function(res){
+          $.post('/signup',body,function(res){
             $("#signup").prop('disabled',false);
             if(res.status){
               window.location = res.redirectURL;
@@ -453,7 +453,7 @@
 
           console.log(body);
           $("#login").prop('disabled',true);
-          $.post('/login',body,function(res){
+          $.post('/signin',body,function(res){
             $("#login").prop('disabled',false);
             if(res.status){
               window.location = res.redirectURL;

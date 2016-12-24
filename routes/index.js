@@ -5,14 +5,8 @@ User = keystone.list('User'),
 Registration = keystone.list('Registration');
 
 var nodemailer = require('nodemailer');
-var transporter = nodemailer.createTransport('smtps://nvision2k17%40gmail.com:p%40$$w0rd@smtp.gmail.com');
+var transporter = nodemailer.createTransport(process.env.SMTP_EMAIL);
 var randtoken = require('rand-token');
-
-function pad(num, size) {
-    var s = num+"";
-    while (s.length < size) s = "0" + s;
-    return s;
-}
 
 function sendVEmail(tk, email, cb) {
     var mailOptions = {
@@ -20,7 +14,29 @@ function sendVEmail(tk, email, cb) {
         to: email,
         subject: 'Email verfication',
         text: `Verify your email here : https://nvision.org.in/verify?token=${tk}`,
-        html: `Verify your email here : <a href="https://nvision.org.in/verify?token=${tk}">Verify</a>`
+        html: `
+        <div style="width:100%;background-color:#072347;padding:3em 0 6em 0">
+	<div style="
+		background-image:url(https://nvision.org.in/img/nvision.png);
+		height:10em;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+	"></div>
+	<p style="color:#fff;font-size:1.2em;text-align:center">
+		Here is the last step of your signup.<br><br>
+		<a href="https://nvision.org.in/verify?token=${tk}" style="text-decoration: none;background-color:#00ccff;color:#072347;padding:6px;border-radius:3px">Click me</a> to verify your email<br><br>
+
+		(or) copy and paste this below link in your web browser<br>
+		<a href="https://nvision.org.in/verify?token=${tk}" style="color:#00ccff">https://nvision.org.in/verify?token=${tk}</a>
+	</p>
+
+	<p style="color:#fff;font-size:1.2em;text-align:center">
+		Thank You,<br>
+		&eta;vision team
+	</p>
+</div>
+        `
     };
     transporter.sendMail(mailOptions, function(err, info){
         if (err) return console.log(err);
@@ -73,7 +89,6 @@ exports = module.exports = function (app) {
     app.get('/mobilemaking', (req, res) => {
         res.redirect('/mobileMaking');
     });
-    app.get('/auth', routes.views.auth);
     app.get('/about', routes.views.about);
     app.get('/', routes.views.index);
     app.get('/sponsors', routes.views.sponsors);
@@ -95,9 +110,11 @@ exports = module.exports = function (app) {
             Registration.model.findOne({event: e._id, user: req.user._id}).then(reg=>{
                 if (reg) e.registered = true;
                 else e.registered = false;
+                e.user = req.user;
                 view.render('event', e);
             }, err=>{
                 e.registered = false;
+                e.user = req.user;
                 view.render('event', e);
             });
         }, e => res.err(e));
@@ -108,28 +125,31 @@ exports = module.exports = function (app) {
             email: req.body.email,
             password: req.body.password
         }, req, res, user=>{
-            if (!user) res.redirect('/signin');
-            else res.redirect('/dashboard');
-        }, err=>{res.redirect('/signin')});
+            if (!user) res.json({status: false, message: 'Invalid credentials'});
+            else res.json({status: true, redirectURL: '/dashboard'});
+        }, err=>{res.json({status: false, message: 'Invalid credentials'});});
     });
 
     app.post('/signup', (req, res) => {
         var tk = randtoken.generate(64);
+        var i = req.body.name.indexOf(' ');
         new User.model({
-            name: { first: req.body.first, last: req.body.last },
+            name: { first: req.body.name.substr(0,i), last: req.body.name.substr(i) },
             email: req.body.email,
             password: req.body.password,
+            college: req.body.college,
+            phone: req.body.phone,
             canAccessKeystone: false,
             emailVerified: false,
             verificationToken: tk
         }).save().then((user)=>{
-            var token = jwt.sign({token:token}, tokenSecret, {expiresIn: 900});
+            var token = jwt.sign({token:tk}, tokenSecret, {expiresIn: 900});
             sendVEmail(token, req.body.email);
             keystone.session.signin({
                 email: req.body.email,
                 password: req.body.password
             }, req, res, (user)=>{
-                return res.json({status: true, verified: false, message: 'Email verification email sent'});
+                return res.json({status: true, verified: false, redirectURL: '/dashboard', message: 'A verification email sent'});
             }, (err) => res.json({status: false, message: "Auth failed"}));
         }, (err)=>{
             res.json({status: false, message: "Auth failed"});
@@ -139,24 +159,23 @@ exports = module.exports = function (app) {
     app.get('/verify', (req, res)=>{
         var token = req.query.token;
         if (!token) {
-            return res.send('error');
+            return res.notfound();
         }
         jwt.verify(token, tokenSecret, function(err, decoded){
             if (err) {
-                return res.send('error');
+                return res.notfound();
             }
             else {
                 User.model.findOne({emailVerified: false, verificationToken: decoded.token}).then(user=>{
                     if (!user) return res.send('Error');
                     user.emailVerified = true;
-                    user.nvisionID = 'NVISION17'+pad(user.userid,4);
                     user.save().then(usr=>{
-                        res.send('verified');
+                        res.redirect('/dashboard');
                     }, e=>{
-                        res.send('Error');
+                        res.redirect('/dashboard');
                     });
                 }, err=>{
-                    res.send('error');
+                    res.notfound();
                 });
             }
         });
@@ -169,13 +188,26 @@ exports = module.exports = function (app) {
         if (!req.user.emailVerified) {
             return res.json({status: false, message: 'Email not verified'});
         }
-        new Registration.model({
-            event: req.params.id,
-            user: req.user._id
-        }).save().then(reg=>{
-            res.json({
-                status: true,
-                message: 'Registered'
+        Registration.model.findOne({event: req.params.id, user: req.user._id}).then((user)=>{
+            if (user) {
+                return res.json({
+                    status: true,
+                    message: 'Registered'
+                });
+            }
+            new Registration.model({
+                event: req.params.id,
+                user: req.user._id
+            }).save().then(reg=>{
+                res.json({
+                    status: true,
+                    message: 'Registered'
+                });
+            }, err=>{
+                res.json({
+                    status: false,
+                    message: 'Error'
+                });
             });
         }, err=>{
             res.json({
@@ -183,6 +215,7 @@ exports = module.exports = function (app) {
                 message: 'Error'
             });
         });
+        
     });
 
     app.post('/events/:id/unregister', (req, res)=>{
@@ -208,10 +241,10 @@ exports = module.exports = function (app) {
             return res.redirect('/signin');
         }
         if (!req.user.emailVerified) {
-            return view.render('dashboard', {emailnv:true});
+            return view.render('dashboard', {emailnv:true, user:req.user});
         }
         Registration.model.find({user: req.user._id}).populate('event').exec().then(r=>{
-            return view.render('dashboard', {reg:r, user:req.user});
+            return view.render('dashboard', {reg:r, n:r.length, user:req.user});
         }, e=>{
             return res.redirect('/');
         });
@@ -222,7 +255,7 @@ exports = module.exports = function (app) {
             return res.json({status:false, message: 'Auth failed'});
         }
         if (!req.emailVerified) {
-        var token = jwt.sign({toen:req.user.verificationToken}, tokenSecret, {expiresIn: 900});
+        var token = jwt.sign({token:req.user.verificationToken}, tokenSecret, {expiresIn: 900});
             sendVEmail(token, req.user.email);
             return res.json({status:true});
         }

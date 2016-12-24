@@ -343,14 +343,18 @@
         <h5>College : {{user.college}}</h5>
         <h5>Phone : {{user.phone}}<h5>
       </div>
-      <div class="col-md-7"><h3>Events Registered</h3>
-      {{#each reg}}
-      <div class="col-md-3 col-sm-6 col-xs-12 center" style="padding: 0 2em;margin: 2em;background: url('/img/buried.png');background-color: #555;">
-        <h5>{{this.event.name}}</h5>
-        <a href="{{this.event.link}}"></a>
-        <a href="#" class="unregister" data-id="{{this.event._id}}" style="text-align: center;color: white;padding: 1em;">Unregister</a>
+      <div class="col-md-7">
+        {{#if n}}
+        <h3>Events Registered</h3>
+        {{#each reg}}
+          <div>
+            <a href="{{this.event.link}}"><h5>{{this.event.name}}</h5></a>
+          </div>
+        {{/each}}
+        {{else}}
+          <p>No events registered.</p>
+        {{/if}}
       </div>
-      {{/each}}</div>
       {{/if}}
     </div>
   </div>

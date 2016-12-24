@@ -4,6 +4,6 @@ exports = module.exports = function(req, res) {
 
     var view = new keystone.View(req, res);
 
-    view.render('exhibitions');
+    view.render('exhibitions', {user: req.user});
 
 }

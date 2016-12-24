@@ -9,9 +9,14 @@ let User = new keystone.List('User', {
     nodelete: true
 });
 
+function pad(num, size) {
+    var s = num+"";
+    while (s.length < size) s = "0" + s;
+    return s;
+}
+
 User.add({
     name: { type: Types.Name, required: true, index: true },
-    nvisionID: {type: Types.Text },
     userid: {type: Types.Number},
     email: { type: Types.Email, initial: true, required: true, index: true, unique: true },
     password: { type: Types.Password, required: true, initial: true },
@@ -23,6 +28,10 @@ User.add({
 });
 
 User.schema.plugin(autoIncrement.plugin, {model: 'User', field: 'userid'});
+
+User.schema.virtual('nvisionID').get(function(){
+    return 'NVISION17'+pad(this.userid,4);
+});
 
 User.relationship({path: 'registrations', ref: 'Registration', refPath: 'user'});
 
