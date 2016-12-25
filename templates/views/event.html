@@ -433,6 +433,7 @@
           $.post('/events/{{_id}}/register', function(data, sts){
             if (data.status) {
               $('#registerbtn').html('Unregister');
+              alert(`Successfully registered for {{name}}`);
               reg = !reg;
             }
             else {
@@ -444,6 +445,7 @@
           $.post('/events/{{_id}}/unregister', function(data, sts){
             if (data.status) {
               $('#registerbtn').html('Register');
+              alert(`Successfully unregistered for {{name}}`);
               reg = !reg;
             }
             else {

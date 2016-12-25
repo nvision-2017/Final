@@ -4,7 +4,7 @@ var transporter = nodemailer.createTransport(sparkPostTransport({
   sparkPostApiKey: process.env.SPARKPOST
 }));
 
-var template = (tk, email)=>{return `
+var template = (email, heading, body, aname, alink)=>{return `
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -181,7 +181,7 @@ var template = (tk, email)=>{return `
 								<td width="100%" colspan="3" align="center" style="padding-bottom:10px;padding-top:25px;">
 									<div class="contentEditableContainer contentTextEditable">
 					                	<div class="contentEditable" align='center' >
-					                  		<h2 >Welcome to &eta;vision</h2>
+					                  		<h2 >${heading}</h2>
 					                	</div>
 					              	</div>
 								</td>
@@ -191,7 +191,7 @@ var template = (tk, email)=>{return `
 								<td width="400" align="center">
 									<div class="contentEditableContainer contentTextEditable">
 					                	<div class="contentEditable" align='center' >
-                                  Here is the last step for signup
+                                  ${body}
                               </div>
 					              	</div>
 								</td>
@@ -207,7 +207,7 @@ var template = (tk, email)=>{return `
 											<td bgcolor="#072347" align="center" style="border-radius:4px;" width="200" height="50">
 												<div class="contentEditableContainer contentTextEditable">
 								                	<div class="contentEditable" align='center' >
-								                  		<a target='_blank' href="https://nvision.org.in/verify?token=${tk}" class='link2'>Click here to confirm</a>
+								                  		<a target='_blank' href="${alink}" class='link2'>${aname}</a>
 								                	</div>
 								              	</div>
 											</td>
@@ -680,19 +680,35 @@ var template = (tk, email)=>{return `
 
 `;};
 
-function sendVEmail(tk, email, cb) {
+let mail = {};
+
+mail.sendVEmail = function(tk, email, cb) {
     var mailOptions = {
         from: 'nvision 2017 <'+process.env.EMAIL+'>',
         to: email,
         subject: 'Email verfication - ηvision 2017',
         text: `Verify your email here : https://nvision.org.in/verify?token=${tk}`,
-        html: template(tk, email)
+        html: template(email, 'Welcome to &eta;vision', 'Here is the last step for signup', 'Click here to confirm', `https://nvision.org.in/verify?token=${tk}`)
     };
     transporter.sendMail(mailOptions, function(err, info){
         if (err) return console.log(err);
         console.log('Message sent : '+info.response);
     });
-}
+};
+
+mail.sendRegisteredMail = function(email, name, ename, elink) {
+	var mailOptions = {
+        from: 'nvision 2017 <'+process.env.EMAIL+'>',
+        to: email,
+        subject: 'Successfully registered for event '+ename+' - ηvision 2017',
+        text: `Successfully registered for event ${ename}`,
+        html: template(email, `Hi ${name},`, `You have successfully registered for the event ${ename}`, `More about ${ename}`, elink)
+    };
+    transporter.sendMail(mailOptions, function(err, info){
+        if (err) return console.log(err);
+        console.log('Message sent : '+info.response);
+    });
+};
 
 
-module.exports = exports = sendVEmail;
+module.exports = exports = mail;

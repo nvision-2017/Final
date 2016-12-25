@@ -6,7 +6,9 @@ Registration = keystone.list('Registration');
 
 var randtoken = require('rand-token');
 
-var sendVEmail = require('./mail');
+const Mail = require('./mail');
+
+var sendVEmail = Mail.sendVEmail;
 
 const jwt = require('jsonwebtoken');
 
@@ -246,6 +248,9 @@ exports = module.exports = function (app) {
                 event: req.params.id,
                 user: req.user._id
             }).save().then(reg=>{
+                Event.model.findById(reg.event).then(e=>{
+                    Mail.sendRegisteredMail(req.user.email, `${req.user.name.first} ${req.user.name.last}`, e.name, `https://nvision.org.in${e.link}`);
+                });
                 res.json({
                     status: true,
                     message: 'Registered'
