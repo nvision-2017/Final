@@ -213,3 +213,10 @@ left: 120%;
 -webkit-transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
 }
+
+@media (max-width: 600px) {
+      nav {
+        background-color: black !important;
+        height: 5em !important;
+      }
+    }
