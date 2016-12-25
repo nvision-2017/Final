@@ -29,7 +29,7 @@ User.add({
 User.schema.plugin(autoIncrement.plugin, {model: 'User', field: 'userid'});
 
 User.schema.virtual('nvisionID').get(function(){
-    return 'NVISION17'+pad(this.userid,4);
+    return 'IITH17'+pad(this.userid,4);
 });
 
 User.relationship({path: 'registrations', ref: 'Registration', refPath: 'user'});
