@@ -682,9 +682,9 @@ var template = (email, heading, body, aname, alink)=>{return `
 
 let mail = {};
 
-mail.sendVEmail = function(tk, email, cb) {
+mail.sendVEmail = function(tk, email) {
     var mailOptions = {
-        from: 'nvision 2017 <'+process.env.EMAIL+'>',
+        from: 'Nvision 2017 - IIT Hyderabad <'+process.env.EMAIL+'>',
         to: email,
         subject: 'Email verfication - ηvision 2017',
         text: `Verify your email here : https://nvision.org.in/verify?token=${tk}`,
@@ -698,12 +698,28 @@ mail.sendVEmail = function(tk, email, cb) {
 
 mail.sendRegisteredMail = function(email, name, ename, elink) {
 	var mailOptions = {
-        from: 'nvision 2017 <'+process.env.EMAIL+'>',
+        from: 'Nvision 2017 - IIT Hyderabad <'+process.env.EMAIL+'>',
         to: email,
         subject: 'Successfully registered for event '+ename+' - ηvision 2017',
         text: `Successfully registered for event ${ename}`,
         html: template(email, `Hi ${name},`, `You have successfully registered for the event ${ename}`, `More about ${ename}`, elink)
     };
+    transporter.sendMail(mailOptions, function(err, info){
+        if (err) return console.log(err);
+        console.log('Message sent : '+info.response);
+    });
+};
+
+mail.sendFMail = function(email, tk, name) {
+	console.log(email);
+	var mailOptions = {
+        from: 'Nvision 2017 - IIT Hyderabad <'+process.env.EMAIL+'>',
+        to: email,
+        subject: 'Forgot Password - ηvision 2017',
+        text: `Reset your password here : https://nvision.org.in/forgot?token=${tk}`,
+        html: template(email, `Hi ${name},`, 'Click on the button below to reset your password', 'Reset Password', `https://nvision.org.in/forgot?token=${tk}`)
+    };
+	console.log(mailOptions.from);
     transporter.sendMail(mailOptions, function(err, info){
         if (err) return console.log(err);
         console.log('Message sent : '+info.response);

@@ -355,11 +355,12 @@
 
           <button id="login" class="form-btn" type="submit">Login</button>
 
+          <a href="#" data-toggle="modal" data-target="#forgotM" style="font-size: 1.2em;margin-top: 1em;float:right">Forgot Password?</a>
+
         </div>
       </div>
 
-
-
+      
       <div class="col-lg-6">
         <h3 style="text-align:center">Signup</h3>
         <div>
@@ -402,9 +403,28 @@
       </div>
 
     </div>
-      
+ 
 
   </div>
+
+  <div id="forgotM" class="modal fade" style="background-color: transparent;">
+      <div class="modal-dialog">
+        <div class="modal-content" style="background-color: black;border-color: wheat;">
+          <button type="button" class="close" data-dismiss="modal" style="font-size: 3em;color: white;">&times;</button>
+          <div class="modal-header">
+            <h6>Enter your email</h6>  
+          </div>
+          <div class="modal-body">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">email</i>
+              <input id="forgot-email" name="email" type="email" class="validate input-forgot">
+              <label for="forgot-email">Email</label>
+            </div>
+            <button id="forgot" class="form-btn" type="submit">Reset password</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
   <script src="/js/jquery.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
@@ -489,6 +509,34 @@
 
         }
 
+      });
+
+      $("#forgot").click(function(){
+        var invalidFlag = false;
+        $('input.input-forgot').each(function(){
+          if(( $(this).attr('name')!='password' && /^\s*$/.test($(this).val())) || $(this).val()=="" ) invalidFlag = true;
+        });
+
+        if(invalidFlag) {
+          alert('All fields are mandatory');
+        } else {
+
+          var body = {
+            email: $("#forgot-email").val()
+          };
+
+          console.log(body);
+          $("#forgot").prop('disabled',true);
+          $.post('/forgotpassword',body,function(res){
+            $("#forgot").prop('disabled',false);
+            if(res.status){
+              alert('An email to reset password has been sent. Check your mail.');
+            } else {
+              alert(res.message);
+            }
+          });
+
+        }
       });
 
     });

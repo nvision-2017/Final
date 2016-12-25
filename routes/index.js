@@ -181,19 +181,36 @@ exports = module.exports = function (app) {
         });
     });
 
+    app.post('/forgotpassword', (req, res)=>{
+        var email = req.body.email;
+        if (!email) {
+            return res.json({status:false, message: 'Email not provided'});
+        }
+        User.model.findOne({email: email}).then(user=>{
+            if (!user) {
+                return res.json({status: false, message: 'No user with this email found'});
+            }
+            var token = jwt.sign({token:'forgot'+user.verificationToken}, tokenSecret, {expiresIn: 900});
+            Mail.sendFMail(email, token, `${user.name.first} ${user.name.last}`);
+            return res.json({status:true, message: 'Sent an email to reset password'});
+        }, err=>{
+            return res.json({status:false, message: 'No user with this email found'});
+        });
+    });
+
     app.get('/forgot', (req, res)=>{
-        var token = req.query.token;
-        if (!token) {
+        var oldtoken = req.query.token;
+        if (!oldtoken) {
             return res.notfound();
         }
-        jwt.verify(token, tokenSecret, function(err, decoded){
+        jwt.verify(oldtoken, tokenSecret, function(err, decoded){
             if (err) return res.notfound();
             else {
                 var token = decoded.token;
                 if (token.substr(0, 6) != "forgot") return res.notfound();
                 User.model.findOne({verificationToken: token.substr(6)}).then(user=>{
                     if (!user) return res.notfound();
-                    res.render('forgot', {user: req.user, token: token, updates: keystone.get('updatesWeb')});
+                    res.render('forgot', {user: req.user, token: oldtoken, updates: keystone.get('updatesWeb')});
                 }, err=>res.notfound());
             }
         });
@@ -209,17 +226,17 @@ exports = module.exports = function (app) {
             return res.json({status:false, message: 'Password should have min 6 characters'});
         }
         jwt.verify(token, tokenSecret, function(err, decoded){
-            if (err) return res.notfound('Invalid token');
+            if (err) return res.json({status: 'Invaid token'});
             else {
                 var token = decoded.token;
-                if (token.substr(0, 6) != "forgot") return res.notfound();
+                console.log(token);
+                if (token.substr(0, 6) != "forgot") return res.json({status: 'Invaid token'});
                 User.model.findOne({verificationToken: token.substr(6)}).then(user=>{
                     if (!user) return res.json({status:false, message: 'Invalid token'});
-                    user.verificationToken = 
                     user.password = password;
                     user.verificationToken = randtoken.generate(64);
                     user.save().then(user=>{
-                        res.json({status: true, message: 'Updated password'});
+                        res.json({status: true, redirectURL: '/dashboard', message: 'Updated password'});
                     }, err=>{
                         res.json({status: false, message: 'Error'});
                     });
