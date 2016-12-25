@@ -152,11 +152,11 @@
       padding: 0.5em;
       margin: 0.5em;
     }
-    .event-btn a {
+    .event-div a {
       color: white;
     }
-    .event-btn a:hover {
-      color: blue;
+    .event-div a:hover {
+      /*color: green;*/
     }
   </style>
 <script>
@@ -393,7 +393,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4 center">
+      <div class="col-md-4">
         <h5>Name : {{user.name.first}} {{user.name.last}}</h5>
         <h5>Email : {{user.email}}</h5>
         <h5>&eta;vision ID : {{user.nvisionID}}</h5>
@@ -432,7 +432,7 @@
       $("#resendv").click(function(){
         $.post('/resendemail', function(data, sts){
           if (data.status) {
-            alert('Rsent email');
+            alert('Resent verification email');
           }
         });
       });

@@ -144,6 +144,13 @@
       background: url(/img/buried.png);
       border-radius: 0;
     }
+
+    @media (max-width: 600px) {
+      nav {
+        background-color: black !important;
+        height: 5em !important;
+      }
+    }
   </style>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -371,7 +378,7 @@
   <div class="container-fluid">
     <div class="row center">
       <div class="col-xs-12">
-        <h1 style="font-size:4em;margin:0.2em">{{name}}</h1>
+        <h1 style="font-size:4em;margin:0.2em;margin-top:0.7em;">{{name}}</h1>
         <ul class="nav nav-tabs">
         </ul>
       </div>
