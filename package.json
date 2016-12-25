@@ -11,6 +11,7 @@
     "keystone": "latest",
     "mongoose-auto-increment": "^5.0.1",
     "nodemailer": "^2.7.0",
+    "nodemailer-sparkpost-transport": "^1.1.0",
     "rand-token": "^0.3.0",
     "underscore": "latest"
   },

@@ -1,5 +1,8 @@
 var nodemailer = require('nodemailer');
-var transporter = nodemailer.createTransport(process.env.SMTP_EMAIL);
+var sparkPostTransport = require('nodemailer-sparkpost-transport');
+var transporter = nodemailer.createTransport(sparkPostTransport({
+  sparkPostApiKey: process.env.SPARKPOST
+}));
 
 var template = (tk)=>{return `
 
@@ -123,7 +126,7 @@ function sendVEmail(tk, email, cb) {
     var mailOptions = {
         from: 'nvision 2017 <'+process.env.EMAIL+'>',
         to: email,
-        subject: 'Email verfication',
+        subject: 'Email verfication - ηvision 2017',
         text: `Verify your email here : https://nvision.org.in/verify?token=${tk}`,
         html: template(tk)
     };
