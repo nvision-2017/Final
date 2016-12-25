@@ -20,7 +20,7 @@
 	
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<!-- <link rel="stylesheet" href="css/updates.css"> -->
+	<link rel="stylesheet" href="css/updates.css">
 	<link rel="stylesheet" href="css/style.css">
 
 
@@ -62,8 +62,33 @@
 
 	<div id="pre-loader"></div>
 
-	<style type="text/css">
-		table {
+	<style>
+		.md-close {
+			color: #fff;
+			margin-top: 6em !important;
+			border: 1px solid #fff;
+			transition-duration: 0.3s;
+		}
+		
+		.md-close:hover {
+			background-color: #fff !important;
+			color: #000 !important;
+		}
+		
+		.md-content {
+			/*width: 70vw;*/
+			/*height: 100vh;*/
+			font-size: 1.8em;
+			text-align: center;
+			padding-top: 6em;
+			border: 1px solid #fff;
+		}
+		
+		.md-content {
+			background-color: rgba(0, 0, 0, 0.5) !important;
+		}
+		
+ 		table {
 			height: 100vh;
 			width: 100vw;
 		}
@@ -74,7 +99,7 @@
 		
 		table tr td {
 			width: 50%;
-			border: 15px solid transparent;
+			border: 10px solid transparent;
 		}
 		
 		table tr td > div {
@@ -86,13 +111,17 @@
 			background: url(/img/nvision_b.png) center no-repeat;
 			background-size: 100%;
 		}
+
+		.box {
+			height: 18%;
+		}
 		
 		.box td {
 			text-align: center;
-			font-size: 2em;
 		}
 		
 		.box td div a {
+			font-size: 3em;
 			display: table;
 			overflow: hidden;
 			width: 100%;
@@ -106,6 +135,22 @@
 			vertical-align: middle;
 		}
 	</style>
+
+	<div class="md-modal md-effect-19 md-effect-12 md-effect-13" id="updates-modal" style="text-align:center">
+			<div class="md-content">
+				<h3><b>Updates</b></h3>
+				<div>
+					<ul>
+					{{#each updates}}
+					<li>{{{this}}}</li>
+					{{/each}}
+					</ul>
+					<button class="btnfos md-close">Close</button>
+				</div>
+			</div>
+		</div>
+		<div class="md-overlay"></div>
+	<!-- the overlay element -->
 
 	<table border="1">
 
@@ -129,24 +174,36 @@
 			<tr class="box">
 				<td>
 					<div>
-						<a href="/exhibitions" class="content"><span>Exhibitions</span></a>
+						<a href="/sponsors" class="content"><span>Sponsors</span></a>
 					</div>
 				</td>
 				<td>
 					<div>
-						<a href="/sponsors" class="content"><span>Sponsors</span></a>
+						<a href="/workshops" class="content"><span>Workshops</span></a>
 					</div>
 				</td>
 			</tr>
 			<tr class="box">
 				<td>
 					<div>
-						<a href="/workshops" class="content"><span>Workshops</span></a>
+						<a href="/exhibitions" class="content"><span>Exhibitions</span></a>
 					</div>
 				</td>
 				<td>
 					<div>
 						<a href="/team" class="content"><span>Team</span></a>
+					</div>
+				</td>
+			</tr>
+			<tr class="box">
+				<td>
+					<div>
+						<a class="content md-trigger md-setperspective" data-modal="updates-modal"><span>Updates<b style="color:#f00;font-weight:bold">&#33;</b></span></a>
+					</div>
+				</td>
+				<td>
+					<div>
+						<a href="/signin" class="content"><span>Register</span></a>
 					</div>
 				</td>
 			</tr>
@@ -175,7 +232,7 @@
 		}
 	</script>
 
-	<!-- <script src="/js/updates.js"></script> -->
+	<script src="/js/updates.js"></script>
 
 </body>
 
