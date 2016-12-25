@@ -71,18 +71,25 @@ exports = module.exports = function (app) {
         Event.model.findOne({ link: `/events/${req.params.event}` }).then(e => {
             if (!e) return res.notfound();
             e.registered = false;
-            Registration.model.findOne({event: e._id, user: req.user._id}).then(reg=>{
-                if (reg) e.registered = true;
-                else e.registered = false;
-                e.user = req.user;
+            if (req.user) {
+                Registration.model.findOne({event: e._id, user: req.user._id}).then(reg=>{
+                    if (reg) e.registered = true;
+                    else e.registered = false;
+                    e.user = req.user;
+                    e.updates = keystone.get('updatesWeb');
+                    view.render('event', e);
+                }, err=>{
+                    e.registered = false;
+                    e.user = req.user;
+                    e.updates = keystone.get('updatesWeb');
+                    view.render('event', e);
+                });
+            }
+            else {
                 e.updates = keystone.get('updatesWeb');
                 view.render('event', e);
-            }, err=>{
-                e.registered = false;
-                e.user = req.user;
-                e.updates = keystone.get('updatesWeb');
-                view.render('event', e);
-            });
+            }
+            
         }, e => res.err(e));
     });
 

@@ -388,10 +388,12 @@
         <ul class="nav nav-pills nav-stacked animated bounceInLeft event-nav">
           <li class="active"><a href="#tab-intro" data-toggle="pill">Introduction</a></li>
           <li><a href="#tab-rules" data-toggle="pill">Rules</a></li>
+          {{#if user}}
           {{#if registered}}
           <li><a href="#tab-register" id="registerbtn" data-toggle="pill">Unregister</a></li>
           {{else}}
           <li><a href="#tab-register" id="registerbtn" data-toggle="pill">Register</a></li>
+          {{/if}}
           {{/if}}
         </ul>
         <div class="hidden-xs hidden-sm event-icon animated slideInLeft">
