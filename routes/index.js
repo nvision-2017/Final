@@ -79,7 +79,6 @@ exports = module.exports = function (app) {
             if (req.user) {
                 Registration.model.findOne({event: e._id, user: req.user._id}).then(reg=>{
                     if (reg) e.registered = true;
-                    else e.registered = false;
                     e.user = req.user;
                     e.updates = keystone.get('updatesWeb');
                     view.render('event', e);

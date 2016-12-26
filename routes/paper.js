@@ -33,6 +33,7 @@ handlers.upload = (req, res)=>{
     data = req.body;
     item.getUpdateHandler(req).process(data, function(err){
         if (err) return res.render('paper', {status:false, message: 'Error uploading try again'});
+        require('./mail').sendPPMail(req.user.email, req.user.name.first+' '+req.user.name.last);
         res.render('paper', {
             status:true,
             message: "Paper uploaded successfully"

@@ -711,7 +711,6 @@ mail.sendRegisteredMail = function(email, name, ename, elink) {
 };
 
 mail.sendFMail = function(email, tk, name) {
-	console.log(email);
 	var mailOptions = {
         from: 'Nvision 2017 - IIT Hyderabad <'+process.env.EMAIL+'>',
         to: email,
@@ -725,6 +724,21 @@ mail.sendFMail = function(email, tk, name) {
         console.log('Message sent : '+info.response);
     });
 };
+
+mail.sendPPMail = function(email, name) {
+	var mailOptions = {
+        from: 'Nvision 2017 - IIT Hyderabad <'+process.env.EMAIL+'>',
+        to: email,
+        subject: 'Paper Presentation - ηvision 2017',
+        text: `Successfully register for Paper Presentation`,
+        html: template(email, `Hi ${name},`, 'You have successfully registered for paper presentation.', 'Check other events', `https://nvision.org.in/events`)
+    };
+	console.log(mailOptions.from);
+    transporter.sendMail(mailOptions, function(err, info){
+        if (err) return console.log(err);
+        console.log('Message sent : '+info.response);
+    });
+}
 
 
 module.exports = exports = mail;
