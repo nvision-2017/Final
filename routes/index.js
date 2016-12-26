@@ -68,6 +68,9 @@ exports = module.exports = function (app) {
         }
         next();
     }, routes.views.register);
+    app.get('/e/:event', (req, res)=>{
+        res.redirect('/events/'+req.params.event);
+    });
     app.get('/events/:event', (req, res) => {
         var view = new keystone.View(req, res);
         Event.model.findOne({ link: `/events/${req.params.event}` }).then(e => {
