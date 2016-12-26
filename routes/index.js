@@ -96,12 +96,16 @@ exports = module.exports = function (app) {
     });
 
     app.post('/signin', (req, res)=>{
+        var dh = '/dashboard';
+        if (req.body.from) {
+            dh = req.body.from;
+        }
         keystone.session.signin({
             email: req.body.email,
             password: req.body.password
         }, req, res, user=>{
             if (!user) res.json({status: false, message: 'Invalid credentials'});
-            else res.json({status: true, redirectURL: '/dashboard'});
+            else res.json({status: true, redirectURL: dh});
         }, err=>{res.json({status: false, message: 'Invalid credentials'});});
     });
 
@@ -358,6 +362,11 @@ exports = module.exports = function (app) {
             return res.status(403).json({error: {message: 'Token required'}});
         }
     });
+
+    var paperpresentation = require('./paper');
+
+    app.get('/paperpresentation', paperpresentation.getPP);
+    app.post('/paperpresentation', paperpresentation.upload)
 
     app.get('/api/me', api.getUser);
     app.get('/api/me/events', api.getUserEvents);

@@ -492,6 +492,7 @@
         } else {
 
           var body = {
+            {{#if from}}from: '{{from}}',{{/if}}
             email: $("#login-email").val(),
             password: $("#login-password").val()
           };
