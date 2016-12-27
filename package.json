@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "async": "^2.1.2",
+    "aws-sdk": "^2.7.19",
     "consolidate": "^0.14.5",
     "dotenv": "^2.0.0",
     "express-handlebars": "^3.0.0",
@@ -15,6 +16,7 @@
     "nodemailer": "^2.7.0",
     "nodemailer-sparkpost-transport": "^1.1.0",
     "rand-token": "^0.3.0",
+    "request": "^2.79.0",
     "underscore": "latest"
   },
   "engines": {

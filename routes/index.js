@@ -369,7 +369,8 @@ exports = module.exports = function (app) {
     var paperpresentation = require('./paper');
 
     app.get('/paperpresentation', paperpresentation.getPP);
-    app.post('/paperpresentation', paperpresentation.upload)
+    app.post('/paperpresentation', paperpresentation.upload);
+    app.get('/paper/:id', paperpresentation.getFile);
 
     app.get('/api/me', api.getUser);
     app.get('/api/me/events', api.getUserEvents);

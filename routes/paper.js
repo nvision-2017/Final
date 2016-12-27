@@ -4,11 +4,12 @@ var exec = require('child_process').exec;
 
 var PaperPresentation = keystone.list('PaperPresentation');
 
+// var request = require('request');
+
 let handlers = {};
 
 handlers.getPP = (req, res)=>{
     var view = new keystone.View(req, res);
-
     view.render('paper', {user: req.user, updates: keystone.get('updatesWeb')});
 };
 
@@ -43,5 +44,36 @@ handlers.upload = (req, res)=>{
         })
     })
 };
+
+var AWS = require('aws-sdk');
+// AWS.config.update(
+//     {
+//         accessKeyId: process.env.S3_KEY,
+//         secretAccessKey: process.env.S3_ACCESS
+//     }
+// );
+
+var s3 = new AWS.S3();
+
+handlers.getFile = function(req, res) {
+    if (!req.user) {
+        return res.notfound();
+    }
+    if (!req.user.canAccessKeystone) {
+        return res.notfound();
+    }
+    PaperPresentation.model.findById(req.params.id).then(pp=>{
+        if (!pp) {
+            return res.notfound();
+        }
+        var options = {
+            Bucket    : 'test-ppp',
+            Key    : pp.paper.filename,
+        };
+        res.attachment(pp.paper.filename);
+        var fileStream = s3.getObject(options).createReadStream();
+        fileStream.pipe(res);
+    });
+}
 
 module.exports = exports = handlers;
