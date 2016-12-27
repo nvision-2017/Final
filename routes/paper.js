@@ -20,8 +20,11 @@ handlers.upload = (req, res)=>{
     if (!req.user.emailVerified) {
         return res.render('paper', {status:false, message: 'Email is not verified'});
     }
-    if (!req.body.ugorg) {
+    if (!req.body.ugOrG) {
         return res.render('paper', {status:false, message: 'Select undergraduate or graduate'});
+    }
+    if (!req.files.paper) {
+        return res.render('paper', {status: false, message: 'No file selected'});
     }
     if (!req.body.topic) {
         return res.render('paper', {status: false, message: 'Topic field cannot be empty'});
