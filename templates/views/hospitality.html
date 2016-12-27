@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en-IN">
 
 <head>
@@ -156,194 +156,7 @@
   <!-- the overlay element -->
 
 
-  <nav id="navbar-top" class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" data-activates="slide-out" class="navbar-toggle collapsed button-collapse" aria-expanded="false" style="background-color:#000;position:fixed;right:0">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        <a class="navbar-brand mobile" href="/">
-          <img id="navlogo" alt="Brand" src="/img/nvision.png">
-        </a>
-      </div>
-      <ul id="slide-out" class="side-nav">
-        <li>
-          <div class="userView">
-            <a href="/">
-              <img class="img-responsive" src="/img/nvision_b.png"></a>
-          </div>
-        </li>
-        <li>
-          <div class="divider"></div>
-        </li>
-
-        <li>
-          <a href="#" class="btnfos md-trigger md-setperspective" data-modal="updates-modal">
-            <svg>
-              <rect x="0" y="0" fill="none" width="100%" height="100%" />
-            </svg>Updates&nbsp;<span style="color:#f00;font-size:1.2em;font-weight:bold">&#33;</span></a>
-        </li>
-        <li>
-          <a href="/about" class="btnfos">
-            <svg>
-              <rect x="0" y="0" fill="none" width="100%" height="100%" />
-            </svg>About</a>
-        </li>
-        <li>
-          <a href="/events" class="btnfos">
-            <svg>
-              <rect x="0" y="0" fill="none" width="100%" height="100%" />
-            </svg>Events</a>
-        </li>
-        <li>
-          <a href="/exhibitions" class="btnfos">
-            <svg>
-              <rect x="0" y="0" fill="none" width="100%" height="100%" />
-            </svg>Exhibitions</a>
-        </li>
-        <li>
-          <a href="/sponsors" class="btnfos">
-            <svg>
-              <rect x="0" y="0" fill="none" width="100%" height="100%" />
-            </svg>Sponsors</a>
-        </li>
-        <li>
-          <a href="/workshops" class="btnfos">
-            <svg>
-              <rect x="0" y="0" fill="none" width="100%" height="100%" />
-            </svg>Workshops</a>
-        </li>
-        <li>
-          <a href="https://blog.nvision.org.in/" class="btnfos">
-            <svg>
-              <rect x="0" y="0" fill="none" width="100%" height="100%" />
-            </svg>Blog</a>
-        </li>
-        <li>
-          <a href="/team" class="btnfos">
-            <svg>
-              <rect x="0" y="0" fill="none" width="100%" height="100%" />
-            </svg>Team</a>
-        </li>
-        <li class="dropdown">
-          <a class="dropdown-toggle btnfos" data-toggle="dropdown" href="#">Archives
-          <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li style="width:100%"><a href="https://old.nvision.org.in/" target="_blank">2016</a></li>
-            <li style="width:100%"><a href="/2014" target="_blank">2014</a></li>
-          </ul>
-        </li>
-        <li>
-          {{#if user}}
-            <a href="#" class="btnfos dropdown-toggle" data-toggle="dropdown">
-              <svg>
-                <rect x="0" y="0" fill="none" width="100%" height="100%" />
-              </svg>Hi, {{user.name.first}}<span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-              <li><a href="/dashboard" class="btnfos btnfosd" style="width: 10em;">Dashboard</a></li>
-              <li><a href="/keystone/signout" class="btnfos btnfosd" style="width: 10em;">Signout</a></li>
-              </ul>
-            {{else}}
-            <a href="/signin" class="btnfos">
-              <svg>
-              <rect x="0" y="0" fill="none" width="100%" height="100%" />
-              </svg>Register</a>
-            {{/if}}
-        </li>
-      </ul>
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav navbar-left" style="width:37%;">
-          <li style="width:25%">
-            <a class="btnfos md-trigger md-setperspective" data-modal="updates-modal">
-              <svg>
-                <rect x="0" y="0" fill="none" width="100%" height="100%" />
-              </svg>Updates&nbsp;<span style="color:#f00;font-size:1.2em;font-weight:bold">&#33;</span></a>
-          </li>
-          <li style="width:25%">
-            <a href="/events" class="btnfos">
-              <svg>
-                <rect x="0" y="0" fill="none" width="100%" height="100%" />
-              </svg>Events</a>
-          </li>
-          <li style="width:25%">
-            <a href="/sponsors" class="btnfos">
-              <svg>
-                <rect x="0" y="0" fill="none" width="100%" height="100%" />
-              </svg>Sponsors</a>
-          </li>
-          <li style="width:25%">
-            <a href="/workshops" class="btnfos">
-              <svg>
-                <rect x="0" y="0" fill="none" width="100%" height="100%" />
-              </svg>Workshops</a>
-          </li>
-        </ul>
-        
-        <ul class="nav navbar-nav navbar-left" style="width:23%;">
-          <li style="width:100%;">
-            <a href="/" class="btnfos">
-              <img src="/img/nvision.png" width="300">
-            </a>
-          </li>
-        </ul>  
-        <ul class="nav navbar-nav navbar-right" style="width:40%;">
-          <li style="width:20%">
-            <a href="/exhibitions" class="btnfos">
-              <svg>
-                <rect x="0" y="0" fill="none" width="100%" height="100%" />
-              </svg>Exhibitions</a>
-          </li>
-          <li style="width:20%">
-            <a href="https://blog.nvision.org.in/" class="btnfos">
-              <svg>
-                <rect x="0" y="0" fill="none" width="100%" height="100%" />
-              </svg>Blog</a>
-          </li>
-          <li style="width:20%">
-            <a href="/team" class="btnfos">
-              <svg>
-                <rect x="0" y="0" fill="none" width="100%" height="100%" />
-              </svg>Team</a>
-          </li>
-          <li class="dropdown" style="width:20%">
-            <a href="#" class="btnfos dropdown-toggle" data-toggle="dropdown">
-              <svg>
-                <rect x="0" y="0" fill="none" width="100%" height="100%" />
-              </svg>Archives<span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="https://old.nvision.org.in/" class="btnfos btnfosd" target="_blank">2016</a></li>
-              <li>
-                <a href="/2014" class="btnfos btnfosd" target="_blank">2014</a>
-              </li>
-            </ul>
-          </li>
-          <li style="width:20%">
-            {{#if user}}
-            <a href="#" class="btnfos dropdown-toggle" data-toggle="dropdown">
-              <svg>
-                <rect x="0" y="0" fill="none" width="100%" height="100%" />
-              </svg>Hi, {{user.name.first}}<span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-              <li><a href="/dashboard" class="btnfos btnfosd" style="width: 10em;">Dashboard</a></li>
-              <li><a href="/keystone/signout" class="btnfos btnfosd" style="width: 10em;">Signout</a></li>
-              </ul>
-            {{else}}
-            <a href="/signin" class="btnfos">
-              <svg>
-              <rect x="0" y="0" fill="none" width="100%" height="100%" />
-              </svg>Register</a>
-            {{/if}}
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  {{> nav}}
 
   <div class="container-fluid" style="margin-top:3em">
     <div class="row center">
@@ -427,6 +240,8 @@
       </div>
     </div>
   </div>  
+
+{{> footer}}
 
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
