@@ -62,6 +62,7 @@ exports = module.exports = function (app) {
     app.get('/team', routes.views.team);
     app.get('/workshops', routes.views.workshops);
     app.get('/exhibitions', routes.views.exhibitions);
+    app.get('/hospitality', routes.views.hospitality);
     app.get('/signin', (req, res, next)=>{
         if (req.user) {
             return res.redirect('/dashboard');

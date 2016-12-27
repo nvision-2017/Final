@@ -7,9 +7,6 @@ var PaperPresentation = keystone.list('PaperPresentation');
 let handlers = {};
 
 handlers.getPP = (req, res)=>{
-    if (!req.user) {
-        return res.redirect('/signin?from=/paperpresentation');
-    }
     var view = new keystone.View(req, res);
 
     view.render('paper', {user: req.user, updates: keystone.get('updatesWeb')});

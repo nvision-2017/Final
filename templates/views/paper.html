@@ -161,7 +161,7 @@
                   <ul class="nav nav-tabs"></ul>
                   <h4>Introduction:</h4>
                   <p style="font-size:16px">
-                    Participants are invited to present papers spanning various research topics pertaining to the different branches of engineering and science. We expect to see some really innovative work.  It will be conducted in 2 rounds, selected students in first will give their presentation in final round in Nvision 2016.
+                    Participants are invited to present papers spanning various research topics pertaining to the different branches of engineering and science. We expect to see some really innovative work.  It will be conducted in 2 rounds, selected students in first will give their presentation in final round in &eta;vision 2017.
                   </p><br>
 
                   <h4>Judging Criteria:</h4>
@@ -201,6 +201,10 @@
 
                   <h5>Last Date: <b>January 7, 2017</b></h5>
 
+                  {{#if user}}
+
+                  {{#if user.emailVerified}}
+
                   <h3 style="text-align:center">Submit</h3>
                   <ul class="nav nav-tabs"></ul>
                   <p>
@@ -237,6 +241,12 @@
 
                   </form>
                   </p>
+                  {{else}}
+                  <a href="/dashboard" class="form-btn center">Verify your email to submit</a>
+                  {{/if}}
+                  {{else}}
+                  <a href="/signin?from=/paperpresentation" class="form-btn center">Signin to submit</a>
+                  {{/if}}
 </div>
       <div class="col-lg-2"></div>
 
