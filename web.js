@@ -1,7 +1,6 @@
 /* @flow */
 require('dotenv').config();
 const keystone = require('keystone');
-const cons = require('consolidate');
 
 var handlebars = require('express-handlebars');
 
