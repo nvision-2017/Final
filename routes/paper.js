@@ -16,14 +16,20 @@ handlers.upload = (req, res)=>{
     if (!req.user) {
         return res.render('paper', {status:false, message: 'Auth failed'});
     }
+    if (!req.user.emailVerified) {
+        return res.render('paper', {status:false, message: 'Email is not verified'});
+    }
     if (!req.body.ugorg) {
         return res.render('paper', {status:false, message: 'Select undergraduate or graduate'});
     }
     if (!req.body.topic) {
         return res.render('paper', {status: false, message: 'Topic field cannot be empty'});
     }
-    if (!req.files.paper) {
-        return res.render('paper', {status: false, message: 'Upload the paper'});
+    if (req.files.paper.mimetype != 'application/pdf') {
+        return res.render('paper', {status: false, message: 'Invalid file type'});
+    }
+    if (req.files.paper.size > 25*1024*1024) {
+        return res.render('paper', {status: false, message: 'File size should be less than 25MB'});
     }
     var item = new PaperPresentation.model();
     req.body.user = req.user._id;
