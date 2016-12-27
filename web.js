@@ -3,6 +3,8 @@ require('dotenv').config();
 const keystone = require('keystone');
 const cons = require('consolidate');
 
+var handlebars = require('express-handlebars');
+
 keystone.init({
   'name': 'nvision 2017',
   'brand': 'nvision 2017',
@@ -21,7 +23,13 @@ keystone.init({
   'user model': 'User',
   'cookie secret': 'This is a Huuge Secret',
   'views': 'templates/views',
-  'custom engine': cons.handlebars,
+  'custom engine': handlebars.create({
+		// layoutsDir: 'templates/views/layouts',
+		partialsDir: 'templates/views/partials',
+		// defaultLayout: 'default',
+		// helpers: new require('./templates/views/helpers')(),
+		extname: '.html',
+	}).engine,
   'view engine': 'html'
 });
 
