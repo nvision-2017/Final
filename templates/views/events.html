@@ -256,7 +256,7 @@
               <svg>
                 <rect x="0" y="0" fill="none" width="100%" height="100%" />
               </svg>Team</a>
-          </li style="width:20%">
+          </li>
           <li class="dropdown" style="width:20%">
             <a href="#" class="btnfos dropdown-toggle" data-toggle="dropdown">
               <svg>
@@ -1547,6 +1547,7 @@
 	<script>
 	var tween = new TimelineMax ()
 	.add([
+		TweenMax.fromTo(".club-container.online", 1, {}, {top: -1080, ease: Linear.easeNone}),
 		TweenMax.fromTo(".club-container.kludge", 1, {}, {top: -960, ease: Linear.easeNone}),
 		TweenMax.fromTo(".club-container.cephid", 1, {}, {top: -840, ease: Linear.easeNone}),
 		TweenMax.fromTo(".club-container.infero", 1, {}, {top: -720, ease: Linear.easeNone}),
