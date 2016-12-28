@@ -10,7 +10,7 @@
     "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.6",
     "jsonwebtoken": "^7.2.1",
-    "keystone": "latest",
+    "keystone": "^4.0.0-beta.1",
     "keystone-storage-adapter-s3": "^1.1.1",
     "mongoose-auto-increment": "^5.0.1",
     "nodemailer": "^2.7.0",

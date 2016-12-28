@@ -4,7 +4,9 @@ let Types = keystone.Field.Types;
 let autoIncrement = require('mongoose-auto-increment');
 autoIncrement.initialize(keystone.mongoose);
 
-let PaperPresentation = new keystone.List('PaperPresentation');
+let PaperPresentation = new keystone.List('PaperPresentation', {
+    nodelete: true
+});
 
 function pad(num, size) {
     var s = num+"";

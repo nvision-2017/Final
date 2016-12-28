@@ -55,6 +55,9 @@ exports = module.exports = function (app) {
     app.get('/mobilemaking', (req, res) => {
         res.redirect('/mobileMaking');
     });
+    app.get('/processingmech', (req, res) => {
+        res.redirect('/processingMech');
+    });
     app.get('/about', routes.views.about);
     app.get('/', routes.views.index);
     app.get('/sponsors', routes.views.sponsors);
@@ -63,6 +66,7 @@ exports = module.exports = function (app) {
     app.get('/workshops', routes.views.workshops);
     app.get('/exhibitions', routes.views.exhibitions);
     app.get('/hospitality', routes.views.hospitality);
+    app.get('/emblazon', routes.views.emblazon);
     app.get('/signin', (req, res, next)=>{
         if (req.user) {
             return res.redirect('/dashboard');
