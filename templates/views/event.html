@@ -145,6 +145,9 @@
       border-radius: 0;
     }
 
+    #navbar-top {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2)) !important;
+    }
     
   </style>
 <script>
@@ -216,7 +219,7 @@
             <div class="prize-div">Prizes worth&emsp;&#8377;&nbsp;{{prize}}</div>{{/if}}
           </div>
         </div>
-        <div class="row tab-content">
+        <div class="row tab-content custom-scrollbar" style="height: 52vh; overflow-y: auto;">
           <div class="tab-pane active animated bounceInUp" id="tab-intro">
             <p class="" style="font-size:1.5em;width:100%;padding:0.3em;">
               {{introduction}}
