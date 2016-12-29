@@ -16,6 +16,12 @@ let tokenSecret = 'varyverysecrettokenithinkso';
 
 const Event = keystone.list('Event');
 
+function pad(num, size) {
+    var s = num+"";
+    while (s.length < size) s = "0" + s;
+    return s;
+}
+
 // Common Middleware
 keystone.pre('routes', middleware.initErrorHandlers);
 keystone.pre('routes', middleware.initLocals);
@@ -120,7 +126,7 @@ exports = module.exports = function (app) {
             return view.render('dashboard', {emailnv:true, user:req.user, updates: keystone.get('updatesWeb')});
         }
         Registration.model.find({user: req.user._id}).populate('event').exec().then(r=>{
-            return view.render('dashboard', {reg:r, n:r.length, user:req.user, updates: keystone.get('updatesWeb')});
+            return view.render('dashboard', {reg:r, n:r.length, user:req.user, nvid: 'IITH17'+pad(req.user.userid, 4), updates: keystone.get('updatesWeb')});
         }, e=>{
             return res.redirect('/');
         });
