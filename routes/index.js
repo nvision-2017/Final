@@ -43,6 +43,50 @@ keystone.set('500', function (err, req, res, next) {
     res.err(err, title, message);
 });
 
+var crypto = require('crypto');
+var _ = require('lodash');
+
+function hash (str) {
+	// force type
+	str = '' + str;
+	// get the first half
+	str = str.substr(0, Math.round(str.length / 2));
+	// hash using sha256
+	return crypto
+		.createHmac('sha256', keystone.get('cookie secret'))
+		.update(str)
+		.digest('base64')
+		.replace(/\=+$/, '');
+}
+
+function signinSSO(req, res, next) {
+    if (req.query.token) {
+        jwt.verify(req.query.token, tokenSecret, (err, decoded)=>{
+            if (!err) {
+                var user = decoded.user;
+                req.session.regenerate(function () {
+                    req.user = user;
+                    req.session.userId = user._id;
+                    // if the user has a password set, store a persistence cookie to resume sessions
+                    if (keystone.get('cookie signin') && user.password) {
+                        var userToken = user._id + ':' + hash(user.password);
+                        var cookieOpts = _.defaults({}, keystone.get('cookie signin options'), {
+                            signed: true,
+                            httpOnly: true,
+                            maxAge: 10 * 24 * 60 * 60,
+                        });
+                        res.cookie('keystone.uid', userToken, cookieOpts);
+                        console.log(userToken);
+                    }
+                    return next();
+                });
+            }
+            else next();
+        });
+    }
+    else next();
+};
+
 // Bind Routes
 exports = module.exports = function (app) {
     // views
@@ -67,12 +111,34 @@ exports = module.exports = function (app) {
     app.get('/exhibitions', routes.views.exhibitions);
     app.get('/hospitality', routes.views.hospitality);
     app.get('/emblazon', routes.views.emblazon);
-    app.get('/signin', (req, res, next)=>{
-        if (req.user) {
-            return res.redirect('/dashboard');
+    app.get('/dashboard', signinSSO, (req, res)=>{
+        if (!req.user) {
+            return res.redirect(process.env.ID_SERVER+'/signin?url='+process.env.THIS_SERVER+'/dashboard');
         }
-        next();
-    }, routes.views.register);
+        var view = new keystone.View(req, res);
+        if (!req.user.emailVerified) {
+            return view.render('dashboard', {emailnv:true, user:req.user, updates: keystone.get('updatesWeb')});
+        }
+        Registration.model.find({user: req.user._id}).populate('event').exec().then(r=>{
+            return view.render('dashboard', {reg:r, n:r.length, user:req.user, updates: keystone.get('updatesWeb')});
+        }, e=>{
+            return res.redirect('/');
+        });
+    });
+    app.get('/signout', (req, res)=>{
+        keystone.session.signout(req, res, function(){
+            res.redirect(process.env.ID_SERVER+'/signout?url='+process.env.THIS_SERVER);
+        });
+    });
+    app.get('/signin', (req, res)=>{
+        res.redirect('/dashboard');
+    });
+    // app.get('/signin', (req, res, next)=>{
+    //     if (req.user) {
+    //         return res.redirect('/dashboard');
+    //     }
+    //     next();
+    // }, routes.views.register);
     app.get('/e/:event', (req, res)=>{
         res.redirect('/events/'+req.params.event);
     });
@@ -102,161 +168,161 @@ exports = module.exports = function (app) {
         }, e => res.err(e));
     });
 
-    app.post('/signin', (req, res)=>{
-        var dh = '/dashboard';
-        if (req.body.from) {
-            dh = req.body.from;
-        }
-        keystone.session.signin({
-            email: req.body.email,
-            password: req.body.password
-        }, req, res, user=>{
-            if (!user) res.json({status: false, message: 'Invalid credentials'});
-            else res.json({status: true, redirectURL: dh});
-        }, err=>{res.json({status: false, message: 'Invalid credentials'});});
-    });
+    // app.post('/signin', (req, res)=>{
+    //     var dh = '/dashboard';
+    //     if (req.body.from) {
+    //         dh = req.body.from;
+    //     }
+    //     keystone.session.signin({
+    //         email: req.body.email,
+    //         password: req.body.password
+    //     }, req, res, user=>{
+    //         if (!user) res.json({status: false, message: 'Invalid credentials'});
+    //         else res.json({status: true, redirectURL: dh});
+    //     }, err=>{res.json({status: false, message: 'Invalid credentials'});});
+    // });
 
-    app.post('/signup', (req, res) => {
-        var tk = randtoken.generate(64);
-        if (!req.body.name) {
-            return res.json({status:false, message: 'Name cannot be empty'});
-        }
-        var i = req.body.name.indexOf(' ');
-        var f,l;
-        if (i==-1){
-            f = req.body.name;
-            l = ''
-        }
-        else
-        {
-            f = req.body.name.substr(0, i);
-            l = req.body.name.substr(i);
-        }
-        if(!req.body.password || req.body.password.length < 6) {
-            return res.json({status:false, message: 'Password must have atleast 6 characters'});
-        }
-        if (!req.body.email) {
-            return res.json({status:false, message: 'Enter a valid email address'});
-        }
-        if (!req.body.college) {
-            return res.json({status:false, message: 'College name cannot be empty'});
-        }
-        if (!req.body.phone) {
-            return res.json({status:false, message: 'Phone cannot be empty'});
-        }
-        new User.model({
-            name: { first: f, last: l },
-            email: req.body.email,
-            password: req.body.password,
-            college: req.body.college,
-            phone: req.body.phone,
-            canAccessKeystone: false,
-            emailVerified: false,
-            verificationToken: tk
-        }).save().then((user)=>{
-            var token = jwt.sign({token:tk}, tokenSecret, {expiresIn: 900});
-            sendVEmail(token, req.body.email);
-            keystone.session.signin({
-                email: req.body.email,
-                password: req.body.password
-            }, req, res, (user)=>{
-                return res.json({status: true, verified: false, redirectURL: '/dashboard', message: 'A verification email sent'});
-            }, (err) => res.json({status: false, message: "Auth failed"}));
-        }, (err)=>{
-            res.json({status: false, message: "Use another email"});
-        });
-    });
+    // app.post('/signup', (req, res) => {
+    //     var tk = randtoken.generate(64);
+    //     if (!req.body.name) {
+    //         return res.json({status:false, message: 'Name cannot be empty'});
+    //     }
+    //     var i = req.body.name.indexOf(' ');
+    //     var f,l;
+    //     if (i==-1){
+    //         f = req.body.name;
+    //         l = ''
+    //     }
+    //     else
+    //     {
+    //         f = req.body.name.substr(0, i);
+    //         l = req.body.name.substr(i);
+    //     }
+    //     if(!req.body.password || req.body.password.length < 6) {
+    //         return res.json({status:false, message: 'Password must have atleast 6 characters'});
+    //     }
+    //     if (!req.body.email) {
+    //         return res.json({status:false, message: 'Enter a valid email address'});
+    //     }
+    //     if (!req.body.college) {
+    //         return res.json({status:false, message: 'College name cannot be empty'});
+    //     }
+    //     if (!req.body.phone) {
+    //         return res.json({status:false, message: 'Phone cannot be empty'});
+    //     }
+    //     new User.model({
+    //         name: { first: f, last: l },
+    //         email: req.body.email,
+    //         password: req.body.password,
+    //         college: req.body.college,
+    //         phone: req.body.phone,
+    //         canAccessKeystone: false,
+    //         emailVerified: false,
+    //         verificationToken: tk
+    //     }).save().then((user)=>{
+    //         var token = jwt.sign({token:tk}, tokenSecret, {expiresIn: 900});
+    //         sendVEmail(token, req.body.email);
+    //         keystone.session.signin({
+    //             email: req.body.email,
+    //             password: req.body.password
+    //         }, req, res, (user)=>{
+    //             return res.json({status: true, verified: false, redirectURL: '/dashboard', message: 'A verification email sent'});
+    //         }, (err) => res.json({status: false, message: "Auth failed"}));
+    //     }, (err)=>{
+    //         res.json({status: false, message: "Use another email"});
+    //     });
+    // });
 
-    app.get('/verify', (req, res)=>{
-        var token = req.query.token;
-        if (!token) {
-            return res.notfound();
-        }
-        jwt.verify(token, tokenSecret, function(err, decoded){
-            if (err) {
-                return res.notfound();
-            }
-            else {
-                User.model.findOne({emailVerified: false, verificationToken: decoded.token}).then(user=>{
-                    if (!user) return res.notfound();
-                    user.emailVerified = true;
-                    user.save().then(usr=>{
-                        res.redirect('/dashboard');
-                    }, e=>{
-                        res.redirect('/dashboard');
-                    });
-                }, err=>{
-                    res.notfound();
-                });
-            }
-        });
-    });
+    // app.get('/verify', (req, res)=>{
+    //     var token = req.query.token;
+    //     if (!token) {
+    //         return res.notfound();
+    //     }
+    //     jwt.verify(token, tokenSecret, function(err, decoded){
+    //         if (err) {
+    //             return res.notfound();
+    //         }
+    //         else {
+    //             User.model.findOne({emailVerified: false, verificationToken: decoded.token}).then(user=>{
+    //                 if (!user) return res.notfound();
+    //                 user.emailVerified = true;
+    //                 user.save().then(usr=>{
+    //                     res.redirect('/dashboard');
+    //                 }, e=>{
+    //                     res.redirect('/dashboard');
+    //                 });
+    //             }, err=>{
+    //                 res.notfound();
+    //             });
+    //         }
+    //     });
+    // });
 
-    app.post('/forgotpassword', (req, res)=>{
-        var email = req.body.email;
-        if (!email) {
-            return res.json({status:false, message: 'Email not provided'});
-        }
-        User.model.findOne({email: email}).then(user=>{
-            if (!user) {
-                return res.json({status: false, message: 'No user with this email found'});
-            }
-            var token = jwt.sign({token:'forgot'+user.verificationToken}, tokenSecret, {expiresIn: 900});
-            Mail.sendFMail(email, token, `${user.name.first} ${user.name.last}`);
-            return res.json({status:true, message: 'Sent an email to reset password'});
-        }, err=>{
-            return res.json({status:false, message: 'No user with this email found'});
-        });
-    });
+    // app.post('/forgotpassword', (req, res)=>{
+    //     var email = req.body.email;
+    //     if (!email) {
+    //         return res.json({status:false, message: 'Email not provided'});
+    //     }
+    //     User.model.findOne({email: email}).then(user=>{
+    //         if (!user) {
+    //             return res.json({status: false, message: 'No user with this email found'});
+    //         }
+    //         var token = jwt.sign({token:'forgot'+user.verificationToken}, tokenSecret, {expiresIn: 900});
+    //         Mail.sendFMail(email, token, `${user.name.first} ${user.name.last}`);
+    //         return res.json({status:true, message: 'Sent an email to reset password'});
+    //     }, err=>{
+    //         return res.json({status:false, message: 'No user with this email found'});
+    //     });
+    // });
 
-    app.get('/forgot', (req, res)=>{
-        var oldtoken = req.query.token;
-        if (!oldtoken) {
-            return res.notfound();
-        }
-        jwt.verify(oldtoken, tokenSecret, function(err, decoded){
-            if (err) return res.notfound();
-            else {
-                var token = decoded.token;
-                if (token.substr(0, 6) != "forgot") return res.notfound();
-                User.model.findOne({verificationToken: token.substr(6)}).then(user=>{
-                    if (!user) return res.notfound();
-                    res.render('forgot', {user: req.user, token: oldtoken, updates: keystone.get('updatesWeb')});
-                }, err=>res.notfound());
-            }
-        });
-    });
+    // app.get('/forgot', (req, res)=>{
+    //     var oldtoken = req.query.token;
+    //     if (!oldtoken) {
+    //         return res.notfound();
+    //     }
+    //     jwt.verify(oldtoken, tokenSecret, function(err, decoded){
+    //         if (err) return res.notfound();
+    //         else {
+    //             var token = decoded.token;
+    //             if (token.substr(0, 6) != "forgot") return res.notfound();
+    //             User.model.findOne({verificationToken: token.substr(6)}).then(user=>{
+    //                 if (!user) return res.notfound();
+    //                 res.render('forgot', {user: req.user, token: oldtoken, updates: keystone.get('updatesWeb')});
+    //             }, err=>res.notfound());
+    //         }
+    //     });
+    // });
 
-    app.post('/forgot', (req, res)=>{
-        var token = req.body.token;
-        var password = req.body.password;
-        if (!token) {
-            return res.json({status:false, message: 'No token'});
-        }
-        if (!password || password.length < 6) {
-            return res.json({status:false, message: 'Password should have min 6 characters'});
-        }
-        jwt.verify(token, tokenSecret, function(err, decoded){
-            if (err) return res.json({status: 'Invaid token'});
-            else {
-                var token = decoded.token;
-                console.log(token);
-                if (token.substr(0, 6) != "forgot") return res.json({status: 'Invaid token'});
-                User.model.findOne({verificationToken: token.substr(6)}).then(user=>{
-                    if (!user) return res.json({status:false, message: 'Invalid token'});
-                    user.password = password;
-                    user.verificationToken = randtoken.generate(64);
-                    user.save().then(user=>{
-                        res.json({status: true, redirectURL: '/dashboard', message: 'Updated password'});
-                    }, err=>{
-                        res.json({status: false, message: 'Error'});
-                    });
-                }, err=>{
-                    res.json({status: false, message: 'Invalid token'});
-                });
-            }
-        });
-    });
+    // app.post('/forgot', (req, res)=>{
+    //     var token = req.body.token;
+    //     var password = req.body.password;
+    //     if (!token) {
+    //         return res.json({status:false, message: 'No token'});
+    //     }
+    //     if (!password || password.length < 6) {
+    //         return res.json({status:false, message: 'Password should have min 6 characters'});
+    //     }
+    //     jwt.verify(token, tokenSecret, function(err, decoded){
+    //         if (err) return res.json({status: 'Invaid token'});
+    //         else {
+    //             var token = decoded.token;
+    //             console.log(token);
+    //             if (token.substr(0, 6) != "forgot") return res.json({status: 'Invaid token'});
+    //             User.model.findOne({verificationToken: token.substr(6)}).then(user=>{
+    //                 if (!user) return res.json({status:false, message: 'Invalid token'});
+    //                 user.password = password;
+    //                 user.verificationToken = randtoken.generate(64);
+    //                 user.save().then(user=>{
+    //                     res.json({status: true, redirectURL: '/dashboard', message: 'Updated password'});
+    //                 }, err=>{
+    //                     res.json({status: false, message: 'Error'});
+    //                 });
+    //             }, err=>{
+    //                 res.json({status: false, message: 'Invalid token'});
+    //             });
+    //         }
+    //     });
+    // });
 
     app.post('/events/:id/register', (req, res)=>{
         if (!req.user) {
@@ -315,31 +381,16 @@ exports = module.exports = function (app) {
         });
     });
 
-    app.get('/dashboard', (req, res)=>{
-        var view = new keystone.View(req, res);
-        if (!req.user) {
-            return res.redirect('/signin');
-        }
-        if (!req.user.emailVerified) {
-            return view.render('dashboard', {emailnv:true, user:req.user, updates: keystone.get('updatesWeb')});
-        }
-        Registration.model.find({user: req.user._id}).populate('event').exec().then(r=>{
-            return view.render('dashboard', {reg:r, n:r.length, user:req.user, updates: keystone.get('updatesWeb')});
-        }, e=>{
-            return res.redirect('/');
-        });
-    });
-
-    app.post('/resendemail', (req, res)=>{
-        if (!req.user){
-            return res.json({status:false, message: 'Auth failed'});
-        }
-        if (!req.emailVerified) {
-        var token = jwt.sign({token:req.user.verificationToken}, tokenSecret, {expiresIn: 900});
-            sendVEmail(token, req.user.email);
-            return res.json({status:true});
-        }
-    });
+    // app.post('/resendemail', (req, res)=>{
+    //     if (!req.user){
+    //         return res.json({status:false, message: 'Auth failed'});
+    //     }
+    //     if (!req.emailVerified) {
+    //     var token = jwt.sign({token:req.user.verificationToken}, tokenSecret, {expiresIn: 900});
+    //         sendVEmail(token, req.user.email);
+    //         return res.json({status:true});
+    //     }
+    // });
 
     app.post('/api/auth', (req, res)=>{
         keystone.session.signin({
