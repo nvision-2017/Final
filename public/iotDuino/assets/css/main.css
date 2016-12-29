@@ -653,21 +653,13 @@ html {
     display: none;
   }
   #headerwrap {
-    background: url("/iotDuino/assets/img/poster_web.jpg") no-repeat center top;
+    display: none;
+  }
+  #headerwrap-mobile {
     margin-top: 4em;
-	text-align:center;
-	height: 100%;
-	width: 100%;
-    background-size: cover;
-
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
-
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    line-height: 2em;
   }
 }
