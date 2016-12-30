@@ -213,7 +213,7 @@
       </div>
       {{#if emailnv}}
       <div class="col-md-8 center">
-        <p style="font-size:2em;">Email is not verified. Check your mail for verification email.<br><a href="#" id="resendv">Resend verification email</a></p>
+        <p style="font-size:2em;">Email is not verified. Check your mail for verification email.<br><a href="https://id.nvision.org.in/resendemail?url=https://nvision.org.in/dashboard" id="resendv">Resend verification email</a></p>
       </div>
       {{else}}
       <div class="col-md-7">
@@ -241,14 +241,10 @@
    <script src="/js/updates.js"></script> 
   <script>
     $(document).ready(function(){
+      {{#if sent}}
+      alert('Verification email sent.');
+      {{/if}}
       {{#if emailnv}}
-      $("#resendv").click(function(){
-        $.post('/resendemail',{callbackURL: 'https://nvision.org.in/dashboard'}, function(data, sts){
-          if (data.status) {
-            alert('Resent verification email');
-          }
-        });
-      });
       {{else}}
       $(".unregister").click(function(){
         var th = $(this);
