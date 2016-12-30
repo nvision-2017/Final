@@ -123,10 +123,10 @@ exports = module.exports = function (app) {
         }
         var view = new keystone.View(req, res);
         if (!req.user.emailVerified) {
-            return view.render('dashboard', {emailnv:true, user:req.user, nvid: 'IITH17'+pad(req.user.userid, 4), updates: keystone.get('updatesWeb')});
+            return view.render('dashboard', {emailnv:true, user:req.user, nvid: 'IITH17'+pad(req.user.userid, 4), updates: keystone.get('updatesWeb'), sent: req.query.sent});
         }
         Registration.model.find({user: req.user._id}).populate('event').exec().then(r=>{
-            return view.render('dashboard', {reg:r, n:r.length, user:req.user, nvid: 'IITH17'+pad(req.user.userid, 4), updates: keystone.get('updatesWeb')});
+            return view.render('dashboard', {reg:r, n:r.length, user:req.user, nvid: 'IITH17'+pad(req.user.userid, 4), updates: keystone.get('updatesWeb'), sent: req.query.sent});
         }, e=>{
             return res.redirect('/');
         });

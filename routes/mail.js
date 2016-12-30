@@ -733,7 +733,6 @@ mail.sendPPMail = function(email, name) {
         text: `Successfully register for Paper Presentation`,
         html: template(email, `Hi ${name},`, 'You have successfully registered for paper presentation.', 'Check other events', `https://nvision.org.in/events`)
     };
-	console.log(mailOptions.from);
     transporter.sendMail(mailOptions, function(err, info){
         if (err) return console.log(err);
         console.log('Message sent : '+info.response);
