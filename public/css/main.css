@@ -261,3 +261,8 @@ footer ul li a {
 footer ul li a:hover {
   font-weight: bold;
 }
+
+.signin,.signin:hover {
+  border: 2px solid #fff;
+}
+
