@@ -2,7 +2,6 @@ let keystone = require('keystone');
 let Types = keystone.Field.Types;
 
 let Domain = new keystone.List('Domain', {
-  nocreate: true,
   nodelete: true
 });
 

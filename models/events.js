@@ -2,7 +2,6 @@ let keystone = require('keystone');
 let Types = keystone.Field.Types;
 
 let Event = new keystone.List('Event', {
-  nodelete: true
 });
 
 Event.add({
