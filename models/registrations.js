@@ -3,8 +3,6 @@ let Types = keystone.Field.Types;
 
 let Registration = new keystone.List('Registration', {
   noedit: true,
-  nocreate: true,
-  nodelete: true
 });
 
 Registration.add({
