@@ -257,11 +257,11 @@ a.hexagon_item {
   margin: 0 auto;
 }
 
-.hexagon_item:nth-child(8n-2) {
+.hexagon_item:visible:nth-child(8n-2) {
   margin-left: 50px;
 }
 
-.hexagon_item:nth-child(n+6) {
+.hexagon_item:visible:nth-child(n+6) {
   margin-top: -25px;
 }
 
@@ -273,19 +273,19 @@ a.hexagon_item {
 }
 
 @media (max-width: 820px) {
-  .hexagon_item:nth-child(5n-1) {
+  .hexagon_item:visible:nth-child(5n-1) {
   margin-left: 51px;
 }
 
-.hexagon_item:nth-child(n+4) {
+.hexagon_item:visible:nth-child(n+4) {
   margin-top: -31px;
 }
 
-.hexagon_item:nth-child(7n-2) {
+.hexagon_item:visible:nth-child(7n-2) {
   margin-left: 0px;
 }
 
-.hexagon_item:nth-child(n+5) {
+.hexagon_item:visible:nth-child(n+5) {
   margin-top: -28px;
 }
 
@@ -300,15 +300,15 @@ a.hexagon_item {
   width: 205px;
 }
 
-.hexagon_item:nth-child(5n-1) {
+.hexagon_item:visible:nth-child(5n-1) {
   margin-left: 0px;
 }
 
-.hexagon_item:nth-child(3n) {
+.hexagon_item:visible:nth-child(3n) {
   margin-left: 51px;
 }
 
-.hexagon_item:nth-child(n+3) {
+.hexagon_item:visible:nth-child(n+3) {
   margin-top: -28px;
 }
 
@@ -319,15 +319,15 @@ a.hexagon_item {
   width: 150px;
 }
 
-.hexagon_item:nth-child(3n) {
+.hexagon_item:visible:nth-child(3n) {
   margin-left: 0px;
 }
 
-.hexagon_item:nth-child(2n) {
+.hexagon_item:visible:nth-child(2n) {
   margin-left: 51px;
 }
 
-.hexagon_item:nth-child(n+2) {
+.hexagon_item:visible:nth-child(n+2) {
   margin-top: -28px;
 }
 
