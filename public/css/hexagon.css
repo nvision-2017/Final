@@ -31,10 +31,6 @@ body {
     -ms-transition: all ease-in-out 200ms;
     transition: all ease-in-out 200ms;
 }
-.club-container:hover {
-    box-shadow:0 0 100px #000, 0 0 30px #fff;
-    cursor: pointer;
-}
 
 .club-container div h4 {
   font-size: 40px;
