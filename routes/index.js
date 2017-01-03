@@ -116,7 +116,8 @@ exports = module.exports = function (app) {
     app.get('/sponsors', routes.views.sponsors);
     app.get('/events', routes.views.events);
     app.get('/infi_events', (req, res)=>{
-        res.render('infi');
+        var view = new keystone.View(req, res);
+        view.render('infi', {user: req.user, updates: keystone.get('updatesWeb')});
     });
     app.get('/team', routes.views.team);
     app.get('/workshops', routes.views.workshops);
