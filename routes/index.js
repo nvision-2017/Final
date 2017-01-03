@@ -108,6 +108,9 @@ exports = module.exports = function (app) {
     app.get('/processingmech', (req, res) => {
         res.redirect('/processingMech');
     });
+    app.get('/workshop', (req, res) => {
+        res.redirect('/workshops');
+    });
     app.get('/about', routes.views.about);
     app.get('/', routes.views.index);
     app.get('/sponsors', routes.views.sponsors);
