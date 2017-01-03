@@ -150,107 +150,112 @@
 <div class="md-overlay"></div>
 <!-- the overlay element -->
 
-    {{> nav}}
+{{> nav}}
 <div class="container-fluid" style="margin-top: 2em;">
 
-    <div class="row">
+<div class="row">
 
-      <div class="col-lg-2"></div>
-      <div class="col-lg-8">
-                <h3 style="text-align:center">Paper Presentation</h3>
-                  <ul class="nav nav-tabs"></ul>
-                  <h4>Introduction:</h4>
-                  <p style="font-size:16px">
-                    Participants are invited to present papers spanning various research topics pertaining to the different branches of engineering and science. We expect to see some really innovative work.  It will be conducted in 2 rounds, selected students in first will give their presentation in final round in &eta;vision 2017.
-                  </p><br>
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+        <h3 style="text-align:center">Paper Presentation</h3>
+<ul class="nav nav-tabs"></ul>
+<h4>Introduction:</h4>
+<p style="font-size:16px"> Participants are invited to present papers spanning various research topics pertaining to the different branches of engineering
+and science. We expect to see some really innovative work. It will be conducted in 2 rounds, selected students in first will
+give their presentation in final round in &eta;vision 2017.
+</p><br>
 
-                  <h4>Judging Criteria:</h4>
-                  <p>
-                    <li style="font-size:16px">Correctness of facts</li>
-                    <li style="font-size:16px">Methods of analysis</li>
-                    <li style="font-size:16px">Innovativeness of idea</li>
-                    <li style="font-size:16px">Presentation of solution or ideas</li>
-                    <li style="font-size:16px">Practical feasibility or implication of ideas</li>
-                  </p><br>
+<h4>Judging Criteria:</h4>
+<p>
+    <li style="font-size:16px">Correctness of facts</li>
+<li style="font-size:16px">Methods of analysis</li>
+<li style="font-size:16px">Innovativeness of idea</li>
+<li style="font-size:16px">Presentation of solution or ideas</li>
+<li style="font-size:16px">Practical feasibility or implication of ideas</li>
+</p><br>
 
-                  <h4>Rules:</h4>
-                  <p>
-                    <li style="font-size:16px">The abstract should not exceed 500 words. </li>
-                    <li style="font-size:16px">Short listing will be done based on the abstract.</li>
-                    <li style="font-size:16px">All relevant data and figures must be represented in the paper</li>
-                    <li style="font-size:16px">Organizers decision will be final and binding.</li>
-                    <li style="font-size:16px">Teams of maximum 3 members are allowed.</li>
-                    <li style="font-size:16px">Nominal fee will be charged at the time of presentation of paper(if selected).</li>
-                    <li style="font-size:16px">All results will be announced on the website and will be mailed to the team members.</li>
-                    <li style="font-size:16px">Any abstract that is selected and is not presented shall not qualify for any award.</li>
-                  </p><br>
+<h4>Rules:</h4>
+<p>
+    <li style="font-size:16px">The abstract should not exceed 500 words. </li>
+<li style="font-size:16px">Short listing will be done based on the abstract.</li>
+<li style="font-size:16px">All relevant data and figures must be represented in the paper</li>
+<li style="font-size:16px">Organizers decision will be final and binding.</li>
+<li style="font-size:16px">Teams of maximum 3 members are allowed.</li>
+<li style="font-size:16px">Nominal fee will be charged at the time of presentation of paper(if selected).</li>
+<li style="font-size:16px">All results will be announced on the website and will be mailed to the team members.</li>
+<li style="font-size:16px">Any abstract that is selected and is not presented shall not qualify for any award.</li>
+</p><br>
 
-                  <h4>Organisers:</h4>
-                  <p>
-                    <div class="col-lg-6">
-                      Karthik B V<br>
-                      8978759487<br>
-                      <a href="mailto:me15btech11040@iith.ac.in">me15btech11040@iith.ac.in</a>
-                    </div>
-                    <div class="col-lg-6">
-                      H M Sandeep<br>
-                      9497025304<br>
-                      <a href="mailto:ee15btech11011@iith.ac.in">ee15btech11011@iith.ac.in</a>
-                    </div>
-                  </p><br><br><br><br>
+<h4>Organisers:</h4>
+<p>
+    <div class="col-lg-6">
+        Karthik B V<br> 8978759487
+        <br>
+        <a href="mailto:me15btech11040@iith.ac.in">me15btech11040@iith.ac.in</a>
+    </div>
+    <div class="col-lg-6">
+        H M Sandeep<br> 9497025304
+        <br>
+        <a href="mailto:ee15btech11011@iith.ac.in">ee15btech11011@iith.ac.in</a>
+    </div>
+</p><br><br><br><br>
 
-                  <h5>Last Date: <b>January 7, 2017</b></h5>
+<h5>Last Date: <b>January 7, 2017</b></h5>
 
-                  {{#if user}}
+{{#if user}} {{#if user.emailVerified}}
 
-                  {{#if user.emailVerified}}
+<h3 style="text-align:center">Submit</h3>
+<ul class="nav nav-tabs"></ul>
+<p>
+    <form id="formpaper" action="/paperpresentation" method="post" enctype="multipart/form-data">
+        <div>
 
-                  <h3 style="text-align:center">Submit</h3>
-                  <ul class="nav nav-tabs"></ul>
-                  <p>
-                  <form id="formpaper" action="/paperpresentation" method="post" enctype="multipart/form-data">
-                    <div>
+            <div class="input-field col s12">
+                <i class="material-icons prefix">assignment</i>
+                <input id="topic" name="topic" type="text" class="validate input-signup">
+                <label for="topic">Topic</label>
+            </div>
 
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">assignment</i>
-                            <input id="topic" name="topic" type="text" class="validate input-signup">
-                            <label for="topic">Topic</label>
-                        </div>
-
-                        <div class="col s12">
-                            <input style="color: white !important;z-index: 12;position: relative" type="radio" id="ugorgug" name="ugOrG" value="Undergraduate" class="with-gap">
-                            <label for="ugorgug">Undergraduate</label>
-                        </div><div class="col s12">
-                            <input style="color: white !important;z-index: 12;position: relative" type="radio" id="ugorgg" name="ugOrG" value="Graduate" class="with-gap">
-                            <label for="ugorgg">Graduate</label>
-                        </div>
-
-                        <div class="file-field input-field col s12">
-                          <div class="btn">
-                            <span>Select File (Only PDF)</span>
-                            <input type="file" id="paper" name="paper" accept="application/pdf">
-                          </div>
-                          <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
-                          </div>
-                        </div>
-
-                        <button id="signup" class="form-btn" type="submit">Submit</button>
-
-                    </div>
-
-                  </form>
-                  </p>
-                  {{else}}
-                  <a href="/dashboard" class="form-btn center">Verify your email to submit</a>
-                  {{/if}}
-                  {{else}}
-                  <a href="/signin?from=/paperpresentation" class="form-btn center">Signin to submit</a>
-                  {{/if}}
+            <div class="col s12">
+                <input style="color: white !important;z-index: 12;position: relative" type="radio" id="ugorgug" name="ugOrG" value="Undergraduate" class="with-gap">
+<label for="ugorgug">Undergraduate</label>
 </div>
-      <div class="col-lg-2"></div>
+<div class="col s12">
+    <input style="color: white !important;z-index: 12;position: relative" type="radio" id="ugorgg" name="ugOrG" value="Graduate" class="with-gap">
+<label for="ugorgg">Graduate</label>
+</div>
+
+<div class="file-field input-field col s12">
+    <div class="btn">
+        <span>Select File (Only PDF)</span>
+        <input type="file" id="paper" name="paper" accept="application/pdf">
+    </div>
+    <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+    </div>
+</div>
+<!--<div class="progress" style="height: 20px;">
+    <div class="bar progress-bar">
+        <span class="percent">0%</span>
+    </div>
+    
+</div>-->
+
+<button id="signup" class="form-btn" type="submit">Submit</button>
 
 </div>
+
+</form>
+</p>
+{{else}}
+<a href="/dashboard" class="form-btn center">Verify your email to submit</a> {{/if}} {{else}}
+<a href="/signin?from=/paperpresentation" class="form-btn center">Signin to submit</a> {{/if}}
+</div>
+<div class="col-lg-2"></div>
+
+</div>
+
+
 
 
 </div>
@@ -258,60 +263,61 @@
 {{> footer}}
 
 <script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.form.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/materialize.min.js"></script>
 <script src="/js/main.js"></script>
 <script src="/js/updates.js"></script>
 
 <script type="text/javascript">
+    $(".progress").hide();
 
-    var files;
-    $('input[type=file]').on('change', prepareUpload);
-
-// Grab the files and set them to our variable
-function prepareUpload(event)
-{
-  files = event.target.files;
-  console.log(files);
-}
-
-
-
-    $("input[name=ugorg]").click(function(){
+    $("input[name=ugorg]").click(function () {
         $(this).attr('checked', 'checked');
     });
 
-    {{!--$("#formpaper").on('submit', function(e){
-        e.preventDefault();
-        var data = new FormData();
-        $.each(files, function(key, value){
-            data.append(key,value);
-        });
-        data.append('ugorg', $("input[name=ugorg]").val());
-        data.append('topic', $("#topic").val());
-        console.log(data);
-        $.ajax({
-            url: '/paper',
-            type: 'POST',
-            data: data,
-            cache: false,
-            processData: false,
-            contentType: false,
-            success: function(data, sts, xhr) {
-                if (data.status) {
-                    alert(data.message);
-                    location = '/dashboard';
-                }
-                else {
-                    alert(data.message);
-                }
+    $(function () {
+
+        var bar = $('.bar');
+        var percent = $('.percent');
+
+        $('form').submit(function(e){
+            if ($("#topic").val() == "") {
+                e.preventDefault();
+                alert("Topic cannot be empty");
+            }
+            else if (!$("#ugorgug").prop('checked') && !$("#uporgg").prop('checked')) {
+                e.preventDefault();
+                alert('Select Undergraduate or Graduate');
             }
         });
-    });--}}
 
-    {{#if message}}
-    alert('{{message}}');
-    {{/if}}
+        $('form').ajaxForm({
+            beforeSend: function () {
+                $(".progress").show();
+                $("#signup").prop("disabled", true);
+                $("#signup").html("Uploading... <span class='percent'>0%</span>");
+                percent = $('.percent');
+                var percentVal = '0%';
+                bar.width(percentVal);
+                percent.html(percentVal);
+            },
+            uploadProgress: function (event, position, total, percentComplete) {
+                var percentVal = percentComplete + '%';
+                bar.width(percentVal);
+                percent.html(percentVal);
+            },
+            complete: function (xhr) {
+                console.log(this);
+                var data = JSON.parse(xhr.responseText);
+                console.log(xhr.responseText);
+                $(".progress").hide();
+                $("#signup").prop("disabled", false);
+                $("#signup").html("Submit");
+                alert(data.message);
+            }
+        });
+    });
 </script>
 
 </body>

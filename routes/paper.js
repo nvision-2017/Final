@@ -15,33 +15,33 @@ handlers.getPP = (req, res)=>{
 
 handlers.upload = (req, res)=>{
     if (!req.user) {
-        return res.render('paper', {status:false, message: 'Auth failed'});
+        return res.json({status:false, message: 'Auth failed'});
     }
     if (!req.user.emailVerified) {
-        return res.render('paper', {status:false, message: 'Email is not verified'});
+        return res.json({status:false, message: 'Email is not verified'});
     }
     if (!req.body.ugOrG) {
-        return res.render('paper', {status:false, message: 'Select undergraduate or graduate'});
+        return res.json({status:false, message: 'Select undergraduate or graduate'});
     }
     if (!req.files.paper) {
-        return res.render('paper', {status: false, message: 'No file selected'});
+        return res.json({status: false, message: 'No file selected'});
     }
     if (!req.body.topic) {
-        return res.render('paper', {status: false, message: 'Topic field cannot be empty'});
+        return res.json({status: false, message: 'Topic field cannot be empty'});
     }
     if (req.files.paper.mimetype != 'application/pdf') {
-        return res.render('paper', {status: false, message: 'Invalid file type'});
+        return res.json({status: false, message: 'Invalid file type'});
     }
     if (req.files.paper.size > 25*1024*1024) {
-        return res.render('paper', {status: false, message: 'File size should be less than 25MB'});
+        return res.json({status: false, message: 'File size should be less than 25MB'});
     }
     var item = new PaperPresentation.model();
     req.body.user = req.user._id;
     data = req.body;
     item.getUpdateHandler(req).process(data, function(err){
-        if (err) return res.render('paper', {status:false, message: 'Error uploading try again'});
+        if (err) return res.json({status:false, message: 'Error uploading try again'});
         require('./mail').sendPPMail(req.user.email, req.user.name.first+' '+req.user.name.last);
-        res.render('paper', {
+        res.json({
             status:true,
             message: "Paper uploaded successfully"
         })
