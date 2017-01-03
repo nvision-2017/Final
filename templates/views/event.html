@@ -200,10 +200,13 @@
           <li class="active"><a href="#tab-intro" data-toggle="pill">Introduction</a></li>
           <li><a href="#tab-rules" data-toggle="pill">Rules</a></li>
           {{#if user}}
+          {{#if infi}}
+          {{else}}
           {{#if registered}}
           <li><a href="#tab-register" id="registerbtn" data-toggle="pill">Unregister</a></li>
           {{else}}
           <li><a href="#tab-register" id="registerbtn" data-toggle="pill">Register</a></li>
+          {{/if}}
           {{/if}}
           {{/if}}
         </ul>

@@ -153,9 +153,10 @@ exports = module.exports = function (app) {
     });
     app.get('/events/:event', (req, res) => {
         var view = new keystone.View(req, res);
-        Event.model.findOne({ link: `/events/${req.params.event}` }).then(e => {
+        Event.model.findOne({ link: `/events/${req.params.event}` }).populate('domain').then(e => {
             if (!e) return res.notfound();
             e.registered = false;
+            if (e.domain.name == "infi") e.infi = true;
             if (req.user) {
                 Registration.model.findOne({event: e._id, user: req.user._id}).then(reg=>{
                     if (reg) e.registered = true;
