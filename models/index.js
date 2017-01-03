@@ -3,3 +3,4 @@ require('./domains.js');
 require('./events.js');
 require('./registrations.js');
 require('./pps.js');
+require('./accommodations.js');
