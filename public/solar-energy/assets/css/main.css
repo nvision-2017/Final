@@ -274,7 +274,7 @@ html {
 
 #headerwrap {
 	/*background: url("http://blog.ourcrowd.com/wp-content/uploads/2013/10/media_banner_07.jpg") no-repeat center top;*/
-  background: url("/workshop/assets/img/poster_web.jpg") #00121C no-repeat center top;
+  background: url("/solar-energy/assets/img/poster_web.jpg") #00121C no-repeat center top;
 	margin-top: 50px;
 	text-align:center;
 	/*background-attachment: relative;*/
@@ -653,7 +653,7 @@ html {
     display: none;
   }
   #headerwrap {
-    background: url("/workshop/assets/img/poster_web.jpg") no-repeat center top;
+    background: url("/solar-energy/assets/img/poster_web.jpg") no-repeat center top;
     margin-top: 4em;
 	text-align:center;
 	height: 100%;

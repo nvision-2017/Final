@@ -5,6 +5,24 @@ Styles for the html/body for special modal where we want 3d effects
 Note that we need a container wrapping all content on the page for the 
 perspective effects (not including the modals and the overlay).
 */
+.md-perspective,
+.md-perspective body {
+	height: 100%;
+	overflow: hidden;
+}
+
+.md-perspective body  {
+	background: #222;
+	-webkit-perspective: 600px;
+	-moz-perspective: 600px;
+	perspective: 600px;
+}
+
+.container {
+	background: #e74c3c;
+	min-height: 100%;
+}
+
 .md-modal {
 	position: fixed;
 	top: 50%;
@@ -23,6 +41,11 @@ perspective effects (not including the modals and the overlay).
 	-ms-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
 }
+
+.md-show {
+	visibility: visible;
+}
+
 .md-overlay {
 	position: fixed;
 	width: 100%;
@@ -38,6 +61,10 @@ perspective effects (not including the modals and the overlay).
 	transition: all 0.3s;
 }
 
+.md-show ~ .md-overlay {
+	opacity: 1;
+	visibility: visible;
+}
 
 /* Content styles */
 .md-content {
@@ -155,7 +182,6 @@ perspective effects (not including the modals and the overlay).
 	50% { transform: translateZ(-250px) rotateY(89deg); opacity: 1; animation-timing-function: ease-in;}
 	100% { transform: translateZ(0) rotateY(0deg); opacity: 1; }
 }
-
 
 /* Effect 19:  Slip in from the top with perspective on container */
 .md-show.md-effect-19 ~ .container {
