@@ -115,6 +115,9 @@ exports = module.exports = function (app) {
     app.get('/', routes.views.index);
     app.get('/sponsors', routes.views.sponsors);
     app.get('/events', routes.views.events);
+    app.get('/infi_events', (req, res)=>{
+        res.render('infi');
+    });
     app.get('/team', routes.views.team);
     app.get('/workshops', routes.views.workshops);
     app.get('/exhibitions', routes.views.exhibitions);
