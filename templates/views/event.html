@@ -208,6 +208,8 @@
           <li><a href="#tab-register" id="registerbtn" data-toggle="pill">Register</a></li>
           {{/if}}
           {{/if}}
+          {{else}}
+          <li><a href="#tab-register" id="regis">Register</a></li>
           {{/if}}
         </ul>
         <div class="hidden-xs hidden-sm event-icon animated slideInLeft">
@@ -249,6 +251,10 @@
   <script>
     let reg = {{registered}};
     $(document).ready(function(){
+      $('#regis').click(function(){
+        alert('Signin to register for the event');
+        location = 'https://id.nvision.org.in/signin?url=https://nvision.org.in{{link}}';
+      });
       $('#registerbtn').click(function(data, sts){
         if (!reg) {
           $.post('/events/{{_id}}/register', function(data, sts){
