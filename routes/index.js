@@ -162,6 +162,7 @@ exports = module.exports = function (app) {
             if (!e) return res.notfound();
             e.registered = false;
             if (e.domain.name == "infi") e.infi = true;
+            if (req.params.event == "roboquidditch") e.cert = "ROBOTICS CLUB, IIT HYDERABAD";
             if (req.user) {
                 Registration.model.findOne({event: e._id, user: req.user._id}).then(reg=>{
                     if (reg) e.registered = true;
