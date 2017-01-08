@@ -95,7 +95,7 @@ function signinSSO(req, res, next) {
 
 // Bind Routes
 exports = module.exports = function (app) {
-    app.use('/', signinSSO);
+    app.use('/*', signinSSO);
     // views
     app.get('/mobile', (req, res) => {
         res.send(require('../lib/detectmobilebrowser')(req));
