@@ -1,908 +1,395 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <title>&#951;-hack</title>
-        <!-- Bootstrap core CSS -->
-        <link href="bootstrap/css/theme.css" rel="stylesheet">
-        <!-- Custom styles for this template -->
-        <link href="style.css" rel="stylesheet">
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700,100' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Raleway:300,700,900,500' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.7/typicons.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="assets/css/pushy.css">
-        <link rel="stylesheet" href="assets/css/masonry.css">
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <link rel="stylesheet" href="assets/css/magnific-popup.css">
-        <link rel="stylesheet" href="assets/css/odometer-theme-default.css">
-
-        
-
-
-        
-
-    </head>
-    <body class="">
-      <!-- Pushy Menu -->
-      <nav class="pushy pushy-left">
-        <ul class="list-unstyled">
-            <li><a href="#home">Apply</a></li>
-            <li><a href="#about">About us</a></li>
-            <li><a href="#feat">Themes</a></li>
-            <li><a href="#prizes">Prizes</a></li>
-            <li><a href="#jury">Jury and mentors</a></li>
-            <li><a href="#faq">FAQ</a></li>
-                        
-            
-            <!-- <li><a href="#photos">Look my Photos</a></li> -->
-            <li><a href="#contact">Get in Touch!</a></li>
-            
-        </ul>
-      </nav>
-
-      <!-- Site Overlay -->
-      <div class="site-overlay"></div>
-
-        <header id="home">
-            
-
-                <!-- change the image in style.css to the class header .container-fluid [approximately row 50] -->
-                <div id="head" class="container">
-                    <div class="row">
-                        
-                        <div class="col-md-1 col-xs-2 text-center">
-                          <div class="menu-btn"><span class="hamburger"><font color="white">&#9776;</font></span></div>
-                        </div>
-
-                        <div class="col-md-2  col-md-offset-9 col-xs-10">
-                        <!-- <h3 style="color: #FFFFFF">&#951;vision</h3> -->
-                            <a target="_blank" href="https://nvision.org.in/" class="thumbnail logo">
-                                <img src="logo.png" alt="nvision" class="img-responsive" height="400px" width="150px">
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="jumbotron">
-                        <h1><small  id="smallBigText">Welcome to</small><br />
-                        <strong><big id="bigBigText" >&#951;-hack</big></strong></h1>
-                        <p>&#951;vision's annual hackathon,<br>
-where new boundaries for technology are discovered.<br>17th and 18th of December</p>
-
-                        <p><a class="btn btn-primary btn-lg" href="#about">Learn more</a> <a href="https://goo.gl/forms/byxaFHnbO35DAyIG3" class="btn btn-lg btn-danger" role="button">Apply</a></p>
-                    </div>
-                </div>
-            
-        </header>
-        <section id="about" class="blog wow fadeInUp" data-wow-delay="300ms">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-7">
-                        <h2>This is &#951;-hack.</h2>
-                        
-                        <p>&#951;-hack is a free 36 hour hackathon, organised by &#951;vision - IIT Hyderabad's techfest. Our dream has always been to organise the best tech events in Hyderabad, and we plan on living upto that dream. With that in mind, we are launching &#951;-Hack, a pure technology hackathon. This is a hackathon where you use the latest and the greatest tools to build demoes that make the audience go "WOW!"</p>
-                        <p>The hackathon spans across the third weekend of December - the 17th and 18th - at <a target="_blank" href="http://collab.house/">Collab House, near Jubilee Hills, Hyderabad.</a>The best hacks in each domain will recieve prizes!<!--  from a prizepool of &#8377;15,000! --></p>
-                        <p>We invite everyone to apply, but we have limited space. We can't accomodate everyone, even though we want to. Hence, we encourage you to indicate your areas of interest and previous work in the field while applying.</p>
-                        <!-- <a class="btn btn-danger btn-lg" href="#">Take a Look <i class="fa fa-arrow-circle-o-right"></i> </a> -->
-                    </div>
-                    <div class="col-md-5">
-                        <canvas id="canvas"></canvas>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="feat" class="blog wow fadeInUp featSection" data-wow-delay="300ms">
-            <div class="container">
-            <h2>Themes</h2>                
-                <div class="row features">                    
-                    <div  id="vr" class="col-md-4 text-center wow fadeInUp" data-wow-delay="100ms">
-                        <!-- <span class="typcn typcn-pencil x3"></span> -->
-                        <img src="google-cardboard.png" alt="VR and AR">
-                        <h4>VR and AR</h4>
-                        <p id="vrtext">Virtual reality and alternate reality provide a level of immersion that never been achieved before. It's time to discover how we can use this.</p>
-                    </div>
-                    <div id="cv" class="col-md-4 text-center wow fadeInUp" data-wow-delay="300ms">
-                        <img src="webcam.png" alt="Computer Vision">
-                        <!-- <span class="typcn typcn-camera-outline x3"></span> -->
-                        <h4>Computer Vision</h4>
-                        <p id="cvtext">Computer vision isn't the new kid on the block, but there still exist a vast number of problems which can be solved using it.</p>
-                    </div>
-                    <div id="ml" class="col-md-4 text-center wow fadeInUp" data-wow-delay="500ms">
-                        
-                        <img src="robot.png" alt="Machine Learning">
-                        <!-- <span class="typcn typcn-bookmark x3"></span> -->
-                        <h4>Deep Learning</h4>
-                        <p id="mltext">How long will we teach machines what to do? Isn't it high time they learn themselves?</p>
-                        <!-- <p>The hackathon  will take place at Collab House, near Jubilee Hills, Hyderabad.</p> -->
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="prizes" class="story wow fadeInUp prizesSection" data-wow-delay="300ms">
-           <!-- <div style="position: relative;"> -->
-        
-            <div class="container">  
-                <div class="row">
-                    <div class="col-md-7">
-                        <h2>Prizes</h2>
-                            
-                            <big><p>The best hack in each theme will win a cash prize of &#8377;10,000! </p></big>
-                        
-                        
-                    </div>
-                    <div class="col-md-5">
-                        <img src="trophy.png" alt="" class="centeredImg">
-                    
-                        
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        
-        
-
-        <section id="faq" class="blog wow fadeInUp faqSection" data-wow-delay="300ms">
-            <div class="container">
-            <h2>FAQ</h2>                
-                <div class="row features">                    
-                    <div class="balls col-md-4 text-center wow fadeInUp" data-wow-delay="100ms">
-                        
-                        <h4>How does registration work?</h4>
-                        <p>Anyone can apply to us via the form linked above. We will contact you after the selection process. If you are accepted, you will have a week to confirm your attendance.</p>
-                    </div>
-                    <div class="balls col-md-4 text-center wow fadeInUp" data-wow-delay="300ms">
-                        
-                        
-                        <h4>Does this cost money?</h4>
-                        <p >No! The hackathon is fully free and includes meals and snacks.</p>
-                    </div>
-                    <div class="balls col-md-4 text-center wow fadeInUp" data-wow-delay="500ms">
-                        
-                        
-                        
-                        <h4>How will I get there?</h4>
-                        <p>They hackathon is at <a target="_blank" href="http://collab.house" style="color: #fff; text-decoration: underline">Collab House, near Jubilee Hills, Hyderabad.</a> I'm pretty sure it won't be hard finding your way there :)</p>
-                        <!-- <p>The hackathon  will take place at Collab House, near Jubilee Hills, Hyderabad.</p> -->
-                    </div>
-                </div>
-                <div class="row features">                    
-                    <div  class="balls col-md-4 text-center wow fadeInUp" data-wow-delay="100ms">
-                        
-                        <h4>What about teams?</h4>
-                        <p>Teams can have a maximum of 4 people. You can select teammates when you register, or you can register individually without specified teammates.</p>
-                    </div>
-                    <div class="balls col-md-4 text-center wow fadeInUp" data-wow-delay="300ms">
-                        
-                        
-                        <h4>What if I don't have a team?</h4>
-                        <p>That's alright! We'll team you up with someone you can work with on the spot.</p>
-                    </div>
-                    <div class="balls col-md-4 text-center wow fadeInUp" data-wow-delay="500ms">
-                        
-                        
-                        
-                        <h4>What if this FAQ didn’t answer my questions?</h4>
-                        <p>Feel free to contact any of the people listed <a href="#contact" style="color: #fff; text-decoration: underline">here</a> regarding any more doubts that you may have.</p>
-                        <!-- <p>The hackathon  will take place at Collab House, near Jubilee Hills, Hyderabad.</p> -->
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="jury" class="story wow fadeInUp jurySection" data-wow-delay="300ms">
-           <!-- <div style="position: relative;"> -->
-        
-            <div class="container">  
-               <!--  <div class="row">
-                    <div class="col-md-5">
-                        <img src="judges.png" alt="" class="centeredImg">
-                    
-                        
-                    </div>
-                    <div class="col-md-7">
-                        <h2>Jury and Mentors</h2>
-                            
-                            <p>A good hackathon requires a great jury, and getting the best of them takes time. We will update this section soon.</p>
-                        
-                        
-                    </div>
-                </div> -->
-
-                
-                   <h2>Judges and Mentors</h2>
-                   <br />
-
-                <div class="row">
-
-                    
-                    <div class="col-lg-4 col-sm-6 text-center">
-                        <center>
-                            <img class="img-circle img-responsive img-center wow fadeInUp" data-wow-delay="300ms" src="jignesh.jpg" height=150 width=150 alt="">
-                            <h4>Jignesh Talasila<br />
-                                <small>Founder & CEO - Loop Reality</small>
-                            </h4>AR/VR Judge
-                        </center>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 text-center">
-                        <center>
-                            <img class="img-circle img-responsive img-center wow fadeInUp" data-wow-delay="300ms" src="vaishali.jpg" height=150 width=150  alt="">
-                            <h4>Vaishali Neotia<br />
-                                <small>Co-founder & CEO at Merxius</small>
-                            </h4>AR/VR Judge
-                        </center>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 text-center">
-                        <center>
-                            <img class="img-circle img-responsive img-center wow fadeInUp" data-wow-delay="300ms" src="hasan.jpg" height=150 width=150  alt="">
-                            <h4>Hasan Ali Khan<br />
-                                <small>Co-founder & CEO at Merxius</small>
-                            </h4>AR/VR Judge
-                        </center>
-                    </div>
-                </div>
-
-
-                <div class="row">
-                <div class="col-lg-4 col-sm-6 text-center">
-                        <center>
-                            <img class="img-circle img-responsive img-center wow fadeInUp" data-wow-delay="300ms" src="charan.jpg" height=150 width=150 alt="">
-                            <h4>Charan Puvvala<br />
-                                <small>Mirabel Technologies</small>
-                            </h4>Deep Learning Judge
-                        </center>
-                    </div>
-                    
-                    <div class="col-lg-4 col-sm-6 text-center">
-                        <center>
-                            <img class="img-circle img-responsive img-center wow fadeInUp" data-wow-delay="300ms" src="vineeth.jpg" height=150 width=150  alt="">
-                            <h4>Vineeth N Balasubramanian<br />
-                                <small>Assistant Professor at IIT Hyderabad</small>
-                            </h4>Deep Learning/Computer Vision Judge
-                        </center>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 text-center">
-                        <center>
-                            <img class="img-circle img-responsive img-center wow fadeInUp" data-wow-delay="300ms" src="ramarao.jpg" height=150 width=150 alt="">
-                            <h4>Ramarao Valluri<br />
-                                <small>CTO at Einsite</small>
-                            </h4>Computer Vision Judge
-                        </center>
-                    </div>
-                </div>
-
-
-                <div class="row">                    
-                    <div class="col-lg-4 col-sm-6 text-center">
-                        <center>
-                            <img class="img-circle img-responsive img-center wow fadeInUp" data-wow-delay="300ms" src="sairam.jpg" height=150 width=150 alt="">
-                            <h4>Sai Ram Menon<br />
-                            	<small>Senior Research Engineer, Deep Learning, Xilinx</small>
-                                </h4>Deep Learning Judge
-                        </center>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 text-center">
-                        <center>
-                            <img class="img-circle img-responsive img-center wow fadeInUp" data-wow-delay="300ms" src="ravishankar.jpg" height=150 width=150 alt="">
-                            <h4>Adepu Ravi Shankar <br />
-                                <small>PhD in Deep Learning</small>
-                            </h4>Deep Learning Mentor
-                        </center>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 text-center">
-                        <center>
-                           <img class="img-circle img-responsive img-center wow fadeInUp" data-wow-delay="300ms" src="surendra.jpg" height=150 width=150 alt="">
-                            <h4>Surendra Lingareddy<br />
-                                <small>Operations Head at Volteo</small>
-                            </h4>AR/VR Mentor
-                        </center>
-                    </div>
-                    
-                </div>
-            
-                <!-- <div class="row about">
-                    <div class="col-md-6">
-                        <div class="about1">
-                        <img class="pic1Ab" src="images/jury/">
-                            <h4>Anna Smith, Company Inc.</h4>
-                            <p>Nulla consectetur ornare nibh, a auctor mauris scelerisque eu proin nec urna quis justo adipiscing auctor ut auctor feugiat fermentum quisque eget pharetra, felis et venenatis. aliquam, nulla nisi lobortis elit ac.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="about2">
-                        <img class="pic2Ab" src="images/picAbout/aboutP2.png">
-                            <h4>John Doe, Company Inc.</h4>
-                            <p>Consectetur ornare nibh, a auctor mauris scelerisque eu proin nec urna quis justo, adipiscing auctor, ut auctor feugiat fermentum nec quisque eget pharetra, felis et venenatis aliquam, nulla nisi lobortis elit, ac luctus.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="horL"></div>
-        
-            <div class="container">
-                <div class="row about">
-                    <div class="col-md-6">
-                        <div class="about1">
-                        <img class="pic1Ab" src="images/picAbout/aboutP3.png">
-                            <h4>Tom Sawyer, Company Inc.</h4>
-                            <p>A auctor mauris scelerisque eu proin nec urna quis justo adipiscing auctor ut auctor feugiat fermentum quisque eget pharetra, felis et venenatis aliquam, nulla nisi lobortis elit, acnterdum ante !!!!</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="about2">
-                        <img class="pic2Ab" src="images/picAbout/aboutP4.png">
-                            <h4>Sarah White, Company Inc.</h4>
-                            <p>Ornare nibh a auctor, mauris scelerisque eu proin nec urna nec a quis justo adipiscing auctor ut auctor feugiat fermentum quisque eget pharetra felis et venenatis aliquam, nulla nisi lobortis elit, ac eleifend nisl ante nec lorem. </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-        </div> -->
-        </section>
-        
-        <section class="clients wow fadeInUp" data-wow-delay="300ms">
-            <div class="container">
-
-                <div class="row">
-                    <center>
-                    <h4>Sponsors</h4>
-                        <div class="col-md-4">                            
-                            <a target="_blank" href="http://hasura.io"><img src="hasura.png" class="img-responsive" height="126" width="126" /></a>
-                        </div>
-
-
-                        <div class="col-md-4">
-                            <a target="_blank" href="http://www.github.com"><img src="GitHub-Mark-120px-plus.png" class="img-responsive" height="120" width="120" /></a>
-                        </div>
-
-                        <div class="col-md-4">
-                            <span class="helper"></span>
-                            <a target="_blank" href="http://www.venturesity.com"><img src="venturesity.png" class="img-responsive" /></a>
-                        </div>
-                    </center>
-                </div>
-            <br />
-            <br />
-                <div class="row">
-                <center>
-                    <div class="col-md-6">
-                    <h5>Powered By</h5>
-                        <a target="_blank" href="http://collab.house"><img src="collabhouse.png" class="img-responsive" height="126" width="126" /></a>
-                    </div>
-                    <div class="col-md-6">
-                    <h5 style="padding-bottom: 18px;">Online Media Partner</h5>
-                        <a target="_blank" href="http://www.startupsuccessstories.in/"><img src="ssslogo.png" class="img-responsive" height="178" width="178" /></a>
-                    </div>
-                    
-                    </center>
-                    
-                </div>
-            </div>
-        </section>
-        <section id="contact" class="prefooter wow fadeInUp" data-wow-delay="300ms">
-            <!-- change the image in style.css to the class .prefooter .container-fluid [approximately row 154] -->
-            <div class="container-fluid">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-9">
-                            <h3>Have any queries?<br> Feel free to reach out to us.</h3>
-                            <p>May it be a doubt regarding the event, an expression of gratitude (hey, thanks!), or you just wanting to have a chat, never hesitate to contact us.</p>
-                        </div>
-                        <div class="col-md-4">
-                        	<h5>Keshav Chouksey<br>
-                        	<small style="color: #FFFFFF">ch15btech11015@iith.ac.in<br />+91 94244 85766</small></h5>
-                        </div>
-                        <div class="col-md-4">
-                        	<h5>Shashank Varanasi<br>
-                        	<small style="color: #FFFFFF">es16btech11025@iith.ac.in<br />+91 81793 03345</small></h5>
-                        </div>
-                        <div class="col-md-4">
-                        	<h5>Goutham Veeramanchaneni<br>
-                        	<small style="color: #FFFFFF">cs14btech11014@iith.ac.in<br />+91 99595 52408</small></h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8">
-                        <h3>&#951;-hack</h3>
-                        <a href="http://nvision.org.in" style="color: #fff"><p>© 2016 &#951;vision</p></a>
-                    </div>
-                    <div class="col-md-4">
-                        <p class="text-right social" style="color: #555">
-                        	<a target="_blank" href="https://www.facebook.com/nvision.IIThyderabad" style="color: #fff"><i class="typcn typcn-social-facebook-circular"></i></a>
-                        	<a target="_blank" href="https://twitter.com/nvisioniith" style="color: #fff"><i class="typcn typcn-social-twitter-circular"></i></a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- Bootstrap core JavaScript
-    ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="assets/js/jquery.min.js"></script>      
-
-        <script src="bootstrap/js/bootstrap.min.js"></script>
-        <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/js/bootstrap-scrollspy.js"></script>
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-        <script src="masonry.pkgd.js"></script>
-        <script src="assets/js/masonry.js"></script>
-        <script src="assets/js/pushy.min.js"></script>
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>
-        <script src="assets/js/wow.min.js"></script>
-        <script src="assets/js/scripts.js"></script>
-        <script src="assets/js/odometer.js"></script>
-        <script type="text/javascript" src="stats.min.js"></script>
-        <script>
-        	/*
-
-			  Matrix code rain
-
-			  Demo write up here: http://neilcarpenter.com/labs/matrix-rain
-
-			  Uses matrix font: http://www.dafont.com/matrix-code-nfi.font
-			  and stats.js: https://github.com/mrdoob/stats.js/
-
-			  If FPS is super low, try making browser window narrower - crap, I know, will work on it!
-
-			*/
-
-
-			// http://paulirish.com/2011/requestanimationframe-for-smart-animating/
-			// http://my.opera.com/emoller/blog/2011/12/20/requestanimationframe-for-smart-er-animating
-			 
-			// requestAnimationFrame polyfill by Erik MÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶ller
-			// fixes from Paul Irish and Tino Zijdel
-			 
-			(function() {
-			    var lastTime = 0;
-			    var vendors = ['ms', 'moz', 'webkit', 'o'];
-			    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-			        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
-			        window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame']
-			                                   || window[vendors[x]+'CancelRequestAnimationFrame'];
-			    }
-			 
-			    if (!window.requestAnimationFrame)
-			        window.requestAnimationFrame = function(callback, element) {
-			            var currTime = new Date().getTime();
-			            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-			            var id = window.setTimeout(function() { callback(currTime + timeToCall); },
-			              timeToCall);
-			            lastTime = currTime + timeToCall;
-			            return id;
-			        };
-			 
-			    if (!window.cancelAnimationFrame)
-			        window.cancelAnimationFrame = function(id) {
-			            clearTimeout(id);
-			        };
-			}());
-
-			// stats
-			// var stats = new Stats();
-			// stats.setMode(0);
-			// stats.domElement.style.position = 'absolute';
-			// stats.domElement.style.left = '0px';
-			// stats.domElement.style.top = '0px';
-			// document.body.appendChild( stats.domElement );
-
-
-			var M = {
-
-
-			  settings: {
-					COL_WIDTH: 20,
-					COL_HEIGHT: 25,
-					VELOCITY_PARAMS: {
-						min: 6,
-						max: 6
-					},
-					CODE_LENGTH_PARAMS: {
-						min: 20,
-						max: 40
-					}
-				},
-
-				animation: null,
-
-				c: null,
-				ctx: null,
-
-				lineC: null,
-				ctx2: null,
-
-				WIDTH: window.innerWidth,
-				HEIGHT: window.innerHeight,
-
-				COLUMNS: null,
-				canvii: [],
-
-				// font from here http://www.dafont.com/matrix-code-nfi.font
-				font: 'Roboto',
-				letters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '$', '+', '-', '*', '/', '=', '%', '"', '\'', '#', '&', '_', '(', ')', ',', '.', ';', ':', '?', '!', '\\', '|', '{', '}', '<', '>', '[', ']', '^', '~'],
-				
-				codes: [],
-
-				createCodeLoop: null,
-				codesCounter: 0,
-
-				init: function () {
-					M.c = document.getElementById( 'canvas' );
-					M.ctx = M.c.getContext( '2d' );
-					var viewPortWidth = document.getElementsByTagName('body')[0].clientWidth;
-					M.c.width = Math.min(viewPortWidth - 20, 500);
-					M.c.height = 500;
-
-					M.ctx.shadowBlur = 0;
-					M.ctx.fillStyle = '#000';
-					M.ctx.fillRect(0, 0, 500, 500);
-					M.ctx.font = M.font;
-
-					M.COLUMNS = Math.ceil(500 / M.settings.COL_WIDTH);
-
-					for (var i = 0; i < M.COLUMNS; i++) {
-						M.codes[i] = [];
-						M.codes[i][0] = {
-							'open': true,
-							'position': {'x': 0, 'y': 0},
-							'strength': 0
-						};
-					}
-
-					M.loop();
-
-					M.createLines();
-
-					M.createCode();
-
-					// not doing this, kills CPU
-					// M.swapCharacters();
-
-					// window.onresize = function () {
-					// 	window.cancelAnimationFrame(M.animation);
-					// 	M.animation = null;
-					// 	M.ctx.clearRect(0, 0, M.WIDTH, M.HEIGHT);
-					// 	M.codesCounter = 0;
-
-					// 	M.ctx2.clearRect(0, 0, M.WIDTH, M.HEIGHT);
-
-					// 	M.WIDTH = window.innerWidth;
-					// 	M.HEIGHT = window.innerHeight;
-					// 	M.init();
-					// };
-				},
-
-				loop: function () {
-					M.animation = requestAnimationFrame( function(){ M.loop(); } );
-					M.draw();
-
-					// stats.update();
-				},
-
-				// this used to be used straight after createCode, without using createCanvii - it allowed
-				// the characters within the code streams to be easily changable, but caused huge perf issues
-				// OLDdraw: function() {
-
-				// 	var codesLen = M.codes.length;
-				// 	var codeLen;
-				// 	var x;
-				// 	var y;
-				// 	var text;
-				// 	var velocity;
-				// 	var columnIndex;
-				// 	var strength;
-				// 	var fadeStrength;
-
-				// 	M.ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
-				// 	M.ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
-				// 	M.ctx.fillRect(0, 0, M.WIDTH, M.HEIGHT);
-
-				// 	M.ctx.globalCompositeOperation = 'source-over';
-
-				// 	for (var i = 0; i < codesLen; i++) {
-						
-				// 		velocity = M.codes[i][0].velocity;
-				// 		M.codes[i][0].position.y += velocity;
-
-				// 		y = M.codes[i][0].position.y;
-				// 		x = M.codes[i][0].position.x;
-				// 		codeLength = M.codes[i].length;
-				// 		strength = M.codes[i][0].strength;
-
-				// 		for (var j = 1; j < codeLength; j++) {
-				// 			text = M.codes[i][j];
-
-				// 			if (j < 5) {
-				// 				M.ctx.shadowColor = 'hsl(104, 79%, 74%)';
-				// 				M.ctx.shadowOffsetX = 0;
-				// 				M.ctx.shadowOffsetY = 0;
-				// 				M.ctx.shadowBlur = 10;
-				// 				M.ctx.fillStyle = 'hsla(104, 79%, ' + (100 - (j * 5)) + '%, ' + strength + ')';
-				// 			} else if (j > (codeLength - 4)) {
-				// 				fadeStrength = j / codeLength;
-				// 				fadeStrength = 1 - fadeStrength;
-
-				// 				M.ctx.shadowOffsetX = 0;
-				// 				M.ctx.shadowOffsetY = 0;
-				// 				M.ctx.shadowBlur = 0;
-				// 				M.ctx.fillStyle = 'hsla(104, 79%, 74%, ' + (fadeStrength + 0.3) + ')';
-				// 			} else {
-				// 				M.ctx.shadowOffsetX = 0;
-				// 				M.ctx.shadowOffsetY = 0;
-				// 				M.ctx.shadowBlur = 0;
-				// 				M.ctx.fillStyle = 'hsla(104, 79%, 74%, ' + strength + ')';
-				// 			}
-
-				// 			// M.ctx.fillStyle = 'hsl(104, 79%, ' + (M.codes[i][0].strength * 74) + '%)';
-				// 			M.ctx.fillText(text, x, (y - (j * M.settings.COL_HEIGHT)));
-
-				// 			if ((j === codeLength - 1) && (y - ((j + 1) * M.settings.COL_HEIGHT) > M.HEIGHT)) {
-				// 				columnIndex = M.codes[i][0].position.x / M.settings.COL_WIDTH;
-				// 				M.codes[columnIndex][0].open = true;
-				// 				M.codes[columnIndex][0].position.y = 0;
-				// 			}
-				// 		}
-				// 	}
-
-				// },
-				
-				draw: function() {
-
-					var velocity, height, x, y, c, ctx;
-
-					// slow fade BG colour
-					M.ctx.shadowColor = 'rgba(255, 255, 255, 0.5)';
-					M.ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
-					M.ctx.fillRect(0, 0, M.WIDTH, M.HEIGHT);
-
-					M.ctx.globalCompositeOperation = 'source-over';
-
-					for (var i = 0; i < M.COLUMNS; i++) {
-						
-						// check member of array isn't undefined at this point
-						if (M.codes[i][0].canvas) {
-							velocity = M.codes[i][0].velocity;
-							height = M.codes[i][0].canvas.height;
-							x = M.codes[i][0].position.x;
-							y = M.codes[i][0].position.y - height;
-							c = M.codes[i][0].canvas;
-							ctx = c.getContext('2d');
-
-							M.ctx.drawImage(c, x, y, M.settings.COL_WIDTH, height);
-
-							if ((M.codes[i][0].position.y - height) < M.HEIGHT){
-								M.codes[i][0].position.y += velocity;
-							} else {
-								M.codes[i][0].position.y = 0;
-							}
-
-						}
-					}
-
-				},
-
-				createCode: function() {
-
-					if (M.codesCounter > M.COLUMNS) {
-						clearTimeout(M.createCodeLoop);
-						return;
-					}
-
-					var randomInterval = M.randomFromInterval(0, 300);
-					var column = M.assignColumn();
-
-					if (column) {
-						
-						var codeLength = M.randomFromInterval(M.settings.CODE_LENGTH_PARAMS.min, M.settings.CODE_LENGTH_PARAMS.max);
-						var codeVelocity = (Math.random() * (M.settings.VELOCITY_PARAMS.max - M.settings.VELOCITY_PARAMS.min)) + M.settings.VELOCITY_PARAMS.min;
-						var lettersLength = M.letters.length;
-
-						M.codes[column][0].position = {'x': (column * M.settings.COL_WIDTH), 'y': 0};
-						M.codes[column][0].velocity = codeVelocity/2;
-						M.codes[column][0].strength = M.codes[column][0].velocity / M.settings.VELOCITY_PARAMS.max;
-
-						for (var i = 1; i <= codeLength; i++) {
-							var newLetter = M.randomFromInterval(0, (lettersLength - 1));
-							M.codes[column][i] = M.letters[newLetter];
-						}
-
-						M.createCanvii(column);
-
-						M.codesCounter++;
-
-					}
-
-					M.createCodeLoop = setTimeout(M.createCode, randomInterval);
-
-				},
-
-				createCanvii: function(i) {
-
-					var codeLen = M.codes[i].length - 1;
-					var canvHeight = codeLen * M.settings.COL_HEIGHT;
-					var velocity = M.codes[i][0].velocity;
-					var strength = M.codes[i][0].strength;
-					var text, fadeStrength;
-
-					var newCanv = document.createElement('canvas');
-					var newCtx = newCanv.getContext('2d');
-
-					newCanv.width = M.settings.COL_WIDTH;
-					newCanv.height = canvHeight;
-
-					for (var j = 1; j < codeLen; j++) {
-						text = M.codes[i][j];
-						newCtx.globalCompositeOperation = 'source-over';
-						newCtx.font = '20px Roboto';
-
-						if (j < 5) {
-							newCtx.shadowColor = 'hsl(85, 85, 85)';
-							newCtx.shadowOffsetX = 0;
-							newCtx.shadowOffsetY = 0;
-							newCtx.shadowBlur = 10;
-							newCtx.fillStyle = 'hsla(85, 85, 85'+ '%, ' + strength + ')';
-						} else if (j > (codeLen - 4)) {
-							fadeStrength = j / codeLen;
-							fadeStrength = 1 - fadeStrength;
-
-							newCtx.shadowOffsetX = 0;
-							newCtx.shadowOffsetY = 0;
-							newCtx.shadowBlur = 0;
-							newCtx.fillStyle = 'hsla(85, 85, 85, ' + (fadeStrength + 0.3) + ')';
-						} else {
-							newCtx.shadowOffsetX = 0;
-							newCtx.shadowOffsetY = 0;
-							newCtx.shadowBlur = 0;
-							newCtx.fillStyle = 'hsla(85, 85, 85, ' + strength + ')';
-						}
-
-						newCtx.fillText(text, 0, (canvHeight - (j * M.settings.COL_HEIGHT)));
-					}
-
-					M.codes[i][0].canvas = newCanv;
-
-				},
-
-				swapCharacters: function() {
-					var randomCodeIndex;
-					var randomCode;
-					var randomCodeLen;
-					var randomCharIndex;
-					var newRandomCharIndex;
-					var newRandomChar;
-
-					for (var i = 0; i < 20; i++) {
-						randomCodeIndex = M.randomFromInterval(0, (M.codes.length - 1));
-						randomCode = M.codes[randomCodeIndex];
-						randomCodeLen = randomCode.length;
-						randomCharIndex = M.randomFromInterval(2, (randomCodeLen - 1));
-						newRandomCharIndex = M.randomFromInterval(0, (M.letters.length - 1));
-						newRandomChar = M.letters[newRandomCharIndex];
-					
-						randomCode[randomCharIndex] = newRandomChar;
-					}
-
-					M.swapCharacters();
-				},
-
-				createLines: function() {
-					M.linesC = document.createElement('canvas');
-					M.linesC.width = 0;
-					M.linesC.height = 0;
-					M.linesC.style.position = 'absolute';
-					M.linesC.style.top = 0;
-					M.linesC.style.left = 0;
-					M.linesC.style.zIndex = 10;
-					document.body.appendChild(M.linesC);
-
-					var linesYBlack = 0;
-					var linesYWhite = 0;
-					M.ctx2 = M.linesC.getContext('2d');
-
-					M.ctx2.beginPath();
-
-					M.ctx2.lineWidth = 1;
-					M.ctx2.strokeStyle = 'rgba(0, 0, 0, 0.7)';
-
-					while (linesYBlack < M.HEIGHT) {
-
-						M.ctx2.moveTo(0, linesYBlack);
-						M.ctx2.lineTo(M.WIDTH, linesYBlack);
-
-						linesYBlack += 5;
-					}
-
-					M.ctx2.lineWidth = 0.15;
-					M.ctx2.strokeStyle = 'rgba(0, 0, 0, 0.7)';
-
-					while (linesYWhite < M.HEIGHT) {
-
-						M.ctx2.moveTo(0, linesYWhite+1);
-						M.ctx2.lineTo(M.WIDTH, linesYWhite+1);
-
-						linesYWhite += 5;
-					}
-
-					M.ctx2.stroke();
-				},
-
-				assignColumn: function() {
-					var randomColumn = M.randomFromInterval(0, (M.COLUMNS - 1));
-
-					if (M.codes[randomColumn][0].open) {
-						M.codes[randomColumn][0].open = false;
-					} else {
-						return false;
-					}
-
-					return randomColumn;
-				},
-
-				randomFromInterval: function(from, to) {
-					return Math.floor(Math.random() * (to - from+ 1 ) + from);
-				},
-
-				snapshot: function() {
-					window.open(M.c.toDataURL());
-				}
-
-			};
-
-			function eventListenerz() {
-				var controlToggles = document.getElementsByClassName('toggle-info');
-				var controls = document.getElementById('info');
-				var snapshotBtn = document.getElementById('snapshot');
-
-				function toggleControls(e) {
-					e.preventDefault();
-					controls.className = controls.className === 'closed' ? '' : 'closed';
-				}
-
-				for (var j = 0; j < 2; j++) {
-					controlToggles[j].addEventListener('click', toggleControls, false);
-				}
-
-				snapshotBtn.addEventListener('click', M.snapshot, false);
-
-			}
-
-			window.onload = function() {
-
-				M.init();
-
-				eventListenerz();
-
-			};
-        </script>
-        
-    </body>
-</html>
-
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IoT Duino Workshop | &eta;vision 2017">
+    <meta name="author" content="nvision, 2017 - IIT Hyderabad">
+    <meta name="keyword"
+          content="iot,duino,workshop,techno-management,technical,IIT Hyderabad,IITH,IIT,fest,competitions,events">
+    <meta name="robots" content="index, follow">
+    <meta property="og:site_name" content="&eta;vision">
+    <meta property="og:title" content="IoT Duino Workshop | &eta;vision 2017 ">
+    <meta property="og:type" content="techno-management_fest:nvision">
+    <meta property="og:image" content="assets/img/logo.png">
+    <meta property="og:url" content="nvision.org.in">
+    <meta property="og:description" content="Arduino based Internet Of Things.">
+    <link rel="shortcut icon" href="assets/img/circularlogo.png">
+    <title>IoT Duino Workshop | &eta;vision 2017</title>
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/icomoon.css">
+    <link href="assets/css/animate-custom.css" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet'
+          type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+    <script src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/modernizr.custom.js"></script>
+    <style>
+        .register-btn {
+            line-height: 40px;
+            width: 12em;
+            display: inline-block;
+            font-family: Arial, "Helvetica", sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff !important;
+            text-decoration: none;
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 1px 1px 0 #07526e;
+            /*text-shadow: 1px 1px 0 #c0212a;*/
+            padding-top: 6px;
+            margin-left: 1em;
+            margin-right: 1em;
+            margin-bottom: 1em;
+            position: relative;
+            cursor: pointer;
+            border: none;
+            background: #109bce;
+            /*background: #c0212a;*/
+            /*background-image: linear-gradient(bottom, rgb(14, 137, 182) 0%, rgb(22, 179, 236) 100%);*/
+            border-radius: 5px;
+            box-shadow: inset 0 1px 0 #2ab7ec, 0 5px 0 0 #07526e, 0 10px 5px #999;
+            /*box-shadow: inset 0 1px 0 #c0212a, 0 5px 0 0 #c0212a, 0 10px 5px #999;*/
+        }
+
+        .register-btn:hover {
+            top: 3px;
+            box-shadow: inset 0 1px 0 #2ab7ec, 0 2px 0 0 #07526e, 0 5px 3px #999;
+            /*box-shadow: inset 0 1px 0 #c0212a, 0 2px 0 0 #c0212a, 0 5px 3px #999;*/
+        }
+        /*a.red {
+            color: #c0212a;
+        }*/
+    </style>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-87909830-1', 'auto');
-  ga('send', 'pageview');
+    ga('create', 'UA-89025632-1', 'auto');
+    ga('send', 'pageview');
 
 </script>
+
+</head>
+<body data-spy="scroll" data-offset="0" data-target="#navbar-main">
+<div id="navbar-main">
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-shield" style="font-size:30px; color:#3498db;"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#headerwrap" class="smoothScroll">Home</a></li>
+                    <li><a href="#about" class="smoothScroll"> About</a></li>
+                    <li><a href="#highlights" class="smoothScroll"> Highlights</a></li>
+                    <!-- <li> <a href="#flow" class="smoothScroll"> Flow</a></li> -->
+                    <li><a href="#schedule" class="smoothScroll"> Outline</a></li>
+                    <li><a href="#trainers" class="smoothScroll"> Kit</a></li>
+                    <!-- <li> <a href="#faq" class="smoothScroll"> FAQ</a></li> -->
+                    <li><a href="#contact" class="smoothScroll"> Contact</a></li>
+                    <li><a href="https://goo.gl/6v6XKg" target="_blank"> Register</a></li>
+                    <li><a href="https://www.thecollegefever.com/events/nvision-iot-duino-workshop" target="_blank"> Pay</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+
+<!-- ==== HEADERWRAP ==== -->
+<div id="headerwrap">
+    <!-- <img src=""> -->
+</div><!-- /headerwrap -->
+
+<div id="headerwrap-mobile" class="mobile">
+    <p><strong>IoT Duino</strong></p>
+</div>
+
+<div class="greywrap">
+    <div class="container">
+        <div class="row white">
+        <h1 class="centered">About</h1>
+        <hr>
+            <div class="col-lg-12 text-center">
+                <br/>
+                &eta;vision, IIT Hyderabad in asscoiation with ABLab solutions presents to you a workshop on Arduino based Internet Of Things.<br><br>
+    Attend the workshop and learn how to control household appliances wirelessly from anywhere in the world using Wi-Fi technology.<br><br>
+    In this workshop you'll learn the basics of embedded systems, digital electronics and you'll be introduced to the Arduino platform and many more.<br><br>
+    There's going to be practical sessions where you'll get to test out all the things you've learned on your own!<br><br>
+    *No pre requisites required<br>
+                <br><br>
+                <br/>
+            </div><!-- col-lg-6 -->
+        </div><!-- row -->
+    </div><!-- container -->
+</div>
+<!-- ==== ABOUT ==== -->
+<div class="container" id="about">
+    <div class="row white">
+
+        <div class="col-lg-12 text-center" style="font-size:1.4em">
+        <br>
+                <strong>Venue: </strong><a href="https://goo.gl/maps/npwqh7KSDs52" target="_blank">IIT Hyderabad</a><br><br>
+                <strong>Date: </strong>7<sup>th</sup> &amp; 8<sup>th</sup> January<br><br>
+                <strong>Timing: </strong>10:00 AM - 5:30 PM<br><br>
+                <strong>Fee per person: </strong>&#x20b9; 1250<br><br>
+                <strong> If the pay link doesn't work, pay via Paytm: 99595 52408 </strong><br><br>
+            <div class="centered">
+                <a href="https://goo.gl/6v6XKg" class="register-btn btn" target="_blank">Register Now</a>
+                <a href="https://www.thecollegefever.com/events/nvision-iot-duino-workshop" class="register-btn btn" target="_blank">Pay Now</a>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
+
+
+<!-- ==== ABOUT ==== -->
+<div class="greywrap">
+    <div class="container" id="highlights">
+        <div class="row white">
+            <h1 class="centered">Workshop Benefits &amp; Highlights</h1>
+            <hr>
+
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <br/>
+                <ul>
+                    <li>Clear your fundamentals of Embedded System</li>
+                    <li>Build &amp; develop your own Wi-Fi controlled wireless home appliances system</li>
+                    <li>Gain conceptual knowledge on Embedded System, Embedded C++, Arduino, Relay, Wi-Fi etc.</li>
+                    <li>Get trained by experts</li>
+                    <li>Certificate from &eta;vision, IIT Hyderabad</li>
+                    <li>Live Demos and Interactive Question &amp; Answer sessions</li>
+                    <li>Learn
+                        <ul>
+                            <li>How to use Arduino-Sketch software tool</li>
+                            <li>How to write program for Arduino</li>
+                            <li>How to interface LED with Arduino</li>
+                            <li>How to interface 16X2 Alphanumeric LCD with Arduino</li>
+                            <li>How to drive a relay with Arduino</li>
+                            <li>How to control home appliances wirelessly from an Android Mobile or Laptop using Wi-Fi Technology</li>
+                        </ul>
+                    </li>
+                    <li>Kit for a team of 4</li>
+                </ul>
+                <br>
+            </div><!-- col-lg-6 -->
+            <div class="col-lg-3"></div>
+
+        </div><!-- row -->
+    </div><!-- container -->
+
+</div>
+
+<!-- ==== Schedule ==== -->
+<div class="container" id="schedule">
+    <br>
+    <br>
+    <div class="row">
+        <h2 class="centered">Workshop Outline</h2>
+        <hr>
+        <br>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <ul>
+                    <li>Introduction to Embedded System</li>
+                    <li>Overview of Basic Electronics</li>
+                    <li>Overview of Digital electronics</li>
+                    <li>Introduction to Arduino Platform</li>
+                    <li>Features of Arduino UNO</li>
+                    <li>Arduino Software Tool- Arduino Sketch</li>
+                    <li>I/O Ports of Arduino UNO</li>
+                    <li>LED Interfacing with Arduino</li>
+                    <li>Introduction to 16X2 Alphanumeric LCD</li>
+                    <li>16X2 Alphanumeric LCD Interfacing with Arduino</li>
+                    <li>Horizontal Scrolling in 16X2 Alphanumeric LCD with Arduino</li>
+                    <li>Vertical Scrolling in 16X2 Alphanumeric LCD with Arduino</li>
+                    <li>Relay</li>
+                    <li>Different types of Relay</li>
+                    <li>Relay Interfacing with Arduino</li>
+                    <li>USART</li>
+                    <li>USART of Arduino</li>
+                    <li>Wi-Fi Protocol</li>
+                    <li>ESP8266 Wi-Fi Module</li>
+                    <li>AT Commands for ESP8266 Wi-Fi Module</li>
+                    <li>ESP8266 Wi-Fi Module Interfacing with Arduino</li>
+                    <li>Accessing ESP8266 Wi-Fi Module through the Web Browser on Mobile or Laptop over Wi-Fi Network</li>
+                    <li>Getting the IP Address of the ESP8266 Wi-Fi Module</li>
+                    <li>Relay and ESP8266 Wi-Fi Module based Android Mobile Controlled Wireless Home Appliances System with Arduino</li>
+                </ul>
+                
+            </div>
+            <div class="col-lg-3"></div>
+    </div><!-- row -->
+
+    <div class="row">
+        <h2 class="centered">Practicals</h2>
+        <hr>
+        <br>
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <ul>
+                <li>LED Interfacing with Arduino</li>
+                <li>LED Blinking with Arduino</li>
+                <li>16X2 alphanumeric LCD Interfacing with Arduino</li>
+                <li>Horizontal Scrolling in 16X2 Alphanumeric LCD with Arduino</li>
+                <li>Vertical Scrolling in 16X2 Alphanumeric LCD with Arduino</li>
+                <li>Relay Interfacing with Arduino</li>
+                <li>Getting the IP of ESP8266 Wi-Fi Module using 16X2 Alphanumeric LCD</li>
+                <li>Getting the IP of ESP8266 Wi-Fi Module using Serial Monitor</li>
+                <li>Relay and ESP8266 Wi-Fi Module based Android Mobile Controlled Wireless Home Appliances System with Arduino</li>
+                <li>Password Protected Relay and ESP8266 Wi-Fi Module based Android Mobile Controlled Wireless Home Appliances System with Arduino</li>
+            </ul>
+        </div><!-- col-lg -->
+        <div class="col-lg-3"></div>
+    </div><!-- row -->
+
+    <br>
+</div><!-- container -->
+
+<div class="greywrap">
+<div class="container" id="trainers">
+    <br>
+    <br>
+    <div class="row">
+        <h2 class="centered">Kit Details (for a team of 4)</h2>
+        <hr>
+        <br>
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <ul>
+                <li>Arduino UNO Board- 1pc</li>
+                <li>USB AM-BM Cable - 1pc</li>
+                <li>ESP8266 Wi-Fi Module - 1pc</li>
+                <li>Quad Relay Driver - 1pc</li>
+                <li>12V, 1A Adapter</li>
+                <li>Required Connectors</li>
+            </ul>
+        </div><!-- col-lg -->
+        <div class="col-lg-3"></div>
+    </div><!-- row -->
+    <br>
+</div><!-- container -->
+</div>
+
+<div class="container" id="contact">
+    <div class="row">
+        <br>
+        <h1 class="centered">Contact for more details:</h1>
+        <hr>
+        <br>
+        <br>
+        <div class="centered">
+            <p class="col-md-offset-3 col-md-3">
+                <span>Sai Niranjan Reddy</span><br>
+                <span>Manager</span><br>
+                <span>+91 9014611990</span><br>
+                <a href="mailto:es14btech11011@iith.ac.in">es14btech11011@iith.ac.in</a>
+            </p>
+            <p class="col-md-3">
+                <span>Srivardhan Reddy</span><br>
+                <span>Events</span><br>
+                <span>+91 8121539192</span><br>
+                <a href="mailto:ee15btech11009@iith.ac.in">ee15btech11009@iith.ac.in</a>
+            </p>
+        </div><!-- col -->
+    </div><!-- row -->
+
+    <div class="centered">
+        <a href="https://goo.gl/6v6XKg" class="register-btn btn" target="_blank">Register now</a>
+                <a href="https://www.thecollegefever.com/events/nvision-iot-duino-workshop" class="register-btn btn" target="_blank">Pay Now</a>
+    </div>
+
+</div><!-- container -->
+
+<div class="greywrap">
+    <div class="container">
+        <div class="row white">
+            <div class="col-lg-12 text-center" style="font-size:1.1em">
+                <h1 class="centered">Hospitality:</h1>
+                <hr>
+                <br>
+                Accommodation will be provided on request<br>
+                Fee: &#x20b9; 300/- per day (food and accommodation)<br>
+                <div class="centered">
+                    <p class="col-md-2">
+                    </p>
+                    <p class="col-md-3">
+                        <span>Abhijeet Bhure</span><br>
+                        <span>Hospitality</span><br>
+                        <span>+91 7032404412</span><br>
+                        <a href="mailto:cs15btech11001@iith.ac.in">cs15btech11001@iith.ac.in</a>
+                    </p>
+                    <p class="col-md-3">
+                        <span>Angel Rawat</span><br>
+                        <span>Hospitality</span><br>
+                        <span>+91 7839926881</span><br>
+                        <a href="mailto:ce15btech11003@iith.ac.in">ce15btech11003@iith.ac.in</a>
+                    </p>
+                </div><!-- col -->
+            </div><!-- col-lg-6 -->
+        </div><!-- row -->
+    </div><!-- container -->
+</div>
+
+<!-- <div class="container">
+      <div class="row white">
+        <div class="col-lg-12 text-center" style="font-size:1.1em">
+        <h1 class="centered">Transport:</h1>
+        <hr>
+          <a href="/workshop/nvision_solar_transport.pdf" target="_blank">Click here</a> to view transport details<br><br><br>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="container">
+      <div class="row white">
+        <div class="col-lg-12 text-center" style="font-size:1.1em">
+        <h1 class="centered">Workshop by</h1>
+        <hr>
+          <br>
+        <div class="centered">
+		<p class="col-md-3">
+        </p>
+          <p class="col-md-3">
+            <a href="https://nvision.org.in" target="_blank"><img src="/iotDuino/assets/img/nvision_b.png" width="250"></a>
+          </p>
+		  <p class="col-md-3">
+			  <a href="http://www.ablab.in/" target="_blank"><img src="/iotDuino/assets/img/ablab.png" width="250"></a>
+          </p>
+		  <p class="col-md-3">
+          </p>
+        </div><!-- col -->
+        </div><!-- col-lg-6 -->
+      </div><!-- row -->
+    </div><!-- container -->
+
+<div id="footerwrap">
+    <div class="container">
+        <h4><a href="http://nvision.org.in">&eta;vision, IIT Hyderabad</a> - Copyright 2017</h4>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/retina.js"></script>
+<script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="assets/js/smoothscroll.js"></script>
+<script type="text/javascript" src="assets/js/jquery-func.js"></script>
+</body>
+</html>
