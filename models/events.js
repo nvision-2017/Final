@@ -10,6 +10,7 @@ Event.add({
   name: { type: Types.Text, required: true, index: true, unique: true },
   introduction: { type: Types.Textarea },
   rules: { type: Types.Html },
+  hint: {type: Types.Html},
   image: { type: Types.Text },
   link: { type: Types.Text, noedit: true, index: true },
   file: { type: Types.Text },
