@@ -199,6 +199,8 @@
         <ul class="nav nav-pills nav-stacked animated bounceInLeft event-nav">
           <li class="active"><a href="#tab-intro" data-toggle="pill">Introduction</a></li>
           <li><a href="#tab-rules" data-toggle="pill">Rules</a></li>
+          {{# if hint}}
+          <li><a href="#tab-hint" data-toggle="pill">Hint</a></li>{{/if}}
           {{#if user}}
           {{#if infi}}
           {{else}}
@@ -239,6 +241,11 @@
           <div class="tab-pane animated zoomIn" id="tab-rules">
             <p class="" style="font-size:1.5em;width:100%;padding:0.3em;">
               {{{rules}}}
+            </p>
+          </div>
+          <div class="tab-pane animated zoomIn" id="tab-hint">
+            <p class="" style="font-size:1.5em;width:100%;padding:0.3em;">
+              {{{hint}}}
             </p>
           </div>
         </div>
