@@ -125,6 +125,7 @@ exports = module.exports = function (app) {
     app.get('/exhibitions', routes.views.exhibitions);
     app.get('/hospitality', routes.views.hospitality);
     app.get('/emblazon', routes.views.emblazon);
+    app.get('/ProShows', routes.views.ProShows);
     app.get('/dashboard', signinSSO, (req, res)=>{
         if (!req.user) {
             return res.redirect(process.env.ID_SERVER+'/signin?url='+process.env.THIS_SERVER+'/dashboard');
