@@ -1,4 +1,3 @@
 module.exports = exports = [
-    '<strong>1:</strong> Registrations for events have started. <a href="/signin">Signup</a> now!',
-    '<strong>2:</strong> Check out the upcoming <a href="/workshops">workshops</a> on <a href="/iotDuino">IoT Duino</a>, <a href="/mobileMaking">Mobile Making</a> and <a href="/processingMech">Project Processing Machinery</a>'
+    '<strong>1:</strong> <a href="https://cryptex.nvision.org.in/">CRYPTEX</a>, the most exciting treasure hunt of the year is here! Visit <a href="https://cryptex.nvision.org.in/">https://cryptex.nvision.org.in/</a> for more details.',
 ];
