@@ -123,6 +123,7 @@ exports = module.exports = function (app) {
     app.get('/team', routes.views.team);
     app.get('/workshops', routes.views.workshops);
     app.get('/exhibitions', routes.views.exhibitions);
+    app.get('/changes', routes.views.changes);
     app.get('/hospitality', routes.views.hospitality);
     app.get('/emblazon', routes.views.emblazon);
     app.get('/ProShows', routes.views.ProShows);
