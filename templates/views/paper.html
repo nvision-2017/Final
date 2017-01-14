@@ -111,6 +111,10 @@
       transition: 800ms ease all;
     }
 
+
+    ol li {
+      font-size: 18px;
+    }
   </style>
 <script>
     (function (i, s, o, g, r, a, m) {
@@ -202,55 +206,30 @@ give their presentation in final round in &eta;vision 2017.
 
 <h5>Last Date: <b>January 7, 2017</b></h5>
 <h5>Prizes worth INR 30,000</h5>
+<br>
+<h4><u>Selected Candidates</u>:</h4>
+  <ol>
+    <li>Rupika</li>
+    <li>MV SHRAVANTHI</li>
+    <li>Ponnaganti durga venkata sai pavan</li>
+    <li>Manisha</li>
+    <li>Ajay Kumar</li>
+    <li>GUDELA VENKATA SAI PRANEETH</li>
+    <li>Madhuri Asopa</li>
+    <li>B.Tanmayee</li>
+    <li>Yamini</li>
+    <li>Aravind.Panasa</li>
+    <li>B Sushma</li>
+    <li>CHARAN RATHOD</li>
+    <li>Rana Sujith</li>
+    <li>HYDRABOINY SAITEJA</li>
+    <li>S.Nazneen Kausar</li>
+    <li>Srimouli</li>
+    <li>Rupika valiki</li>
+    <li>Omshanthi M</li>
+    <li>Renuka</li>
+  </ol>
 
-{{#if user}} {{#if user.emailVerified}}
-
-<h3 style="text-align:center">Submit</h3>
-<ul class="nav nav-tabs"></ul>
-<p>
-    <form id="formpaper" action="/paperpresentation" method="post" enctype="multipart/form-data">
-        <div>
-
-            <div class="input-field col s12">
-                <i class="material-icons prefix">assignment</i>
-                <input id="topic" name="topic" type="text" class="validate input-signup">
-                <label for="topic">Topic</label>
-            </div>
-
-            <div class="col s12">
-                <input style="color: white !important;z-index: 12;position: relative" type="radio" id="ugorgug" name="ugOrG" value="Undergraduate" class="with-gap">
-<label for="ugorgug">Undergraduate</label>
-</div>
-<div class="col s12">
-    <input style="color: white !important;z-index: 12;position: relative" type="radio" id="ugorgg" name="ugOrG" value="Graduate" class="with-gap">
-<label for="ugorgg">Graduate</label>
-</div>
-
-<div class="file-field input-field col s12">
-    <div class="btn">
-        <span>Select File (Only PDF)</span>
-        <input type="file" id="paper" name="paper" accept="application/pdf">
-    </div>
-    <div class="file-path-wrapper">
-        <input class="file-path validate" type="text">
-    </div>
-</div>
-<!--<div class="progress" style="height: 20px;">
-    <div class="bar progress-bar">
-        <span class="percent">0%</span>
-    </div>
-    
-</div>-->
-
-<button id="signup" class="form-btn" type="submit">Submit</button>
-
-</div>
-
-</form>
-</p>
-{{else}}
-<a href="/dashboard" class="form-btn center">Verify your email to submit</a> {{/if}} {{else}}
-<a href="https://id.nvision.org.in/signin?url=https://nvision.org.in/paperpresentation" class="form-btn center">Signin to submit</a> {{/if}}
 </div>
 <div class="col-lg-2"></div>
 
