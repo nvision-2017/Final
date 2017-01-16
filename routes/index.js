@@ -123,10 +123,12 @@ exports = module.exports = function (app) {
     app.get('/team', routes.views.team);
     app.get('/workshops', routes.views.workshops);
     app.get('/exhibitions', routes.views.exhibitions);
+    app.get('/changes', routes.views.changes);
     app.get('/hospitality', routes.views.hospitality);
     app.get('/emblazon', routes.views.emblazon);
     app.get('/ProShows', routes.views.ProShows);
     app.get('/schedule', routes.views.sch);
+    app.get('/transport', routes.views.trans);
     app.get('/dashboard', signinSSO, (req, res)=>{
         if (!req.user) {
             return res.redirect(process.env.ID_SERVER+'/signin?url='+process.env.THIS_SERVER+'/dashboard');
