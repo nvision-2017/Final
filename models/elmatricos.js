@@ -41,5 +41,5 @@ Elmatrico.schema.pre('save', function(next){
     next();
 });
 
-Elmatrico.defaultColumns = 'answerid, user, download';
+Elmatrico.defaultColumns = 'user, download';
 Elmatrico.register();
