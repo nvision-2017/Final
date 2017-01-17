@@ -447,6 +447,10 @@ exports = module.exports = function (app) {
     app.post('/paperpresentation', paperpresentation.upload);
     app.get('/paper/:id', paperpresentation.getFile);
 
+    app.post('/elmatrico', paperpresentation.elmatrico);
+    app.post('/getelmatrico', paperpresentation.getElmatrico);
+    app.get('/elmatrico/:id', paperpresentation.getAnswer);
+
     app.get('/api/me', api.getUser);
     app.get('/api/me/events', api.getUserEvents);
     app.get('/api/event/:id', api.getEvent);
