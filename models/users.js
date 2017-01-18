@@ -22,7 +22,8 @@ User.add({
     college: {type: Types.Text, initial: true},
     phone: {type: Types.Number, initial:true},
     canAccessKeystone: { type: Boolean, initial: true },
-    emailVerified: {type:Boolean, initial: false, noedit: true},
+    emailVerified: {type: Types.Boolean, initial: false, noedit: true},
+    checkedIn: {type: Types.Boolean, initial: true, default: false},
     verificationToken: {type: Types.Text, initial: false, noedit: true}
 });
 
@@ -33,7 +34,8 @@ User.schema.virtual('nvisionID').get(function(){
 });
 
 User.relationship({path: 'registrations', ref: 'Registration', refPath: 'user'});
+User.relationship({path: 'accommodations', ref: 'Accommodation', refPath: 'user'});
 
-User.defaultColumns = 'name, email, college, phone';
+User.defaultColumns = 'name, userid, email, college, phone, checkedIn';
 
 User.register();
