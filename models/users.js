@@ -24,6 +24,7 @@ User.add({
     canAccessKeystone: { type: Boolean, initial: true },
     emailVerified: {type: Types.Boolean, initial: false, noedit: true},
     checkedIn: {type: Types.Boolean, initial: true, default: false},
+    onlyCryptex: {type: Types.Boolean, default: false},
     verificationToken: {type: Types.Text, initial: false, noedit: true}
 });
 
