@@ -5,6 +5,8 @@ let autoIncrement = require('mongoose-auto-increment');
 autoIncrement.initialize(keystone.mongoose);
 
 let User = new keystone.List('User', {
+    map: {name: 'nvisionID'},
+    searchFields: "name, email, nvisionID",
     nodelete: true
 });
 

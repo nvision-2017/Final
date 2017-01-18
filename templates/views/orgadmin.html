@@ -120,10 +120,8 @@
                 winner: $("#winner-"+i).prop("checked")
             }
             var id=$("#id-"+i).val();
-            $this.prop("disabled", true);
             $this.html("saving")
             $.post("/dashboard/"+id, data, function(data, sts){
-                $this.prop("disabled", false);
                 if (!data || !data.status) {
                     $this.html("Error, click again");
                 }

@@ -16,6 +16,8 @@ let tokenSecret = 'varyverysecrettokenithinkso';
 
 const Event = keystone.list('Event');
 
+const Team = keystone.list('Team');
+
 function pad(num, size) {
     var s = num+"";
     while (s.length < size) s = "0" + s;
@@ -488,6 +490,62 @@ exports = module.exports = function (app) {
         if (!req.user || !req.user.canAccessKeystone) {
             res.notfound();
         }
+        User.model.find({}).then(users=>{
+            res.render('volunteer', {users: users});
+        }, err=>{res.notfound()})
+    });
+
+
+    // app.get('/admin/teams', (req, res)=>{
+    //     if (!req.user || !req.user.canAccessKeystone) {
+    //         res.notfound();
+    //     }
+    //     Team.model.find({}).then(users=>{
+    //         res.render('teams', {users: users});
+    //     }, err=>{res.notfound()})
+    // })
+
+    app.get('/admin/:event', function(req, res){
+        if (!req.user || !req.user.canAccessKeystone) {
+            return res.notfound();
+        }
+        var view = new keystone.View(req, res);
+        Event.model.findOne({ link: `/events/${req.params.event}` }).then(e => {
+            if (!e) return res.notfound();
+            Team.model.find({event: e._id}).populate('members').then(r => {
+                view.render('adminevent', {event: e, reg: r});
+            }, e=>res.err(e))
+        }, e => res.err(e));
+    });
+
+    app.post('/admin/team/:reg', function(req, res){
+        if (!req.user || !req.user.canAccessKeystone) {
+            return res.json({status: false});
+        }
+        Team.model.findById(req.params.reg).then(r =>{
+            r.attendance = req.body.attendance;
+            r.isWinner = req.body.winner;
+            r.orgComments = req.body.comments;
+            r.save().then((err)=>{
+                res.json({status: true});
+            }, (err)=>{
+                res.json({status: false});
+            })
+        });
+    });
+
+    app.post('/checkin/:reg', function(req, res){
+        if (!req.user || !req.user.canAccessKeystone) {
+            return res.json({status: false});
+        }
+        User.model.findById(req.params.reg).then(r =>{
+            r.checkedIn = req.body.check;
+            r.save().then((err)=>{
+                res.json({status: true});
+            }, (err)=>{
+                res.json({status: false});
+            })
+        });
     });
 
 

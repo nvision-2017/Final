@@ -5,3 +5,4 @@ require('./registrations.js');
 require('./pps.js');
 require('./elmatricos.js');
 require('./accommodations.js');
+require('./teams.js')
