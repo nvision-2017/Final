@@ -112,6 +112,9 @@ exports = module.exports = function (app) {
     app.get('/workshop', (req, res) => {
         res.redirect('/workshops');
     });
+    app.get('/transport', (req, res) => {
+        res.redirect('/transport.pdf');
+    });
     app.get('/about', routes.views.about);
     app.get('/', routes.views.index);
     app.get('/sponsors', routes.views.sponsors);
@@ -128,7 +131,6 @@ exports = module.exports = function (app) {
     app.get('/emblazon', routes.views.emblazon);
     app.get('/ProShows', routes.views.ProShows);
     app.get('/schedule', routes.views.sch);
-    app.get('/transport', routes.views.trans);
     app.get('/dashboard', signinSSO, (req, res)=>{
         if (!req.user) {
             return res.redirect(process.env.ID_SERVER+'/signin?url='+process.env.THIS_SERVER+'/dashboard');
