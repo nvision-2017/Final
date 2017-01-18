@@ -68,7 +68,7 @@ function hash (str) {
 function signinSSO(req, res, next) {
     if (req.query.token) {
         jwt.verify(req.query.token, tokenSecret, (err, decoded)=>{
-            if (!err) {
+            if (!err && decoded.user) {
                 var user = decoded.user;
                 req.session.regenerate(function () {
                     req.user = user;
@@ -482,6 +482,12 @@ exports = module.exports = function (app) {
                 res.json({status: false});
             })
         });
+    });
+
+    app.get('/checkin', (req, res)=>{
+        if (!req.user || !req.user.canAccessKeystone) {
+            res.notfound();
+        }
     });
 
 
