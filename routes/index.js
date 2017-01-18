@@ -453,6 +453,39 @@ exports = module.exports = function (app) {
     app.post('/getelmatrico', paperpresentation.getElmatrico);
     app.get('/elmatrico/:id', paperpresentation.getAnswer);
 
+
+
+    app.get('/dashboard/:event', function(req, res){
+        if (!req.user || !req.user.canAccessKeystone) {
+            return res.notfound();
+        }
+        var view = new keystone.View(req, res);
+        Event.model.findOne({ link: `/events/${req.params.event}` }).then(e => {
+            if (!e) return res.notfound();
+            Registration.model.find({event: e._id}).populate('user').then(r => {
+                view.render('orgadmin', {event: e, reg: r});
+            }, e=>res.err(e))
+        }, e => res.err(e));
+    });
+
+    app.post('/dashboard/:reg', function(req, res){
+        if (!req.user || !req.user.canAccessKeystone) {
+            return res.json({status: false});
+        }
+        Registration.model.findById(req.params.reg).then(r =>{
+            r.attendance = req.body.attendance;
+            r.isWinner = req.body.winner;
+            r.orgComments = req.body.comments;
+            r.save().then((err)=>{
+                res.json({status: true});
+            }, (err)=>{
+                res.json({status: false});
+            })
+        });
+    });
+
+
+
     app.get('/api/me', api.getUser);
     app.get('/api/me/events', api.getUserEvents);
     app.get('/api/event/:id', api.getEvent);
