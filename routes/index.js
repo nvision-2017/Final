@@ -405,6 +405,14 @@ exports = module.exports = function (app) {
         });
     });
 
+    app.get('/e/stockmarket', (req, res)=>{
+        res.redirect('http://dsij.in/nvisioncontest.aspx');
+    })
+
+    app.get('/events/stockmarket', (req, res)=>{
+        res.redirect('http://dsij.in/nvisioncontest.aspx');
+    })
+
     // app.post('/resendemail', (req, res)=>{
     //     if (!req.user){
     //         return res.json({status:false, message: 'Auth failed'});
