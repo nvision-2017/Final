@@ -23,15 +23,13 @@ body {
 <div class="container">
 	<div class="row">
         <div class="col-md-3">
-            <form action="#" method="get">
                 <div class="input-group">
                     <!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
-                    <input class="form-control" id="system-search" name="q" placeholder="Search for" required>
+                    <input class="form-control" id="qsearch" placeholder="Search for" required>
                     <span class="input-group-btn">
-                        <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                        <button id="search" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
                     </span>
                 </div>
-            </form>
         </div>
         <div class="col-md-9"></div>
 		<div class="col-md-12">
@@ -47,16 +45,7 @@ body {
                         </tr>
                     </thead>
                     <tbody>
-                        {{#each users}}
-                        <tr>
-                            <td>{{this.nvisionID}}</td>
-                            <td>{{this.name.first}} {{this.name.last}}</td>
-                            <td>{{this.email}}</td>
-                            <td>{{this.phone}}</td>
-                            <td>{{this.college}}</td>
-                            <td><input type="hidden" id="id-{{@index}}" value="{{this._id}}"> {{#if this.checkedIn}}Checked in{{else}}<button class="save" data-index="{{@index}}">Ckeck in</button>{{/if}}</td>
-                        </tr>
-                        {{/each}}
+                        
                         <!--<tr>
                             <td>Sample</td>
                             <td>Filter</td>
@@ -94,6 +83,23 @@ body {
 
     <script>
 $(document).ready(function() {
+    $("#search").click(function(){
+        var q = $("#qsearch").val().toUpperCase();
+        console.log(q);
+        $.post('/checkin/user', {q: q}, function(data, sts){
+            $("tbody").html(`
+                <tr>
+                    <td>${q}</td>
+                    <td>${data.name.first} ${data.name.last}</td>
+                    <td>${data.email}</td>
+                    <td>${data.phone}</td>
+                    <td>${data.college}</td>
+                    <td><input type="hidden" id="id-${data._id}" value="${data._id}"> 
+                    ${data.checkedIn ? "checkedin " : '<button class="save" data-index="'+data._id+'">Ckeck in</button>'}</td>
+                </tr>
+            `);
+        });
+    });
     $(".save").click(function(){
             var $this = $(this);
             var i = $this.attr("data-index");

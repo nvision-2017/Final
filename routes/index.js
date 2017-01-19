@@ -488,11 +488,24 @@ exports = module.exports = function (app) {
 
     app.get('/checkin', (req, res)=>{
         if (!req.user || !req.user.canAccessKeystone) {
-            res.notfound();
+            return res.notfound();
         }
-        User.model.find({}).then(users=>{
-            res.render('volunteer', {users: users});
-        }, err=>{res.notfound()})
+        res.render('volunteer');
+        // User.model.find({}).then(users=>{
+            
+        // }, err=>{res.notfound()})
+    });
+
+    app.post('/checkin/user', (req, res)=>{
+        if (!req.user  || !req.user.canAccessKeystone) {
+            return res.notfound();
+        }
+        var id = Number(req.body.q.substring(6));
+        console.log(id);
+        User.model.findOne({userid: id}).then(function(usr){
+            console.log(usr);
+            res.json(usr);
+        }, err=>{res.json({})});
     });
 
 
