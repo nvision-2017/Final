@@ -507,7 +507,22 @@ exports = module.exports = function (app) {
         if (!req.user  || !req.user.canAccessKeystone) {
             return res.notfound();
         }
-        res.render('adminteam');
+        Event.model.find({}).then(evts=>{
+            res.render('adminteam', {events: evts});
+        }, err=>res.notfound())
+    })
+
+    app.post('/admin/team', (req, res)=>{
+        if (!req.user  || !req.user.canAccessKeystone) {
+            return res.json({status: false});
+        }
+        new Team.model({
+            name: req.body.name,
+            event: req.body.event,
+            members: req.body.members
+        }).save().then(team=>{
+            res.json({status: true, team: team})
+        }, err=>{res.json({status: false})});
     })
 
     app.get('/admin/:event', function(req, res){

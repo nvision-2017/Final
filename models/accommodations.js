@@ -25,23 +25,27 @@ Accommodation.add({
 });
 
 Accommodation.schema.pre('save', function(next){
-    if (!this.mailStatus && this.confirmed) {
-        User.model.findById(this.user).then((user)=>{
-            this.mailStatus = true;
-            require('../routes/mail.js').sendAAMail(user.email, user.name.first+' '+user.name.last);
+    User.model.findById(this.user).then((user)=>{
+        this.email = user.email;
+        this.phone = user.phone;
+        if (!this.mailStatus && this.confirmed) {
+            User.model.findById(this.user).then((user)=>{
+                this.mailStatus = true;
+                require('../routes/mail.js').sendAAMail(user.email, user.name.first+' '+user.name.last);
+                next();
+            }, (err)=>{
+                console.log(err);
+                next();
+            });
+        }
+        else if (!this.confirmed) {
+            this.mailStatus = false;
             next();
-        }, (err)=>{
-            console.log(err);
+        }
+        else {
             next();
-        });
-    }
-    else if (!this.confirmed) {
-        this.mailStatus = false;
-        next();
-    }
-    else {
-        next();
-    }
+        }
+    })
 });
 
 Accommodation.defaultColumns = 'id|1%, user|15%, email|20%%, phone|15%, noOfMale|5%, noOfFemale|5%, on19|5%, on20|5%, on21|5%, on22|5%, confirmed, notes';

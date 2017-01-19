@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>Dashboard</title>
 
-
     <link rel='stylesheet prefetch' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
     <link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
 
@@ -22,11 +21,47 @@ body {
 
 <div class="container">
 	<div class="row">
-        <h2>Team</h2>
-        <textarea id="team-in" rows="5", cols="50"></textarea><br>
-        <button id="createteam">Create Team</button>
-        <p id="result"></p>
-        
+        <div class="col-md-3">
+                <div class="input-group">
+                    <input class="form-control" id="qsearch" placeholder="Search for" required>
+                    <span class="input-group-btn">
+                        <button id="search" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                    </span>
+                </div>
+                <div class="input-group">
+                    <input class="form-control" id="name" placeholder="Team name" required>
+                </div>
+                <div class="form-group">
+                    <label for="selev">Event:</label>
+                    <select class="form-control" id="selev">
+                        {{#each events}}
+                        <option value="{{this._id}}">{{this.name}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <button id="createteam">Create team</button>
+                <button id="clear">Clear</button>
+                <p class="result"></p>
+        </div>
+        <div class="col-md-9"></div>
+		<div class="col-md-12">
+    	 <table class="table table-list-search">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>IITH ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>College</th>
+                            <th style="display: none">Select</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>   
+		</div>
 	</div>
 </div>
 
@@ -36,14 +71,115 @@ body {
     <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore.js'></script>
 
     <script>
-    $(document).ready(function(){
-        $("#createteam").click(function(){
-            var teams = $("#team-in").val();
-            teams = teams.replace(/\s/g, '')
-            teams = teams.split(',');
-            console.log(teams);
+
+    function checkin(i) {
+        var $this = $("button[data-index='"+i+"']");
+        var data = {
+            check: true
+        }
+        $this.html("saving")
+        $.post("/checkin/"+i, data, function(data, sts){
+            if (!data || !data.status) {
+                $this.html("Error, click again");
+            }
+            else {
+                $this.parent().html("Checked in");
+            }
         });
+    }
+
+    function removetd(el) {
+        $(el).parent().parent().remove();
+    }
+$(document).ready(function() {
+    $("#qsearch").on("keypress", function(e){
+        if (e.charCode == 13) {
+            $("#search").click();
+        }
     })
+    $("#clear").click(function(){
+        $(".result").html("");
+        $("tbody").html("");
+        $("#name").val("");
+    })
+    function pad(num, size) {
+        var s = num+"";
+        while (s.length < size) s = "0" + s;
+        return s;
+    }
+    $("#createteam").click(function(){
+        var data = {
+            name: $("#name").val(),
+            event: $("#selev").val(),
+            members: $(".selmem:checked").map(function(){return $(this).attr('data-id')}).get()
+        };
+        $.post('/admin/team', data, function(dt, st){
+            console.log(dt);
+            if (dt.status) {
+                $(".result").html("Team created. Team ID : "+dt.team.teamID)
+            }
+            else {
+                $(".result").html("Error creating team");
+            }
+        })
+    })
+    $("#search").click(function(){
+        var q = $("#qsearch").val();
+        if (q.toUpperCase().substring(0, 6) == "IITH17") {
+            q = q.toUpperCase();
+            $.post('/checkin/user', {q: q}, function(data, sts){
+                $("tbody").append(`
+                    <tr>
+                        <td><span onclick="removetd(this)">&times</span></th>
+                        <td>${q}</td>
+                        <td>${data.name.first} ${data.name.last}</td>
+                        <td>${data.email}</td>
+                        <td>${data.phone}</td>
+                        <td>${data.college}</td>
+                        <td style="display: none"><input type="checkbox" class="selmem" data-id="${data._id}" checked disabled></td>
+                    </tr>
+                `);
+            });
+        }
+        else {$(".msg").html("Enter correct iith id")}
+        // else {
+        //     $.get('/keystone/api/users?search='+encodeURIComponent(q)+'&fields=name%2Cuserid%2Cemail%2Ccollege%2Cphone%2CcheckedIn&limit=100&sort=name&expandRelationshipFields=false',
+        //     function(dat, sts){
+        //         $("tbody").html("");
+        //         for (x in  dat.results) {
+        //             var data = dat.results[x];
+        //             $("tbody").append(`
+        //                 <tr>
+        //                     <td>${"IITH17"+pad(data.fields.userid, 4)}</td>
+        //                     <td>${data.name}</td>
+        //                     <td>${data.fields.email}</td>
+        //                     <td>${data.fields.phone}</td>
+        //                     <td>${data.fields.college}</td>
+        //                     <td>${data.fields.checkedIn ? "Checked in " : '<button class="save" onclick="checkin(\''+data.id+'\')" data-index="'+data.id+'">Check in</button>'}</td>
+        //                 </tr>
+        //             `);
+        //         }
+        //     })
+        // }
+    });
+    // $(".save").click(function(){
+    //     console.log('save');
+    //     var $this = $(this);
+    //     var i = $this.attr("data-index");
+    //     var data = {
+    //         check: true
+    //     }
+    //     $this.html("saving")
+    //     $.post("/checkin/"+i, data, function(data, sts){
+    //         if (!data || !data.status) {
+    //             $this.html("Error, click again");
+    //         }
+    //         else {
+    //             $this.parent().html("Checked in");
+    //         }
+    //     });
+    // });
+});
     </script>
 
 </body>
