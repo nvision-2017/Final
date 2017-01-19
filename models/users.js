@@ -6,7 +6,7 @@ autoIncrement.initialize(keystone.mongoose);
 
 let User = new keystone.List('User', {
     // map: {name: 'nvisionID'},
-    searchFields: "name, email, nvisionID",
+    searchFields: "name, email, nvisionID, phone",
     nodelete: true
 });
 
@@ -22,7 +22,7 @@ User.add({
     email: { type: Types.Email, initial: true, required: true, index: true, unique: true, noedit: false },
     password: { type: Types.Password, required: true, initial: true },
     college: {type: Types.Text, initial: true},
-    phone: {type: Types.Number, initial:true},
+    phone: {type: Types.Text, initial:true},
     canAccessKeystone: { type: Boolean, initial: true },
     emailVerified: {type: Types.Boolean, initial: false, noedit: true},
     checkedIn: {type: Types.Boolean, initial: true, default: false},

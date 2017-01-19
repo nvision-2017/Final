@@ -105,6 +105,11 @@ $(document).ready(function() {
             $("#search").click();
         }
     })
+    function pad(num, size) {
+        var s = num+"";
+        while (s.length < size) s = "0" + s;
+        return s;
+    }
     $("#search").click(function(){
         var q = $("#qsearch").val();
         if (q.toUpperCase().substring(0, 6) == "IITH17") {
@@ -130,12 +135,12 @@ $(document).ready(function() {
                     var data = dat.results[x];
                     $("tbody").append(`
                         <tr>
-                            <td>${q}</td>
+                            <td>${"IITH17"+pad(data.fields.userid, 4)}</td>
                             <td>${data.name}</td>
                             <td>${data.fields.email}</td>
                             <td>${data.fields.phone}</td>
                             <td>${data.fields.college}</td>
-                            <td>${data.fields.checkedIn ? "Checked in " : '<button class="save" onclick="checkin(\''+data.id+'\')" data-index="'+data.id+'">Ckeck in</button>'}</td>
+                            <td>${data.fields.checkedIn ? "Checked in " : '<button class="save" onclick="checkin(\''+data.id+'\')" data-index="'+data.id+'">Check in</button>'}</td>
                         </tr>
                     `);
                 }
