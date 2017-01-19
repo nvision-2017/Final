@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+
+
+    <link rel='stylesheet prefetch' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+    <link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
+
+<style>
+body {
+    margin-top: 2%
+}
+</style>
+
+
+</head>
+
+<body>
+
+<div class="container">
+	<div class="row">
+        <h2>Team</h2>
+        <textarea id="team-in" rows="5", cols="50"></textarea><br>
+        <button id="createteam">Create Team</button>
+        <p id="result"></p>
+        
+	</div>
+</div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+    <script src='https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore.js'></script>
+
+    <script>
+    $(document).ready(function(){
+        $("#createteam").click(function(){
+            var teams = $("#team-in").val();
+            teams = teams.replace(/\s/g, '')
+            teams = teams.split(',');
+            console.log(teams);
+        });
+    })
+    </script>
+
+</body>
+
+</html>

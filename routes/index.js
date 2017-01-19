@@ -503,15 +503,12 @@ exports = module.exports = function (app) {
         }, err=>{res.json({})});
     });
 
-
-    // app.get('/admin/teams', (req, res)=>{
-    //     if (!req.user || !req.user.canAccessKeystone) {
-    //         res.notfound();
-    //     }
-    //     Team.model.find({}).then(users=>{
-    //         res.render('teams', {users: users});
-    //     }, err=>{res.notfound()})
-    // })
+    app.get('/admin/team', (req, res)=>{
+        if (!req.user  || !req.user.canAccessKeystone) {
+            return res.notfound();
+        }
+        res.render('adminteam');
+    })
 
     app.get('/admin/:event', function(req, res){
         if (!req.user || !req.user.canAccessKeystone) {
