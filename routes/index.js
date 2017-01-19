@@ -501,9 +501,9 @@ exports = module.exports = function (app) {
             return res.notfound();
         }
         var id = Number(req.body.q.substring(6));
-        console.log(id);
+        // console.log(id);
         User.model.findOne({userid: id}).then(function(usr){
-            console.log(usr);
+            // console.log(usr);
             res.json(usr);
         }, err=>{res.json({})});
     });
