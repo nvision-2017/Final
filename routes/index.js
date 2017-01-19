@@ -155,6 +155,15 @@ exports = module.exports = function (app) {
     app.get('/signin', (req, res)=>{
         res.redirect('/dashboard');
     });
+
+    app.get('/e/stockmarket', (req, res)=>{
+        res.redirect('http://dsij.in/nvisioncontest.aspx');
+    })
+
+    app.get('/events/stockmarket', (req, res)=>{
+        res.redirect('http://dsij.in/nvisioncontest.aspx');
+    })
+
     // app.get('/signin', (req, res, next)=>{
     //     if (req.user) {
     //         return res.redirect('/dashboard');
@@ -404,14 +413,6 @@ exports = module.exports = function (app) {
             res.json({status:false, message: 'Error'});
         });
     });
-
-    app.get('/e/stockmarket', (req, res)=>{
-        res.redirect('http://dsij.in/nvisioncontest.aspx');
-    })
-
-    app.get('/events/stockmarket', (req, res)=>{
-        res.redirect('http://dsij.in/nvisioncontest.aspx');
-    })
 
     // app.post('/resendemail', (req, res)=>{
     //     if (!req.user){
