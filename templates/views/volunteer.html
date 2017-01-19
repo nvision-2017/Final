@@ -101,19 +101,41 @@ body {
     }
 $(document).ready(function() {
     $("#search").click(function(){
-        var q = $("#qsearch").val().toUpperCase();
-        $.post('/checkin/user', {q: q}, function(data, sts){
-            $("tbody").html(`
-                <tr>
-                    <td>${q}</td>
-                    <td>${data.name.first} ${data.name.last}</td>
-                    <td>${data.email}</td>
-                    <td>${data.phone}</td>
-                    <td>${data.college}</td>
-                    <td>${data.checkedIn ? "checkedin " : '<button class="save" onclick="checkin(\''+data._id+'\')" data-index="'+data._id+'">Ckeck in</button>'}</td>
-                </tr>
-            `);
-        });
+        var q = $("#qsearch").val();
+        if (q.toUpperCase().substring(0, 6) == "IITH17") {
+            q = q.toUpperCase();
+            $.post('/checkin/user', {q: q}, function(data, sts){
+                $("tbody").html(`
+                    <tr>
+                        <td>${q}</td>
+                        <td>${data.name.first} ${data.name.last}</td>
+                        <td>${data.email}</td>
+                        <td>${data.phone}</td>
+                        <td>${data.college}</td>
+                        <td>${data.checkedIn ? "checkedin " : '<button class="save" onclick="checkin(\''+data._id+'\')" data-index="'+data._id+'">Ckeck in</button>'}</td>
+                    </tr>
+                `);
+            });
+        }
+        else {
+            $.get('/keystone/api/users?search='+encodeURIComponent(q)+'&fields=name%2Cuserid%2Cemail%2Ccollege%2Cphone%2CcheckedIn&limit=100&sort=name&expandRelationshipFields=false',
+            function(dat, sts){
+                $("tbody").html("");
+                for (x in  dat.results) {
+                    var data = dat.results[x];
+                    $("tbody").append(`
+                        <tr>
+                            <td>${q}</td>
+                            <td>${data.name.first} ${data.name.last}</td>
+                            <td>${data.email}</td>
+                            <td>${data.phone}</td>
+                            <td>${data.college}</td>
+                            <td>${data.checkedIn ? "checkedin " : '<button class="save" onclick="checkin(\''+data._id+'\')" data-index="'+data._id+'">Ckeck in</button>'}</td>
+                        </tr>
+                    `);
+                }
+            })
+        }
     });
     $(".save").click(function(){
         console.log('save');
