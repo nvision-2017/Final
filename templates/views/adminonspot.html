@@ -21,16 +21,13 @@ body {
 
 <div class="container">
 	<div class="row">
-        <h1>Team registration</h1>
+        <h1>Onspot registration</h1>
         <div class="col-md-3">
                 <div class="input-group">
                     <input class="form-control" id="qsearch" placeholder="Search for" required>
                     <span class="input-group-btn">
                         <button id="search" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
                     </span>
-                </div>
-                <div class="input-group">
-                    <input class="form-control" id="name" placeholder="Team name" required>
                 </div>
                 <div class="form-group">
                     <label for="selev">Event:</label>
@@ -40,7 +37,7 @@ body {
                         {{/each}}
                     </select>
                 </div>
-                <button id="createteam">Create team</button>
+                <button id="createteam">Register</button>
                 <button id="clear">Clear</button>
                 <p class="result"></p>
         </div>
@@ -109,18 +106,21 @@ $(document).ready(function() {
         return s;
     }
     $("#createteam").click(function(){
+        var mem = $(".selmem:checked").map(function(){return $(this).attr('data-id')}).get()
+        if (mem.length != 1) {
+            $('.result').html('Selct only one user');
+        }
         var data = {
-            name: $("#name").val(),
             event: $("#selev").val(),
-            members: $(".selmem:checked").map(function(){return $(this).attr('data-id')}).get()
+            user: mem[0]
         };
-        $.post('/admin/team', data, function(dt, st){
+        $.post('/admin/onspot', data, function(dt, st){
             console.log(dt);
             if (dt.status) {
-                $(".result").html("Team created. Team ID : "+dt.team.teamID)
+                $(".result").html("Registered")
             }
             else {
-                $(".result").html("Error creating team");
+                $(".result").html("Error registering");
             }
         })
     })

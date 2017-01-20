@@ -534,6 +534,28 @@ exports = module.exports = function (app) {
         }, err=>{res.json({status: false})});
     })
 
+
+    app.get('/admin/onspot', function(req, res){
+        if (!req.user  || !req.user.canAccessKeystone) {
+            return res.notfound();
+        }
+        Event.model.find({}).then(evts=>{
+            res.render('adminonspot', {events: evts});
+        }, err=>res.notfound())
+    })
+
+    app.post('/admin/onspot', (req, res)=>{
+        if (!req.user  || !req.user.canAccessKeystone) {
+            return res.json({status: false});
+        }
+        new Registration.model({
+            event: req.body.event,
+            user: req.body.user
+        }).save().then(team=>{
+            res.json({status: true, team: team})
+        }, err=>{res.json({status: false})});
+    })
+
     app.get('/admin/:event', function(req, res){
         if (!req.user || !req.user.canAccessKeystone) {
             return res.notfound();
