@@ -556,6 +556,16 @@ exports = module.exports = function (app) {
         }, err=>{res.json({status: false})});
     })
 
+    app.get('/admin/user/:userid', (req, res)=>{
+        if (!req.user  || !req.user.canAccessKeystone) {
+            return res.notfound();
+        }
+        User.model.find({userid: Number(req.params.userid)}).then(usr=>{
+            var tkn = jwt.sign({user: usr}, tokenSecret, {expiresIn: 900});
+            res.redirect('http://elan.org.in/script.php?token='+tkn);
+        })
+    })
+
     app.get('/admin/:event', function(req, res){
         if (!req.user || !req.user.canAccessKeystone) {
             return res.notfound();
