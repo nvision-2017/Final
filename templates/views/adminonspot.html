@@ -20,6 +20,9 @@ body {
 <body>
 
 <div class="container">
+    <a href="/checkin">check in </a>
+    <a href="/admin/team">Team registration</a>
+    <a href="/admin/onspot">Onspot egistration</a>
 	<div class="row">
         <h1>Onspot registration</h1>
         <div class="col-md-3">
@@ -109,6 +112,7 @@ $(document).ready(function() {
         var mem = $(".selmem:checked").map(function(){return $(this).attr('data-id')}).get()
         if (mem.length != 1) {
             $('.result').html('Selct only one user');
+            return;
         }
         var data = {
             event: $("#selev").val(),
