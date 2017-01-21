@@ -17,6 +17,7 @@ let tokenSecret = 'varyverysecrettokenithinkso';
 const Event = keystone.list('Event');
 
 const Team = keystone.list('Team');
+const request = require("request");
 
 function pad(num, size) {
     var s = num+"";
