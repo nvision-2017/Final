@@ -69,7 +69,7 @@ $(document).ready(function() {
         $(".result").html("Wait ....");
         $.post('/admin/user', data, function(d,s){
             if (d.status) {
-                $(".result").html("Registered")
+                $(".result").html("Registered with IITH ID : IITH17"+d.user.userid)
             }
             else {
                 $(".result").html(d.message);
