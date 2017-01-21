@@ -596,6 +596,7 @@ exports = module.exports = function (app) {
             college: req.body.college
         }
         new User.model(data).save().then((usr)=>{
+            request('/admin/user/'+usr.userid);
             res.json({status: true, message: "Registered"})
         }, err=>{res.json({status: false, message: "User already exists"})})
     })
