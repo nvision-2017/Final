@@ -35,6 +35,7 @@ body {
         </div>
         <div class="col-md-9"></div>
 		<div class="col-md-12">
+            <h2>Teams</h2>
     	 <table class="table table-list-search">
                     <thead>
                             <tr>
@@ -58,10 +59,42 @@ body {
                                         <td>{{this.nvisionID}}</td>
                                         <td>{{this.name.first}} {{this.name.last}}</td>
                                         <td>{{this.email}}</td>
+                                        <td>{{this.phone}}</td>
                                     </tr>
                                 {{/each}}
                                 </table>                      
                             </td>
+                            <td><input type="hidden" id="id-{{@index}}" value="{{this._id}}"><input type="checkbox" id="attendance-{{@index}}"{{#if this.attendance}} checked{{/if}}></td>
+                            <td><input type="checkbox" id="winner-{{@index}}"{{#if this.isWinner}} checked{{/if}}></td>
+                            <td><textarea id="comments-{{@index}}">{{this.orgComments}}</textarea></td>
+                            <td><button class="save" data-index="{{@index}}">Save</button></td>
+                        </tr>
+                        {{/each}}
+                       
+                    </tbody>
+                </table>   
+		</div>
+        <div class="col-md-12">
+            <h2>Regisreations without team</h2>
+    	 <table class="table table-list-search">
+                    <thead>
+                            <tr>
+                                <th>IITH ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Attendance</th>
+                                <th>isWinner</th>
+                                <th>Comments</th>    
+                            </tr>
+                    </thead>
+                    <tbody>
+                        {{#each users}}
+                        <tr>
+                            <td>{{this.nvisionID}}</td>
+                            <td>{{this.name.first}} {{this.name.last}}</td>
+                            <td>{{this.email}}</td>
+                            <td>{{this.phone}}</td>
                             <td><input type="hidden" id="id-{{@index}}" value="{{this._id}}"><input type="checkbox" id="attendance-{{@index}}"{{#if this.attendance}} checked{{/if}}></td>
                             <td><input type="checkbox" id="winner-{{@index}}"{{#if this.isWinner}} checked{{/if}}></td>
                             <td><textarea id="comments-{{@index}}">{{this.orgComments}}</textarea></td>

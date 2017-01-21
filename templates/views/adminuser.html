@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+
+    <link rel='stylesheet prefetch' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+    <link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
+
+<style>
+body {
+    margin-top: 2%
+}
+</style>
+
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row">
+        <a href="/checkin" class="btn btn-default">check in </a>
+        <a href="/admin/team" class="btn btn-default">Team registration</a>
+        <a href="/admin/onspot" class="btn btn-default">Event registration</a>
+        <a href="/admin/user" class="btn btn-default">New user</a>
+    </div>
+	<div class="row">
+        <h1>Team registration</h1>
+        <p class="result"></p>
+        <form method="POST">
+            <div class="form-group">
+                <label for="name">Name : </label>
+                <input type="text" name="name" id="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email : </label>
+                <input type="email" name="email" id="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="college">College :</label>
+                <input type="text" name="college" id="college" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone :</label>
+                <input type="tel" name="phone" id="phone" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-info">Submit</button>
+        </form>
+    </div>
+</div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+    <script src='https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore.js'></script>
+
+    <script>
+$(document).ready(function() {
+    $("form").submit(function(e){
+        e.preventDefault();
+        var data = {
+            name: $("#name").val(),
+            college: $("#college").val(),
+            email: $("#email").val(),
+            phone: $("#phone").val()
+        }
+        $(".result").html("Wait ....");
+        $.post('/admin/user', data, function(d,s){
+            if (d.status) {
+                $(".result").html("Registered")
+            }
+            else {
+                $(".result").html(d.message);
+            }
+        })
+    });
+});
+    </script>
+
+</body>
+
+</html>

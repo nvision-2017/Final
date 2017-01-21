@@ -7,7 +7,7 @@
 
     <link rel='stylesheet prefetch' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
     <link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'>
-
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css">
 <style>
 body {
     margin-top: 2%
@@ -20,9 +20,12 @@ body {
 <body>
 
 <div class="container">
-    <a href="/checkin">check in </a>
-    <a href="/admin/team">Team registration</a>
-    <a href="/admin/onspot">Onspot egistration</a>
+    <div class="row">
+        <a href="/checkin" class="btn btn-default">check in </a>
+        <a href="/admin/team" class="btn btn-default">Team registration</a>
+        <a href="/admin/onspot" class="btn btn-default">Event registration</a>
+        <a href="/admin/user" class="btn btn-default">New user</a>
+    </div>
 	<div class="row">
         <h1>Onspot registration</h1>
         <div class="col-md-3">
@@ -34,14 +37,14 @@ body {
                 </div>
                 <div class="form-group">
                     <label for="selev">Event:</label>
-                    <select class="form-control" id="selev">
+                    <select class="form-control selectpicker" data-live-search="true" id="selev" title="select event">
                         {{#each events}}
                         <option value="{{this._id}}">{{this.name}}</option>
                         {{/each}}
                     </select>
                 </div>
-                <button id="createteam">Register</button>
-                <button id="clear">Clear</button>
+                <button id="createteam" class="btn btn-info">Register</button>
+                <button id="clear" class="btn btn-warning">Clear</button>
                 <p class="result"></p>
         </div>
         <div class="col-md-9"></div>
@@ -69,6 +72,7 @@ body {
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
     <script src='https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js'></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore.js'></script>
 
     <script>
@@ -111,11 +115,16 @@ $(document).ready(function() {
     $("#createteam").click(function(){
         var mem = $(".selmem:checked").map(function(){return $(this).attr('data-id')}).get()
         if (mem.length != 1) {
-            $('.result').html('Selct only one user');
+            $('.result').html('Selct a user');
+            return;
+        }
+        var ev = $("#selev").val();
+        if (!ev) {
+            $(".result").html("Select event");
             return;
         }
         var data = {
-            event: $("#selev").val(),
+            event:ev,
             user: mem[0]
         };
         $.post('/admin/onspot', data, function(dt, st){
@@ -133,17 +142,24 @@ $(document).ready(function() {
         if (q.toUpperCase().substring(0, 6) == "IITH17") {
             q = q.toUpperCase();
             $.post('/checkin/user', {q: q}, function(data, sts){
-                $("tbody").append(`
-                    <tr>
-                        <td><span onclick="removetd(this)">&times</span></th>
-                        <td>${q}</td>
-                        <td>${data.name.first} ${data.name.last}</td>
-                        <td>${data.email}</td>
-                        <td>${data.phone}</td>
-                        <td>${data.college}</td>
-                        <td style="display: none"><input type="checkbox" class="selmem" data-id="${data._id}" checked disabled></td>
-                    </tr>
-                `);
+                if (data) {
+                    $(".result").html("");
+                    $("tbody").html(`
+                        <tr>
+                            <td><span onclick="removetd(this)">&times</span></th>
+                            <td>${q}</td>
+                            <td>${data.name.first} ${data.name.last}</td>
+                            <td>${data.email}</td>
+                            <td>${data.phone}</td>
+                            <td>${data.college}</td>
+                            <td style="display: none"><input type="checkbox" class="selmem" data-id="${data._id}" checked disabled></td>
+                        </tr>
+                    `);
+                }
+                else {
+                    $("tbody").html("");
+                    $(".result").html("User not found");
+                }
             });
         }
         else {$(".msg").html("Enter correct iith id")}

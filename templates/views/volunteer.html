@@ -21,10 +21,14 @@ body {
 <body>
 
 <div class="container">
-    <a href="/checkin">check in </a>
-    <a href="/admin/team">Team registration</a>
-    <a href="/admin/onspot">Onspot egistration</a>
+    <div class="row">
+        <a href="/checkin" class="btn btn-default">check in </a>
+        <a href="/admin/team" class="btn btn-default">Team registration</a>
+        <a href="/admin/onspot" class="btn btn-default">Event registration</a>
+        <a href="/admin/user" class="btn btn-default">New user</a>
+    </div>
 	<div class="row">
+        <h1>Check in</h1>
         <div class="col-md-3">
                 <div class="input-group">
                     <!-- USE TWITTER TYPEAHEAD JSON WITH API TO SEARCH -->
@@ -48,31 +52,6 @@ body {
                         </tr>
                     </thead>
                     <tbody>
-                        
-                        <!--<tr>
-                            <td>Sample</td>
-                            <td>Filter</td>
-                            <td>12-11-2011 11:11</td>
-                            <td>OK</td>
-                            <td>123</td>
-                            <td>Do some other</td>
-                        </tr>
-                        <tr>
-                            <td>Try</td>
-                            <td>It</td>
-                            <td>11-20-2013 08:56</td>
-                            <td>It</td>
-                            <td>Works</td>
-                            <td>Do some FILTERME</td>
-                        </tr>
-                        <tr>
-                            <td>§</td>
-                            <td>$</td>
-                            <td>%</td>
-                            <td>&</td>
-                            <td>/</td>
-                            <td>!</td>
-                        </tr>-->
                     </tbody>
                 </table>   
 		</div>
@@ -125,7 +104,7 @@ $(document).ready(function() {
                         <td>${data.email}</td>
                         <td>${data.phone}</td>
                         <td>${data.college}</td>
-                        <td>${data.checkedIn ? "checkedin " : '<button class="save" onclick="checkin(\''+data._id+'\')" data-index="'+data._id+'">Ckeck in</button>'}</td>
+                        <td>${data.checkedIn ? "checkedin " : '<button class="save btn btn-danger" onclick="checkin(\''+data._id+'\')" data-index="'+data._id+'">Ckeck in</button>'}</td>
                     </tr>
                 `);
             });

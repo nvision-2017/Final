@@ -548,12 +548,56 @@ exports = module.exports = function (app) {
         if (!req.user  || !req.user.canAccessKeystone) {
             return res.json({status: false});
         }
-        new Registration.model({
+        Registration.model.find({
             event: req.body.event,
             user: req.body.user
-        }).save().then(team=>{
-            res.json({status: true, team: team})
-        }, err=>{res.json({status: false})});
+        }).then(reg=>{
+            if (reg.length == 0) {
+                new Registration.model({
+                    event: req.body.event,
+                    user: req.body.user
+                }).save().then(team=>{
+                    res.json({status: true})
+                }, err=>{res.json({status: false})});
+            }
+            else if (reg.length == 1) {
+                res.json({status: true})
+            }
+            else {
+                res.json({status: true})
+                var l = reg.length;
+                for (var i=1; i<l; i++) {
+                    reg[i].remove();
+                }
+            }
+        }, err=>{res.notfound()})
+        
+    })
+
+    app.get('/admin/user', (req, res)=>{
+        if (!req.user  || !req.user.canAccessKeystone) {
+            return res.notfound();
+        }
+        res.render('adminuser');
+    })
+
+    app.post('/admin/user', (req, res)=>{
+        if (!req.user  || !req.user.canAccessKeystone) {
+            return res.json({status: false, message: "Auth failed"});
+        }
+        var data = {
+            name : {
+                first: req.body.name,
+                last: ""
+            },
+            password: "passw0rd",
+            email: req.body.email,
+            phone: req.body.phone,
+            college: req.body.college
+        }
+        new User.model(data).save().then((usr)=>{
+            res.json({status: true, message: "Registered"})
+        }, err=>{res.json({status: false, message: "User already exists"})})
     })
 
     app.get('/admin/user/:userid', (req, res)=>{
@@ -573,8 +617,22 @@ exports = module.exports = function (app) {
         var view = new keystone.View(req, res);
         Event.model.findOne({ link: `/events/${req.params.event}` }).then(e => {
             if (!e) return res.notfound();
-            Team.model.find({event: e._id}).populate('members').then(r => {
-                view.render('adminevent', {event: e, reg: r});
+            Team.model.find({event: e._id}).populate('members').then(rr => {
+                var usrs = [];
+                for (var i in rr) {
+                    for (var j in rr) {
+                        usrs.push(rr[i].members[j]._id)
+                    }
+                }
+                Registration.model.find({event:e._id }).populate('user').then(r => {
+                    var users = [];
+                    for (var i in r) {
+                        if (usrs.indexOf(r[i].user._id == -1)) {
+                            users.push(r[i].user);
+                        } 
+                    }
+                    view.render('adminevent', {event: e, reg: rr, users: users});
+                }, e=>res.err(e))
             }, e=>res.err(e))
         }, e => res.err(e));
     });
