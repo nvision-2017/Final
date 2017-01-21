@@ -30,6 +30,7 @@ body {
         <h1>Team registration</h1>
         <p class="result"></p>
         <form method="POST">
+            <button type="button" class="btn btn-danger clear">Clear</button>
             <div class="form-group">
                 <label for="name">Name : </label>
                 <input type="text" name="name" id="name" class="form-control" required>
@@ -76,6 +77,13 @@ $(document).ready(function() {
             }
         })
     });
+    $(".clear").click(function(){
+        $(".result").html("");
+        $("#name").val("");
+        $("#college").val("");
+        $("#email").val("");
+        $("#phone").val("");
+    })
 });
     </script>
 

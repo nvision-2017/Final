@@ -598,7 +598,7 @@ exports = module.exports = function (app) {
         }
         new User.model(data).save().then((usr)=>{
             res.json({status: true, user: usr, message: "Registered"})
-            request('https://nvision.org.in/admin/user/'+usr.userid);
+            // request('https://nvision.org.in/admin/user/'+usr.userid);
         }, err=>{res.json({status: false, message: "User already exists"})})
     })
 
